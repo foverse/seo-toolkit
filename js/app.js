@@ -1,4 +1,4 @@
-﻿/**
+/**
  * SEO Studio - Frontend Application Controller
  * Handles UI interactions, live audit execution, tab navigation, SERP simulator, and report exports.
  */

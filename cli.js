@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 /**
  * Fouad's SEO Toolkit - Command Line Interface (CLI)
  * Run terminal SEO audits on live URLs or local HTML files with zero external dependencies.

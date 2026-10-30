@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Fouad's SEO Toolkit - Local Server & Proxy Backend
  * Built with native Node.js HTTP, URL, FS, and Path modules.
  * Serves the static web app on http://localhost:3000 and provides a CORS-free /api/audit endpoint.

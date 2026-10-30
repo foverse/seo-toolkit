@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Fouad's SEO Toolkit - Core Analyzer Engine
  * On-page SEO auditor, scoring algorithm, keyword extractor, and structure validator.
  * Created by Fouad Sennouni (https://github.com/foverse)

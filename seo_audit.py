@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Fouad's SEO Toolkit - Python CLI Auditor
 Zero-dependency SEO auditing tool for websites and HTML files using Python 3 standard library.

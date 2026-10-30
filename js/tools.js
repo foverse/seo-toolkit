@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Fouad's SEO Toolkit - Interactive SEO Tools Module
  * Generators for Schema.org JSON-LD, Robots.txt, XML Sitemaps, Meta Tags, and SERP pixel calculations.
  * Created by Fouad Sennouni (https://github.com/foverse)
