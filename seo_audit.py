@@ -1,8 +1,8 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 Fouad's SEO Toolkit - Python CLI Auditor
 Zero-dependency SEO auditing tool for websites and HTML files using Python 3 standard library.
-Created by Fouad Sennouni (https://github.com/fouad01)
+Created by Fouad Sennouni (https://github.com/foverse)
 
 Usage:
     python seo_audit.py https://example.com
@@ -241,7 +241,7 @@ def main():
             print(f"{Colors.CYAN}Fetching {target}...{Colors.END}")
         req = urllib.request.Request(
             target,
-            headers={'User-Agent': 'Mozilla/5.0 (compatible; SEOStudioPy/2.0; +https://github.com/fouad01/seo)'}
+            headers={'User-Agent': 'Mozilla/5.0 (compatible; SEOStudioPy/2.0; +https://github.com/foverse/seo)'}
         )
         try:
             with urllib.request.urlopen(req, timeout=12) as response:

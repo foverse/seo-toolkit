@@ -1,9 +1,9 @@
-# Fouad's SEO Toolkit
+﻿# Fouad's SEO Toolkit
 
 A fast, zero-dependency on-page SEO analyzer, Google SERP simulator, and technical markup toolkit.
 
-- **Live Web App**: [https://fouad01.github.io/seo/](https://fouad01.github.io/seo/)
-- **Repository**: [https://github.com/fouad01/seo](https://github.com/fouad01/seo)
+- **Live Web App**: [https://foverse.github.io/seo/](https://foverse.github.io/seo/)
+- **Repository**: [https://github.com/foverse/seo](https://github.com/foverse/seo)
 - **License**: MIT
 
 ---
@@ -15,7 +15,7 @@ Hi, I am **Fouad Sennouni**, a photography, videography, and tech enthusiast bas
 - **Location**: Tetouan, Morocco
 - **Focus**: Web development, open-source tools, visual media, and video editing
 - **Skills**: JavaScript, Python, HTML/CSS, Adobe Photoshop, Illustrator, Premiere Pro
-- **GitHub**: [@fouad01](https://github.com/fouad01)
+- **GitHub**: [@fouad01](https://github.com/foverse)
 - **Instagram**: [@fouadsennouni](https://www.instagram.com/fouadsennouni)
 
 ### Project Background
@@ -67,13 +67,13 @@ I originally created this repository back in 2019 as a personal sandbox. In 2026
 
 ### 1. In Your Browser (No Setup Needed)
 Open `index.html` in any browser or visit the live site:
-[https://fouad01.github.io/seo/](https://fouad01.github.io/seo/)
+[https://foverse.github.io/seo/](https://foverse.github.io/seo/)
 
 ### 2. Local Node.js Server & Proxy
 To audit external websites without browser CORS limits, start the local server:
 
 ```bash
-git clone https://github.com/fouad01/seo.git
+git clone https://github.com/foverse/seo.git
 cd seo
 
 npm start
@@ -143,4 +143,4 @@ seo/
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-Created by [Fouad Sennouni](https://github.com/fouad01).
+Created by [Fouad Sennouni](https://github.com/foverse).

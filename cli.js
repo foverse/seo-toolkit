@@ -1,8 +1,8 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /**
  * Fouad's SEO Toolkit - Command Line Interface (CLI)
  * Run terminal SEO audits on live URLs or local HTML files with zero external dependencies.
- * Created by Fouad Sennouni (https://github.com/fouad01)
+ * Created by Fouad Sennouni (https://github.com/foverse)
  *
  * Usage:
  *   node cli.js https://example.com
@@ -115,7 +115,7 @@ async function main() {
 
 function printHelp() {
   console.log(`
-${c.bold}${c.cyan}Fouad's SEO Toolkit CLI${c.reset} (https://github.com/fouad01/seo)
+${c.bold}${c.cyan}Fouad's SEO Toolkit CLI${c.reset} (https://github.com/foverse/seo)
 
 ${c.bold}Usage:${c.reset}
   node cli.js <url> [options]
@@ -143,7 +143,7 @@ function fetchUrl(targetUrl, timeoutMs = 10000, maxRedirects = 5) {
 
     const req = client.get(targetUrl, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; SEOStudioCLI/2.0; +https://github.com/fouad01/seo)',
+        'User-Agent': 'Mozilla/5.0 (compatible; SEOStudioCLI/2.0; +https://github.com/foverse/seo)',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
       },
       timeout: timeoutMs

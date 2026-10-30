@@ -1,7 +1,7 @@
-/**
+﻿/**
  * Fouad's SEO Toolkit - Core Analyzer Engine
  * On-page SEO auditor, scoring algorithm, keyword extractor, and structure validator.
- * Created by Fouad Sennouni (https://github.com/fouad01)
+ * Created by Fouad Sennouni (https://github.com/foverse)
  * Compatible with Browser (DOMParser) and Node.js.
  */
 

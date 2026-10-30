@@ -1,8 +1,8 @@
-/**
+﻿/**
  * Fouad's SEO Toolkit - Local Server & Proxy Backend
  * Built with native Node.js HTTP, URL, FS, and Path modules.
  * Serves the static web app on http://localhost:3000 and provides a CORS-free /api/audit endpoint.
- * Created by Fouad Sennouni (https://github.com/fouad01)
+ * Created by Fouad Sennouni (https://github.com/foverse)
  */
 
 const http = require('http');
@@ -113,7 +113,7 @@ function fetchWithTimeout(targetUrl, timeoutMs = 10000, maxRedirects = 5) {
 
     const req = client.get(targetUrl, {
       headers: {
-        'User-Agent': 'SEO-Studio-Auditor/2.0 (+https://github.com/fouad01/seo)',
+        'User-Agent': 'SEO-Studio-Auditor/2.0 (+https://github.com/foverse/seo)',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'Accept-Language': 'en-US,en;q=0.9',
         'Accept-Encoding': 'gzip, deflate, utf-8'
