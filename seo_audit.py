@@ -241,7 +241,7 @@ def main():
             print(f"{Colors.CYAN}Fetching {target}...{Colors.END}")
         req = urllib.request.Request(
             target,
-            headers={'User-Agent': 'Mozilla/5.0 (compatible; SEOStudioPy/2.0; +https://github.com/foverse/seo)'}
+            headers={'User-Agent': 'Mozilla/5.0 (compatible; SEOStudioPy/2.0; +https://github.com/foverse/seo-toolkit)'}
         )
         try:
             with urllib.request.urlopen(req, timeout=12) as response:

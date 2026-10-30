@@ -2,8 +2,8 @@
 
 A fast, zero-dependency on-page SEO analyzer, Google SERP simulator, and technical markup toolkit.
 
-- **Live Web App**: [https://foverse.github.io/seo/](https://foverse.github.io/seo/)
-- **Repository**: [https://github.com/foverse/seo](https://github.com/foverse/seo)
+- **Live Web App**: [https://foverse.github.io/seo-toolkit-toolkit/](https://foverse.github.io/seo-toolkit-toolkit/)
+- **Repository**: [https://github.com/foverse/seo-toolkit](https://github.com/foverse/seo-toolkit)
 - **License**: MIT
 
 ---
@@ -67,13 +67,13 @@ I originally created this repository back in 2019 as a personal sandbox. In 2026
 
 ### 1. In Your Browser (No Setup Needed)
 Open `index.html` in any browser or visit the live site:
-[https://foverse.github.io/seo/](https://foverse.github.io/seo/)
+[https://foverse.github.io/seo-toolkit-toolkit/](https://foverse.github.io/seo-toolkit-toolkit/)
 
 ### 2. Local Node.js Server & Proxy
 To audit external websites without browser CORS limits, start the local server:
 
 ```bash
-git clone https://github.com/foverse/seo.git
+git clone https://github.com/foverse/seo-toolkit-toolkit.git
 cd seo
 
 npm start
