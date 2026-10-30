@@ -1,111 +1,93 @@
-# Fouad's SEO Toolkit
+# SEO Toolkit
 
 A fast, zero-dependency on-page SEO analyzer, Google SERP simulator, and technical markup toolkit.
 
-- **Live Web App**: [https://foverse.github.io/seo-toolkit/](https://foverse.github.io/seo-toolkit/)
-- **Repository**: [https://github.com/foverse/seo-toolkit](https://github.com/foverse/seo-toolkit)
-- **License**: MIT
+- Live Web App: [https://foverse.github.io/seo-toolkit/](https://foverse.github.io/seo-toolkit/)
+- Repository: [https://github.com/foverse/seo-toolkit](https://github.com/foverse/seo-toolkit)
+- License: MIT
 
 ---
 
-## About the Author
+## Overview
 
-Hi, I am **Fouad Sennouni**, a photography, videography, and tech enthusiast based in Tetouan, Morocco.
+SEO Toolkit provides on-page audit insights, real-time SERP previews, and structured data generators without requiring external API subscriptions or heavy dependencies. It runs completely client-side in the browser, with optional Node.js and Python CLIs for automated workflows.
 
-- **Location**: Tetouan, Morocco
-- **Focus**: Web development, open-source tools, visual media, and video editing
-- **Skills**: JavaScript, Python, HTML/CSS, Adobe Photoshop, Illustrator, Premiere Pro
-- **GitHub**: [@fouad01](https://github.com/foverse)
-- **Instagram**: [@fouadsennouni](https://www.instagram.com/fouadsennouni)
-
-### Project Background
-I originally created this repository back in 2019 as a personal sandbox. In 2026, I rebuilt it into a full open-source toolkit. The goal was simple: provide a fast, clean, subscription-free SEO tool that anyone can run directly in their browser, on their terminal, or self-host for free.
+Built and maintained by [Fouad Sennouni](https://growthmaker.fr) ([@foverse](https://github.com/foverse)), creator of [growthmaker.fr](https://growthmaker.fr).
 
 ---
 
-## What It Does
+## Core Features
 
 ### 1. On-Page SEO Auditor
-- **Health Score (0 to 100)**: Evaluates page health across 6 weighted categories (Meta, Content, Images, Links, Social, Technical).
-- **Meta checks**: Title length, description length, canonical tags, viewport meta, charset, robots indexing directives (`noindex`, `nofollow`), and favicon.
-- **Content analysis**: Heading tags (`H1` to `H6`), missing or multiple H1 detection, total word count, reading time, and text-to-code HTML ratio.
-- **Image audit**: Total images, missing `alt` attributes, non-descriptive labels, modern format support (WebP, AVIF, SVG), and layout shift attributes.
-- **Link profile**: Total links, internal vs. external counts, empty anchor text warnings, and `rel="noopener noreferrer"` validation.
-- **Social tags**: Open Graph tags (`og:title`, `og:image`, `og:description`, `og:url`) and Twitter / X Card validation.
-- **Technical checks**: Schema.org JSON-LD detection and syntax check, HTML `lang` attribute, and HTTPS check.
-- **Actionable issue list**: Sorted by Critical, Warnings, and Passed checks with clear fix recommendations.
+- Health Score (0 to 100): Weighted calculation across meta tags, content, images, links, social graphs, and technical markup.
+- Meta direct inspection: Title length, meta description length, canonical tags, viewport configuration, charset, and robots indexing directives (`noindex`, `nofollow`).
+- Content analysis: Heading hierarchy (`H1` through `H6`), multiple or missing H1 alerts, total word count, reading time estimates, and text-to-HTML code ratio.
+- Asset and link validation: Image count, missing `alt` attributes, modern format detection (WebP, AVIF, SVG), internal vs external link distribution, and `rel="noopener noreferrer"` validation.
+- Social graph preview: Open Graph tags (`og:title`, `og:image`, `og:description`, `og:url`) and Twitter Cards.
+- Technical checks: Schema.org JSON-LD validation, language attribute, and HTTPS enforcement.
 
 ### 2. Google SERP Simulator
-- Live desktop and mobile search snippet previews.
-- Real-time pixel width calculators:
-  - Title pixel bar (max ~600px).
-  - Description pixel bar (max ~960px).
-- Editable fields to test titles and descriptions before publishing.
+- Real-time desktop and mobile search snippet previews.
+- Accurate pixel width calculations:
+  - Title pixel tracker (target: under ~600px).
+  - Meta description pixel tracker (target: under ~960px).
+- Live interactive sandbox to test title tags and descriptions before deploying to production.
 
 ### 3. Heading Structure Tree
-- Visual tree outline showing heading levels (`H1` -> `H2` -> `H3`).
-- Highlights skipped levels (for example, when an `H1` is followed directly by an `H3`).
+- Visual outline mapping heading nesting depth.
+- Detects skipped heading levels (such as an `H1` jumping directly to an `H3`).
 
 ### 4. Keyword Density and N-Gram Extraction
-- Extracts single keywords (1-grams), two-word phrases (2-grams), and three-word phrases (3-grams).
-- Includes stop-word filtering and keyword stuffing warnings (>3.5% density).
+- Single keyword, two-word phrase, and three-word phrase frequency extraction.
+- Built-in stop-word filtering and over-optimization alerts for high keyword densities.
 
-### 5. Schema and Technical Generators
-- **Schema.org Builder**: Visual JSON-LD generator for FAQPage, Article, Product, LocalBusiness, and Breadcrumbs.
-- **Robots.txt Builder**: Presets for standard sites, dev staging, and blocking AI crawlers (`GPTBot`, `ClaudeBot`, `CCBot`, `Bytespider`, `Google-Extended`).
-- **XML Sitemap Generator**: Generates clean `sitemap.xml` directly from page links.
-- **Meta Tag Generator**: Complete `<head>` template generator for new projects.
+### 5. Schema and Technical File Generators
+- Schema.org Builder: Visual JSON-LD generator for FAQPage, Article, Product, LocalBusiness, and Breadcrumbs.
+- Robots.txt Builder: Presets for standard production sites, staging environments, and blocking aggressive AI scrapers.
+- XML Sitemap Builder: Generates structured `sitemap.xml` entries directly from discovered page links.
+- Meta Tag Generator: Complete template generator for HTML `<head>` tags.
 
 ### 6. Export Options
-- **Print / PDF**: Clean printable stylesheet (`Ctrl+P` or via the Export PDF button).
-- **Save JSON**: Download full audit data as a JSON file.
-- **Copy Markdown**: One-click markdown summary ready to paste into GitHub issues, pull requests, or client notes.
+- PDF / Print: Clean print stylesheet accessible via `Ctrl+P` or the export button.
+- JSON Export: Download the full audit payload as structured JSON.
+- Markdown Summary: Single-click clipboard copy formatted for GitHub issues, pull requests, or client reports.
 
 ---
 
-## How to Run It
+## Quick Start
 
-### 1. In Your Browser (No Setup Needed)
-Open `index.html` in any browser or visit the live site:
-[https://foverse.github.io/seo-toolkit/](https://foverse.github.io/seo-toolkit/)
+### Option 1: Browser (Zero Setup)
+Open [https://foverse.github.io/seo-toolkit/](https://foverse.github.io/seo-toolkit/) or open `index.html` locally in any modern browser.
 
-### 2. Local Node.js Server & Proxy
-To audit external websites without browser CORS limits, start the local server:
-
+### Option 2: Local Node Server (Bypasses CORS for External URLs)
 ```bash
 git clone https://github.com/foverse/seo-toolkit.git
-cd seo
-
+cd seo-toolkit
 npm start
 ```
+Then visit `http://localhost:3000` in your browser.
 
-Then open `http://localhost:3000` in your browser.
-
-### 3. Node.js Command Line
-Run audits straight from your terminal:
-
+### Option 3: Terminal CLI (Node.js)
 ```bash
-# Audit a live website
+# Audit a live URL
 node cli.js https://example.com
 
 # Audit a local HTML file
 node cli.js --file ./index.html
 
-# Save results as JSON
+# Export audit to JSON
 node cli.js https://example.com --json --output report.json
 
-# Run unit verification tests
+# Run test suite
 npm test
 ```
 
-### 4. Python Command Line
-If you prefer Python, run the standalone script (uses only the Python 3 standard library):
-
+### Option 4: Python CLI (Zero Dependencies)
 ```bash
 # Audit a live URL
 python seo_audit.py https://example.com
 
-# Audit a local file
+# Audit a local HTML file
 python seo_audit.py --file index.html
 
 # Output to JSON
@@ -114,33 +96,30 @@ python seo_audit.py https://example.com --json --output audit.json
 
 ---
 
-## File Structure
+## Architecture
 
 ```
-seo/
-├── index.html              # Main web application with About modal and tab
+seo-toolkit/
+├── index.html         # Web application and UI layout
 ├── css/
-│   └── styles.css          # Dark theme, SERP cards, heading tree, and print styles
+│   └── styles.css     # Dark mode layout, SERP simulation, and print styles
 ├── js/
-│   ├── analyzer.js         # Core SEO rules, scoring, and keyword extractor
-│   ├── tools.js            # Schema, robots.txt, sitemap, and SERP pixel calculator
-│   ├── samples.js          # Demo presets (E-commerce, Blog, SaaS, Broken SEO)
-│   └── app.js              # UI controller, About modal, and export handlers
-├── server.js               # Zero-dependency local Node.js server and CORS proxy
-├── cli.js                  # Standalone Node.js CLI tool
-├── seo_audit.py            # Standalone Python 3 CLI tool
-├── package.json            # Scripts and metadata
-├── .github/
-│   └── workflows/
-│       └── deploy.yml      # GitHub Actions Pages deployment
-├── .gitignore              # Ignored files
-├── LICENSE                 # MIT License
-└── README.md               # Documentation and author info
+│   ├── analyzer.js    # Core SEO rules, scoring, and n-gram extraction
+│   ├── tools.js       # Schema, robots.txt, sitemap, and pixel measurement
+│   ├── samples.js     # Test presets (SaaS, E-commerce, Blog, Edge cases)
+│   └── app.js         # Event orchestration and export handlers
+├── server.js          # Lightweight Node.js server and proxy
+├── cli.js             # Command line interface for Node.js
+├── seo_audit.py       # Standalone Python 3 auditor (standard library only)
+└── package.json       # Metadata and scripts
 ```
 
 ---
 
-## License
+## Author & Project Info
 
-This project is licensed under the [MIT License](LICENSE).
-Created by [Fouad Sennouni](https://github.com/foverse).
+Built by [Fouad Sennouni](https://growthmaker.fr) ([@foverse](https://github.com/foverse)).
+
+Visit [growthmaker.fr](https://growthmaker.fr) for case studies and notes on acquisition, conversion optimization, and web engineering.
+
+Licensed under the [MIT License](LICENSE).
