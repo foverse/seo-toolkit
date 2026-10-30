@@ -1,0 +1,29 @@
+{
+  "name": "seo-toolkit",
+  "version": "2.0.0",
+  "description": "All-in-One SEO Audit & Optimization Suite — Live site audit, SERP simulator, Schema.org generator, robots.txt & sitemap builder.",
+  "main": "server.js",
+  "bin": {
+    "seo-audit": "./cli.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "audit": "node cli.js",
+    "test": "node cli.js --test"
+  },
+  "keywords": [
+    "seo",
+    "seo-audit",
+    "serp-preview",
+    "schema-generator",
+    "robots-txt",
+    "sitemap-generator",
+    "keyword-density",
+    "web-vitals",
+    "site-analyzer"
+  ],
+  "author": "Fouad Sennouni (https://github.com/fouad01)",
+  "license": "MIT",
+  "homepage": "https://fouad01.github.io/seo/"
+}
