@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-SEO Studio - Python CLI Auditor
+Fouad's SEO Toolkit - Python CLI Auditor
 Zero-dependency SEO auditing tool for websites and HTML files using Python 3 standard library.
+Created by Fouad Sennouni (https://github.com/fouad01)
 
 Usage:
     python seo_audit.py https://example.com
@@ -266,7 +267,7 @@ def main():
 
     # Terminal output
     print(f"\n{Colors.BOLD}{Colors.CYAN}======================================================{Colors.END}")
-    print(f"  {Colors.BOLD}SEO Studio - Audit Report (Python CLI){Colors.END}")
+    print(f"  {Colors.BOLD}Fouad's SEO Toolkit - Audit Report (Python CLI){Colors.END}")
     print(f"  Source: {report['source']}")
     print(f"{Colors.BOLD}{Colors.CYAN}======================================================{Colors.END}\n")
 

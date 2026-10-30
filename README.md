@@ -1,83 +1,88 @@
-# 🔍 SEO Studio — All-in-One SEO Audit & Optimization Suite
+# Fouad's SEO Toolkit
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-success?style=for-the-badge&logo=github)](https://fouad01.github.io/seo/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
-[![Node.js](https://img.shields.io/badge/Node.js-18%2B-green?style=for-the-badge&logo=nodedotjs)](https://nodejs.org/)
-[![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python)](https://python.org/)
-[![No Dependencies](https://img.shields.io/badge/Dependencies-Zero%20External-purple?style=for-the-badge)](#)
+A fast, zero-dependency on-page SEO analyzer, Google SERP simulator, and technical markup toolkit.
 
-> **SEO Studio** is a modern, blazing-fast, open-source SEO audit and developer optimization suite. Inspect meta tags, diagnose broken heading hierarchies, simulate Google SERP snippets with pixel-accurate counters, extract keyword n-grams, generate Schema.org JSON-LD, build AI-blocking `robots.txt`, and export audit reports to PDF, JSON, or Markdown.
-
-**Live Web App**: [https://fouad01.github.io/seo/](https://fouad01.github.io/seo/)
+- **Live Web App**: [https://fouad01.github.io/seo/](https://fouad01.github.io/seo/)
+- **Repository**: [https://github.com/fouad01/seo](https://github.com/fouad01/seo)
+- **License**: MIT
 
 ---
 
-## ✨ Features
+## About the Author
 
-### 1. 📊 Deep On-Page SEO Auditor
-- **Health Score (0–100)** with animated radial gauge and letter grade (`A+`, `A`, `B`, `C`, `D`, `F`).
-- **6-Category Breakdown**:
-  - **Meta & Indexing (25 pts)**: `<title>` length & pixel width, meta description, canonical URL, robots meta directives (`noindex`, `nofollow`), viewport, charset, and favicon.
-  - **Content & Hierarchy (25 pts)**: `<h1>` presence, duplicate H1 detection, H2–H6 hierarchy structure, total word count, estimated reading time, and text-to-code HTML ratio.
-  - **Images & Media (15 pts)**: Missing `alt` tags, generic labels (`"image.jpg"`), modern container formats (WebP, AVIF, SVG), and layout shift prevention attributes.
-  - **Links & Navigation (15 pts)**: Internal vs. external link counts, empty anchor text warnings, `rel="noopener noreferrer"` validation, and nofollow counts.
-  - **Social Open Graph (10 pts)**: `og:title`, `og:image`, `og:description`, `og:url`, `og:type`, and Twitter / X Card validation.
-  - **Technical & Structured Data (10 pts)**: Schema.org JSON-LD syntax validation, HTML `lang` localization, HTTPS protocol enforcement, and doctype check.
-- **Actionable Issue Tracker**: Sorted into 🚨 Critical (blockers), ⚠️ Warnings (optimizations), ℹ️ Info, and ✅ Passed checks with exact fixes.
+Hi, I am **Fouad Sennouni**, a photography, videography, and tech enthusiast based in Tetouan, Morocco.
 
-### 2. 📱 Pixel-Accurate SERP Simulator
-- Real-time **Google Desktop & Mobile** search snippet preview.
-- Dynamic **pixel-width calculators**:
-  - Title pixel gauge (max ~600px, turns amber/red when truncating).
-  - Description pixel gauge (max ~960px).
-- Editable fields for rapid headline copy testing.
+- **Location**: Tetouan, Morocco
+- **Focus**: Web development, open-source tools, visual media, and video editing
+- **Skills**: JavaScript, Python, HTML/CSS, Adobe Photoshop, Illustrator, Premiere Pro
+- **GitHub**: [@fouad01](https://github.com/fouad01)
+- **Instagram**: [@fouadsennouni](https://www.instagram.com/fouadsennouni)
 
-### 3. 🌳 Headings Structural Hierarchy Tree
-- Visual tree outline showing heading levels (`H1` ➔ `H2` ➔ `H3`).
-- Alerts when heading levels are skipped (e.g., an `H1` followed directly by an `H3`).
+### Project Background
+I originally created this repository back in 2019 as a personal sandbox. In 2026, I rebuilt it into a full open-source toolkit. The goal was simple: provide a fast, clean, subscription-free SEO tool that anyone can run directly in their browser, on their terminal, or self-host for free.
 
-### 4. 📈 Keyword Density & N-Gram Analyzer
-- Instant extraction of:
-  - **1-Grams** (single focus keywords)
-  - **2-Grams** (two-word phrases)
-  - **3-Grams** (long-tail keyphrases)
-- Automatic stop-word filtering and keyword stuffing alerts (>3.5% density).
+---
 
-### 5. 🛠️ Interactive SEO Developer Tools
-- **Schema.org JSON-LD Generator**: Visual builders for `FAQPage`, `Article` / `BlogPosting`, `Product`, `LocalBusiness`, and `Breadcrumbs`.
-- **Robots.txt Builder**: Includes 1-click presets for standard sites, dev/staging blocking, and **blocking AI crawlers** (`GPTBot`, `ClaudeBot`, `CCBot`, `Bytespider`, `Google-Extended`).
-- **XML Sitemap Generator**: Generates standard, valid `sitemap.xml` directly from audited pages.
+## What It Does
+
+### 1. On-Page SEO Auditor
+- **Health Score (0 to 100)**: Evaluates page health across 6 weighted categories (Meta, Content, Images, Links, Social, Technical).
+- **Meta checks**: Title length, description length, canonical tags, viewport meta, charset, robots indexing directives (`noindex`, `nofollow`), and favicon.
+- **Content analysis**: Heading tags (`H1` to `H6`), missing or multiple H1 detection, total word count, reading time, and text-to-code HTML ratio.
+- **Image audit**: Total images, missing `alt` attributes, non-descriptive labels, modern format support (WebP, AVIF, SVG), and layout shift attributes.
+- **Link profile**: Total links, internal vs. external counts, empty anchor text warnings, and `rel="noopener noreferrer"` validation.
+- **Social tags**: Open Graph tags (`og:title`, `og:image`, `og:description`, `og:url`) and Twitter / X Card validation.
+- **Technical checks**: Schema.org JSON-LD detection and syntax check, HTML `lang` attribute, and HTTPS check.
+- **Actionable issue list**: Sorted by Critical, Warnings, and Passed checks with clear fix recommendations.
+
+### 2. Google SERP Simulator
+- Live desktop and mobile search snippet previews.
+- Real-time pixel width calculators:
+  - Title pixel bar (max ~600px).
+  - Description pixel bar (max ~960px).
+- Editable fields to test titles and descriptions before publishing.
+
+### 3. Heading Structure Tree
+- Visual tree outline showing heading levels (`H1` -> `H2` -> `H3`).
+- Highlights skipped levels (for example, when an `H1` is followed directly by an `H3`).
+
+### 4. Keyword Density and N-Gram Extraction
+- Extracts single keywords (1-grams), two-word phrases (2-grams), and three-word phrases (3-grams).
+- Includes stop-word filtering and keyword stuffing warnings (>3.5% density).
+
+### 5. Schema and Technical Generators
+- **Schema.org Builder**: Visual JSON-LD generator for FAQPage, Article, Product, LocalBusiness, and Breadcrumbs.
+- **Robots.txt Builder**: Presets for standard sites, dev staging, and blocking AI crawlers (`GPTBot`, `ClaudeBot`, `CCBot`, `Bytespider`, `Google-Extended`).
+- **XML Sitemap Generator**: Generates clean `sitemap.xml` directly from page links.
 - **Meta Tag Generator**: Complete `<head>` template generator for new projects.
 
-### 6. 📄 Multi-Format Export
-- **Print / PDF**: Professional printable report stylesheet (triggerable via 1-click or `Ctrl+P`).
-- **Save JSON**: Full programmatic audit data export.
-- **Copy Markdown**: Ready-to-paste executive summary for pull requests, tickets, or client reports.
+### 6. Export Options
+- **Print / PDF**: Clean printable stylesheet (`Ctrl+P` or via the Export PDF button).
+- **Save JSON**: Download full audit data as a JSON file.
+- **Copy Markdown**: One-click markdown summary ready to paste into GitHub issues, pull requests, or client notes.
 
 ---
 
-## 🚀 Quick Start
+## How to Run It
 
-### Option A: Run in the Browser (GitHub Pages or Local)
-No build step or server required! Simply open `index.html` in any browser or visit the live deployment:
-👉 **[https://fouad01.github.io/seo/](https://fouad01.github.io/seo/)**
+### 1. In Your Browser (No Setup Needed)
+Open `index.html` in any browser or visit the live site:
+[https://fouad01.github.io/seo/](https://fouad01.github.io/seo/)
 
-### Option B: Run Local Node.js Server & CORS Proxy
-To audit any external URL without browser CORS limitations, launch the zero-dependency local server:
+### 2. Local Node.js Server & Proxy
+To audit external websites without browser CORS limits, start the local server:
 
 ```bash
-# Clone the repository
 git clone https://github.com/fouad01/seo.git
 cd seo
 
-# Start the local server
 npm start
-# or: node server.js
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Option C: Node.js Terminal CLI
-Audit websites or local files directly from your terminal:
+Then open `http://localhost:3000` in your browser.
+
+### 3. Node.js Command Line
+Run audits straight from your terminal:
 
 ```bash
 # Audit a live website
@@ -86,86 +91,56 @@ node cli.js https://example.com
 # Audit a local HTML file
 node cli.js --file ./index.html
 
-# Output JSON or save to file
+# Save results as JSON
 node cli.js https://example.com --json --output report.json
 
 # Run unit verification tests
 npm test
 ```
 
-### Option D: Python 3 CLI
-If you prefer Python, use the standalone `seo_audit.py` script (requires only Python 3 standard library):
+### 4. Python Command Line
+If you prefer Python, run the standalone script (uses only the Python 3 standard library):
 
 ```bash
-# Audit a website
+# Audit a live URL
 python seo_audit.py https://example.com
 
 # Audit a local file
 python seo_audit.py --file index.html
 
-# Export to JSON
+# Output to JSON
 python seo_audit.py https://example.com --json --output audit.json
 ```
 
 ---
 
-## 📂 Project Architecture
+## File Structure
 
 ```
 seo/
-├── index.html              # Main Single-Page Application (SPA)
+├── index.html              # Main web application with About modal and tab
 ├── css/
-│   └── styles.css          # Glassmorphism, dark theme, SERP cards, print CSS
+│   └── styles.css          # Dark theme, SERP cards, heading tree, and print styles
 ├── js/
-│   ├── analyzer.js         # Core SEO rules, scoring logic, keyword extractor
-│   ├── tools.js            # Schema.org, robots.txt, sitemap, SERP pixel logic
-│   ├── samples.js          # Preloaded test presets (E-commerce, Blog, SaaS, Broken)
-│   └── app.js              # Application UI controller and export handlers
-├── server.js               # Zero-dependency Node.js HTTP server & CORS proxy
-├── cli.js                  # Standalone Node.js CLI auditor with colored output
-├── seo_audit.py            # Standalone Python 3 CLI auditor
-├── package.json            # NPM package metadata and runner scripts
+│   ├── analyzer.js         # Core SEO rules, scoring, and keyword extractor
+│   ├── tools.js            # Schema, robots.txt, sitemap, and SERP pixel calculator
+│   ├── samples.js          # Demo presets (E-commerce, Blog, SaaS, Broken SEO)
+│   └── app.js              # UI controller, About modal, and export handlers
+├── server.js               # Zero-dependency local Node.js server and CORS proxy
+├── cli.js                  # Standalone Node.js CLI tool
+├── seo_audit.py            # Standalone Python 3 CLI tool
+├── package.json            # Scripts and metadata
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml      # Automated GitHub Pages CI/CD workflow
-├── .gitignore              # Git ignore rules
+│       └── deploy.yml      # GitHub Actions Pages deployment
+├── .gitignore              # Ignored files
 ├── LICENSE                 # MIT License
-└── README.md               # Documentation
+└── README.md               # Documentation and author info
 ```
 
 ---
 
-## 🧪 Testing & Verification
+## License
 
-The suite includes internal unit tests:
-
-```bash
-# Node.js self test
-node cli.js --test
-# Output: ✓ All Self Tests Passed Successfully! (100/100)
-
-# Audit index.html itself
-node cli.js --file ./index.html
-# Output: SEO Health Score: 100 / 100
-```
-
----
-
-## 🚢 Deploying to GitHub Pages
-
-1. Push your changes to the `master` or `main` branch:
-   ```bash
-   git add .
-   git commit -m "feat: complete SEO Studio suite v2.0"
-   git push origin master
-   ```
-2. In your GitHub repository settings, go to **Settings > Pages**.
-3. Under **Build and deployment**, select **GitHub Actions** (or deploy directly from the `master` branch `/ (root)`).
-4. Your SEO tool is now live at `https://<your-username>.github.io/<repo-name>/`!
-
----
-
-## 📄 License
-
-This project is open-source under the [MIT License](LICENSE).
-Created with ❤️ by [Fouad Sennouni](https://github.com/fouad01).
+This project is licensed under the [MIT License](LICENSE).
+Created by [Fouad Sennouni](https://github.com/fouad01).

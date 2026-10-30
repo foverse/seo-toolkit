@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SEO Studio | All-in-One SEO Audit & Optimization Suite</title>
-  <meta name="description" content="Open-source SEO auditor, live SERP simulator, Schema.org generator, heading tree visualizer, and keyword density analyzer.">
+  <title>Fouad's SEO Toolkit | Fast On-Page SEO Analyzer & Tools</title>
+  <meta name="description" content="A practical on-page SEO analyzer, Google SERP simulator, Schema.org generator, and technical SEO toolkit created by Fouad Sennouni.">
   <link rel="canonical" href="https://fouad01.github.io/seo/">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'></circle><line x1='21' y1='21' x2='16.65' y2='16.65'></line></svg>">
   <meta name="robots" content="index, follow">
@@ -12,14 +12,14 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://fouad01.github.io/seo/">
-  <meta property="og:title" content="SEO Studio | All-in-One SEO Audit & Optimization Suite">
-  <meta property="og:description" content="Open-source SEO auditor, live SERP simulator, Schema.org generator, and keyword density analyzer.">
+  <meta property="og:title" content="Fouad's SEO Toolkit | Fast On-Page SEO Analyzer & Tools">
+  <meta property="og:description" content="A practical on-page SEO analyzer, Google SERP simulator, Schema.org generator, and technical SEO toolkit created by Fouad Sennouni.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SEO Studio | All-in-One SEO Audit Suite">
-  <meta name="twitter:description" content="Audit on-page SEO, simulate SERPs, generate Schema.org JSON-LD and robots.txt.">
+  <meta name="twitter:title" content="Fouad's SEO Toolkit">
+  <meta name="twitter:description" content="Audit on-page SEO, simulate SERP snippets, and build technical schema markup.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200">
 
   <!-- Schema.org JSON-LD -->
@@ -27,15 +27,20 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "SEO Studio",
+    "name": "Fouad's SEO Toolkit",
     "url": "https://fouad01.github.io/seo/",
-    "description": "All-in-one open-source SEO audit and optimization suite with SERP simulator, Schema.org generator, and keyword analyzer.",
+    "description": "Open-source on-page SEO analyzer and developer toolkit created by Fouad Sennouni.",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "All",
     "author": {
       "@type": "Person",
       "name": "Fouad Sennouni",
-      "url": "https://github.com/fouad01"
+      "url": "https://github.com/fouad01",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tetouan",
+        "addressCountry": "Morocco"
+      }
     }
   }
   </script>
@@ -85,19 +90,23 @@
           <i data-lucide="search" class="w-5 h-5 text-white"></i>
         </div>
         <div>
-          <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">SEO Studio</span>
+          <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">Fouad's SEO Toolkit</span>
           <span class="ml-2 text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">v2.0</span>
         </div>
       </div>
 
-      <div class="flex items-center space-x-3">
+      <div class="flex items-center space-x-2 sm:space-x-3">
+        <button id="btn-open-about" class="inline-flex items-center space-x-1.5 text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white transition">
+          <i data-lucide="user" class="w-4 h-4 text-cyan-400"></i>
+          <span>About</span>
+        </button>
         <a href="https://github.com/fouad01/seo" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center space-x-2 text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white transition">
           <i data-lucide="github" class="w-4 h-4"></i>
-          <span>fouad01/seo</span>
+          <span>GitHub</span>
         </a>
-        <button id="btn-quick-tour" class="inline-flex items-center space-x-1.5 text-xs font-medium px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-600/30 transition">
-          <i data-lucide="sparkles" class="w-4 h-4"></i>
-          <span>Sample Demo</span>
+        <button id="btn-quick-tour" class="inline-flex items-center space-x-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-600/30 transition">
+          <i data-lucide="play" class="w-4 h-4"></i>
+          <span>Run Demo</span>
         </button>
       </div>
     </div>
@@ -107,10 +116,10 @@
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full" id="input-section">
     <div class="text-center max-w-3xl mx-auto mb-8">
       <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
-        Professional SEO Audit &amp; Optimization Suite
+        Fouad's SEO Toolkit
       </h1>
       <p class="text-slate-400 text-sm sm:text-base">
-        Inspect meta tags, heading hierarchies, keyword density, schema markup, and SERP visibility with actionable zero-fluff recommendations.
+        A fast on-page SEO analyzer, SERP simulator, and technical markup toolkit without subscriptions or bloat.
       </p>
     </div>
 
@@ -166,7 +175,7 @@
         </form>
         <p class="text-xs text-slate-500 flex items-center space-x-1.5">
           <i data-lucide="info" class="w-3.5 h-3.5"></i>
-          <span>Supports local CORS proxy, public CORS relays, or direct HTML fallback.</span>
+          <span>Supports local backend proxy, public CORS relays, or direct HTML fallback.</span>
         </p>
       </div>
 
@@ -202,7 +211,7 @@
   <!-- Loading Indicator -->
   <div id="audit-loading" class="hidden py-12 text-center">
     <div class="inline-block animate-spin rounded-full h-10 w-10 border-4 border-slate-700 border-t-blue-500 mb-3"></div>
-    <p class="text-sm text-slate-400">Crawling, parsing, and running SEO heuristic rules...</p>
+    <p class="text-sm text-slate-400">Running SEO audit rules and calculating metrics...</p>
   </div>
 
   <!-- Results Dashboard -->
@@ -348,11 +357,14 @@
         <i data-lucide="wrench" class="w-4 h-4"></i>
         <span>SEO Generators</span>
       </button>
+      <button class="tab-btn px-4 py-3 text-slate-400 hover:text-white flex items-center space-x-2 transition" data-target="tab-about">
+        <i data-lucide="user" class="w-4 h-4 text-cyan-400"></i>
+        <span>About</span>
+      </button>
     </div>
 
     <!-- TAB 1: Issues List -->
     <div id="tab-issues" class="tab-pane space-y-4">
-      <!-- Filter controls -->
       <div class="flex items-center justify-between pb-2">
         <div class="flex items-center space-x-2 text-xs">
           <span class="text-slate-400">Filter:</span>
@@ -362,8 +374,6 @@
           <button class="filter-issue-btn px-2.5 py-1 rounded bg-slate-800 text-slate-300 hover:text-white font-medium" data-filter="passed">✅ Passed</button>
         </div>
       </div>
-
-      <!-- Container dynamically populated -->
       <div id="issues-list-container" class="space-y-3"></div>
     </div>
 
@@ -409,7 +419,7 @@
         <div class="space-y-4">
           <h3 class="text-base font-bold text-white flex items-center space-x-2">
             <i data-lucide="eye" class="w-4 h-4 text-emerald-400"></i>
-            <span>Live Google Search Previews</span>
+            <span>Google Search Result Previews</span>
           </h3>
 
           <!-- Desktop Preview -->
@@ -455,9 +465,9 @@
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-base font-bold text-white flex items-center space-x-2">
             <i data-lucide="git-branch" class="w-4 h-4 text-purple-400"></i>
-            <span>Heading Structural Hierarchy Tree</span>
+            <span>Heading Hierarchy Tree</span>
           </h3>
-          <span class="text-xs text-slate-400">Search crawlers use this outline to navigate content hierarchy</span>
+          <span class="text-xs text-slate-400">Headings outline used by crawlers to understand page structure</span>
         </div>
         <div id="heading-tree-container" class="space-y-2"></div>
       </div>
@@ -590,15 +600,140 @@
       </div>
     </div>
 
+    <!-- TAB 7: About Fouad & The Project -->
+    <div id="tab-about" class="tab-pane hidden space-y-6">
+      <div class="glass-panel p-6 sm:p-8">
+        <div class="flex flex-col md:flex-row items-start gap-6">
+          <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-blue-600 via-cyan-500 to-indigo-600 flex items-center justify-center text-3xl font-bold text-white shadow-xl shadow-blue-500/20 flex-shrink-0">
+            FS
+          </div>
+          <div class="space-y-4 max-w-3xl">
+            <div>
+              <div class="flex items-center space-x-3">
+                <h3 class="text-2xl font-bold text-white">Fouad Sennouni</h3>
+                <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">Creator</span>
+              </div>
+              <p class="text-slate-400 text-sm mt-1 flex items-center space-x-2">
+                <i data-lucide="map-pin" class="w-4 h-4 text-rose-400"></i>
+                <span>Tetouan, Morocco</span>
+              </p>
+            </div>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Photography, videography, and tech enthusiast living in Tetouan, Morocco. Passionate about web development, clean design, and building useful tools for the open-source community.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div class="glass-panel-subtle p-4">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center space-x-2">
+                  <i data-lucide="wrench" class="w-3.5 h-3.5 text-cyan-400"></i>
+                  <span>Skills &amp; Toolkit</span>
+                </h4>
+                <ul class="text-xs text-slate-300 space-y-1">
+                  <li>- Web Development (JavaScript, Python, HTML5, CSS3)</li>
+                  <li>- Search Engine Optimization (SEO) &amp; Web Vitals</li>
+                  <li>- Photoshop, Illustrator, Premiere Pro</li>
+                </ul>
+              </div>
+
+              <div class="glass-panel-subtle p-4">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center space-x-2">
+                  <i data-lucide="heart" class="w-3.5 h-3.5 text-pink-400"></i>
+                  <span>Interests &amp; Hobbies</span>
+                </h4>
+                <ul class="text-xs text-slate-300 space-y-1">
+                  <li>- Coding &amp; Open Source Projects</li>
+                  <li>- Photography &amp; Video Production</li>
+                  <li>- Movies, Series, and Gaming</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800/80">
+              <h4 class="text-sm font-semibold text-white mb-2">About This Project</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                This project began in 2019 as a personal web repository. In 2026, I completely rebuilt and expanded it into Fouad's SEO Toolkit: a free, zero-dependency suite that anyone can run in their browser, on their terminal, or host on GitHub Pages without expensive recurring subscriptions.
+              </p>
+            </div>
+
+            <div class="flex items-center space-x-3 pt-2">
+              <a href="https://github.com/fouad01" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 flex items-center space-x-2 transition">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>GitHub Profile</span>
+              </a>
+              <a href="https://www.instagram.com/fouadsennouni" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-gradient-to-r from-pink-600/20 to-purple-600/20 hover:from-pink-600/30 hover:to-purple-600/30 text-xs font-medium text-pink-300 border border-pink-500/30 flex items-center space-x-2 transition">
+                <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i>
+                <span>Instagram (@fouadsennouni)</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
+
+  <!-- Modal: About Fouad Sennouni -->
+  <div id="about-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
+    <div class="glass-panel max-w-xl w-full p-6 sm:p-8 relative border border-slate-700 shadow-2xl">
+      <button id="btn-close-about-modal" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center space-x-4 mb-5">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-xl font-bold text-white shadow-lg">
+          FS
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white">Fouad Sennouni</h3>
+          <p class="text-xs text-slate-400 flex items-center space-x-1 mt-0.5">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-400"></i>
+            <span>Tetouan, Morocco</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-3 text-xs sm:text-sm text-slate-300">
+        <p>
+          Photography, videography, and tech enthusiast based in Tetouan, Morocco.
+        </p>
+        <p class="text-slate-400">
+          Originally created in 2019, this repository was upgraded into <strong>Fouad's SEO Toolkit</strong> to provide developers, creators, and website owners with an open-source, subscription-free SEO auditor.
+        </p>
+
+        <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 space-y-1.5 text-xs text-slate-400">
+          <div><strong class="text-slate-200">Skills:</strong> JavaScript, Python, Web Development, SEO, Photoshop, Premiere Pro, Illustrator</div>
+          <div><strong class="text-slate-200">Hobbies:</strong> Coding, Photography, Videography, Movies &amp; Gaming</div>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-3 mt-6 pt-4 border-t border-slate-800">
+        <a href="https://github.com/fouad01" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 flex items-center space-x-2 transition">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.instagram.com/fouadsennouni" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 flex items-center space-x-2 transition">
+          <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i>
+          <span>Instagram</span>
+        </a>
+        <a href="https://github.com/fouad01/seo" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-xs font-medium text-white flex items-center space-x-2 transition">
+          <i data-lucide="star" class="w-4 h-4"></i>
+          <span>Star on GitHub</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="mt-auto border-t border-slate-900 bg-slate-950 py-6 text-xs text-slate-500 text-center">
     <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p>SEO Studio &copy; 2026. Built with modern web standards by <a href="https://github.com/fouad01" class="text-blue-400 hover:underline">Fouad Sennouni</a>.</p>
+      <p>Fouad's SEO Toolkit (c) 2026. Built by <a href="https://github.com/fouad01" class="text-blue-400 hover:underline">Fouad Sennouni</a> in Tetouan, Morocco.</p>
       <div class="flex items-center space-x-4">
+        <button id="footer-btn-about" class="text-slate-400 hover:text-white transition">About Fouad</button>
         <a href="https://github.com/fouad01/seo" class="hover:text-slate-400">GitHub Repository</a>
-        <a href="https://fouad01.github.io/seo/" class="hover:text-slate-400">Live GitHub Pages</a>
+        <a href="https://www.instagram.com/fouadsennouni" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400">Instagram</a>
+        <a href="https://fouad01.github.io/seo/" class="hover:text-slate-400">Live Site</a>
       </div>
     </div>
   </footer>

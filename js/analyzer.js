@@ -1,7 +1,8 @@
 /**
- * SEO Studio - Core Analyzer Engine
- * Comprehensive on-page SEO auditor, scoring algorithm, keyword extractor, and structure validator.
- * Compatible with both Browser (DOMParser) and Node.js (via minimal DOM or Cheerio).
+ * Fouad's SEO Toolkit - Core Analyzer Engine
+ * On-page SEO auditor, scoring algorithm, keyword extractor, and structure validator.
+ * Created by Fouad Sennouni (https://github.com/fouad01)
+ * Compatible with Browser (DOMParser) and Node.js.
  */
 
 (function (root, factory) {
