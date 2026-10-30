@@ -1,8 +1,8 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /**
  * Fouad's SEO Toolkit - Command Line Interface (CLI)
  * Run terminal SEO audits on live URLs or local HTML files with zero external dependencies.
- * Created by Fouad Sennouni (https://github.com/foverse)
+ * Created by Fouad (https://github.com/foverse)
  *
  * Usage:
  *   node cli.js https://example.com
@@ -109,7 +109,7 @@ async function main() {
 
   if (outputFilePath) {
     fs.writeFileSync(outputFilePath, JSON.stringify(report, null, 2));
-    console.log(`\n${c.green}✓ Detailed report saved to:${c.reset} ${outputFilePath}`);
+    console.log(`\n${c.green}âœ“ Detailed report saved to:${c.reset} ${outputFilePath}`);
   }
 }
 
@@ -333,7 +333,7 @@ function printReport(r) {
   if (r.passed.length > 0) {
     console.log(`\n  ${c.bold}${c.green}Passed Checks (${r.passed.length}):${c.reset}`);
     r.passed.forEach(p => {
-      console.log(`    ${c.green}✓${c.reset} ${p.title} (${p.desc})`);
+      console.log(`    ${c.green}âœ“${c.reset} ${p.title} (${p.desc})`);
     });
   }
 
@@ -368,7 +368,7 @@ function runSelfTest() {
   console.log(`Passed checks: ${report.passed.length}`);
   console.log(`Issues found: ${report.issues.length}`);
   if (report.score >= 95) {
-    console.log(`${c.green}${c.bold}✓ All Self Tests Passed Successfully!${c.reset}`);
+    console.log(`${c.green}${c.bold}âœ“ All Self Tests Passed Successfully!${c.reset}`);
   } else {
     console.log(`${c.red}Self test produced unexpected score: ${report.score}${c.reset}`);
     process.exit(1);

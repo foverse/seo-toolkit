@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "fouads-seo-toolkit",
   "version": "2.0.0",
   "description": "Fouad's SEO Toolkit: A fast on-page SEO analyzer, Google SERP simulator, Schema.org builder, and robots.txt generator.",
@@ -22,7 +22,7 @@
     "keyword-density",
     "site-analyzer"
   ],
-  "author": "Fouad Sennouni (https://github.com/foverse)",
+  "author": "Fouad (https://github.com/foverse)",
   "license": "MIT",
   "homepage": "https://foverse.github.io/seo-toolkit/"
 }

@@ -1,4 +1,4 @@
-# SEO Toolkit
+﻿# SEO Toolkit
 
 A fast, zero-dependency on-page SEO analyzer, Google SERP simulator, and technical markup toolkit.
 
@@ -12,7 +12,7 @@ A fast, zero-dependency on-page SEO analyzer, Google SERP simulator, and technic
 
 SEO Toolkit provides on-page audit insights, real-time SERP previews, and structured data generators without requiring external API subscriptions or heavy dependencies. It runs completely client-side in the browser, with optional Node.js and Python CLIs for automated workflows.
 
-Built and maintained by [Fouad Sennouni](https://growthmaker.fr) ([@foverse](https://github.com/foverse)), creator of [growthmaker.fr](https://growthmaker.fr).
+Built and maintained by [Fouad](https://growthmaker.fr) ([@foverse](https://github.com/foverse)), creator of [growthmaker.fr](https://growthmaker.fr).
 
 ---
 
@@ -100,25 +100,25 @@ python seo_audit.py https://example.com --json --output audit.json
 
 ```
 seo-toolkit/
-├── index.html         # Web application and UI layout
-├── css/
-│   └── styles.css     # Dark mode layout, SERP simulation, and print styles
-├── js/
-│   ├── analyzer.js    # Core SEO rules, scoring, and n-gram extraction
-│   ├── tools.js       # Schema, robots.txt, sitemap, and pixel measurement
-│   ├── samples.js     # Test presets (SaaS, E-commerce, Blog, Edge cases)
-│   └── app.js         # Event orchestration and export handlers
-├── server.js          # Lightweight Node.js server and proxy
-├── cli.js             # Command line interface for Node.js
-├── seo_audit.py       # Standalone Python 3 auditor (standard library only)
-└── package.json       # Metadata and scripts
+â”œâ”€â”€ index.html         # Web application and UI layout
+â”œâ”€â”€ css/
+â”‚   â””â”€â”€ styles.css     # Dark mode layout, SERP simulation, and print styles
+â”œâ”€â”€ js/
+â”‚   â”œâ”€â”€ analyzer.js    # Core SEO rules, scoring, and n-gram extraction
+â”‚   â”œâ”€â”€ tools.js       # Schema, robots.txt, sitemap, and pixel measurement
+â”‚   â”œâ”€â”€ samples.js     # Test presets (SaaS, E-commerce, Blog, Edge cases)
+â”‚   â””â”€â”€ app.js         # Event orchestration and export handlers
+â”œâ”€â”€ server.js          # Lightweight Node.js server and proxy
+â”œâ”€â”€ cli.js             # Command line interface for Node.js
+â”œâ”€â”€ seo_audit.py       # Standalone Python 3 auditor (standard library only)
+â””â”€â”€ package.json       # Metadata and scripts
 ```
 
 ---
 
 ## Author & Project Info
 
-Built by [Fouad Sennouni](https://growthmaker.fr) ([@foverse](https://github.com/foverse)).
+Built by [Fouad](https://growthmaker.fr) ([@foverse](https://github.com/foverse)).
 
 Visit [growthmaker.fr](https://growthmaker.fr) for case studies and notes on acquisition, conversion optimization, and web engineering.
 

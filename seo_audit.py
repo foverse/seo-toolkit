@@ -1,8 +1,8 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 Fouad's SEO Toolkit - Python CLI Auditor
 Zero-dependency SEO auditing tool for websites and HTML files using Python 3 standard library.
-Created by Fouad Sennouni (https://github.com/foverse)
+Created by Fouad (https://github.com/foverse)
 
 Usage:
     python seo_audit.py https://example.com
@@ -291,14 +291,14 @@ def main():
     if report['passed']:
         print(f"\n  {Colors.BOLD}{Colors.GREEN}Passed Checks ({len(report['passed'])}):{Colors.END}")
         for p in report['passed']:
-            print(f"    {Colors.GREEN}✓{Colors.END} {p['title']} ({p['desc']})")
+            print(f"    {Colors.GREEN}âœ“{Colors.END} {p['title']} ({p['desc']})")
 
     print(f"\n{Colors.BOLD}{Colors.CYAN}======================================================{Colors.END}\n")
 
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:
             json.dump(report, f, indent=2)
-        print(f"{Colors.GREEN}✓ Saved report to {args.output}{Colors.END}")
+        print(f"{Colors.GREEN}âœ“ Saved report to {args.output}{Colors.END}")
 
 if __name__ == "__main__":
     main()
