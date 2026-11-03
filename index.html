@@ -3,745 +3,531 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fouad's SEO Toolkit | Fast On-Page SEO Analyzer & Tools</title>
-  <meta name="description" content="A practical on-page SEO analyzer, Google SERP simulator, Schema.org generator, and technical SEO toolkit created by Fouad Sennouni.">
-  <link rel="canonical" href="https://foverse.github.io/seo-toolkit/">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'></circle><line x1='21' y1='21' x2='16.65' y2='16.65'></line></svg>">
+  <title>SEOVerse: Open-Source SEO and AI Visibility Platform</title>
+  <meta name="description" content="The developer-first, open-source alternative to Semrush and Ahrefs. All-in-one SEO and AI visibility platform for engineers, founders, and AI coding agents.">
+  <link rel="canonical" href="https://foverse.github.io/seoverse/">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://foverse.github.io/seo-toolkit/">
-  <meta property="og:title" content="Fouad's SEO Toolkit | Fast On-Page SEO Analyzer & Tools">
-  <meta property="og:description" content="A practical on-page SEO analyzer, Google SERP simulator, Schema.org generator, and technical SEO toolkit created by Fouad Sennouni.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200">
+  <meta property="og:url" content="https://foverse.github.io/seoverse/">
+  <meta property="og:title" content="SEOVerse: Open-Source SEO and AI Visibility Platform">
+  <meta property="og:description" content="Open-source alternative to Semrush and Ahrefs. 12 autonomous AI agent skills, MCP server, and complete local suite.">
+  <meta property="og:image" content="./shots/seoverse-dashboard.png">
 
-  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Fouad's SEO Toolkit">
-  <meta name="twitter:description" content="Audit on-page SEO, simulate SERP snippets, and build technical schema markup.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200">
+  <meta name="twitter:title" content="SEOVerse">
+  <meta name="twitter:description" content="The developer-first, open-source SEO suite and AI visibility platform.">
+  <meta name="twitter:image" content="./shots/seoverse-dashboard.png">
 
-  <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Fouad's SEO Toolkit",
-    "url": "https://foverse.github.io/seo-toolkit/",
-    "description": "Open-source on-page SEO analyzer and developer toolkit created by Fouad Sennouni.",
-    "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "All",
-    "author": {
-      "@type": "Person",
-      "name": "Fouad Sennouni",
-      "url": "https://github.com/foverse",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Tetouan",
-        "addressCountry": "Morocco"
-      }
+  <style>
+    :root {
+      --bg: #090d16;
+      --bg-card: #0f172a;
+      --bg-card-hover: #1e293b;
+      --border: #1e293b;
+      --border-accent: #3b82f6;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --success: #10b981;
+      --radius: 10px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     }
-  }
-  </script>
-  
-  <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
-          colors: {
-            brand: {
-              50: '#eff6ff',
-              500: '#3b82f6',
-              600: '#2563eb',
-              700: '#1d4ed8',
-            }
-          }
-        }
-      }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-  </script>
 
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="css/styles.css">
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    header {
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 50;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .brand {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand span {
+      background: linear-gradient(135deg, #60a5fa, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+    .nav-links a:hover {
+      color: var(--text);
+      text-decoration: none;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      border: 1px solid transparent;
+      text-decoration: none !important;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+    .btn-outline {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      background: var(--bg-card);
+      border-color: var(--border-accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+    .pill {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #93c5fd;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      max-width: 850px;
+      margin: 0 auto 20px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 32px;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    /* Showcase Carousel */
+    .showcase {
+      margin-bottom: 80px;
+    }
+    .showcase-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 8px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .tab-btn.active {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: var(--primary);
+      color: #93c5fd;
+    }
+    .preview-frame {
+      border: 1px solid var(--border);
+      background: #020617;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    .preview-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Features Grid */
+    .section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-title h2 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.8px;
+      margin-bottom: 12px;
+    }
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 28px;
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+    }
+    .card:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      transform: translateY(-2px);
+    }
+    .card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+    .card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Skills Table */
+    .skills-section {
+      margin-bottom: 80px;
+    }
+    .table-wrap {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow-x: auto;
+      background: var(--bg-card);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: #0b1120;
+      color: var(--text);
+      font-weight: 600;
+    }
+    td code {
+      font-family: var(--mono);
+      color: #93c5fd;
+      background: rgba(59, 130, 246, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    /* Terminal Quickstart */
+    .quickstart {
+      background: #020617;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 80px;
+    }
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #eab308; }
+    .dot-green { background: #10b981; }
+    pre {
+      font-family: var(--mono);
+      font-size: 14px;
+      color: #38bdf8;
+      line-height: 1.7;
+      overflow-x: auto;
+    }
+    pre .cmd { color: #f8fafc; font-weight: 600; }
+    pre .comment { color: #64748b; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      color: var(--text-muted);
+      font-size: 14px;
+      text-align: center;
+    }
+    footer a { color: var(--text); }
+  </style>
 </head>
-<body class="min-h-screen text-slate-100 flex flex-col selection:bg-blue-600 selection:text-white">
+<body>
 
-  <!-- Header -->
-  <header class="border-b border-slate-800/80 bg-slate-950/70 backdrop-blur sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-blue-500/25">
-          <i data-lucide="search" class="w-5 h-5 text-white"></i>
-        </div>
-        <div>
-          <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">Fouad's SEO Toolkit</span>
-          <span class="ml-2 text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">v2.0</span>
-        </div>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        SEO<span>Verse</span>
       </div>
-
-      <div class="flex items-center space-x-2 sm:space-x-3">
-        <button id="btn-open-about" class="inline-flex items-center space-x-1.5 text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white transition">
-          <i data-lucide="user" class="w-4 h-4 text-cyan-400"></i>
-          <span>About</span>
-        </button>
-        <a href="https://github.com/foverse/seo-toolkit" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center space-x-2 text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white transition">
-          <i data-lucide="github" class="w-4 h-4"></i>
-          <span>GitHub</span>
-        </a>
-        <button id="btn-quick-tour" class="inline-flex items-center space-x-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-600/30 transition">
-          <i data-lucide="play" class="w-4 h-4"></i>
-          <span>Run Demo</span>
-        </button>
-      </div>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#showcase">UI Showcase</a></li>
+        <li><a href="#skills">12 Agent Skills</a></li>
+        <li><a href="#quickstart">Quickstart</a></li>
+        <li><a href="https://github.com/foverse/seoverse" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+      <a href="https://github.com/foverse/seoverse" class="btn btn-primary" target="_blank" rel="noopener">Star on GitHub</a>
     </div>
   </header>
 
-  <!-- Hero & Audit Input Section -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full" id="input-section">
-    <div class="text-center max-w-3xl mx-auto mb-8">
-      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
-        Fouad's SEO Toolkit
-      </h1>
-      <p class="text-slate-400 text-sm sm:text-base">
-        A fast on-page SEO analyzer, SERP simulator, and technical markup toolkit without subscriptions or bloat.
-      </p>
-    </div>
+  <main class="container">
+    <section class="hero">
+      <div class="pill">Open-Source Alternative to Semrush and Ahrefs</div>
+      <h1>The All-in-One SEO and AI Visibility Platform</h1>
+      <p>Developer-first SEO suite and autonomous AI agent toolkit. Run fully locally, self-host on your own servers, and connect directly to Cursor, Claude Code, Antigravity, and Codex via MCP.</p>
+      <div class="hero-actions">
+        <a href="#quickstart" class="btn btn-primary">Run Locally in 60s</a>
+        <a href="https://github.com/foverse/seoverse" class="btn btn-outline" target="_blank" rel="noopener">View Source Code</a>
+      </div>
+    </section>
 
-    <!-- Card: Input Controls -->
-    <div class="glass-panel p-6 max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
-      <!-- Input Mode Switcher -->
-      <div class="flex border-b border-slate-800 pb-4 mb-5 items-center justify-between flex-wrap gap-3">
-        <div class="flex space-x-2" role="tablist">
-          <button id="btn-mode-url" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-lg bg-blue-600 text-white flex items-center space-x-2 transition">
-            <i data-lucide="globe" class="w-4 h-4"></i>
-            <span>Analyze Website URL</span>
-          </button>
-          <button id="btn-mode-html" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-lg bg-slate-800 text-slate-300 hover:text-white flex items-center space-x-2 transition">
-            <i data-lucide="code-2" class="w-4 h-4"></i>
-            <span>Paste / Upload HTML</span>
-          </button>
-        </div>
-        
-        <!-- Quick Preset Select -->
-        <div class="flex items-center space-x-2 text-xs">
-          <span class="text-slate-400 font-medium">Quick Presets:</span>
-          <button class="preset-btn px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/60" data-preset="ecommerce">E-Commerce</button>
-          <button class="preset-btn px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/60" data-preset="blog">Tech Blog</button>
-          <button class="preset-btn px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/60" data-preset="saas">SaaS</button>
-          <button class="preset-btn px-2.5 py-1 rounded bg-rose-950/40 hover:bg-rose-900/40 text-rose-300 border border-rose-800/60" data-preset="broken">Broken SEO</button>
-        </div>
+    <!-- UI Showcase Tabs -->
+    <section class="showcase" id="showcase">
+      <div class="showcase-tabs">
+        <button class="tab-btn active" onclick="setSlide(0, this)">Dashboard</button>
+        <button class="tab-btn" onclick="setSlide(1, this)">Keyword Research</button>
+        <button class="tab-btn" onclick="setSlide(2, this)">Domain Overview</button>
+        <button class="tab-btn" onclick="setSlide(3, this)">Site Audit</button>
+        <button class="tab-btn" onclick="setSlide(4, this)">Reports</button>
+      </div>
+      <div class="preview-frame">
+        <img id="preview-img" src="./shots/seoverse-dashboard.png" alt="SEOVerse UI Preview">
+      </div>
+    </section>
+
+    <!-- Core Features Grid -->
+    <section class="features" id="features">
+      <div class="section-title">
+        <h2>Core SEO and GEO Workflows</h2>
+        <p>Engineered to replace bloated subscription tools with clean, focused developer workflows.</p>
       </div>
 
-      <!-- Mode 1: URL Input -->
-      <div id="panel-url-mode" class="space-y-4">
-        <form id="url-audit-form" class="flex flex-col sm:flex-row gap-3">
-          <div class="relative flex-1">
-            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-              <i data-lucide="link" class="w-4 h-4"></i>
-            </div>
-            <input 
-              type="url" 
-              id="input-url" 
-              required
-              placeholder="https://example.com" 
-              value="https://shop.soundcraft.com/products/pro-wireless-headphones"
-              class="w-full pl-10 pr-4 py-3 bg-slate-900/90 border border-slate-700 rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-            >
-          </div>
-          <button 
-            type="submit" 
-            id="btn-run-url-audit"
-            class="px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-semibold rounded-xl text-sm shadow-lg shadow-blue-500/25 flex items-center justify-center space-x-2 transition"
-          >
-            <i data-lucide="play" class="w-4 h-4"></i>
-            <span>Run Audit</span>
-          </button>
-        </form>
-        <p class="text-xs text-slate-500 flex items-center space-x-1.5">
-          <i data-lucide="info" class="w-3.5 h-3.5"></i>
-          <span>Supports local backend proxy, public CORS relays, or direct HTML fallback.</span>
-        </p>
-      </div>
-
-      <!-- Mode 2: HTML Paste / File Upload -->
-      <div id="panel-html-mode" class="space-y-4 hidden">
-        <div class="flex items-center justify-between text-xs text-slate-400">
-          <span>Paste raw HTML or upload an <code>.html</code> file:</span>
-          <label class="cursor-pointer text-blue-400 hover:text-blue-300 flex items-center space-x-1">
-            <i data-lucide="upload" class="w-3.5 h-3.5"></i>
-            <span>Upload File</span>
-            <input type="file" id="input-file" accept=".html,.htm" class="hidden">
-          </label>
+      <div class="grid">
+        <div class="card">
+          <h3>Keyword Research and Clustering</h3>
+          <p>Analyze search volumes, keyword difficulty, CPC, and intent categories. Automatically cluster keyword sets into structured topical content hubs.</p>
         </div>
-        <textarea 
-          id="input-raw-html" 
-          rows="5"
-          placeholder="<!DOCTYPE html><html><head><title>My Page</title>...</head><body>...</body></html>" 
-          class="w-full p-3 font-mono text-xs bg-slate-900/90 border border-slate-700 rounded-xl text-slate-200 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-        ></textarea>
-        <div class="flex justify-end">
-          <button 
-            id="btn-run-html-audit"
-            class="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-semibold rounded-xl text-sm shadow-md transition flex items-center space-x-2"
-          >
-            <i data-lucide="play" class="w-4 h-4"></i>
-            <span>Analyze HTML</span>
-          </button>
+
+        <div class="card">
+          <h3>Full Technical Site Auditing</h3>
+          <p>Crawl internal links, detect indexation directives, broken redirects, canonical structure, and mobile-responsiveness issues with prioritized fixes.</p>
+        </div>
+
+        <div class="card">
+          <h3>Competitor Intelligence</h3>
+          <p>Benchmark your domain against market leaders. Map keyword footprint overlaps, discover content gaps, and analyze referring backlink profiles.</p>
+        </div>
+
+        <div class="card">
+          <h3>Generative Engine Optimization (GEO)</h3>
+          <p>Audit how conversational LLMs (ChatGPT, Gemini, Perplexity) answer queries in your niche, identify cited sources, and track brand visibility.</p>
+        </div>
+
+        <div class="card">
+          <h3>Rank Tracking and Local SEO</h3>
+          <p>Monitor daily organic ranking movements and Google Maps local pack visibility around specific locations without recurring costs.</p>
+        </div>
+
+        <div class="card">
+          <h3>Model Context Protocol (MCP)</h3>
+          <p>Connect your AI coding assistants directly to your SEO data. Instruct agents to audit code, optimize metadata, or query rankings in plain English.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Loading Indicator -->
-  <div id="audit-loading" class="hidden py-12 text-center">
-    <div class="inline-block animate-spin rounded-full h-10 w-10 border-4 border-slate-700 border-t-blue-500 mb-3"></div>
-    <p class="text-sm text-slate-400">Running SEO audit rules and calculating metrics...</p>
-  </div>
-
-  <!-- Results Dashboard -->
-  <main id="audit-results" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 w-full hidden">
-    
-    <!-- Top Score Overview Card -->
-    <div class="glass-panel p-6 sm:p-8 mb-8 shadow-2xl border border-slate-800">
-      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
-        
-        <!-- Circular Score Gauge -->
-        <div class="flex items-center space-x-6">
-          <div class="relative w-32 h-32 flex-shrink-0">
-            <svg class="w-32 h-32" viewBox="0 0 120 120">
-              <circle cx="60" cy="60" r="50" stroke="rgba(255,255,255,0.06)" stroke-width="10" fill="none"/>
-              <circle id="score-circle-bar" class="score-circle" cx="60" cy="60" r="50" stroke="#10b981" stroke-width="10" stroke-linecap="round" fill="none" stroke-dasharray="314.16" stroke-dashoffset="60"/>
-            </svg>
-            <div class="absolute inset-0 flex flex-col items-center justify-center">
-              <span id="score-number" class="text-3xl font-extrabold tracking-tight">--</span>
-              <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400">SEO Health</span>
-            </div>
-          </div>
-
-          <div>
-            <div class="flex items-center space-x-2 mb-1">
-              <span id="score-grade-badge" class="px-2.5 py-0.5 rounded text-sm font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">A</span>
-              <span id="score-grade-label" class="text-lg font-bold text-white">Excellent</span>
-            </div>
-            <p id="page-audited-url" class="text-xs text-slate-400 font-mono truncate max-w-md">https://example.com</p>
-            <div class="flex items-center space-x-4 mt-3 text-xs text-slate-300">
-              <span class="flex items-center space-x-1"><i data-lucide="alert-octagon" class="w-3.5 h-3.5 text-rose-500"></i><strong id="badge-crit-count">0</strong> Critical</span>
-              <span class="flex items-center space-x-1"><i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-amber-500"></i><strong id="badge-warn-count">0</strong> Warnings</span>
-              <span class="flex items-center space-x-1"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-500"></i><strong id="badge-pass-count">0</strong> Passed</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Category Progress Bars -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full lg:max-w-xl text-xs">
-          <div class="glass-panel-subtle p-3">
-            <div class="flex justify-between text-slate-400 mb-1"><span>Meta &amp; Index</span><strong id="cat-score-meta" class="text-slate-200">--%</strong></div>
-            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden"><div id="cat-bar-meta" class="h-full bg-blue-500 rounded-full transition-all duration-700" style="width: 0%"></div></div>
-          </div>
-          <div class="glass-panel-subtle p-3">
-            <div class="flex justify-between text-slate-400 mb-1"><span>Content Depth</span><strong id="cat-score-content" class="text-slate-200">--%</strong></div>
-            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden"><div id="cat-bar-content" class="h-full bg-emerald-500 rounded-full transition-all duration-700" style="width: 0%"></div></div>
-          </div>
-          <div class="glass-panel-subtle p-3">
-            <div class="flex justify-between text-slate-400 mb-1"><span>Images &amp; Alt</span><strong id="cat-score-images" class="text-slate-200">--%</strong></div>
-            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden"><div id="cat-bar-images" class="h-full bg-cyan-500 rounded-full transition-all duration-700" style="width: 0%"></div></div>
-          </div>
-          <div class="glass-panel-subtle p-3">
-            <div class="flex justify-between text-slate-400 mb-1"><span>Link Structure</span><strong id="cat-score-links" class="text-slate-200">--%</strong></div>
-            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden"><div id="cat-bar-links" class="h-full bg-purple-500 rounded-full transition-all duration-700" style="width: 0%"></div></div>
-          </div>
-          <div class="glass-panel-subtle p-3">
-            <div class="flex justify-between text-slate-400 mb-1"><span>Social OpenGraph</span><strong id="cat-score-social" class="text-slate-200">--%</strong></div>
-            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden"><div id="cat-bar-social" class="h-full bg-pink-500 rounded-full transition-all duration-700" style="width: 0%"></div></div>
-          </div>
-          <div class="glass-panel-subtle p-3">
-            <div class="flex justify-between text-slate-400 mb-1"><span>Technical &amp; Schema</span><strong id="cat-score-technical" class="text-slate-200">--%</strong></div>
-            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden"><div id="cat-bar-technical" class="h-full bg-amber-500 rounded-full transition-all duration-700" style="width: 0%"></div></div>
-          </div>
-        </div>
-
-        <!-- Export Buttons -->
-        <div class="flex flex-row lg:flex-col gap-2 w-full lg:w-auto">
-          <button id="btn-export-pdf" class="flex-1 lg:flex-none px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700 flex items-center justify-center space-x-1.5 transition">
-            <i data-lucide="printer" class="w-4 h-4 text-blue-400"></i>
-            <span>Export PDF</span>
-          </button>
-          <button id="btn-export-json" class="flex-1 lg:flex-none px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700 flex items-center justify-center space-x-1.5 transition">
-            <i data-lucide="download" class="w-4 h-4 text-cyan-400"></i>
-            <span>Save JSON</span>
-          </button>
-          <button id="btn-copy-markdown" class="flex-1 lg:flex-none px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700 flex items-center justify-center space-x-1.5 transition">
-            <i data-lucide="file-text" class="w-4 h-4 text-emerald-400"></i>
-            <span>Copy Markdown</span>
-          </button>
-        </div>
-
+    <!-- 12 Agent Skills -->
+    <section class="skills-section" id="skills">
+      <div class="section-title">
+        <h2>12 Built-in AI Agent Skills</h2>
+        <p>Ready-to-run skill workflows for Claude Code, Cursor, Antigravity, OpenClaw, and Codex.</p>
       </div>
 
-      <!-- Quick Metrics Counter Strip -->
-      <div class="mt-6 pt-6 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 text-center">
-        <div class="p-2 rounded bg-slate-900/60">
-          <span class="text-xs text-slate-400 block">Words</span>
-          <strong id="stat-words" class="text-sm font-bold text-white">0</strong>
-        </div>
-        <div class="p-2 rounded bg-slate-900/60">
-          <span class="text-xs text-slate-400 block">Reading Time</span>
-          <strong id="stat-read-time" class="text-sm font-bold text-white">0m</strong>
-        </div>
-        <div class="p-2 rounded bg-slate-900/60">
-          <span class="text-xs text-slate-400 block">H1 Headings</span>
-          <strong id="stat-h1" class="text-sm font-bold text-white">0</strong>
-        </div>
-        <div class="p-2 rounded bg-slate-900/60">
-          <span class="text-xs text-slate-400 block">Total Headings</span>
-          <strong id="stat-headings" class="text-sm font-bold text-white">0</strong>
-        </div>
-        <div class="p-2 rounded bg-slate-900/60">
-          <span class="text-xs text-slate-400 block">Images</span>
-          <strong id="stat-images" class="text-sm font-bold text-white">0</strong>
-        </div>
-        <div class="p-2 rounded bg-slate-900/60">
-          <span class="text-xs text-slate-400 block">Missing Alt</span>
-          <strong id="stat-missing-alt" class="text-sm font-bold text-rose-400">0</strong>
-        </div>
-        <div class="p-2 rounded bg-slate-900/60">
-          <span class="text-xs text-slate-400 block">Total Links</span>
-          <strong id="stat-links" class="text-sm font-bold text-white">0</strong>
-        </div>
-        <div class="p-2 rounded bg-slate-900/60">
-          <span class="text-xs text-slate-400 block">Schemas</span>
-          <strong id="stat-schemas" class="text-sm font-bold text-white">0</strong>
-        </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Skill Command</th>
+              <th>Workflow Objective</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>/seo-audit</code></td>
+              <td>Audit a domain, investigate crawl issues, and deliver a prioritized recommendations report.</td>
+            </tr>
+            <tr>
+              <td><code>/keyword-research</code></td>
+              <td>Discover seed opportunities, analyze search volumes, difficulty scores, and user intent.</td>
+            </tr>
+            <tr>
+              <td><code>/competitor-analysis</code></td>
+              <td>Map a competitor organic footprint, top ranking URLs, content gaps, and backlinks.</td>
+            </tr>
+            <tr>
+              <td><code>/keyword-clustering</code></td>
+              <td>Cluster related keywords by topical intent and map them into actionable content silos.</td>
+            </tr>
+            <tr>
+              <td><code>/link-prospecting</code></td>
+              <td>Find prospective backlink opportunities, verify contacts, and draft contextual outreach.</td>
+            </tr>
+            <tr>
+              <td><code>/local-seo</code></td>
+              <td>Audit Google Business Profiles and track geo-targeted rankings across local radius grids.</td>
+            </tr>
+            <tr>
+              <td><code>/seo-coach</code></td>
+              <td>Interactive strategy guide providing tailored prioritization between quick wins and long-term bets.</td>
+            </tr>
+            <tr>
+              <td><code>/seo-report</code></td>
+              <td>Generate executive-ready SEO performance reports in self-contained markdown and HTML.</td>
+            </tr>
+            <tr>
+              <td><code>/seo-project-setup</code></td>
+              <td>Configure domain baselines, tracked competitors, target geographies, and seed keywords.</td>
+            </tr>
+            <tr>
+              <td><code>/ai-visibility-audit</code></td>
+              <td>Track how often your brand is mentioned or cited in ChatGPT, Perplexity, and Gemini answers.</td>
+            </tr>
+            <tr>
+              <td><code>/ai-prompt-research</code></td>
+              <td>Uncover prompts and queries that prospective customers ask conversational AI in your sector.</td>
+            </tr>
+            <tr>
+              <td><code>/competitive-landscape</code></td>
+              <td>Macro-level competitive share comparison across multiple industry domains.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
+    </section>
 
-    <!-- Navigation Tabs -->
-    <div class="border-b border-slate-800 mb-6 flex space-x-1 sm:space-x-3 overflow-x-auto text-xs sm:text-sm font-medium">
-      <button class="tab-btn active px-4 py-3 flex items-center space-x-2 transition" data-target="tab-issues">
-        <i data-lucide="list-checks" class="w-4 h-4"></i>
-        <span>Audit Issues &amp; Fixes</span>
-      </button>
-      <button class="tab-btn px-4 py-3 text-slate-400 hover:text-white flex items-center space-x-2 transition" data-target="tab-serp">
-        <i data-lucide="layout" class="w-4 h-4"></i>
-        <span>SERP Simulator</span>
-      </button>
-      <button class="tab-btn px-4 py-3 text-slate-400 hover:text-white flex items-center space-x-2 transition" data-target="tab-headings">
-        <i data-lucide="git-branch" class="w-4 h-4"></i>
-        <span>Heading Tree</span>
-      </button>
-      <button class="tab-btn px-4 py-3 text-slate-400 hover:text-white flex items-center space-x-2 transition" data-target="tab-keywords">
-        <i data-lucide="pie-chart" class="w-4 h-4"></i>
-        <span>Keyword Density</span>
-      </button>
-      <button class="tab-btn px-4 py-3 text-slate-400 hover:text-white flex items-center space-x-2 transition" data-target="tab-social">
-        <i data-lucide="share-2" class="w-4 h-4"></i>
-        <span>Social Previews</span>
-      </button>
-      <button class="tab-btn px-4 py-3 text-slate-400 hover:text-white flex items-center space-x-2 transition" data-target="tab-tools">
-        <i data-lucide="wrench" class="w-4 h-4"></i>
-        <span>SEO Generators</span>
-      </button>
-      <button class="tab-btn px-4 py-3 text-slate-400 hover:text-white flex items-center space-x-2 transition" data-target="tab-about">
-        <i data-lucide="user" class="w-4 h-4 text-cyan-400"></i>
-        <span>About</span>
-      </button>
-    </div>
-
-    <!-- TAB 1: Issues List -->
-    <div id="tab-issues" class="tab-pane space-y-4">
-      <div class="flex items-center justify-between pb-2">
-        <div class="flex items-center space-x-2 text-xs">
-          <span class="text-slate-400">Filter:</span>
-          <button class="filter-issue-btn px-2.5 py-1 rounded bg-blue-600 text-white font-medium" data-filter="all">All</button>
-          <button class="filter-issue-btn px-2.5 py-1 rounded bg-slate-800 text-slate-300 hover:text-white font-medium" data-filter="critical">🚨 Critical</button>
-          <button class="filter-issue-btn px-2.5 py-1 rounded bg-slate-800 text-slate-300 hover:text-white font-medium" data-filter="warning">⚠️ Warnings</button>
-          <button class="filter-issue-btn px-2.5 py-1 rounded bg-slate-800 text-slate-300 hover:text-white font-medium" data-filter="passed">✅ Passed</button>
-        </div>
+    <!-- Quickstart -->
+    <section class="quickstart" id="quickstart">
+      <div class="terminal-header">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+        <span style="margin-left: 8px; font-size: 13px; color: #64748b;">bash (local quickstart)</span>
       </div>
-      <div id="issues-list-container" class="space-y-3"></div>
-    </div>
+      <pre>
+<span class="comment"># 1. Clone repository</span>
+<span class="cmd">git clone https://github.com/foverse/seoverse.git</span>
+<span class="cmd">cd seoverse</span>
 
-    <!-- TAB 2: SERP Simulator -->
-    <div id="tab-serp" class="tab-pane hidden space-y-6">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        
-        <!-- Interactive Controls -->
-        <div class="glass-panel p-6 space-y-4">
-          <h3 class="text-base font-bold text-white flex items-center space-x-2">
-            <i data-lucide="sliders" class="w-4 h-4 text-blue-400"></i>
-            <span>SERP Snippet Editor</span>
-          </h3>
+<span class="comment"># 2. Install dependencies</span>
+<span class="cmd">pnpm install</span>
 
-          <div>
-            <div class="flex justify-between text-xs text-slate-400 mb-1">
-              <span>SEO Title</span>
-              <span id="serp-title-pixel-count">0px / ~600px (0 chars)</span>
-            </div>
-            <input type="text" id="editor-serp-title" class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:ring-1 focus:ring-blue-500">
-            <div class="pixel-meter-bar mt-1.5"><div id="meter-serp-title" class="pixel-meter-fill bg-blue-500" style="width: 0%"></div></div>
-          </div>
+<span class="comment"># 3. Apply local SQLite migrations and build widgets</span>
+<span class="cmd">pnpm run db:migrate:local</span>
+<span class="cmd">pnpm run build:report-widgets</span>
 
-          <div>
-            <div class="flex justify-between text-xs text-slate-400 mb-1">
-              <span>Target URL</span>
-              <span id="serp-url-char-count">0 chars</span>
-            </div>
-            <input type="text" id="editor-serp-url" class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:ring-1 focus:ring-blue-500">
-          </div>
-
-          <div>
-            <div class="flex justify-between text-xs text-slate-400 mb-1">
-              <span>Meta Description</span>
-              <span id="serp-desc-pixel-count">0px / ~960px (0 chars)</span>
-            </div>
-            <textarea id="editor-serp-desc" rows="3" class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:ring-1 focus:ring-blue-500"></textarea>
-            <div class="pixel-meter-bar mt-1.5"><div id="meter-serp-desc" class="pixel-meter-fill bg-emerald-500" style="width: 0%"></div></div>
-          </div>
-        </div>
-
-        <!-- Live Google Mockup -->
-        <div class="space-y-4">
-          <h3 class="text-base font-bold text-white flex items-center space-x-2">
-            <i data-lucide="eye" class="w-4 h-4 text-emerald-400"></i>
-            <span>Google Search Result Previews</span>
-          </h3>
-
-          <!-- Desktop Preview -->
-          <div>
-            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Desktop Result</span>
-            <div class="serp-card p-5 max-w-xl">
-              <div class="flex items-center space-x-2 mb-1.5">
-                <div class="w-5 h-5 rounded-full bg-slate-200 flex items-center justify-center text-[10px] text-slate-600 font-bold overflow-hidden" id="serp-favicon-desktop">
-                  G
-                </div>
-                <div>
-                  <div class="serp-site-name" id="serp-preview-sitename">Example Site</div>
-                  <div class="serp-url" id="serp-preview-url-desktop">https://example.com › products</div>
-                </div>
-              </div>
-              <div class="serp-title mb-1" id="serp-preview-title-desktop">Title Tag Preview</div>
-              <div class="serp-snippet" id="serp-preview-snippet-desktop">Meta description will appear here as seen on Google desktop search results.</div>
-            </div>
-          </div>
-
-          <!-- Mobile Preview -->
-          <div class="pt-2">
-            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Mobile Result</span>
-            <div class="serp-card serp-card-mobile p-4">
-              <div class="flex items-center space-x-2 mb-1">
-                <div class="w-5 h-5 rounded-full bg-slate-200 flex items-center justify-center text-[10px] text-slate-600 font-bold" id="serp-favicon-mobile">G</div>
-                <span class="serp-site-name text-xs" id="serp-preview-sitename-mobile">Example</span>
-              </div>
-              <div class="serp-url text-[11px] mb-1" id="serp-preview-url-mobile">https://example.com</div>
-              <div class="serp-title text-base leading-tight mb-1" id="serp-preview-title-mobile">Mobile Title Preview</div>
-              <div class="serp-snippet text-xs leading-normal" id="serp-preview-snippet-mobile">Mobile snippet text...</div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-
-    <!-- TAB 3: Headings Tree -->
-    <div id="tab-headings" class="tab-pane hidden space-y-4">
-      <div class="glass-panel p-6">
-        <div class="flex items-center justify-between mb-4">
-          <h3 class="text-base font-bold text-white flex items-center space-x-2">
-            <i data-lucide="git-branch" class="w-4 h-4 text-purple-400"></i>
-            <span>Heading Hierarchy Tree</span>
-          </h3>
-          <span class="text-xs text-slate-400">Headings outline used by crawlers to understand page structure</span>
-        </div>
-        <div id="heading-tree-container" class="space-y-2"></div>
-      </div>
-    </div>
-
-    <!-- TAB 4: Keyword Density -->
-    <div id="tab-keywords" class="tab-pane hidden space-y-6">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- 1-Grams -->
-        <div class="glass-panel p-5">
-          <h4 class="text-sm font-bold text-white mb-3 flex items-center justify-between">
-            <span>Single Words (1-Grams)</span>
-            <span class="text-xs text-slate-400">Density</span>
-          </h4>
-          <div id="keywords-unigrams-list" class="space-y-2 text-xs"></div>
-        </div>
-
-        <!-- 2-Grams -->
-        <div class="glass-panel p-5">
-          <h4 class="text-sm font-bold text-white mb-3 flex items-center justify-between">
-            <span>2-Word Phrases</span>
-            <span class="text-xs text-slate-400">Density</span>
-          </h4>
-          <div id="keywords-bigrams-list" class="space-y-2 text-xs"></div>
-        </div>
-
-        <!-- 3-Grams -->
-        <div class="glass-panel p-5">
-          <h4 class="text-sm font-bold text-white mb-3 flex items-center justify-between">
-            <span>3-Word Phrases</span>
-            <span class="text-xs text-slate-400">Density</span>
-          </h4>
-          <div id="keywords-trigrams-list" class="space-y-2 text-xs"></div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- TAB 5: Social Previews -->
-    <div id="tab-social" class="tab-pane hidden space-y-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <!-- Facebook / OpenGraph Mockup -->
-        <div>
-          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Facebook &amp; LinkedIn Open Graph Preview</span>
-          <div class="fb-card max-w-md">
-            <div class="aspect-video w-full bg-slate-800 flex items-center justify-center overflow-hidden">
-              <img id="og-preview-image" src="" alt="OG Preview" class="w-full h-full object-cover">
-            </div>
-            <div class="p-3 bg-[#242526]">
-              <span id="og-preview-host" class="text-[11px] text-slate-400 uppercase tracking-wide block truncate">EXAMPLE.COM</span>
-              <h5 id="og-preview-title" class="text-sm font-semibold text-white leading-snug mt-0.5 line-clamp-2">Article Headline</h5>
-              <p id="og-preview-desc" class="text-xs text-slate-400 mt-1 line-clamp-2">Article description...</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Twitter Card Mockup -->
-        <div>
-          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Twitter / X Large Image Card</span>
-          <div class="twitter-card-preview max-w-md">
-            <div class="aspect-video w-full bg-slate-800 flex items-center justify-center overflow-hidden">
-              <img id="tw-preview-image" src="" alt="Twitter Preview" class="w-full h-full object-cover">
-            </div>
-            <div class="p-3 bg-[#16181c]">
-              <span id="tw-preview-host" class="text-[11px] text-slate-400 block truncate">example.com</span>
-              <h5 id="tw-preview-title" class="text-sm font-semibold text-white leading-snug mt-0.5 line-clamp-1">Tweet Title</h5>
-              <p id="tw-preview-desc" class="text-xs text-slate-400 mt-1 line-clamp-2">Tweet description preview...</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- TAB 6: SEO Generators -->
-    <div id="tab-tools" class="tab-pane hidden space-y-6">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
-        <!-- Schema.org Generator -->
-        <div class="glass-panel p-6 space-y-3">
-          <div class="flex items-center space-x-2 text-white font-bold text-sm">
-            <i data-lucide="code" class="w-4 h-4 text-amber-400"></i>
-            <span>Schema.org JSON-LD Generator</span>
-          </div>
-          <select id="tool-schema-type" class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white">
-            <option value="faq">FAQPage Schema</option>
-            <option value="article">Article / BlogPosting Schema</option>
-            <option value="product">Product Schema</option>
-            <option value="localBusiness">LocalBusiness Schema</option>
-            <option value="breadcrumbs">Breadcrumbs Schema</option>
-          </select>
-          <div class="relative">
-            <pre id="tool-schema-output" class="p-3 bg-slate-950 rounded-lg text-[11px] font-mono text-amber-300 overflow-x-auto max-h-56"></pre>
-            <button id="btn-copy-schema" class="absolute top-2 right-2 px-2 py-1 bg-slate-800 hover:bg-slate-700 text-[10px] text-slate-200 rounded border border-slate-700">Copy</button>
-          </div>
-        </div>
-
-        <!-- Robots.txt Builder -->
-        <div class="glass-panel p-6 space-y-3">
-          <div class="flex items-center space-x-2 text-white font-bold text-sm">
-            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
-            <span>Robots.txt Builder</span>
-          </div>
-          <div class="flex space-x-1.5 text-[11px]">
-            <button class="tool-robots-preset px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300" data-preset="standard">Standard</button>
-            <button class="tool-robots-preset px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300" data-preset="blockAi">Block AI Bots</button>
-            <button class="tool-robots-preset px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300" data-preset="disallowAll">Disallow All</button>
-          </div>
-          <div class="relative">
-            <pre id="tool-robots-output" class="p-3 bg-slate-950 rounded-lg text-[11px] font-mono text-emerald-300 overflow-x-auto max-h-56"></pre>
-            <button id="btn-copy-robots" class="absolute top-2 right-2 px-2 py-1 bg-slate-800 hover:bg-slate-700 text-[10px] text-slate-200 rounded border border-slate-700">Copy</button>
-          </div>
-        </div>
-
-        <!-- XML Sitemap Generator -->
-        <div class="glass-panel p-6 space-y-3">
-          <div class="flex items-center space-x-2 text-white font-bold text-sm">
-            <i data-lucide="map" class="w-4 h-4 text-cyan-400"></i>
-            <span>XML Sitemap Generator</span>
-          </div>
-          <button id="btn-generate-sitemap" class="w-full py-1.5 bg-cyan-600/80 hover:bg-cyan-600 text-white rounded text-xs font-semibold">Generate from Audited Links</button>
-          <div class="relative">
-            <pre id="tool-sitemap-output" class="p-3 bg-slate-950 rounded-lg text-[11px] font-mono text-cyan-300 overflow-x-auto max-h-56"></pre>
-            <button id="btn-copy-sitemap" class="absolute top-2 right-2 px-2 py-1 bg-slate-800 hover:bg-slate-700 text-[10px] text-slate-200 rounded border border-slate-700">Copy</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- TAB 7: About Fouad & The Project -->
-    <div id="tab-about" class="tab-pane hidden space-y-6">
-      <div class="glass-panel p-6 sm:p-8">
-        <div class="flex flex-col md:flex-row items-start gap-6">
-          <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-blue-600 via-cyan-500 to-indigo-600 flex items-center justify-center text-3xl font-bold text-white shadow-xl shadow-blue-500/20 flex-shrink-0">
-            FS
-          </div>
-          <div class="space-y-4 max-w-3xl">
-            <div>
-              <div class="flex items-center space-x-3">
-                <h3 class="text-2xl font-bold text-white">Fouad Sennouni</h3>
-                <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">Creator</span>
-              </div>
-              <p class="text-slate-400 text-sm mt-1 flex items-center space-x-2">
-                <i data-lucide="map-pin" class="w-4 h-4 text-rose-400"></i>
-                <span>Tetouan, Morocco</span>
-              </p>
-            </div>
-
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Photography, videography, and tech enthusiast living in Tetouan, Morocco. Passionate about web development, clean design, and building useful tools for the open-source community.
-            </p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div class="glass-panel-subtle p-4">
-                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center space-x-2">
-                  <i data-lucide="wrench" class="w-3.5 h-3.5 text-cyan-400"></i>
-                  <span>Skills &amp; Toolkit</span>
-                </h4>
-                <ul class="text-xs text-slate-300 space-y-1">
-                  <li>- Web Development (JavaScript, Python, HTML5, CSS3)</li>
-                  <li>- Search Engine Optimization (SEO) &amp; Web Vitals</li>
-                  <li>- Photoshop, Illustrator, Premiere Pro</li>
-                </ul>
-              </div>
-
-              <div class="glass-panel-subtle p-4">
-                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center space-x-2">
-                  <i data-lucide="heart" class="w-3.5 h-3.5 text-pink-400"></i>
-                  <span>Interests &amp; Hobbies</span>
-                </h4>
-                <ul class="text-xs text-slate-300 space-y-1">
-                  <li>- Coding &amp; Open Source Projects</li>
-                  <li>- Photography &amp; Video Production</li>
-                  <li>- Movies, Series, and Gaming</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="pt-4 border-t border-slate-800/80">
-              <h4 class="text-sm font-semibold text-white mb-2">About This Project</h4>
-              <p class="text-xs text-slate-400 leading-relaxed">
-                This project began in 2019 as a personal web repository. In 2026, I completely rebuilt and expanded it into Fouad's SEO Toolkit: a free, zero-dependency suite that anyone can run in their browser, on their terminal, or host on GitHub Pages without expensive recurring subscriptions.
-              </p>
-            </div>
-
-            <div class="flex items-center space-x-3 pt-2">
-              <a href="https://github.com/foverse" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 flex items-center space-x-2 transition">
-                <i data-lucide="github" class="w-4 h-4"></i>
-                <span>GitHub Profile</span>
-              </a>
-              <a href="https://www.instagram.com/fouadsennouni" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-gradient-to-r from-pink-600/20 to-purple-600/20 hover:from-pink-600/30 hover:to-purple-600/30 text-xs font-medium text-pink-300 border border-pink-500/30 flex items-center space-x-2 transition">
-                <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i>
-                <span>Instagram (@fouadsennouni)</span>
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
+<span class="comment"># 4. Start local development server (runs with local trusted auth on port 3001)</span>
+<span class="cmd">pnpm run dev</span>
+</pre>
+    </section>
   </main>
 
-  <!-- Modal: About Fouad Sennouni -->
-  <div id="about-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
-    <div class="glass-panel max-w-xl w-full p-6 sm:p-8 relative border border-slate-700 shadow-2xl">
-      <button id="btn-close-about-modal" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition">
-        <i data-lucide="x" class="w-5 h-5"></i>
-      </button>
-
-      <div class="flex items-center space-x-4 mb-5">
-        <div class="w-14 h-14 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-xl font-bold text-white shadow-lg">
-          FS
-        </div>
-        <div>
-          <h3 class="text-xl font-bold text-white">Fouad Sennouni</h3>
-          <p class="text-xs text-slate-400 flex items-center space-x-1 mt-0.5">
-            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-400"></i>
-            <span>Tetouan, Morocco</span>
-          </p>
-        </div>
-      </div>
-
-      <div class="space-y-3 text-xs sm:text-sm text-slate-300">
-        <p>
-          Photography, videography, and tech enthusiast based in Tetouan, Morocco.
-        </p>
-        <p class="text-slate-400">
-          Originally created in 2019, this repository was upgraded into <strong>Fouad's SEO Toolkit</strong> to provide developers, creators, and website owners with an open-source, subscription-free SEO auditor.
-        </p>
-
-        <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 space-y-1.5 text-xs text-slate-400">
-          <div><strong class="text-slate-200">Skills:</strong> JavaScript, Python, Web Development, SEO, Photoshop, Premiere Pro, Illustrator</div>
-          <div><strong class="text-slate-200">Hobbies:</strong> Coding, Photography, Videography, Movies &amp; Gaming</div>
-        </div>
-      </div>
-
-      <div class="flex items-center space-x-3 mt-6 pt-4 border-t border-slate-800">
-        <a href="https://github.com/foverse" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 flex items-center space-x-2 transition">
-          <i data-lucide="github" class="w-4 h-4"></i>
-          <span>GitHub</span>
-        </a>
-        <a href="https://www.instagram.com/fouadsennouni" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 flex items-center space-x-2 transition">
-          <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i>
-          <span>Instagram</span>
-        </a>
-        <a href="https://github.com/foverse/seo-toolkit" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-xs font-medium text-white flex items-center space-x-2 transition">
-          <i data-lucide="star" class="w-4 h-4"></i>
-          <span>Star on GitHub</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="mt-auto border-t border-slate-900 bg-slate-950 py-6 text-xs text-slate-500 text-center">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p>Fouad's SEO Toolkit (c) 2026. Built by <a href="https://github.com/foverse" class="text-blue-400 hover:underline">Fouad Sennouni</a> in Tetouan, Morocco.</p>
-      <div class="flex items-center space-x-4">
-        <button id="footer-btn-about" class="text-slate-400 hover:text-white transition">About Fouad</button>
-        <a href="https://github.com/foverse/seo-toolkit" class="hover:text-slate-400">GitHub Repository</a>
-        <a href="https://www.instagram.com/fouadsennouni" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400">Instagram</a>
-        <a href="https://foverse.github.io/seo-toolkit/" class="hover:text-slate-400">Live Site</a>
-      </div>
+  <footer>
+    <div class="container">
+      <p>SEOVerse is open-source under the MIT License. Hosted on <a href="https://github.com/foverse/seoverse" target="_blank" rel="noopener">GitHub (foverse/seoverse)</a>.</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="js/analyzer.js"></script>
-  <script src="js/tools.js"></script>
-  <script src="js/samples.js"></script>
-  <script src="js/app.js"></script>
+  <script>
+    const slides = [
+      './shots/seoverse-dashboard.png',
+      './shots/seoverse-keywords.png',
+      './shots/seoverse-domain.png',
+      './shots/seoverse-audit.png',
+      './shots/seoverse-reports.png'
+    ];
+
+    function setSlide(index, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('preview-img').src = slides[index];
+    }
+  </script>
 </body>
 </html>

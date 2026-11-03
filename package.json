@@ -1,28 +1,11 @@
 {
-  "name": "fouads-seo-toolkit",
-  "version": "2.0.0",
-  "description": "Fouad's SEO Toolkit: A fast on-page SEO analyzer, Google SERP simulator, Schema.org builder, and robots.txt generator.",
-  "main": "server.js",
-  "bin": {
-    "seo-audit": "./cli.js"
+  "name": "seoverse-showcase",
+  "version": "1.0.0",
+  "description": "SEOVerse live showcase and portal on GitHub Pages",
+  "homepage": "https://foverse.github.io/seoverse/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foverse/seoverse.git"
   },
-  "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js",
-    "audit": "node cli.js",
-    "test": "node cli.js --test"
-  },
-  "keywords": [
-    "seo",
-    "seo-audit",
-    "serp-preview",
-    "schema-generator",
-    "robots-txt",
-    "sitemap-generator",
-    "keyword-density",
-    "site-analyzer"
-  ],
-  "author": "Fouad Sennouni (https://github.com/foverse)",
-  "license": "MIT",
-  "homepage": "https://foverse.github.io/seo-toolkit/"
+  "license": "MIT"
 }
