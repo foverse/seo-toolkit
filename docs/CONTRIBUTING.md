@@ -31,7 +31,7 @@ For ease of review, I would appreciate if you used the `/simple-issue-descriptio
 Install it with:
 
 ```sh
-npx skills add every-app/open-seo --skill simple-issue-description
+npx skills add foverse/seoverse --skill simple-issue-description
 ```
 
 See [Set up OpenSEO Agent Skills](https://openseo.so/docs/skills/setup) for other install options.

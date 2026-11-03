@@ -1,98 +1,123 @@
-# SEOVerse
+# 🌌 SEOVerse
 
-> Open-source all-in-one SEO & AI Visibility platform for developers, indie hackers, and AI agents.
+> **The developer-first, open-source alternative to Semrush and Ahrefs.**  
+> Built for engineers, founders, and autonomous AI coding agents.
 
-OpenSEO is an SEO tool for _the people_. If tools like Semrush or Ahrefs are too expensive or bloated, OpenSEO is a pay-as-you-go alternative that you actually control.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-foverse%2Fseoverse-blue?logo=github)](https://github.com/foverse/seoverse)
+[![Model Context Protocol](https://img.shields.io/badge/MCP-Compatible-orange)](https://modelcontextprotocol.io)
 
-> All-in-one SEO tool for you and your AI agent.
+**SEOVerse** is an all-in-one SEO and AI Visibility platform that puts you in complete control. Avoid expensive recurring SaaS subscriptions and bloated dashboards—run your SEO suite locally, self-host on your own infrastructure, and let autonomous AI coding agents perform deep keyword discovery, competitor gap analyses, and site audits via the Model Context Protocol (MCP).
 
-Connect with any agent like Claude Code, OpenClaw or Hermes. We have pre-built skills, but you can build your own to tailor OpenSEO to your needs.
+---
 
-<img width="100%" alt="openseo-keyword-research" src="https://github.com/user-attachments/assets/8ebdc439-3e72-41ab-8bde-8cda771ef2e8" />
+## ✨ Features
 
-## Hosted Version
+- **🔍 Keyword Research & Clustering** — Discover search volumes, keyword difficulty, CPC, intent classification, and long-tail query clusters.
+- **🛡️ Full-Spectrum Site Audits** — Crawl technical issues, mobile readiness, performance bottlenecks, and canonical tag structure with prioritized fix recommendations.
+- **⚔️ Competitor Intelligence** — Map competitors' organic footprints, uncover ranking gaps, and analyze backlinks side-by-side.
+- **🧠 Generative Engine Optimization (GEO)** — Track how often your brand is cited or mentioned across conversational AI models (ChatGPT, Perplexity, Gemini).
+- **📍 Rank Tracking & Local SEO** — Track organic rankings and Google Business Profile local pack visibility by location.
+- **🤖 12 Built-in Agent Skills** — Modular workflows designed for Claude Code, Cursor, Antigravity, OpenClaw, and Hermes.
+- **🔒 Private & Self-Hostable** — Runs locally with SQLite/D1 out of the box, or deploys to Cloudflare Workers or Docker.
 
-Try OpenSEO for free on our website. If you want to support the project, a hosted subscription is $10/month.
+---
 
-[openseo.so](https://openseo.so)
+## 🤖 12 Included AI Agent Skills
 
-### EveryApp
+SEOVerse includes 12 production-ready skills located in [`.agents/skills/`](./.agents/skills) and [`plugins/openseo/skills/`](./plugins/openseo/skills) that AI coding assistants can run autonomously:
 
-Host OpenSEO and other open source apps on our platform EveryApp.
+| Skill | Description |
+| :--- | :--- |
+| **`seo-audit`** | Audit a website, investigate real search opportunities, and deliver a data-backed prioritized report. |
+| **`keyword-research`** | Discover keyword opportunities, analyze SERPs, CPC, difficulty, and search intent. |
+| **`competitor-analysis`** | Analyze a competitor's organic footprint, ranking keywords, content themes, and backlink gaps. |
+| **`keyword-clustering`** | Cluster keyword groups by search intent and map them into content hubs. |
+| **`link-prospecting`** | Find link prospects, discover contact paths, and draft outreach from backlink signals. |
+| **`local-seo`** | Audit Google Business Profiles, compare local competitors, and map local pack rankings. |
+| **`seo-coach`** | Interactive SEO strategy assistant that prioritizes quick wins vs. long-term bets. |
+| **`seo-report`** | Formats and outputs comprehensive executive SEO reports in self-contained markdown or HTML. |
+| **`seo-project-setup`** | Configures site scope, competitor benchmarks, seed keywords, and initial baselines. |
+| **`ai-visibility-audit`** | Audits brand mentions and citations inside ChatGPT, Gemini, and Google AI answers. |
+| **`ai-prompt-research`** | Mines questions and search prompts people ask AI models about your niche. |
+| **`competitive-landscape`** | Macro-level benchmarking comparing organic visibility across an entire industry landscape. |
 
-[Self-host on EveryApp and give it a star →](https://github.com/every-app/every-app)
+---
 
-## Why use OpenSEO?
+## 🚀 Quickstart (Run Fully Locally)
 
-- Best in class MCP and AI Skills.
-- Modern, simple UI.
-  - Focused workflows instead of a bloated, complex SEO suite.
-- No subscriptions.
-  - Bring your own DataForSEO API key and pay only for what you use.
-- Fork and vibe code your own custom tool.
+### Prerequisites
+- Node.js 20+
+- `pnpm` (Corepack or `npm i -g pnpm`)
 
-## Main SEO Workflows
-
-- Keyword research
-- Rank tracking
-- Competitor Insights
-- Backlinks
-- Site Audits
-- AI Visibility
-
-## OpenSEO MCP & Agent Skills
-
-OpenSEO exposes an MCP server so AI agents like Claude Code, OpenClaw, and Hermes can use your SEO data directly. Agent Skills are reusable workflows that guide your agent through SEO tasks using the MCP.
-
-- [Set up ChatGPT web or desktop](https://openseo.so/docs/chatgpt) (works on Free and paid ChatGPT plans)
-- [Set up Codex](https://openseo.so/docs/codex-plugin)
-- [Set up OpenSEO MCP](https://openseo.so/docs/mcp)
-- [Set up OpenSEO Agent Skills](https://openseo.so/docs/skills/setup)
-
-## Self-Hosting
-
-OpenSEO supports two self-hosting paths. Both use email and password accounts: the first visitor creates the admin account, teammates join from invitation links, and MCP clients (Claude, ChatGPT, Codex, Cursor) sign in with the same accounts.
-
-- **Docker** - On your own server or computer, with a prebuilt image that is ready in seconds. Works with Compose-based platforms such as Coolify, Portainer and Dokploy. See [`docs/SELF_HOSTING_DOCKER.md`](./docs/SELF_HOSTING_DOCKER.md).
-  - Running the older single-container image? It keeps getting updates; [move to the new setup](./docs/SELF_HOSTING_DOCKER.md#move-from-the-old-docker-image) when you are ready, data included.
-- **Cloudflare** - No server to run: one deploy command puts OpenSEO on your own Cloudflare account (works on the free plan). See [`docs/SELF_HOSTING_CLOUDFLARE.md`](./docs/SELF_HOSTING_CLOUDFLARE.md).
-
-For security-conscious setups, two advanced options replace the accounts with your own network controls:
-
-- **Cloudflare Access** in front of the Cloudflare deploy, so Cloudflare checks every request before it reaches OpenSEO. See [`docs/SELF_HOSTING_CLOUDFLARE.md`](./docs/SELF_HOSTING_CLOUDFLARE.md).
-- **No sign-in on Docker**, behind Tailscale, a private network or your own authenticating proxy. See [Without sign-in](./docs/SELF_HOSTING_DOCKER.md#without-sign-in-advanced).
-
-Either way, you need a DataForSEO API key to get SEO data. See [`docs/DATAFORSEO_API_KEY.md`](./docs/DATAFORSEO_API_KEY.md).
-
-## Costs
-
-OpenSEO needs a [DataForSEO](https://dataforseo.com/?aff=255379) API key so that you can get SEO data. You pay them directly when self hosting.
-
-See [openseo.so/pricing](https://openseo.so/pricing)
-
-When you self host, your costs will be slightly lower than the estimates on our website. The way the hosted service makes money is by charging 28% extra for every request we make to DataForSEO.
-
-## Local Development
-
-See [`docs/LOCAL_DEVELOPMENT.md`](./docs/LOCAL_DEVELOPMENT.md).
-
-## Contributing
-
-Creating clear issues is the best way to contribute.
-
-Read more here: [`docs/CONTRIBUTING.md`](./docs/CONTRIBUTING.md)
-
-We have this skill: `/simple-issue-description` which helps.
-
-```sh
-npx skills add every-app/open-seo --skill simple-issue-description
+### 1. Clone & Install
+```bash
+git clone https://github.com/foverse/seoverse.git
+cd seoverse
+pnpm install
 ```
 
-## Community
+### 2. Configure Environment
+Create `.env.local`:
+```bash
+cp .env.example .env.local
+```
+Set `AUTH_MODE=local_noauth` for local development without external auth dependencies:
+```env
+AUTH_MODE=local_noauth
+PORT=3001
+DATAFORSEO_API_KEY=your_key_here # Optional: required for live Google SERP and backlink data
+```
 
-Join Discord to chat: [Discord](https://discord.gg/c9uGs3cFXr)
+### 3. Migrate Local Database & Build Widgets
+```bash
+pnpm run db:migrate:local
+pnpm run build:report-widgets
+```
 
-Follow along for updates:
+### 4. Start the Application
+```bash
+pnpm run dev
+```
+Open **`http://localhost:3001`** in your browser.
 
-- Follow on X: https://x.com/bensenescu
-- Sign up for the mailing list on our website: [openseo.so](https://openseo.so)
+---
+
+## 🔌 Connecting with AI Coding Agents (MCP)
+
+SEOVerse includes Model Context Protocol (MCP) configuration in [`.mcp.json`](./.mcp.json).
+
+```json
+{
+  "mcpServers": {
+    "openseo": {
+      "type": "http",
+      "url": "https://app.openseo.so/mcp"
+    }
+  }
+}
+```
+
+Point Cursor, Claude Code, Antigravity, or Codex to this MCP server or run the local API server to allow your agent to execute audits, fetch rankings, and cluster keywords directly from your chat prompt.
+
+---
+
+## 🚢 Self-Hosting
+
+SEOVerse can be deployed in production without subscriptions:
+
+- **Docker Compose** — Run on any VPS (Coolify, Dokploy, Portainer, or pure Docker). See [`docs/SELF_HOSTING_DOCKER.md`](./docs/SELF_HOSTING_DOCKER.md).
+- **Cloudflare Workers** — Zero-maintenance serverless hosting on Cloudflare's free or paid tier. See [`docs/SELF_HOSTING_CLOUDFLARE.md`](./docs/SELF_HOSTING_CLOUDFLARE.md).
+
+---
+
+## 🗄️ Legacy Toolkit
+
+The original lightweight offline single-file on-page analyzer and Stageshow demo are preserved in [`legacy-toolkit/`](./legacy-toolkit) and on the `backup/seo-toolkit` git branch.
+
+---
+
+## 📄 License & Attribution
+
+- Released under the [MIT License](LICENSE).
+- Built on top of the open-source [OpenSEO](https://github.com/every-app/open-seo) engine by Every App.

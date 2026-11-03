@@ -1,5 +1,14 @@
 {
   "name": "seoverse",
+  "description": "SEOVerse - All-in-one open-source SEO suite and AI agent toolkit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foverse/seoverse.git"
+  },
+  "homepage": "https://github.com/foverse/seoverse#readme",
+  "bugs": {
+    "url": "https://github.com/foverse/seoverse/issues"
+  },
   "private": true,
   "sideEffects": [
     "./src/standalone-server.ts"
@@ -22,8 +31,8 @@
     "preview": "npm run build && vite preview --port 3001",
     "deploy": "npm run db:migrate:prod && npm run build && wrangler deploy -c dist/open_seo_audit/wrangler.json && wrangler deploy",
     "deploy:selfhost": "node scripts/selfhost-deploy-preflight.mjs && pnpm build:report-widgets && vite build --mode selfhost && tsc --noEmit && pnpm alchemy deploy deploy/alchemy/alchemy.run.ts --env-file .env.selfhost --stage selfhost",
-    "deploy:prod": "gh workflow run deploy-production.yml --repo bensenescu/open-seo --ref main",
-    "deploy:web": "gh workflow run deploy-website.yml --repo bensenescu/open-seo --ref main",
+    "deploy:prod": "gh workflow run deploy-production.yml --repo foverse/seoverse --ref main",
+    "deploy:web": "gh workflow run deploy-website.yml --repo foverse/seoverse --ref main",
     "deploy:preview": "pnpm build:report-widgets && vite build --mode preview && pnpm alchemy deploy deploy/alchemy/alchemy.run.ts --env-file .env.preview",
     "preview:access": "pnpm alchemy deploy deploy/alchemy/alchemy.preview-access.run.ts --env-file .env.preview --stage preview-access --adopt",
     "alchemy": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-strip-types\" alchemy",

@@ -10,7 +10,7 @@
   "homepage": "https://openseo.so",
   "privacyPolicyUrl": "https://openseo.so/privacy",
   "icon": "./assets/icon.png",
-  "repository": "https://github.com/every-app/open-seo",
+  "repository": "https://github.com/foverse/seoverse",
   "license": "MIT",
   "keywords": [
     "seo",

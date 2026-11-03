@@ -9,8 +9,8 @@ Already running the older single-container image (`ghcr.io/every-app/open-seo`)?
 You need Docker Engine or Docker Desktop with Compose, at least 4 GiB of memory for Docker, and a [DataForSEO API key](./DATAFORSEO_API_KEY.md). Every command below runs from the repository root:
 
 ```sh
-git clone https://github.com/every-app/open-seo.git
-cd open-seo
+git clone https://github.com/foverse/seoverse.git
+cd seoverse
 export COMPOSE_FILE=deploy/standalone/compose.yaml
 cp deploy/standalone/.env.example deploy/standalone/.env
 ```

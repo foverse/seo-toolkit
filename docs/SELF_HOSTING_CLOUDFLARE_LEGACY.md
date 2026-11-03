@@ -9,7 +9,7 @@ Your repo was created by the deploy button and `wrangler.jsonc` holds your resou
 One-time setup:
 
 ```bash
-git remote add upstream https://github.com/every-app/open-seo.git
+git remote add upstream https://github.com/foverse/seoverse.git
 ```
 
 Update steps:
