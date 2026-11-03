@@ -1,0 +1,1446 @@
+{
+ "url": "index.html",
+ "at": "2026-11-03T11:02:05.292Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.5,
+    0.58
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 1093,
+     "screens": 1.2,
+     "words": 156,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 39,
+     "sections": 1,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Fouad's SEO Toolkit",
+     "words": 3,
+     "chars": 19,
+     "lines": 1,
+     "size": 36,
+     "vw": 2.5,
+     "font": "Inter",
+     "weight": 800,
+     "tracking": -0.025,
+     "leading": 1.11,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "center",
+     "widthRatio": 0.53,
+     "top": 97,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Fouad's SEO Toolkit",
+     "words": 3,
+     "lines": 1,
+     "size": 36,
+     "font": "Inter"
+    },
+    "headings": [
+     {
+      "text": "Fouad's SEO Toolkit",
+      "words": 3,
+      "chars": 19,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Inter",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.53,
+      "top": 97,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "--",
+      "words": 1,
+      "chars": 2,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Inter",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.02,
+      "top": 549,
+      "tag": "span",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 2,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 0.98,
+       "mono": false
+      },
+      {
+       "family": "JetBrains Mono",
+       "share": 0.02,
+       "mono": true
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      30,
+      36
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Inter",
+      "size": 16,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.5
+     },
+     "measureChars": 96,
+     "max": {
+      "size": 36,
+      "vw": 2.5,
+      "font": "Inter",
+      "text": "Fouad's SEO Toolkit"
+     },
+     "monoShare": 0.02,
+     "monoProseShare": 0.02,
+     "monoFamilies": [
+      "JetBrains Mono"
+     ],
+     "monoSamples": [
+      "https://example.com"
+     ],
+     "microLabels": 1,
+     "microLabelShare": 0.011,
+     "microSamples": [
+      "SEO Health"
+     ],
+     "upperShare": 0.01,
+     "centerShare": 0.67,
+     "smallText": 17
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0a0f1d",
+     "bodyBgHsl": {
+      "h": 224,
+      "s": 0.49,
+      "l": 0.08
+     },
+     "dark": true,
+     "sectionBgs": [],
+     "textColors": [
+      {
+       "color": "#94a3b8",
+       "share": 0.46
+      },
+      {
+       "color": "#64748b",
+       "share": 0.18
+      },
+      {
+       "color": "#cbd5e1",
+       "share": 0.13
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.09
+      },
+      {
+       "color": "#e2e8f0",
+       "share": 0.06
+      }
+     ],
+     "button": {
+      "bg": "#1e293b",
+      "hsl": {
+       "h": 217,
+       "s": 0.33,
+       "l": 0.17
+      },
+      "fg": "#cbd5e1"
+     },
+     "lowContrast": [
+      {
+       "text": "Supports local backend proxy, public COR",
+       "ratio": 4,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#64748b",
+       "bg": "#0a0f1d"
+      },
+      {
+       "text": "Fouad's SEO Toolkit (c) 2026. Built by i",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#64748b",
+       "bg": "#020617"
+      },
+      {
+       "text": "GitHub Repository",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#64748b",
+       "bg": "#020617"
+      },
+      {
+       "text": "Live Site",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#64748b",
+       "bg": "#020617"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 10,
+     "inHero": 9,
+     "radius": 8,
+     "height": 50,
+     "withShadow": 0,
+     "withGradient": 1,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "About",
+      "GitHub",
+      "Run Demo",
+      "Analyze Website URL",
+      "Paste / Upload HTML"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 3,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "div.glass-panel.p-6 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "button#btn-run-url-audit.px-6.py-3 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130",
+      "div.glass-panel.p-6 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 1,
+     "hairlines": 5,
+     "hairlineSamples": [
+      "header.border-b.border-slate-800/80 1440px",
+      "div.flex.border-b 846px",
+      "div.mt-6.pt-6 1150px",
+      "div.border-b.border-slate-800 1216px",
+      "footer.mt-auto.border-t 1440px"
+     ],
+     "outlinedBoxes": 2,
+     "dashed": 0,
+     "blurred": 3,
+     "roundedBoxes": 2,
+     "boxRadius": 16,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 65,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "inter",
+     "jetbrains mono"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 1093,
+    "margins": {
+     "left": 112,
+     "right": 124
+    },
+    "sections": [
+     {
+      "sel": "section#input-section.max-w-7xl.mx-auto",
+      "tag": "section",
+      "top": 65,
+      "height": 393,
+      "words": 50,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Fouad's SEO Toolkit",
+       "size": 36,
+       "tag": "h1"
+      },
+      "left": 297,
+      "right": 297,
+      "textLeft": 317,
+      "textRight": 308,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "main#audit-results.max-w-7xl.mx-auto",
+      "tag": "main",
+      "top": 458,
+      "height": 552,
+      "words": 73,
+      "media": 0,
+      "middle": 12,
+      "heading": {
+       "text": "--",
+       "size": 30,
+       "tag": "span"
+      },
+      "left": 112,
+      "right": 145,
+      "textLeft": 112,
+      "textRight": 162,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Fouad's SEO Toolkit",
+      "size": 36,
+      "top": 97,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [],
+    "leftBlocks": 0,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0.07,
+    "voidBox": {
+     "x": 1320,
+     "y": 120,
+     "w": 120,
+     "h": 780
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.88,
+    0.63
+   ],
+   "motion": {
+    "elements": 1,
+    "css": 1,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 1415,
+     "screens": 1.4,
+     "words": 156,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 39,
+     "sections": 1,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 1,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Fouad's SEO Toolkit",
+     "words": 3,
+     "chars": 19,
+     "lines": 1,
+     "size": 36,
+     "vw": 4.7,
+     "font": "Inter",
+     "weight": 800,
+     "tracking": -0.025,
+     "leading": 1.11,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "center",
+     "widthRatio": 0.94,
+     "top": 97,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Fouad's SEO Toolkit",
+     "words": 3,
+     "lines": 1,
+     "size": 36,
+     "font": "Inter"
+    },
+    "headings": [
+     {
+      "text": "Fouad's SEO Toolkit",
+      "words": 3,
+      "chars": 19,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Inter",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.11,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 97,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "--",
+      "words": 1,
+      "chars": 2,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Inter",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.03,
+      "top": 568,
+      "tag": "span",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 2,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 0.98,
+       "mono": false
+      },
+      {
+       "family": "JetBrains Mono",
+       "share": 0.02,
+       "mono": true
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      30,
+      36
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Inter",
+      "size": 16,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.5
+     },
+     "measureChars": 90,
+     "max": {
+      "size": 36,
+      "vw": 4.7,
+      "font": "Inter",
+      "text": "Fouad's SEO Toolkit"
+     },
+     "monoShare": 0.02,
+     "monoProseShare": 0.02,
+     "monoFamilies": [
+      "JetBrains Mono"
+     ],
+     "monoSamples": [
+      "https://example.com"
+     ],
+     "microLabels": 1,
+     "microLabelShare": 0.011,
+     "microSamples": [
+      "SEO Health"
+     ],
+     "upperShare": 0.01,
+     "centerShare": 0.67,
+     "smallText": 17
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0a0f1d",
+     "bodyBgHsl": {
+      "h": 224,
+      "s": 0.49,
+      "l": 0.08
+     },
+     "dark": true,
+     "sectionBgs": [],
+     "textColors": [
+      {
+       "color": "#94a3b8",
+       "share": 0.46
+      },
+      {
+       "color": "#64748b",
+       "share": 0.18
+      },
+      {
+       "color": "#cbd5e1",
+       "share": 0.13
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.09
+      },
+      {
+       "color": "#e2e8f0",
+       "share": 0.06
+      }
+     ],
+     "button": {
+      "bg": "#1e293b",
+      "hsl": {
+       "h": 217,
+       "s": 0.33,
+       "l": 0.17
+      },
+      "fg": "#cbd5e1"
+     },
+     "lowContrast": [
+      {
+       "text": "Supports local backend proxy, public COR",
+       "ratio": 4,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#64748b",
+       "bg": "#0a0f1d"
+      },
+      {
+       "text": "Fouad's SEO Toolkit (c) 2026. Built by i",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#64748b",
+       "bg": "#020617"
+      },
+      {
+       "text": "GitHub Repository",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#64748b",
+       "bg": "#020617"
+      },
+      {
+       "text": "Live Site",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#64748b",
+       "bg": "#020617"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 10,
+     "inHero": 9,
+     "radius": 8,
+     "height": 34,
+     "withShadow": 0,
+     "withGradient": 1,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "About",
+      "GitHub",
+      "Run Demo",
+      "Analyze Website URL",
+      "Paste / Upload HTML"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 3,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "div.glass-panel.p-6 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "button#btn-run-url-audit.px-6.py-3 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130",
+      "div.glass-panel.p-6 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 1,
+     "hairlines": 5,
+     "hairlineSamples": [
+      "header.border-b.border-slate-800/80 768px",
+      "div.flex.border-b 670px",
+      "div.mt-6.pt-6 654px",
+      "div.border-b.border-slate-800 720px",
+      "footer.mt-auto.border-t 768px"
+     ],
+     "outlinedBoxes": 2,
+     "dashed": 0,
+     "blurred": 3,
+     "roundedBoxes": 2,
+     "boxRadius": 16,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 65,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "inter",
+     "jetbrains mono"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 1415,
+    "margins": {
+     "left": 31,
+     "right": 26
+    },
+    "sections": [
+     {
+      "sel": "section#input-section.max-w-7xl.mx-auto",
+      "tag": "section",
+      "top": 65,
+      "height": 431,
+      "words": 50,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Fouad's SEO Toolkit",
+       "size": 36,
+       "tag": "h1"
+      },
+      "left": 49,
+      "right": 49,
+      "textLeft": 49,
+      "textRight": 73,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "main#audit-results.max-w-7xl.mx-auto",
+      "tag": "main",
+      "top": 496,
+      "height": 836,
+      "words": 72,
+      "media": 0,
+      "middle": 21,
+      "heading": {
+       "text": "--",
+       "size": 30,
+       "tag": "span"
+      },
+      "left": 24,
+      "right": 0,
+      "textLeft": 24,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": true,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Fouad's SEO Toolkit",
+      "size": 36,
+      "top": 97,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [],
+    "leftBlocks": 0,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.7,
+    0.77,
+    0.66
+   ],
+   "motion": {
+    "elements": 1,
+    "css": 1,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 393,
+     "h": 851
+    },
+    "page": {
+     "height": 1771,
+     "screens": 2.1,
+     "words": 155,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 39,
+     "sections": 1,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 1,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Fouad's SEO Toolkit",
+     "words": 3,
+     "chars": 19,
+     "lines": 1,
+     "size": 30,
+     "vw": 7.6,
+     "font": "Inter",
+     "weight": 800,
+     "tracking": -0.025,
+     "leading": 1.2,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "center",
+     "widthRatio": 0.91,
+     "top": 97,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Fouad's SEO Toolkit",
+     "words": 3,
+     "lines": 1,
+     "size": 30,
+     "font": "Inter"
+    },
+    "headings": [
+     {
+      "text": "Fouad's SEO Toolkit",
+      "words": 3,
+      "chars": 19,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.6,
+      "font": "Inter",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.91,
+      "top": 97,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "--",
+      "words": 1,
+      "chars": 2,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.6,
+      "font": "Inter",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.07,
+      "top": 668,
+      "tag": "span",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 2,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 0.98,
+       "mono": false
+      },
+      {
+       "family": "JetBrains Mono",
+       "share": 0.02,
+       "mono": true
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      10,
+      12,
+      14,
+      18,
+      20,
+      30
+     ],
+     "sizeCount": 6,
+     "notLoaded": [],
+     "body": {
+      "font": "Inter",
+      "size": 14,
+      "leading": 1.43,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.5
+     },
+     "measureChars": 51,
+     "max": {
+      "size": 30,
+      "vw": 7.6,
+      "font": "Inter",
+      "text": "Fouad's SEO Toolkit"
+     },
+     "monoShare": 0.02,
+     "monoProseShare": 0.02,
+     "monoFamilies": [
+      "JetBrains Mono"
+     ],
+     "monoSamples": [
+      "https://example.com"
+     ],
+     "microLabels": 1,
+     "microLabelShare": 0.011,
+     "microSamples": [
+      "SEO Health"
+     ],
+     "upperShare": 0.01,
+     "centerShare": 0.67,
+     "smallText": 25
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0a0f1d",
+     "bodyBgHsl": {
+      "h": 224,
+      "s": 0.49,
+      "l": 0.08
+     },
+     "dark": true,
+     "sectionBgs": [],
+     "textColors": [
+      {
+       "color": "#94a3b8",
+       "share": 0.46
+      },
+      {
+       "color": "#64748b",
+       "share": 0.18
+      },
+      {
+       "color": "#cbd5e1",
+       "share": 0.13
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.09
+      },
+      {
+       "color": "#e2e8f0",
+       "share": 0.06
+      }
+     ],
+     "button": {
+      "bg": "#1e293b",
+      "hsl": {
+       "h": 217,
+       "s": 0.33,
+       "l": 0.17
+      },
+      "fg": "#cbd5e1"
+     },
+     "lowContrast": [
+      {
+       "text": "Supports local backend proxy, public COR",
+       "ratio": 4,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#64748b",
+       "bg": "#0a0f1d"
+      },
+      {
+       "text": "Fouad's SEO Toolkit (c) 2026. Built by i",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#64748b",
+       "bg": "#020617"
+      },
+      {
+       "text": "GitHub Repository",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#64748b",
+       "bg": "#020617"
+      },
+      {
+       "text": "Live Site",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#64748b",
+       "bg": "#020617"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 13,
+     "inHero": 6,
+     "radius": 8,
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 1,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "About",
+      "Run Demo",
+      "Analyze Website URL",
+      "Paste / Upload HTML",
+      "E-Commerce"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 3,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "div.glass-panel.p-6 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "button#btn-run-url-audit.px-6.py-3 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130",
+      "div.glass-panel.p-6 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0"
+     ],
+     "gradients": 1,
+     "scrims": 0,
+     "gradientSamples": [
+      "button#btn-run-url-audit.px-6.py-3 → linear-gradient(to right, rgb(37, 99, 235), rgb(6, 182, 212))"
+     ],
+     "gradientText": 1,
+     "hairlines": 5,
+     "hairlineSamples": [
+      "header.border-b.border-slate-800/80 390px",
+      "div.flex.border-b 308px",
+      "div.mt-6.pt-6 308px",
+      "div.border-b.border-slate-800 358px",
+      "footer.mt-auto.border-t 390px"
+     ],
+     "outlinedBoxes": 2,
+     "dashed": 0,
+     "blurred": 3,
+     "roundedBoxes": 2,
+     "boxRadius": 16,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 0,
+     "fixed": true,
+     "height": 65,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "inter",
+     "jetbrains mono"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 393,
+     "h": 851
+    },
+    "pageH": 1771,
+    "margins": {
+     "left": 16,
+     "right": 19
+    },
+    "sections": [
+     {
+      "sel": "section#input-section.max-w-7xl.mx-auto",
+      "tag": "section",
+      "top": 65,
+      "height": 539,
+      "words": 50,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Fouad's SEO Toolkit",
+       "size": 30,
+       "tag": "h1"
+      },
+      "left": 30,
+      "right": 27,
+      "textLeft": 30,
+      "textRight": 33,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "main#audit-results.max-w-7xl.mx-auto",
+      "tag": "main",
+      "top": 604,
+      "height": 1056,
+      "words": 68,
+      "media": 0,
+      "middle": 289,
+      "heading": {
+       "text": "--",
+       "size": 30,
+       "tag": "span"
+      },
+      "left": 0,
+      "right": 0,
+      "textLeft": 16,
+      "textRight": 0,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Fouad's SEO Toolkit",
+      "size": 30,
+      "top": 97,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [
+     {
+      "text": "Passed",
+      "side": "right",
+      "px": 0
+     }
+    ],
+    "edges": [],
+    "leftBlocks": 0,
+    "bodySize": 14,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "mono",
+   "width": 1440,
+   "message": "Monospace type outside code: JetBrains Mono — e.g. \"https://example.com\"",
+   "fix": "Set it in the text face. Monospace is for literal code inside <pre>/<code> only.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "micro-label",
+   "width": 1440,
+   "message": "1 tiny uppercase letter-spaced label(s): \"SEO Health\"",
+   "fix": "Prefer sentence case at body size.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "gradient-text",
+   "width": 1440,
+   "message": "1 gradient-filled text element(s).",
+   "fix": "Solid colour text.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "shadow",
+   "width": 1440,
+   "message": "3 box-shadow(s) on elements at rest: div.glass-panel.p-6 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0 | button#btn-run-url-audit.px-6.py-3 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130 | div.glass-panel.p-6 → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+   "fix": "Remove. Separate surfaces with a tone step or space. Shadows are for things that really float (menus, dialogs, sticky bars).",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "button-fx",
+   "width": 1440,
+   "message": "Buttons with gradient fill.",
+   "fix": "Flat fill, one colour.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "hairline",
+   "width": 1440,
+   "message": "5 thin rule(s)/divider line(s): header.border-b.border-slate-800/80 1440px | div.flex.border-b 846px | div.mt-6.pt-6 1150px | div.border-b.border-slate-800 1216px",
+   "fix": "Delete. Separate with space, a tone change, or scale. Lines are only for real tables and form fields.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "outlined-box",
+   "width": 1440,
+   "message": "2 box(es) drawn with a 1px outline.",
+   "fix": "Prefer a filled surface or no box.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "glass",
+   "width": 1440,
+   "message": "3 backdrop-blur surfaces.",
+   "fix": "One blurred sticky bar at most; glass cards are a tell.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "contrast",
+   "width": 1440,
+   "message": "Low-contrast text: \"Supports local backend proxy, public COR\" 4:1 needs 4.5:1; \"Fouad's SEO Toolkit (c) 2026. Built by i\" 4.2:1 needs 4.5:1; \"GitHub Repository\" 4.2:1 needs 4.5:1; \"Live Site\" 4.2:1 needs 4.5:1",
+   "fix": "Darken or lighten the text colour.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "few-pictures",
+   "width": 1440,
+   "message": "Only 0 picture(s) on the page (0 photographs, footage or raster images, 0 interface fragments). Drawings in SVG do not count.",
+   "fix": "Find real pictures of the subject's world with scripts/assets.mjs (photographs, archival images, maps, engravings, footage), download them to assets/ and give them room: a hero picture, one per section that has a subject, a full-width band. At least four, usually six to twelve."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "measure",
+   "width": 1440,
+   "message": "Longest paragraph runs about 96 characters per line.",
+   "fix": "Cap paragraphs at 45–75 characters (max-width: 60ch).",
+   "alsoAt": [
+    768
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "small-text",
+   "width": 1440,
+   "message": "17 text blocks under 13px.",
+   "fix": "Nothing meant to be read goes below 13px.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "focal-point",
+   "width": 1440,
+   "message": "The first screen has no dominant element: the largest type is 36px (2.5vw) and no single picture holds a third of the viewport.",
+   "fix": "Make one thing lead: the headline at display size, or one large picture. A grid of many small pictures is not one thing; in blind tests jurors marked a first screen without a headline down every time. On the strongest studied sites the largest type has a median of 8.4vw."
+  },
+  {
+   "level": "WARN",
+   "id": "name-only-title",
+   "width": 1440,
+   "message": "The h1 is a bare name (\"Fouad's SEO Toolkit\") and nothing else on the first screen says what this is.",
+   "fix": "Keep the name if it leads, and give the line under it (18px or more) the plain words: what it is, for whom, where or when. In the study of 97 Sites of the Day, first screens that named nothing lost usability and content points.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "still-page",
+   "width": 1440,
+   "message": "Only 0 element(s) moved while the page loaded and scrolled.",
+   "fix": "Build the motion layer (SKILL.md step 9, references/motion.md): the signature move, an entrance for the parts of every section, feedback on every control, and one moving picture. Transform and opacity only, with a reduced-motion fallback."
+  },
+  {
+   "level": "WARN",
+   "id": "side-scroll",
+   "width": 768,
+   "message": "1 row(s) scroll sideways with content past their edge.",
+   "fix": "Jurors and most visitors read a row cut at the edge as clipped, not as scrollable. Wrap it onto more lines, or end it inside the grid.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "gradient",
+   "width": 390,
+   "message": "1 gradient fill(s): button#btn-run-url-audit.px-6.py-3 → linear-gradient(to right, rgb(37, 99, 235), rgb(6, 182, 212))",
+   "fix": "Use a flat colour or a real image. The only gradient allowed by default is a neutral scrim over a photo for legibility."
+  },
+  {
+   "level": "FAIL",
+   "id": "body-size",
+   "width": 390,
+   "message": "Body text is 14px (the size most of the running text is set in).",
+   "fix": "Body copy 16–20px. Map small sizes from blueprints onto your body step."
+  },
+  {
+   "level": "FAIL",
+   "id": "edge-text",
+   "width": 390,
+   "message": "1 text block(s) sit within 12px of the screen edge: \"Passed\" (0px from the right)",
+   "fix": "Keep text inside the page margin (16–20px). Only display type deliberately bled past the edge may touch it."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\before\\desktop-fold.jpg",
+   "pages": [
+    "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\before\\desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\before\\tablet-fold.jpg",
+   "pages": [
+    "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\before\\tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\before\\mobile-fold.jpg",
+   "pages": [
+    "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\before\\mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

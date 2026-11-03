@@ -1,125 +1,98 @@
-﻿# SEO Toolkit
+# OpenSEO
 
-A fast, zero-dependency on-page SEO analyzer, Google SERP simulator, and technical markup toolkit.
+> Open source alternative to Semrush and Ahrefs
 
-- Live Web App: [https://foverse.github.io/seo-toolkit/](https://foverse.github.io/seo-toolkit/)
-- Repository: [https://github.com/foverse/seo-toolkit](https://github.com/foverse/seo-toolkit)
-- License: MIT
+OpenSEO is an SEO tool for _the people_. If tools like Semrush or Ahrefs are too expensive or bloated, OpenSEO is a pay-as-you-go alternative that you actually control.
 
----
+> All-in-one SEO tool for you and your AI agent.
 
-## Overview
+Connect with any agent like Claude Code, OpenClaw or Hermes. We have pre-built skills, but you can build your own to tailor OpenSEO to your needs.
 
-SEO Toolkit provides on-page audit insights, real-time SERP previews, and structured data generators without requiring external API subscriptions or heavy dependencies. It runs completely client-side in the browser, with optional Node.js and Python CLIs for automated workflows.
+<img width="100%" alt="openseo-keyword-research" src="https://github.com/user-attachments/assets/8ebdc439-3e72-41ab-8bde-8cda771ef2e8" />
 
-Built and maintained by [Fouad](https://growthmaker.fr) ([@foverse](https://github.com/foverse)), creator of [growthmaker.fr](https://growthmaker.fr).
+## Hosted Version
 
----
+Try OpenSEO for free on our website. If you want to support the project, a hosted subscription is $10/month.
 
-## Core Features
+[openseo.so](https://openseo.so)
 
-### 1. On-Page SEO Auditor
-- Health Score (0 to 100): Weighted calculation across meta tags, content, images, links, social graphs, and technical markup.
-- Meta direct inspection: Title length, meta description length, canonical tags, viewport configuration, charset, and robots indexing directives (`noindex`, `nofollow`).
-- Content analysis: Heading hierarchy (`H1` through `H6`), multiple or missing H1 alerts, total word count, reading time estimates, and text-to-HTML code ratio.
-- Asset and link validation: Image count, missing `alt` attributes, modern format detection (WebP, AVIF, SVG), internal vs external link distribution, and `rel="noopener noreferrer"` validation.
-- Social graph preview: Open Graph tags (`og:title`, `og:image`, `og:description`, `og:url`) and Twitter Cards.
-- Technical checks: Schema.org JSON-LD validation, language attribute, and HTTPS enforcement.
+### EveryApp
 
-### 2. Google SERP Simulator
-- Real-time desktop and mobile search snippet previews.
-- Accurate pixel width calculations:
-  - Title pixel tracker (target: under ~600px).
-  - Meta description pixel tracker (target: under ~960px).
-- Live interactive sandbox to test title tags and descriptions before deploying to production.
+Host OpenSEO and other open source apps on our platform EveryApp.
 
-### 3. Heading Structure Tree
-- Visual outline mapping heading nesting depth.
-- Detects skipped heading levels (such as an `H1` jumping directly to an `H3`).
+[Self-host on EveryApp and give it a star →](https://github.com/every-app/every-app)
 
-### 4. Keyword Density and N-Gram Extraction
-- Single keyword, two-word phrase, and three-word phrase frequency extraction.
-- Built-in stop-word filtering and over-optimization alerts for high keyword densities.
+## Why use OpenSEO?
 
-### 5. Schema and Technical File Generators
-- Schema.org Builder: Visual JSON-LD generator for FAQPage, Article, Product, LocalBusiness, and Breadcrumbs.
-- Robots.txt Builder: Presets for standard production sites, staging environments, and blocking aggressive AI scrapers.
-- XML Sitemap Builder: Generates structured `sitemap.xml` entries directly from discovered page links.
-- Meta Tag Generator: Complete template generator for HTML `<head>` tags.
+- Best in class MCP and AI Skills.
+- Modern, simple UI.
+  - Focused workflows instead of a bloated, complex SEO suite.
+- No subscriptions.
+  - Bring your own DataForSEO API key and pay only for what you use.
+- Fork and vibe code your own custom tool.
 
-### 6. Export Options
-- PDF / Print: Clean print stylesheet accessible via `Ctrl+P` or the export button.
-- JSON Export: Download the full audit payload as structured JSON.
-- Markdown Summary: Single-click clipboard copy formatted for GitHub issues, pull requests, or client reports.
+## Main SEO Workflows
 
----
+- Keyword research
+- Rank tracking
+- Competitor Insights
+- Backlinks
+- Site Audits
+- AI Visibility
 
-## Quick Start
+## OpenSEO MCP & Agent Skills
 
-### Option 1: Browser (Zero Setup)
-Open [https://foverse.github.io/seo-toolkit/](https://foverse.github.io/seo-toolkit/) or open `index.html` locally in any modern browser.
+OpenSEO exposes an MCP server so AI agents like Claude Code, OpenClaw, and Hermes can use your SEO data directly. Agent Skills are reusable workflows that guide your agent through SEO tasks using the MCP.
 
-### Option 2: Local Node Server (Bypasses CORS for External URLs)
-```bash
-git clone https://github.com/foverse/seo-toolkit.git
-cd seo-toolkit
-npm start
-```
-Then visit `http://localhost:3000` in your browser.
+- [Set up ChatGPT web or desktop](https://openseo.so/docs/chatgpt) (works on Free and paid ChatGPT plans)
+- [Set up Codex](https://openseo.so/docs/codex-plugin)
+- [Set up OpenSEO MCP](https://openseo.so/docs/mcp)
+- [Set up OpenSEO Agent Skills](https://openseo.so/docs/skills/setup)
 
-### Option 3: Terminal CLI (Node.js)
-```bash
-# Audit a live URL
-node cli.js https://example.com
+## Self-Hosting
 
-# Audit a local HTML file
-node cli.js --file ./index.html
+OpenSEO supports two self-hosting paths. Both use email and password accounts: the first visitor creates the admin account, teammates join from invitation links, and MCP clients (Claude, ChatGPT, Codex, Cursor) sign in with the same accounts.
 
-# Export audit to JSON
-node cli.js https://example.com --json --output report.json
+- **Docker** - On your own server or computer, with a prebuilt image that is ready in seconds. Works with Compose-based platforms such as Coolify, Portainer and Dokploy. See [`docs/SELF_HOSTING_DOCKER.md`](./docs/SELF_HOSTING_DOCKER.md).
+  - Running the older single-container image? It keeps getting updates; [move to the new setup](./docs/SELF_HOSTING_DOCKER.md#move-from-the-old-docker-image) when you are ready, data included.
+- **Cloudflare** - No server to run: one deploy command puts OpenSEO on your own Cloudflare account (works on the free plan). See [`docs/SELF_HOSTING_CLOUDFLARE.md`](./docs/SELF_HOSTING_CLOUDFLARE.md).
 
-# Run test suite
-npm test
-```
+For security-conscious setups, two advanced options replace the accounts with your own network controls:
 
-### Option 4: Python CLI (Zero Dependencies)
-```bash
-# Audit a live URL
-python seo_audit.py https://example.com
+- **Cloudflare Access** in front of the Cloudflare deploy, so Cloudflare checks every request before it reaches OpenSEO. See [`docs/SELF_HOSTING_CLOUDFLARE.md`](./docs/SELF_HOSTING_CLOUDFLARE.md).
+- **No sign-in on Docker**, behind Tailscale, a private network or your own authenticating proxy. See [Without sign-in](./docs/SELF_HOSTING_DOCKER.md#without-sign-in-advanced).
 
-# Audit a local HTML file
-python seo_audit.py --file index.html
+Either way, you need a DataForSEO API key to get SEO data. See [`docs/DATAFORSEO_API_KEY.md`](./docs/DATAFORSEO_API_KEY.md).
 
-# Output to JSON
-python seo_audit.py https://example.com --json --output audit.json
+## Costs
+
+OpenSEO needs a [DataForSEO](https://dataforseo.com/?aff=255379) API key so that you can get SEO data. You pay them directly when self hosting.
+
+See [openseo.so/pricing](https://openseo.so/pricing)
+
+When you self host, your costs will be slightly lower than the estimates on our website. The way the hosted service makes money is by charging 28% extra for every request we make to DataForSEO.
+
+## Local Development
+
+See [`docs/LOCAL_DEVELOPMENT.md`](./docs/LOCAL_DEVELOPMENT.md).
+
+## Contributing
+
+Creating clear issues is the best way to contribute.
+
+Read more here: [`docs/CONTRIBUTING.md`](./docs/CONTRIBUTING.md)
+
+We have this skill: `/simple-issue-description` which helps.
+
+```sh
+npx skills add every-app/open-seo --skill simple-issue-description
 ```
 
----
+## Community
 
-## Architecture
+Join Discord to chat: [Discord](https://discord.gg/c9uGs3cFXr)
 
-```
-seo-toolkit/
-â”œâ”€â”€ index.html         # Web application and UI layout
-â”œâ”€â”€ css/
-â”‚   â””â”€â”€ styles.css     # Dark mode layout, SERP simulation, and print styles
-â”œâ”€â”€ js/
-â”‚   â”œâ”€â”€ analyzer.js    # Core SEO rules, scoring, and n-gram extraction
-â”‚   â”œâ”€â”€ tools.js       # Schema, robots.txt, sitemap, and pixel measurement
-â”‚   â”œâ”€â”€ samples.js     # Test presets (SaaS, E-commerce, Blog, Edge cases)
-â”‚   â””â”€â”€ app.js         # Event orchestration and export handlers
-â”œâ”€â”€ server.js          # Lightweight Node.js server and proxy
-â”œâ”€â”€ cli.js             # Command line interface for Node.js
-â”œâ”€â”€ seo_audit.py       # Standalone Python 3 auditor (standard library only)
-â””â”€â”€ package.json       # Metadata and scripts
-```
+Follow along for updates:
 
----
-
-## Author & Project Info
-
-Built by [Fouad](https://growthmaker.fr) ([@foverse](https://github.com/foverse)).
-
-Visit [growthmaker.fr](https://growthmaker.fr) for case studies and notes on acquisition, conversion optimization, and web engineering.
-
-Licensed under the [MIT License](LICENSE).
+- Follow on X: https://x.com/bensenescu
+- Sign up for the mailing list on our website: [openseo.so](https://openseo.so)
