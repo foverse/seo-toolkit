@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Fouad's SEO Toolkit - Local Server & Proxy Backend
  * Built with native Node.js HTTP, URL, FS, and Path modules.
  * Serves the static web app on http://localhost:3000 and provides a CORS-free /api/audit endpoint.
@@ -150,7 +150,7 @@ function fetchWithTimeout(targetUrl, timeoutMs = 10000, maxRedirects = 5) {
 server.listen(PORT, () => {
   console.log(`====================================================`);
   console.log(`  Fouad's SEO Toolkit is running at: http://localhost:${PORT}`);
-  console.log(`  Local Audit API: http://localhost:${PORT}/api/audit?url=https://example.com`);
+  console.log(`  Local Audit API: http://localhost:${PORT}/api/audit?url=https://soundcraft.com`);
   console.log(`  Press Ctrl+C to stop.`);
   console.log(`====================================================`);
 });

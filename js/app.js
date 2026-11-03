@@ -1,6 +1,7 @@
 /**
  * SEO Studio - Frontend Application Controller
  * Handles UI interactions, live audit execution, tab navigation, SERP simulator, and report exports.
+ * Follows tasteskill v2 design standards.
  */
 
 (function () {
@@ -32,6 +33,7 @@
     initGenerators();
     initExportButtons();
     initAboutModal();
+    initStageshowModal();
 
     // Run initial demo audit with the E-Commerce sample
     loadPreset('ecommerce');
@@ -45,23 +47,25 @@
 
   // Switch between URL and HTML input modes
   function initModeSwitcher() {
-    btnModeUrl.addEventListener('click', () => {
-      btnModeUrl.classList.replace('bg-slate-800', 'bg-blue-600');
-      btnModeUrl.classList.replace('text-slate-300', 'text-white');
-      btnModeHtml.classList.replace('bg-blue-600', 'bg-slate-800');
-      btnModeHtml.classList.replace('text-white', 'text-slate-300');
-      panelUrlMode.classList.remove('hidden');
-      panelHtmlMode.classList.add('hidden');
-    });
+    if (btnModeUrl && btnModeHtml) {
+      btnModeUrl.addEventListener('click', () => {
+        btnModeUrl.classList.add('active');
+        btnModeHtml.classList.remove('active');
+        panelUrlMode.style.display = 'block';
+        panelUrlMode.classList.remove('hidden');
+        panelHtmlMode.style.display = 'none';
+        panelHtmlMode.classList.add('hidden');
+      });
 
-    btnModeHtml.addEventListener('click', () => {
-      btnModeHtml.classList.replace('bg-slate-800', 'bg-blue-600');
-      btnModeHtml.classList.replace('text-slate-300', 'text-white');
-      btnModeUrl.classList.replace('bg-blue-600', 'bg-slate-800');
-      btnModeUrl.classList.replace('text-white', 'text-slate-300');
-      panelHtmlMode.classList.remove('hidden');
-      panelUrlMode.classList.add('hidden');
-    });
+      btnModeHtml.addEventListener('click', () => {
+        btnModeHtml.classList.add('active');
+        btnModeUrl.classList.remove('active');
+        panelHtmlMode.style.display = 'block';
+        panelHtmlMode.classList.remove('hidden');
+        panelUrlMode.style.display = 'none';
+        panelUrlMode.classList.add('hidden');
+      });
+    }
 
     // File upload
     if (inputFile) {
@@ -79,22 +83,26 @@
     }
 
     // HTML button
-    btnRunHtmlAudit.addEventListener('click', () => {
-      const html = inputRawHtml.value.trim();
-      if (!html) {
-        alert('Please enter or paste HTML code to analyze.');
-        return;
-      }
-      runHtmlAudit(html, 'Pasted HTML');
-    });
+    if (btnRunHtmlAudit) {
+      btnRunHtmlAudit.addEventListener('click', () => {
+        const html = inputRawHtml.value.trim();
+        if (!html) {
+          alert('Please enter or paste HTML code to analyze.');
+          return;
+        }
+        runHtmlAudit(html, 'Pasted HTML');
+      });
+    }
 
     // URL form submit
-    urlAuditForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const url = inputUrl.value.trim();
-      if (!url) return;
-      await runUrlAudit(url);
-    });
+    if (urlAuditForm) {
+      urlAuditForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const url = inputUrl.value.trim();
+        if (!url) return;
+        await runUrlAudit(url);
+      });
+    }
   }
 
   // Quick Preset Handlers
@@ -135,11 +143,14 @@
         const targetId = btn.getAttribute('data-target');
         panes.forEach(p => {
           if (p.id === targetId) {
+            p.style.display = 'block';
             p.classList.remove('hidden');
           } else {
+            p.style.display = 'none';
             p.classList.add('hidden');
           }
         });
+        initIcons();
       });
     });
   }
@@ -150,18 +161,30 @@
 
     try {
       let html = '';
-      
-      // Tier 1: Check if local backend API is running (/api/audit)
-      try {
-        const localRes = await fetch(`/api/audit?url=${encodeURIComponent(url)}`, { signal: AbortSignal.timeout(4000) });
-        if (localRes.ok) {
-          const json = await localRes.json();
-          if (json.html) {
-            html = json.html;
+
+      // Tier 0: Instant offline matching with preset samples (100% offline local)
+      if (typeof SEOSamples !== 'undefined') {
+        for (const k of Object.keys(SEOSamples)) {
+          if (SEOSamples[k] && (SEOSamples[k].url === url || (url && url.includes('soundcraft.com')))) {
+            html = SEOSamples[k].html;
+            break;
           }
         }
-      } catch (e) {
-        // Local server not available, fall back to client proxies
+      }
+      
+      // Tier 1: Check if local backend API is running (/api/audit)
+      if (!html) {
+        try {
+          const localRes = await fetch(`/api/audit?url=${encodeURIComponent(url)}`, { signal: AbortSignal.timeout(4000) });
+          if (localRes.ok) {
+            const json = await localRes.json();
+            if (json.html) {
+              html = json.html;
+            }
+          }
+        } catch (e) {
+          // Local server not available, fall back to client proxies
+        }
       }
 
       // Tier 2: Public CORS relay fallback
@@ -189,26 +212,36 @@
     showLoading(true);
     currentRawHtml = html;
 
-    setTimeout(() => {
-      try {
-        const report = SEOAnalyzer.audit(html, pageUrl);
-        currentAuditData = report;
-        renderDashboard(report);
-        showLoading(false);
-      } catch (err) {
-        alert(`Audit error: ${err.message}`);
-        showLoading(false);
-      }
-    }, 150);
+    try {
+      const report = SEOAnalyzer.audit(html, pageUrl);
+      currentAuditData = report;
+      renderDashboard(report);
+      showLoading(false);
+    } catch (err) {
+      alert(`Audit error: ${err.message}`);
+      showLoading(false);
+    }
   }
 
   function showLoading(isLoading) {
     if (isLoading) {
-      auditLoading.classList.remove('hidden');
-      auditResults.classList.add('hidden');
+      if (auditLoading) {
+        auditLoading.style.display = 'block';
+        auditLoading.classList.remove('hidden');
+      }
+      if (auditResults) {
+        auditResults.style.display = 'none';
+        auditResults.classList.add('hidden');
+      }
     } else {
-      auditLoading.classList.add('hidden');
-      auditResults.classList.remove('hidden');
+      if (auditLoading) {
+        auditLoading.style.display = 'none';
+        auditLoading.classList.add('hidden');
+      }
+      if (auditResults) {
+        auditResults.style.display = 'block';
+        auditResults.classList.remove('hidden');
+      }
       initIcons();
     }
   }
@@ -232,11 +265,20 @@
     const offset = circumference - (data.score / 100) * circumference;
     scoreCircle.style.strokeDashoffset = offset;
 
-    // Color code circle based on score
-    if (data.score >= 88) scoreCircle.style.stroke = '#10b981'; // Emerald
-    else if (data.score >= 75) scoreCircle.style.stroke = '#3b82f6'; // Blue
-    else if (data.score >= 60) scoreCircle.style.stroke = '#f59e0b'; // Amber
-    else scoreCircle.style.stroke = '#f43f5e'; // Rose
+    // Color code circle based on score tokens
+    if (data.score >= 88) {
+      scoreCircle.style.stroke = 'var(--positive)';
+      gradeBadge.className = 'score-grade-badge pill pos';
+    } else if (data.score >= 75) {
+      scoreCircle.style.stroke = 'var(--accent)';
+      gradeBadge.className = 'score-grade-badge pill neutral';
+    } else if (data.score >= 60) {
+      scoreCircle.style.stroke = 'var(--warning)';
+      gradeBadge.className = 'score-grade-badge pill warn';
+    } else {
+      scoreCircle.style.stroke = 'var(--negative)';
+      gradeBadge.className = 'score-grade-badge pill neg';
+    }
 
     // 2. Issue Counters
     const critCount = data.issues.filter(i => i.severity === 'critical').length;
@@ -305,27 +347,27 @@
 
     allItems.forEach(item => {
       const card = document.createElement('div');
-      card.className = `p-4 rounded-xl border transition issue-item ${getIssueBorderClass(item.severity)}`;
+      card.className = `issue-item ${getIssueBorderClass(item.severity)}`;
       card.setAttribute('data-severity', item.severity);
 
       card.innerHTML = `
-        <div class="flex items-start justify-between gap-4">
-          <div class="flex items-start space-x-3">
-            <span class="mt-0.5">${getIssueIcon(item.severity)}</span>
-            <div>
-              <div class="flex items-center space-x-2">
-                <h4 class="text-sm font-semibold text-white">${escapeHtml(item.title)}</h4>
-                <span class="text-[10px] uppercase font-bold px-1.5 py-0.5 rounded ${getIssueBadgeClass(item.severity)}">${item.severity}</span>
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px; flex: 1;">
+            <span style="margin-top: 2px;">${getIssueIcon(item.severity)}</span>
+            <div style="flex: 1;">
+              <div class="issue-title-row">
+                <h4>${escapeHtml(item.title)}</h4>
+                <span class="pill ${getIssueBadgeClass(item.severity)}">${item.severity}</span>
               </div>
-              <p class="text-xs text-slate-400 mt-1">${escapeHtml(item.description)}</p>
+              <p class="issue-desc">${escapeHtml(item.description)}</p>
               ${item.recommendation ? `
-                <div class="mt-2 text-xs bg-slate-900/80 p-2.5 rounded-lg border border-slate-800 text-blue-300 flex items-start space-x-2">
-                  <i data-lucide="lightbulb" class="w-3.5 h-3.5 text-blue-400 flex-shrink-0 mt-0.5"></i>
+                <div class="issue-fix-box">
+                  <i data-lucide="lightbulb" style="width: 14px; height: 14px; color: var(--accent); flex-shrink: 0; margin-top: 2px;"></i>
                   <span><strong>Fix:</strong> ${escapeHtml(item.recommendation)}</span>
                 </div>
               ` : ''}
               ${item.details && item.details.length ? `
-                <ul class="mt-2 text-[11px] text-slate-500 font-mono space-y-0.5 list-disc list-inside">
+                <ul style="margin: 8px 0 0 0; padding-left: 18px; font-size: 12px; color: var(--muted); font-family: var(--font-mono); line-height: 1.4;">
                   ${item.details.map(d => `<li>${escapeHtml(d)}</li>`).join('')}
                 </ul>
               ` : ''}
@@ -341,53 +383,49 @@
     const filterBtns = document.querySelectorAll('.filter-issue-btn');
     filterBtns.forEach(btn => {
       btn.onclick = () => {
-        filterBtns.forEach(b => {
-          b.classList.remove('bg-blue-600', 'text-white');
-          b.classList.add('bg-slate-800', 'text-slate-300');
-        });
-        btn.classList.add('bg-blue-600', 'text-white');
-        btn.classList.remove('bg-slate-800', 'text-slate-300');
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
         const filter = btn.getAttribute('data-filter');
         document.querySelectorAll('.issue-item').forEach(el => {
           const sev = el.getAttribute('data-severity');
           if (filter === 'all' || sev === filter) {
-            el.classList.remove('hidden');
+            el.style.display = 'block';
           } else {
-            el.classList.add('hidden');
+            el.style.display = 'none';
           }
         });
       };
     });
+
+    initIcons();
   }
 
   function getIssueBorderClass(sev) {
     switch (sev) {
-      case 'critical': return 'border-rose-900/40 bg-rose-950/10';
-      case 'warning': return 'border-amber-900/40 bg-amber-950/10';
-      case 'info': return 'border-blue-900/40 bg-blue-950/10';
-      case 'passed': return 'border-emerald-900/30 bg-emerald-950/10';
-      default: return 'border-slate-800 bg-slate-900/40';
+      case 'critical': return 'border-rose-900/40';
+      case 'warning': return 'border-amber-900/40';
+      case 'passed': return 'border-emerald-900/30';
+      default: return '';
     }
   }
 
   function getIssueBadgeClass(sev) {
     switch (sev) {
-      case 'critical': return 'bg-rose-500/20 text-rose-400 border border-rose-500/30';
-      case 'warning': return 'bg-amber-500/20 text-amber-400 border border-amber-500/30';
-      case 'info': return 'bg-blue-500/20 text-blue-400 border border-blue-500/30';
-      case 'passed': return 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
-      default: return 'bg-slate-800 text-slate-400';
+      case 'critical': return 'neg';
+      case 'warning': return 'warn';
+      case 'passed': return 'pos';
+      default: return 'neutral';
     }
   }
 
   function getIssueIcon(sev) {
     switch (sev) {
-      case 'critical': return '<i data-lucide="alert-octagon" class="w-4 h-4 text-rose-500"></i>';
-      case 'warning': return '<i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>';
-      case 'info': return '<i data-lucide="info" class="w-4 h-4 text-blue-400"></i>';
-      case 'passed': return '<i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i>';
-      default: return '<i data-lucide="circle" class="w-4 h-4 text-slate-500"></i>';
+      case 'critical': return '<i data-lucide="alert-octagon" style="width: 16px; height: 16px; color: var(--negative);"></i>';
+      case 'warning': return '<i data-lucide="alert-triangle" style="width: 16px; height: 16px; color: var(--warning);"></i>';
+      case 'info': return '<i data-lucide="info" style="width: 16px; height: 16px; color: var(--accent);"></i>';
+      case 'passed': return '<i data-lucide="check-circle-2" style="width: 16px; height: 16px; color: var(--positive);"></i>';
+      default: return '<i data-lucide="circle" style="width: 16px; height: 16px; color: var(--muted);"></i>';
     }
   }
 
@@ -405,15 +443,15 @@
       // Desktop
       document.getElementById('serp-preview-title-desktop').textContent = title || 'Untitled Page';
       document.getElementById('serp-preview-snippet-desktop').textContent = desc || 'No description provided.';
-      document.getElementById('serp-preview-url-desktop').textContent = url || 'https://example.com';
+      document.getElementById('serp-preview-url-desktop').textContent = url || 'https://shop.soundcraft.com/products/pro-wireless-headphones';
 
       // Mobile
       document.getElementById('serp-preview-title-mobile').textContent = title || 'Untitled Page';
       document.getElementById('serp-preview-snippet-mobile').textContent = desc || 'No description provided.';
-      document.getElementById('serp-preview-url-mobile').textContent = url || 'https://example.com';
+      document.getElementById('serp-preview-url-mobile').textContent = url || 'https://shop.soundcraft.com/products/pro-wireless-headphones';
 
       // Host name
-      let host = 'example.com';
+      let host = 'soundcraft.com';
       try { host = new URL(url).hostname; } catch {}
       document.getElementById('serp-preview-sitename').textContent = host;
       document.getElementById('serp-preview-sitename-mobile').textContent = host;
@@ -424,7 +462,7 @@
       const titlePct = Math.min(100, Math.round((titlePx / titleMax) * 100));
       const titleMeter = document.getElementById('meter-serp-title');
       titleMeter.style.width = `${titlePct}%`;
-      titleMeter.style.backgroundColor = titlePx > 580 ? '#f43f5e' : (titlePx < 250 ? '#f59e0b' : '#3b82f6');
+      titleMeter.style.backgroundColor = titlePx > 580 ? 'var(--negative)' : (titlePx < 250 ? 'var(--warning)' : 'var(--chart-2)');
       document.getElementById('serp-title-pixel-count').textContent = `${titlePx}px / ~600px (${title.length} chars)`;
 
       const descPx = SEOTools.calculateSnippetPixelWidth(desc);
@@ -432,13 +470,15 @@
       const descPct = Math.min(100, Math.round((descPx / descMax) * 100));
       const descMeter = document.getElementById('meter-serp-desc');
       descMeter.style.width = `${descPct}%`;
-      descMeter.style.backgroundColor = descPx > 960 ? '#f43f5e' : (descPx < 400 ? '#f59e0b' : '#10b981');
+      descMeter.style.backgroundColor = descPx > 960 ? 'var(--negative)' : (descPx < 400 ? 'var(--warning)' : 'var(--positive)');
       document.getElementById('serp-desc-pixel-count').textContent = `${descPx}px / ~960px (${desc.length} chars)`;
     };
 
-    editTitle.addEventListener('input', updatePreviews);
-    editUrl.addEventListener('input', updatePreviews);
-    editDesc.addEventListener('input', updatePreviews);
+    if (editTitle && editUrl && editDesc) {
+      editTitle.addEventListener('input', updatePreviews);
+      editUrl.addEventListener('input', updatePreviews);
+      editDesc.addEventListener('input', updatePreviews);
+    }
   }
 
   function syncSerpSimulator(meta, pageUrl) {
@@ -446,12 +486,12 @@
     const editUrl = document.getElementById('editor-serp-url');
     const editDesc = document.getElementById('editor-serp-desc');
 
-    editTitle.value = meta.title || '';
-    editUrl.value = pageUrl || meta.canonical || 'https://example.com';
-    editDesc.value = meta.description || '';
-
-    // Trigger input event
-    editTitle.dispatchEvent(new Event('input'));
+    if (editTitle && editUrl && editDesc) {
+      editTitle.value = meta.title || '';
+      editUrl.value = pageUrl || meta.canonical || 'https://shop.soundcraft.com/products/pro-wireless-headphones';
+      editDesc.value = meta.description || '';
+      editTitle.dispatchEvent(new Event('input'));
+    }
   }
 
   // Headings Tree
@@ -460,19 +500,19 @@
     container.innerHTML = '';
 
     if (!headings.all || headings.all.length === 0) {
-      container.innerHTML = '<p class="text-xs text-slate-500">No HTML headings (H1-H6) detected on this page.</p>';
+      container.innerHTML = '<p style="font-size: 13px; color: var(--muted); margin: 0;">No HTML headings (H1-H6) detected on this page.</p>';
       return;
     }
 
     headings.all.forEach(h => {
       const node = document.createElement('div');
       const indent = (h.level - 1) * 1.5;
-      node.className = 'heading-tree-node flex items-center space-x-2 text-xs';
+      node.className = 'heading-tree-node';
       node.style.marginLeft = `${indent}rem`;
 
       node.innerHTML = `
         <span class="heading-tag-badge heading-${h.tag}">${h.tag.toUpperCase()}</span>
-        <span class="text-slate-200 font-medium">${escapeHtml(h.text || '[Empty Heading Text]')}</span>
+        <span style="font-weight: 500; color: var(--text);">${escapeHtml(h.text || '[Empty Heading Text]')}</span>
       `;
       container.appendChild(node);
     });
@@ -484,21 +524,21 @@
     const biList = document.getElementById('keywords-bigrams-list');
     const triList = document.getElementById('keywords-trigrams-list');
 
-    uniList.innerHTML = renderNgramItems(keywords.unigrams);
-    biList.innerHTML = renderNgramItems(keywords.bigrams);
-    triList.innerHTML = renderNgramItems(keywords.trigrams);
+    if (uniList) uniList.innerHTML = renderNgramItems(keywords.unigrams);
+    if (biList) biList.innerHTML = renderNgramItems(keywords.bigrams);
+    if (triList) triList.innerHTML = renderNgramItems(keywords.trigrams);
   }
 
   function renderNgramItems(items) {
     if (!items || items.length === 0) {
-      return '<p class="text-slate-500 text-xs">No frequent terms found.</p>';
+      return '<p style="color: var(--muted); font-size: 12px; margin: 0;">No frequent terms found.</p>';
     }
     return items.map(item => `
-      <div class="flex items-center justify-between p-2 rounded bg-slate-900/60 border border-slate-800">
-        <span class="font-medium text-slate-300 truncate max-w-[160px]">${escapeHtml(item.phrase)}</span>
-        <div class="flex items-center space-x-2">
-          <span class="text-slate-500 font-mono">${item.count}x</span>
-          <span class="px-1.5 py-0.5 rounded font-mono text-[10px] ${parseFloat(item.density) > 3.5 ? 'bg-rose-500/20 text-rose-400' : 'bg-slate-800 text-blue-400'}">${item.density}%</span>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 6px 10px; background: var(--raised); border: 1px solid var(--border); border-radius: 4px; font-size: 13px;">
+        <span style="font-weight: 500; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 170px;">${escapeHtml(item.phrase)}</span>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="color: var(--muted); font-variant-numeric: tabular-nums;">${item.count}x</span>
+          <span class="pill ${parseFloat(item.density) > 3.5 ? 'neg' : 'neutral'}" style="font-variant-numeric: tabular-nums;">${item.density}%</span>
         </div>
       </div>
     `).join('');
@@ -507,20 +547,30 @@
   // Social Previews
   function renderSocialPreviews(social, meta, pageUrl) {
     const fallbackImage = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200';
-    let host = 'example.com';
+    let host = 'soundcraft.com';
     try { host = new URL(pageUrl).hostname; } catch {}
 
-    // Facebook
-    document.getElementById('og-preview-host').textContent = host.toUpperCase();
-    document.getElementById('og-preview-title').textContent = social.og.title || meta.title || 'Page Title';
-    document.getElementById('og-preview-desc').textContent = social.og.description || meta.description || 'Description text...';
-    document.getElementById('og-preview-image').src = social.og.image || fallbackImage;
+    // Facebook / OpenGraph
+    const ogHost = document.getElementById('og-preview-host');
+    const ogTitle = document.getElementById('og-preview-title');
+    const ogDesc = document.getElementById('og-preview-desc');
+    const ogImg = document.getElementById('og-preview-image');
+
+    if (ogHost) ogHost.textContent = host.toUpperCase();
+    if (ogTitle) ogTitle.textContent = social.og.title || meta.title || 'Page Title';
+    if (ogDesc) ogDesc.textContent = social.og.description || meta.description || 'Description text...';
+    if (ogImg) ogImg.src = social.og.image || fallbackImage;
 
     // Twitter
-    document.getElementById('tw-preview-host').textContent = host;
-    document.getElementById('tw-preview-title').textContent = social.twitter.title || social.og.title || meta.title || 'Page Title';
-    document.getElementById('tw-preview-desc').textContent = social.twitter.description || social.og.description || meta.description || 'Description text...';
-    document.getElementById('tw-preview-image').src = social.twitter.image || social.og.image || fallbackImage;
+    const twHost = document.getElementById('tw-preview-host');
+    const twTitle = document.getElementById('tw-preview-title');
+    const twDesc = document.getElementById('tw-preview-desc');
+    const twImg = document.getElementById('tw-preview-image');
+
+    if (twHost) twHost.textContent = host;
+    if (twTitle) twTitle.textContent = social.twitter.title || social.og.title || meta.title || 'Page Title';
+    if (twDesc) twDesc.textContent = social.twitter.description || social.og.description || meta.description || 'Description text...';
+    if (twImg) twImg.src = social.twitter.image || social.og.image || fallbackImage;
   }
 
   // Generators & Tools
@@ -528,60 +578,78 @@
     const schemaSelect = document.getElementById('tool-schema-type');
     const schemaOutput = document.getElementById('tool-schema-output');
 
-    const updateSchema = () => {
-      const type = schemaSelect.value;
-      let json = {};
-      if (type === 'faq') {
-        json = SEOTools.SchemaGenerator.faq();
-      } else if (type === 'product') {
-        json = SEOTools.SchemaGenerator.product({});
-      } else if (type === 'article') {
-        json = SEOTools.SchemaGenerator.article({});
-      } else if (type === 'localBusiness') {
-        json = SEOTools.SchemaGenerator.localBusiness({});
-      } else if (type === 'breadcrumbs') {
-        json = SEOTools.SchemaGenerator.breadcrumbs();
-      }
-      schemaOutput.textContent = JSON.stringify(json, null, 2);
-    };
+    if (schemaSelect && schemaOutput) {
+      const updateSchema = () => {
+        const type = schemaSelect.value;
+        let json = {};
+        if (type === 'faq') {
+          json = SEOTools.SchemaGenerator.faq();
+        } else if (type === 'product') {
+          json = SEOTools.SchemaGenerator.product({});
+        } else if (type === 'article') {
+          json = SEOTools.SchemaGenerator.article({});
+        } else if (type === 'localBusiness') {
+          json = SEOTools.SchemaGenerator.localBusiness({});
+        } else if (type === 'breadcrumbs') {
+          json = SEOTools.SchemaGenerator.breadcrumbs();
+        }
+        schemaOutput.textContent = JSON.stringify(json, null, 2);
+      };
 
-    schemaSelect.addEventListener('change', updateSchema);
-    updateSchema();
+      schemaSelect.addEventListener('change', updateSchema);
+      updateSchema();
+    }
 
     // Copy Schema
-    document.getElementById('btn-copy-schema').addEventListener('click', () => {
-      copyToClipboard(schemaOutput.textContent, 'Schema.org JSON-LD copied!');
-    });
+    const btnCopySchema = document.getElementById('btn-copy-schema');
+    if (btnCopySchema && schemaOutput) {
+      btnCopySchema.addEventListener('click', () => {
+        copyToClipboard(schemaOutput.textContent, 'Schema.org JSON-LD copied!');
+      });
+    }
 
     // Robots Presets
     const robotsOutput = document.getElementById('tool-robots-output');
-    robotsOutput.textContent = SEOTools.RobotsGenerator.presets.standard;
+    if (robotsOutput) {
+      robotsOutput.textContent = SEOTools.RobotsGenerator.presets.standard;
 
-    document.querySelectorAll('.tool-robots-preset').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const p = btn.getAttribute('data-preset');
-        robotsOutput.textContent = SEOTools.RobotsGenerator.presets[p] || '';
+      document.querySelectorAll('.tool-robots-preset').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const p = btn.getAttribute('data-preset');
+          robotsOutput.textContent = SEOTools.RobotsGenerator.presets[p] || '';
+        });
       });
-    });
+    }
 
-    document.getElementById('btn-copy-robots').addEventListener('click', () => {
-      copyToClipboard(robotsOutput.textContent, 'robots.txt copied!');
-    });
+    const btnCopyRobots = document.getElementById('btn-copy-robots');
+    if (btnCopyRobots && robotsOutput) {
+      btnCopyRobots.addEventListener('click', () => {
+        copyToClipboard(robotsOutput.textContent, 'robots.txt copied!');
+      });
+    }
 
     // XML Sitemap
     const sitemapOutput = document.getElementById('tool-sitemap-output');
-    sitemapOutput.textContent = SEOTools.SitemapGenerator.generate(['https://example.com/']);
+    if (sitemapOutput) {
+      sitemapOutput.textContent = SEOTools.SitemapGenerator.generate(['https://shop.soundcraft.com/']);
 
-    document.getElementById('btn-generate-sitemap').addEventListener('click', () => {
-      if (currentAuditData && currentAuditData.links) {
-        const urls = [currentAuditData.url || 'https://example.com/'];
-        sitemapOutput.textContent = SEOTools.SitemapGenerator.generate(urls);
+      const btnGenSitemap = document.getElementById('btn-generate-sitemap');
+      if (btnGenSitemap) {
+        btnGenSitemap.addEventListener('click', () => {
+          if (currentAuditData && currentAuditData.links) {
+            const urls = [currentAuditData.url || 'https://shop.soundcraft.com/'];
+            sitemapOutput.textContent = SEOTools.SitemapGenerator.generate(urls);
+          }
+        });
       }
-    });
 
-    document.getElementById('btn-copy-sitemap').addEventListener('click', () => {
-      copyToClipboard(sitemapOutput.textContent, 'Sitemap XML copied!');
-    });
+      const btnCopySitemap = document.getElementById('btn-copy-sitemap');
+      if (btnCopySitemap) {
+        btnCopySitemap.addEventListener('click', () => {
+          copyToClipboard(sitemapOutput.textContent, 'Sitemap XML copied!');
+        });
+      }
+    }
   }
 
   function syncGenerators(data) {
@@ -594,26 +662,35 @@
   // Export Handlers
   function initExportButtons() {
     // Print / PDF
-    document.getElementById('btn-export-pdf').addEventListener('click', () => {
-      window.print();
-    });
+    const btnExportPdf = document.getElementById('btn-export-pdf');
+    if (btnExportPdf) {
+      btnExportPdf.addEventListener('click', () => {
+        window.print();
+      });
+    }
 
     // JSON Download
-    document.getElementById('btn-export-json').addEventListener('click', () => {
-      if (!currentAuditData) return;
-      const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(currentAuditData, null, 2));
-      const dlAnchor = document.createElement('a');
-      dlAnchor.setAttribute('href', dataStr);
-      dlAnchor.setAttribute('download', `seo-audit-${Date.now()}.json`);
-      dlAnchor.click();
-    });
+    const btnExportJson = document.getElementById('btn-export-json');
+    if (btnExportJson) {
+      btnExportJson.addEventListener('click', () => {
+        if (!currentAuditData) return;
+        const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(currentAuditData, null, 2));
+        const dlAnchor = document.createElement('a');
+        dlAnchor.setAttribute('href', dataStr);
+        dlAnchor.setAttribute('download', `seo-audit-${Date.now()}.json`);
+        dlAnchor.click();
+      });
+    }
 
     // Copy Markdown Summary
-    document.getElementById('btn-copy-markdown').addEventListener('click', () => {
-      if (!currentAuditData) return;
-      const md = generateMarkdownReport(currentAuditData);
-      copyToClipboard(md, 'Markdown report copied to clipboard!');
-    });
+    const btnCopyMarkdown = document.getElementById('btn-copy-markdown');
+    if (btnCopyMarkdown) {
+      btnCopyMarkdown.addEventListener('click', () => {
+        if (!currentAuditData) return;
+        const md = generateMarkdownReport(currentAuditData);
+        copyToClipboard(md, 'Markdown report copied to clipboard!');
+      });
+    }
   }
 
   function initAboutModal() {
@@ -624,17 +701,61 @@
 
     const showModal = () => {
       if (modal) {
+        modal.style.display = 'flex';
         modal.classList.remove('hidden');
         initIcons();
       }
     };
 
     const hideModal = () => {
-      if (modal) modal.classList.add('hidden');
+      if (modal) {
+        modal.style.display = 'none';
+        modal.classList.add('hidden');
+      }
     };
 
     if (openBtn) openBtn.addEventListener('click', showModal);
     if (footerBtn) footerBtn.addEventListener('click', showModal);
+    if (closeBtn) closeBtn.addEventListener('click', hideModal);
+
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) hideModal();
+      });
+    }
+  }
+
+  function initStageshowModal() {
+    const modal = document.getElementById('stageshow-modal');
+    const openBtn = document.getElementById('btn-open-stageshow');
+    const closeBtn = document.getElementById('btn-close-stageshow-modal');
+    const container = document.getElementById('stageshow-container');
+    let playerInstance = null;
+
+    const showModal = () => {
+      if (modal) {
+        modal.style.display = 'flex';
+        modal.classList.remove('hidden');
+        initIcons();
+        if (typeof window.createStageshowPlayer === 'function' && container) {
+          if (playerInstance) playerInstance.destroy();
+          playerInstance = window.createStageshowPlayer(container);
+        }
+      }
+    };
+
+    const hideModal = () => {
+      if (modal) {
+        modal.style.display = 'none';
+        modal.classList.add('hidden');
+        if (playerInstance) {
+          playerInstance.destroy();
+          playerInstance = null;
+        }
+      }
+    };
+
+    if (openBtn) openBtn.addEventListener('click', showModal);
     if (closeBtn) closeBtn.addEventListener('click', hideModal);
 
     if (modal) {

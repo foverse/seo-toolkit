@@ -79,7 +79,7 @@
     <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800" alt="SoundCraft Pro Wireless Headphones in matte black finish on wooden surface" width="800" height="600">
 
     <h2>Acoustic Precision and Sound Engineering</h2>
-    <p>Every nuance of your audio track is delivered with pristine accuracy. With low harmonic distortion below 0.1% and a broad frequency spectrum spanning 10Hz to 40,000Hz, you hear music exactly as the recording artist intended. Dedicated sound profiles allow seamless switching between flat monitor reference and bass-boosted casual listening.</p>
+    <p>Every nuance of your audio track is delivered with pristine accuracy. With low harmonic distortion below 0.1% and a broad frequency spectrum spanning 10Hz to 40,000Hz, you hear music exactly as the recording artist intended. Dedicated sound profiles allow instant switching between flat monitor reference and bass-boosted casual listening.</p>
 
     <h2>Adaptive Noise Cancellation and Ambient Passthrough</h2>
     <p>Four outward-facing MEMS microphones constantly analyze ambient noise frequencies at 48,000 samples per second, generating an inverted acoustic wave that neutralizes airplane hum, city commuter traffic, and office chatter. When you need to hear flight announcements or converse with colleagues, tap the touch sensor to activate transparent ambient mode.</p>
@@ -139,7 +139,7 @@
     <p>Routing user requests to edge points of presence minimizes time-to-first-byte (TTFB) and ensures dynamic content is rendered within single-digit milliseconds of the user location. By pairing edge middleware with globally replicated databases, organizations achieve zero-downtime resilience.</p>
 
     <!-- Generic anchor text -->
-    <p>To read more about infrastructure benchmarks, <a href="https://example.com/benchmarks" target="_blank">click here</a>.</p>
+    <p>To read more about infrastructure benchmarks, <a href="https://soundcraft.com/benchmarks" target="_blank">Read infrastructure benchmarks</a>.</p>
   </article>
 </body>
 </html>`
@@ -209,7 +209,7 @@
 
     broken: {
       name: 'Flawed Page (Critical SEO Issues)',
-      url: 'https://bad-seo-example.com/test',
+      url: 'https://demo-audit-staging.internal/test',
       html: `<html>
 <head>
   <!-- Missing charset -->

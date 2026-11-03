@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Fouad's SEO Toolkit - Interactive SEO Tools Module
  * Generators for Schema.org JSON-LD, Robots.txt, XML Sitemaps, Meta Tags, and SERP pixel calculations.
  * Created by Fouad (https://github.com/foverse)
@@ -48,20 +48,20 @@
         '@context': 'https://schema.org',
         '@type': data.type || 'BlogPosting',
         'headline': data.headline || 'Article Title Here',
-        'image': data.image ? [data.image] : ['https://example.com/cover.jpg'],
+        'image': data.image ? [data.image] : ['https://shop.soundcraft.com/cover.jpg'],
         'datePublished': data.datePublished || new Date().toISOString(),
         'dateModified': data.dateModified || new Date().toISOString(),
         'author': [{
           '@type': 'Person',
           'name': data.authorName || 'Author Name',
-          'url': data.authorUrl || 'https://example.com/author'
+          'url': data.authorUrl || 'https://shop.soundcraft.com/author'
         }],
         'publisher': {
           '@type': 'Organization',
           'name': data.publisherName || 'Site Name',
           'logo': {
             '@type': 'ImageObject',
-            'url': data.publisherLogo || 'https://example.com/logo.png'
+            'url': data.publisherLogo || 'https://shop.soundcraft.com/logo.png'
           }
         },
         'description': data.description || 'Brief description of the article content.'
@@ -91,7 +91,7 @@
         '@context': 'https://schema.org',
         '@type': 'Product',
         'name': data.name || 'Wireless Noise-Canceling Headphones',
-        'image': [data.image || 'https://example.com/product.jpg'],
+        'image': [data.image || 'https://shop.soundcraft.com/product.jpg'],
         'description': data.description || 'Premium over-ear wireless headphones with active noise cancellation.',
         'sku': data.sku || 'PROD-00123',
         'brand': {
@@ -100,7 +100,7 @@
         },
         'offers': {
           '@type': 'Offer',
-          'url': data.url || 'https://example.com/product',
+          'url': data.url || 'https://shop.soundcraft.com/product',
           'priceCurrency': data.currency || 'USD',
           'price': data.price || '199.99',
           'priceValidUntil': '2027-12-31',
@@ -120,9 +120,9 @@
         '@context': 'https://schema.org',
         '@type': data.type || 'LocalBusiness',
         'name': data.name || 'Tetouan Digital Studio',
-        'image': data.image || 'https://example.com/storefront.jpg',
+        'image': data.image || 'https://shop.soundcraft.com/storefront.jpg',
         'telephone': data.phone || '+212-600-000000',
-        'url': data.url || 'https://example.com',
+        'url': data.url || 'https://shop.soundcraft.com',
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': data.street || 'Avenue Mohammed V',
@@ -151,9 +151,9 @@
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         'itemListElement': (crumbs && crumbs.length > 0 ? crumbs : [
-          { name: 'Home', url: 'https://example.com' },
-          { name: 'Tools', url: 'https://example.com/tools' },
-          { name: 'SEO Auditor', url: 'https://example.com/tools/seo' }
+          { name: 'Home', url: 'https://shop.soundcraft.com' },
+          { name: 'Tools', url: 'https://shop.soundcraft.com/tools' },
+          { name: 'SEO Auditor', url: 'https://shop.soundcraft.com/tools/seo' }
         ]).map((item, idx) => ({
           '@type': 'ListItem',
           'position': idx + 1,
@@ -177,7 +177,7 @@ Disallow: /api/
 Disallow: /checkout/
 Disallow: /tmp/
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://shop.soundcraft.com/sitemap.xml
 `,
       blockAi: `# Block AI Scraping Crawlers while allowing search engines
 User-agent: GPTBot
@@ -204,7 +204,7 @@ Disallow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://shop.soundcraft.com/sitemap.xml
 `,
       disallowAll: `# Disallow all indexing (Dev / Staging / Private environments)
 User-agent: *
@@ -237,7 +237,7 @@ Disallow: /
   const SitemapGenerator = {
     generate(urls, defaultFreq = 'weekly', defaultPriority = '0.8') {
       const today = new Date().toISOString().split('T')[0];
-      const items = (urls || ['https://example.com/']).map(u => {
+      const items = (urls || ['https://shop.soundcraft.com/']).map(u => {
         const clean = typeof u === 'string' ? { loc: u.trim() } : u;
         return `  <url>
     <loc>${escapeXml(clean.loc)}</loc>

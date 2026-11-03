@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Fouad's SEO Toolkit - Core Analyzer Engine
  * On-page SEO auditor, scoring algorithm, keyword extractor, and structure validator.
  * Created by Fouad (https://github.com/foverse)
@@ -149,7 +149,7 @@
     const viewportEl = doc.querySelector('meta[name="viewport" i]');
     const viewport = viewportEl ? (viewportEl.getAttribute('content') || '').trim() : '';
 
-    const charsetEl = doc.querySelector('meta[charset i]') || doc.querySelector('meta[http-equiv="Content-Type" i]');
+    const charsetEl = doc.querySelector('meta[charset]') || doc.querySelector('meta[http-equiv="Content-Type" i]');
     const charset = charsetEl ? (charsetEl.getAttribute('charset') || charsetEl.getAttribute('content') || 'utf-8').trim() : '';
 
     const faviconEl = doc.querySelector('link[rel~="icon" i]') || doc.querySelector('link[rel="shortcut icon" i]');
@@ -237,7 +237,7 @@
         severity: 'warning',
         title: 'Missing Canonical Tag',
         description: 'No `<link rel="canonical">` tag was found. This can lead to duplicate content penalties if accessible via multiple URLs.',
-        recommendation: 'Add `<link rel="canonical" href="https://example.com/page">` pointing to the preferred URL.'
+        recommendation: 'Add `<link rel="canonical" href="https://soundcraft.com/page">` pointing to the preferred URL.'
       });
     } else {
       passed.push({

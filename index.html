@@ -1,26 +1,24 @@
-﻿<!DOCTYPE html>
-<html lang="en" class="dark">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fouad's SEO Toolkit | Fast On-Page SEO Analyzer & Tools</title>
-  <meta name="description" content="A practical on-page SEO analyzer, Google SERP simulator, Schema.org generator, and technical SEO toolkit created by Fouad.">
+  <title>Fouad's SEO Toolkit | On-Page SEO Analyzer &amp; SERP Simulator</title>
+  <meta name="description" content="A zero-dependency on-page SEO analyzer, Google SERP pixel simulator, Schema.org builder, and technical markup toolkit created by Fouad in Paris, France.">
   <link rel="canonical" href="https://foverse.github.io/seo-toolkit/">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'></circle><line x1='21' y1='21' x2='16.65' y2='16.65'></line></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b6c80' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'></circle><line x1='21' y1='21' x2='16.65' y2='16.65'></line></svg>">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://foverse.github.io/seo-toolkit/">
-  <meta property="og:title" content="Fouad's SEO Toolkit | Fast On-Page SEO Analyzer & Tools">
-  <meta property="og:description" content="A practical on-page SEO analyzer, Google SERP simulator, Schema.org generator, and technical SEO toolkit created by Fouad.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200">
+  <meta property="og:title" content="Fouad's SEO Toolkit | On-Page SEO Analyzer &amp; SERP Simulator">
+  <meta property="og:description" content="A zero-dependency on-page SEO analyzer, Google SERP simulator, and technical SEO toolkit.">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Fouad's SEO Toolkit">
   <meta name="twitter:description" content="Audit on-page SEO, simulate SERP snippets, and build technical schema markup.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200">
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -29,7 +27,7 @@
     "@type": "WebApplication",
     "name": "Fouad's SEO Toolkit",
     "url": "https://foverse.github.io/seo-toolkit/",
-    "description": "Open-source on-page SEO analyzer and developer toolkit created by Fouad.",
+    "description": "Zero-dependency client-side SEO analyzer, SERP simulator, and technical markup toolkit.",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "All",
     "author": {
@@ -38,695 +36,630 @@
       "url": "https://github.com/foverse",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Paris",`r`n        "addressCountry": "France"
+        "addressLocality": "Paris",
+        "addressCountry": "France"
       }
     }
   }
   </script>
   
-  <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
-          colors: {
-            brand: {
-              50: '#eff6ff',
-              500: '#3b82f6',
-              600: '#2563eb',
-              700: '#1d4ed8',
-            }
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Local Lucide Icons (Zero-dependency, offline) -->
+  <script src="js/lucide-local.js"></script>
 
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Custom Styles -->
+  <!-- Design System Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="min-h-screen text-slate-100 flex flex-col selection:bg-blue-600 selection:text-white">
+<body>
 
-  <!-- Header -->
-  <header class="border-b border-slate-800/80 bg-slate-950/70 backdrop-blur sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-blue-500/25">
-          <i data-lucide="search" class="w-5 h-5 text-white"></i>
+  <!-- App Header Chrome -->
+  <header class="app-header">
+    <div class="app-header-inner">
+      <a href="https://foverse.github.io/seo-toolkit/" class="brand-badge">
+        <div class="brand-icon">
+          <i data-lucide="search" style="width: 16px; height: 16px;"></i>
         </div>
-        <div>
-          <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">Fouad's SEO Toolkit</span>
-          <span class="ml-2 text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">v2.0</span>
-        </div>
-      </div>
+        <span class="brand-title">Fouad's SEO Toolkit</span>
+        <span class="version-pill">v2.0</span>
+      </a>
 
-      <div class="flex items-center space-x-2 sm:space-x-3">
-        <button id="btn-open-about" class="inline-flex items-center space-x-1.5 text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white transition">
-          <i data-lucide="user" class="w-4 h-4 text-cyan-400"></i>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <button id="btn-open-stageshow" class="btn btn-secondary btn-sm" title="Stageshow Faux UI Demo">
+          <i data-lucide="eye" style="width: 14px; height: 14px;"></i>
+          <span>Stageshow Demo</span>
+        </button>
+        <button id="btn-open-about" class="btn btn-secondary btn-sm">
+          <i data-lucide="user" style="width: 14px; height: 14px;"></i>
           <span>About</span>
         </button>
-        <a href="https://github.com/foverse/seo-toolkit" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center space-x-2 text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white transition">
-          <i data-lucide="github" class="w-4 h-4"></i>
+        <a href="https://github.com/foverse/seo-toolkit" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+          <i data-lucide="github" style="width: 14px; height: 14px;"></i>
           <span>GitHub</span>
         </a>
-        <button id="btn-quick-tour" class="inline-flex items-center space-x-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-600/30 transition">
-          <i data-lucide="play" class="w-4 h-4"></i>
+        <button id="btn-quick-tour" class="btn btn-primary btn-sm">
+          <i data-lucide="play" style="width: 14px; height: 14px;"></i>
           <span>Run Demo</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero & Audit Input Section -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full" id="input-section">
-    <div class="text-center max-w-3xl mx-auto mb-8">
-      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
-        Fouad's SEO Toolkit
-      </h1>
-      <p class="text-slate-400 text-sm sm:text-base">
-        A fast on-page SEO analyzer, SERP simulator, and technical markup toolkit without subscriptions or bloat.
-      </p>
+  <!-- Work Sheet Canvas -->
+  <main class="work-sheet">
+
+    <!-- Title Row -->
+    <div class="sheet-title-row">
+      <h1>Fouad's SEO Toolkit</h1>
+      <p>Zero-dependency client-side SEO analyzer, Google SERP simulator, and technical markup toolkit.</p>
     </div>
 
-    <!-- Card: Input Controls -->
-    <div class="glass-panel p-6 max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
-      <!-- Input Mode Switcher -->
-      <div class="flex border-b border-slate-800 pb-4 mb-5 items-center justify-between flex-wrap gap-3">
-        <div class="flex space-x-2" role="tablist">
-          <button id="btn-mode-url" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-lg bg-blue-600 text-white flex items-center space-x-2 transition">
-            <i data-lucide="globe" class="w-4 h-4"></i>
+    <!-- Input Section -->
+    <section class="tool-panel" id="input-section">
+      <div class="tool-panel-header">
+        <!-- Input Mode Switcher -->
+        <div class="segmented-control" role="tablist">
+          <button id="btn-mode-url" class="segmented-btn active" type="button">
+            <i data-lucide="globe" style="width: 14px; height: 14px;"></i>
             <span>Analyze Website URL</span>
           </button>
-          <button id="btn-mode-html" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-lg bg-slate-800 text-slate-300 hover:text-white flex items-center space-x-2 transition">
-            <i data-lucide="code-2" class="w-4 h-4"></i>
+          <button id="btn-mode-html" class="segmented-btn" type="button">
+            <i data-lucide="code-2" style="width: 14px; height: 14px;"></i>
             <span>Paste / Upload HTML</span>
           </button>
         </div>
         
-        <!-- Quick Preset Select -->
-        <div class="flex items-center space-x-2 text-xs">
-          <span class="text-slate-400 font-medium">Quick Presets:</span>
-          <button class="preset-btn px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/60" data-preset="ecommerce">E-Commerce</button>
-          <button class="preset-btn px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/60" data-preset="blog">Tech Blog</button>
-          <button class="preset-btn px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/60" data-preset="saas">SaaS</button>
-          <button class="preset-btn px-2.5 py-1 rounded bg-rose-950/40 hover:bg-rose-900/40 text-rose-300 border border-rose-800/60" data-preset="broken">Broken SEO</button>
+        <!-- Presets -->
+        <div class="presets-group">
+          <span class="presets-label">Presets:</span>
+          <button class="preset-btn" data-preset="ecommerce">E-Commerce</button>
+          <button class="preset-btn" data-preset="blog">Tech Blog</button>
+          <button class="preset-btn" data-preset="saas">SaaS</button>
+          <button class="preset-btn preset-broken" data-preset="broken">Broken SEO</button>
         </div>
       </div>
 
       <!-- Mode 1: URL Input -->
-      <div id="panel-url-mode" class="space-y-4">
-        <form id="url-audit-form" class="flex flex-col sm:flex-row gap-3">
-          <div class="relative flex-1">
-            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-              <i data-lucide="link" class="w-4 h-4"></i>
+      <div id="panel-url-mode">
+        <form id="url-audit-form">
+          <div class="input-row">
+            <div class="input-field-wrap">
+              <i data-lucide="link" class="input-icon" style="width: 16px; height: 16px;"></i>
+              <input 
+                type="url" 
+                id="input-url" 
+                required
+                placeholder="https://shop.soundcraft.com/products/pro-wireless-headphones" 
+                value="https://shop.soundcraft.com/products/pro-wireless-headphones"
+                class="input-text"
+              >
             </div>
-            <input 
-              type="url" 
-              id="input-url" 
-              required
-              placeholder="https://example.com" 
-              value="https://shop.soundcraft.com/products/pro-wireless-headphones"
-              class="w-full pl-10 pr-4 py-3 bg-slate-900/90 border border-slate-700 rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-            >
+            <button type="submit" id="btn-run-url-audit" class="btn btn-primary">
+              <i data-lucide="play" style="width: 16px; height: 16px;"></i>
+              <span>Run Audit</span>
+            </button>
           </div>
-          <button 
-            type="submit" 
-            id="btn-run-url-audit"
-            class="px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-semibold rounded-xl text-sm shadow-lg shadow-blue-500/25 flex items-center justify-center space-x-2 transition"
-          >
-            <i data-lucide="play" class="w-4 h-4"></i>
-            <span>Run Audit</span>
-          </button>
         </form>
-        <p class="text-xs text-slate-500 flex items-center space-x-1.5">
-          <i data-lucide="info" class="w-3.5 h-3.5"></i>
-          <span>Supports local backend proxy, public CORS relays, or direct HTML fallback.</span>
+        <p style="font-size: 13px; color: var(--muted); margin: 8px 0 0 0; display: flex; align-items: center; gap: 6px;">
+          <i data-lucide="info" style="width: 14px; height: 14px;"></i>
+          <span>Direct browser analysis with local proxy, CORS relay, or offline HTML fallback.</span>
         </p>
       </div>
 
       <!-- Mode 2: HTML Paste / File Upload -->
-      <div id="panel-html-mode" class="space-y-4 hidden">
-        <div class="flex items-center justify-between text-xs text-slate-400">
-          <span>Paste raw HTML or upload an <code>.html</code> file:</span>
-          <label class="cursor-pointer text-blue-400 hover:text-blue-300 flex items-center space-x-1">
-            <i data-lucide="upload" class="w-3.5 h-3.5"></i>
+      <div id="panel-html-mode" class="hidden" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 13px; color: var(--muted);">
+          <span>Paste raw HTML markup below or upload a local file:</span>
+          <label style="cursor: pointer; color: var(--accent); font-weight: 500; display: inline-flex; align-items: center; gap: 4px;">
+            <i data-lucide="upload" style="width: 14px; height: 14px;"></i>
             <span>Upload File</span>
-            <input type="file" id="input-file" accept=".html,.htm" class="hidden">
+            <input type="file" id="input-file" accept=".html,.htm" style="display: none;">
           </label>
         </div>
         <textarea 
           id="input-raw-html" 
-          rows="5"
-          placeholder="<!DOCTYPE html><html><head><title>My Page</title>...</head><body>...</body></html>" 
-          class="w-full p-3 font-mono text-xs bg-slate-900/90 border border-slate-700 rounded-xl text-slate-200 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          rows="6"
+          placeholder="<!DOCTYPE html><html><head><title>Page Title</title></head><body>...</body></html>" 
+          class="input-textarea"
         ></textarea>
-        <div class="flex justify-end">
-          <button 
-            id="btn-run-html-audit"
-            class="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-semibold rounded-xl text-sm shadow-md transition flex items-center space-x-2"
-          >
-            <i data-lucide="play" class="w-4 h-4"></i>
+        <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+          <button id="btn-run-html-audit" class="btn btn-primary">
+            <i data-lucide="play" style="width: 16px; height: 16px;"></i>
             <span>Analyze HTML</span>
           </button>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Loading Indicator -->
-  <div id="audit-loading" class="hidden py-12 text-center">
-    <div class="inline-block animate-spin rounded-full h-10 w-10 border-4 border-slate-700 border-t-blue-500 mb-3"></div>
-    <p class="text-sm text-slate-400">Running SEO audit rules and calculating metrics...</p>
-  </div>
-
-  <!-- Results Dashboard -->
-  <main id="audit-results" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 w-full hidden">
-    
-    <!-- Top Score Overview Card -->
-    <div class="glass-panel p-6 sm:p-8 mb-8 shadow-2xl border border-slate-800">
-      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
-        
-        <!-- Circular Score Gauge -->
-        <div class="flex items-center space-x-6">
-          <div class="relative w-32 h-32 flex-shrink-0">
-            <svg class="w-32 h-32" viewBox="0 0 120 120">
-              <circle cx="60" cy="60" r="50" stroke="rgba(255,255,255,0.06)" stroke-width="10" fill="none"/>
-              <circle id="score-circle-bar" class="score-circle" cx="60" cy="60" r="50" stroke="#10b981" stroke-width="10" stroke-linecap="round" fill="none" stroke-dasharray="314.16" stroke-dashoffset="60"/>
-            </svg>
-            <div class="absolute inset-0 flex flex-col items-center justify-center">
-              <span id="score-number" class="text-3xl font-extrabold tracking-tight">--</span>
-              <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400">SEO Health</span>
-            </div>
-          </div>
-
-          <div>
-            <div class="flex items-center space-x-2 mb-1">
-              <span id="score-grade-badge" class="px-2.5 py-0.5 rounded text-sm font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">A</span>
-              <span id="score-grade-label" class="text-lg font-bold text-white">Excellent</span>
-            </div>
-            <p id="page-audited-url" class="text-xs text-slate-400 font-mono truncate max-w-md">https://example.com</p>
-            <div class="flex items-center space-x-4 mt-3 text-xs text-slate-300">
-              <span class="flex items-center space-x-1"><i data-lucide="alert-octagon" class="w-3.5 h-3.5 text-rose-500"></i><strong id="badge-crit-count">0</strong> Critical</span>
-              <span class="flex items-center space-x-1"><i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-amber-500"></i><strong id="badge-warn-count">0</strong> Warnings</span>
-              <span class="flex items-center space-x-1"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-500"></i><strong id="badge-pass-count">0</strong> Passed</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Category Progress Bars -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full lg:max-w-xl text-xs">
-          <div class="glass-panel-subtle p-3">
-            <div class="flex justify-between text-slate-400 mb-1"><span>Meta &amp; Index</span><strong id="cat-score-meta" class="text-slate-200">--%</strong></div>
-            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden"><div id="cat-bar-meta" class="h-full bg-blue-500 rounded-full transition-all duration-700" style="width: 0%"></div></div>
-          </div>
-          <div class="glass-panel-subtle p-3">
-            <div class="flex justify-between text-slate-400 mb-1"><span>Content Depth</span><strong id="cat-score-content" class="text-slate-200">--%</strong></div>
-            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden"><div id="cat-bar-content" class="h-full bg-emerald-500 rounded-full transition-all duration-700" style="width: 0%"></div></div>
-          </div>
-          <div class="glass-panel-subtle p-3">
-            <div class="flex justify-between text-slate-400 mb-1"><span>Images &amp; Alt</span><strong id="cat-score-images" class="text-slate-200">--%</strong></div>
-            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden"><div id="cat-bar-images" class="h-full bg-cyan-500 rounded-full transition-all duration-700" style="width: 0%"></div></div>
-          </div>
-          <div class="glass-panel-subtle p-3">
-            <div class="flex justify-between text-slate-400 mb-1"><span>Link Structure</span><strong id="cat-score-links" class="text-slate-200">--%</strong></div>
-            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden"><div id="cat-bar-links" class="h-full bg-purple-500 rounded-full transition-all duration-700" style="width: 0%"></div></div>
-          </div>
-          <div class="glass-panel-subtle p-3">
-            <div class="flex justify-between text-slate-400 mb-1"><span>Social OpenGraph</span><strong id="cat-score-social" class="text-slate-200">--%</strong></div>
-            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden"><div id="cat-bar-social" class="h-full bg-pink-500 rounded-full transition-all duration-700" style="width: 0%"></div></div>
-          </div>
-          <div class="glass-panel-subtle p-3">
-            <div class="flex justify-between text-slate-400 mb-1"><span>Technical &amp; Schema</span><strong id="cat-score-technical" class="text-slate-200">--%</strong></div>
-            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden"><div id="cat-bar-technical" class="h-full bg-amber-500 rounded-full transition-all duration-700" style="width: 0%"></div></div>
-          </div>
-        </div>
-
-        <!-- Export Buttons -->
-        <div class="flex flex-row lg:flex-col gap-2 w-full lg:w-auto">
-          <button id="btn-export-pdf" class="flex-1 lg:flex-none px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700 flex items-center justify-center space-x-1.5 transition">
-            <i data-lucide="printer" class="w-4 h-4 text-blue-400"></i>
-            <span>Export PDF</span>
-          </button>
-          <button id="btn-export-json" class="flex-1 lg:flex-none px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700 flex items-center justify-center space-x-1.5 transition">
-            <i data-lucide="download" class="w-4 h-4 text-cyan-400"></i>
-            <span>Save JSON</span>
-          </button>
-          <button id="btn-copy-markdown" class="flex-1 lg:flex-none px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700 flex items-center justify-center space-x-1.5 transition">
-            <i data-lucide="file-text" class="w-4 h-4 text-emerald-400"></i>
-            <span>Copy Markdown</span>
-          </button>
-        </div>
-
-      </div>
-
-      <!-- Quick Metrics Counter Strip -->
-      <div class="mt-6 pt-6 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 text-center">
-        <div class="p-2 rounded bg-slate-900/60">
-          <span class="text-xs text-slate-400 block">Words</span>
-          <strong id="stat-words" class="text-sm font-bold text-white">0</strong>
-        </div>
-        <div class="p-2 rounded bg-slate-900/60">
-          <span class="text-xs text-slate-400 block">Reading Time</span>
-          <strong id="stat-read-time" class="text-sm font-bold text-white">0m</strong>
-        </div>
-        <div class="p-2 rounded bg-slate-900/60">
-          <span class="text-xs text-slate-400 block">H1 Headings</span>
-          <strong id="stat-h1" class="text-sm font-bold text-white">0</strong>
-        </div>
-        <div class="p-2 rounded bg-slate-900/60">
-          <span class="text-xs text-slate-400 block">Total Headings</span>
-          <strong id="stat-headings" class="text-sm font-bold text-white">0</strong>
-        </div>
-        <div class="p-2 rounded bg-slate-900/60">
-          <span class="text-xs text-slate-400 block">Images</span>
-          <strong id="stat-images" class="text-sm font-bold text-white">0</strong>
-        </div>
-        <div class="p-2 rounded bg-slate-900/60">
-          <span class="text-xs text-slate-400 block">Missing Alt</span>
-          <strong id="stat-missing-alt" class="text-sm font-bold text-rose-400">0</strong>
-        </div>
-        <div class="p-2 rounded bg-slate-900/60">
-          <span class="text-xs text-slate-400 block">Total Links</span>
-          <strong id="stat-links" class="text-sm font-bold text-white">0</strong>
-        </div>
-        <div class="p-2 rounded bg-slate-900/60">
-          <span class="text-xs text-slate-400 block">Schemas</span>
-          <strong id="stat-schemas" class="text-sm font-bold text-white">0</strong>
-        </div>
-      </div>
+    <!-- Loading Indicator -->
+    <div id="audit-loading" class="hidden" style="display: none; padding: 32px 0; text-align: center;">
+      <div style="display: inline-block; width: 28px; height: 28px; border: 3px solid var(--rule); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite;"></div>
+      <p style="font-size: 13px; color: var(--muted); margin-top: 8px;">Running SEO audit checks and calculating metrics...</p>
     </div>
 
-    <!-- Navigation Tabs -->
-    <div class="border-b border-slate-800 mb-6 flex space-x-1 sm:space-x-3 overflow-x-auto text-xs sm:text-sm font-medium">
-      <button class="tab-btn active px-4 py-3 flex items-center space-x-2 transition" data-target="tab-issues">
-        <i data-lucide="list-checks" class="w-4 h-4"></i>
-        <span>Audit Issues &amp; Fixes</span>
-      </button>
-      <button class="tab-btn px-4 py-3 text-slate-400 hover:text-white flex items-center space-x-2 transition" data-target="tab-serp">
-        <i data-lucide="layout" class="w-4 h-4"></i>
-        <span>SERP Simulator</span>
-      </button>
-      <button class="tab-btn px-4 py-3 text-slate-400 hover:text-white flex items-center space-x-2 transition" data-target="tab-headings">
-        <i data-lucide="git-branch" class="w-4 h-4"></i>
-        <span>Heading Tree</span>
-      </button>
-      <button class="tab-btn px-4 py-3 text-slate-400 hover:text-white flex items-center space-x-2 transition" data-target="tab-keywords">
-        <i data-lucide="pie-chart" class="w-4 h-4"></i>
-        <span>Keyword Density</span>
-      </button>
-      <button class="tab-btn px-4 py-3 text-slate-400 hover:text-white flex items-center space-x-2 transition" data-target="tab-social">
-        <i data-lucide="share-2" class="w-4 h-4"></i>
-        <span>Social Previews</span>
-      </button>
-      <button class="tab-btn px-4 py-3 text-slate-400 hover:text-white flex items-center space-x-2 transition" data-target="tab-tools">
-        <i data-lucide="wrench" class="w-4 h-4"></i>
-        <span>SEO Generators</span>
-      </button>
-      <button class="tab-btn px-4 py-3 text-slate-400 hover:text-white flex items-center space-x-2 transition" data-target="tab-about">
-        <i data-lucide="user" class="w-4 h-4 text-cyan-400"></i>
-        <span>About</span>
-      </button>
-    </div>
-
-    <!-- TAB 1: Issues List -->
-    <div id="tab-issues" class="tab-pane space-y-4">
-      <div class="flex items-center justify-between pb-2">
-        <div class="flex items-center space-x-2 text-xs">
-          <span class="text-slate-400">Filter:</span>
-          <button class="filter-issue-btn px-2.5 py-1 rounded bg-blue-600 text-white font-medium" data-filter="all">All</button>
-          <button class="filter-issue-btn px-2.5 py-1 rounded bg-slate-800 text-slate-300 hover:text-white font-medium" data-filter="critical">ðŸš¨ Critical</button>
-          <button class="filter-issue-btn px-2.5 py-1 rounded bg-slate-800 text-slate-300 hover:text-white font-medium" data-filter="warning">âš ï¸ Warnings</button>
-          <button class="filter-issue-btn px-2.5 py-1 rounded bg-slate-800 text-slate-300 hover:text-white font-medium" data-filter="passed">âœ… Passed</button>
-        </div>
-      </div>
-      <div id="issues-list-container" class="space-y-3"></div>
-    </div>
-
-    <!-- TAB 2: SERP Simulator -->
-    <div id="tab-serp" class="tab-pane hidden space-y-6">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        
-        <!-- Interactive Controls -->
-        <div class="glass-panel p-6 space-y-4">
-          <h3 class="text-base font-bold text-white flex items-center space-x-2">
-            <i data-lucide="sliders" class="w-4 h-4 text-blue-400"></i>
-            <span>SERP Snippet Editor</span>
-          </h3>
-
-          <div>
-            <div class="flex justify-between text-xs text-slate-400 mb-1">
-              <span>SEO Title</span>
-              <span id="serp-title-pixel-count">0px / ~600px (0 chars)</span>
-            </div>
-            <input type="text" id="editor-serp-title" class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:ring-1 focus:ring-blue-500">
-            <div class="pixel-meter-bar mt-1.5"><div id="meter-serp-title" class="pixel-meter-fill bg-blue-500" style="width: 0%"></div></div>
-          </div>
-
-          <div>
-            <div class="flex justify-between text-xs text-slate-400 mb-1">
-              <span>Target URL</span>
-              <span id="serp-url-char-count">0 chars</span>
-            </div>
-            <input type="text" id="editor-serp-url" class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:ring-1 focus:ring-blue-500">
-          </div>
-
-          <div>
-            <div class="flex justify-between text-xs text-slate-400 mb-1">
-              <span>Meta Description</span>
-              <span id="serp-desc-pixel-count">0px / ~960px (0 chars)</span>
-            </div>
-            <textarea id="editor-serp-desc" rows="3" class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:ring-1 focus:ring-blue-500"></textarea>
-            <div class="pixel-meter-bar mt-1.5"><div id="meter-serp-desc" class="pixel-meter-fill bg-emerald-500" style="width: 0%"></div></div>
-          </div>
-        </div>
-
-        <!-- Live Google Mockup -->
-        <div class="space-y-4">
-          <h3 class="text-base font-bold text-white flex items-center space-x-2">
-            <i data-lucide="eye" class="w-4 h-4 text-emerald-400"></i>
-            <span>Google Search Result Previews</span>
-          </h3>
-
-          <!-- Desktop Preview -->
-          <div>
-            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Desktop Result</span>
-            <div class="serp-card p-5 max-w-xl">
-              <div class="flex items-center space-x-2 mb-1.5">
-                <div class="w-5 h-5 rounded-full bg-slate-200 flex items-center justify-center text-[10px] text-slate-600 font-bold overflow-hidden" id="serp-favicon-desktop">
-                  G
-                </div>
-                <div>
-                  <div class="serp-site-name" id="serp-preview-sitename">Example Site</div>
-                  <div class="serp-url" id="serp-preview-url-desktop">https://example.com â€º products</div>
-                </div>
+    <!-- Results Dashboard -->
+    <section id="audit-results" class="hidden" style="display: none;">
+      
+      <!-- Overview Card -->
+      <div class="overview-card">
+        <div class="overview-top">
+          
+          <!-- Health Score Radial Gauge -->
+          <div class="score-display-group">
+            <div class="score-radial">
+              <svg viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="50" class="score-circle-bg"/>
+                <circle id="score-circle-bar" class="score-circle" cx="60" cy="60" r="50" stroke-dasharray="314.16" stroke-dashoffset="60"/>
+              </svg>
+              <div class="score-radial-center">
+                <span id="score-number" class="score-number">--</span>
+                <span class="score-sublabel">Health score</span>
               </div>
-              <div class="serp-title mb-1" id="serp-preview-title-desktop">Title Tag Preview</div>
-              <div class="serp-snippet" id="serp-preview-snippet-desktop">Meta description will appear here as seen on Google desktop search results.</div>
             </div>
-          </div>
 
-          <!-- Mobile Preview -->
-          <div class="pt-2">
-            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Mobile Result</span>
-            <div class="serp-card serp-card-mobile p-4">
-              <div class="flex items-center space-x-2 mb-1">
-                <div class="w-5 h-5 rounded-full bg-slate-200 flex items-center justify-center text-[10px] text-slate-600 font-bold" id="serp-favicon-mobile">G</div>
-                <span class="serp-site-name text-xs" id="serp-preview-sitename-mobile">Example</span>
+            <div class="score-meta-details">
+              <div class="score-grade-row">
+                <span id="score-grade-badge" class="score-grade-badge">A</span>
+                <span id="score-grade-label" class="score-grade-title">Excellent</span>
               </div>
-              <div class="serp-url text-[11px] mb-1" id="serp-preview-url-mobile">https://example.com</div>
-              <div class="serp-title text-base leading-tight mb-1" id="serp-preview-title-mobile">Mobile Title Preview</div>
-              <div class="serp-snippet text-xs leading-normal" id="serp-preview-snippet-mobile">Mobile snippet text...</div>
+              <div id="page-audited-url" class="audited-url-display">https://shop.soundcraft.com/products/pro-wireless-headphones</div>
+              <div class="issue-counts-summary">
+                <span class="count-chip critical"><strong id="badge-crit-count">0</strong> Critical</span>
+                <span class="count-chip warning"><strong id="badge-warn-count">0</strong> Warnings</span>
+                <span class="count-chip passed"><strong id="badge-pass-count">0</strong> Passed</span>
+              </div>
             </div>
           </div>
 
-        </div>
-
-      </div>
-    </div>
-
-    <!-- TAB 3: Headings Tree -->
-    <div id="tab-headings" class="tab-pane hidden space-y-4">
-      <div class="glass-panel p-6">
-        <div class="flex items-center justify-between mb-4">
-          <h3 class="text-base font-bold text-white flex items-center space-x-2">
-            <i data-lucide="git-branch" class="w-4 h-4 text-purple-400"></i>
-            <span>Heading Hierarchy Tree</span>
-          </h3>
-          <span class="text-xs text-slate-400">Headings outline used by crawlers to understand page structure</span>
-        </div>
-        <div id="heading-tree-container" class="space-y-2"></div>
-      </div>
-    </div>
-
-    <!-- TAB 4: Keyword Density -->
-    <div id="tab-keywords" class="tab-pane hidden space-y-6">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- 1-Grams -->
-        <div class="glass-panel p-5">
-          <h4 class="text-sm font-bold text-white mb-3 flex items-center justify-between">
-            <span>Single Words (1-Grams)</span>
-            <span class="text-xs text-slate-400">Density</span>
-          </h4>
-          <div id="keywords-unigrams-list" class="space-y-2 text-xs"></div>
-        </div>
-
-        <!-- 2-Grams -->
-        <div class="glass-panel p-5">
-          <h4 class="text-sm font-bold text-white mb-3 flex items-center justify-between">
-            <span>2-Word Phrases</span>
-            <span class="text-xs text-slate-400">Density</span>
-          </h4>
-          <div id="keywords-bigrams-list" class="space-y-2 text-xs"></div>
-        </div>
-
-        <!-- 3-Grams -->
-        <div class="glass-panel p-5">
-          <h4 class="text-sm font-bold text-white mb-3 flex items-center justify-between">
-            <span>3-Word Phrases</span>
-            <span class="text-xs text-slate-400">Density</span>
-          </h4>
-          <div id="keywords-trigrams-list" class="space-y-2 text-xs"></div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- TAB 5: Social Previews -->
-    <div id="tab-social" class="tab-pane hidden space-y-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <!-- Facebook / OpenGraph Mockup -->
-        <div>
-          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Facebook &amp; LinkedIn Open Graph Preview</span>
-          <div class="fb-card max-w-md">
-            <div class="aspect-video w-full bg-slate-800 flex items-center justify-center overflow-hidden">
-              <img id="og-preview-image" src="" alt="OG Preview" class="w-full h-full object-cover">
+          <!-- Category Progress Bars -->
+          <div class="category-bars-grid">
+            <div class="category-bar-item">
+              <div class="category-bar-header"><span>Meta &amp; Index</span><strong id="cat-score-meta">--%</strong></div>
+              <div class="progress-track"><div id="cat-bar-meta" class="progress-fill" style="width: 0%"></div></div>
             </div>
-            <div class="p-3 bg-[#242526]">
-              <span id="og-preview-host" class="text-[11px] text-slate-400 uppercase tracking-wide block truncate">EXAMPLE.COM</span>
-              <h5 id="og-preview-title" class="text-sm font-semibold text-white leading-snug mt-0.5 line-clamp-2">Article Headline</h5>
-              <p id="og-preview-desc" class="text-xs text-slate-400 mt-1 line-clamp-2">Article description...</p>
+            <div class="category-bar-item">
+              <div class="category-bar-header"><span>Content Depth</span><strong id="cat-score-content">--%</strong></div>
+              <div class="progress-track"><div id="cat-bar-content" class="progress-fill" style="width: 0%"></div></div>
+            </div>
+            <div class="category-bar-item">
+              <div class="category-bar-header"><span>Images &amp; Alt</span><strong id="cat-score-images">--%</strong></div>
+              <div class="progress-track"><div id="cat-bar-images" class="progress-fill" style="width: 0%"></div></div>
+            </div>
+            <div class="category-bar-item">
+              <div class="category-bar-header"><span>Link Structure</span><strong id="cat-score-links">--%</strong></div>
+              <div class="progress-track"><div id="cat-bar-links" class="progress-fill" style="width: 0%"></div></div>
+            </div>
+            <div class="category-bar-item">
+              <div class="category-bar-header"><span>Social OpenGraph</span><strong id="cat-score-social">--%</strong></div>
+              <div class="progress-track"><div id="cat-bar-social" class="progress-fill" style="width: 0%"></div></div>
+            </div>
+            <div class="category-bar-item">
+              <div class="category-bar-header"><span>Technical &amp; Schema</span><strong id="cat-score-technical">--%</strong></div>
+              <div class="progress-track"><div id="cat-bar-technical" class="progress-fill" style="width: 0%"></div></div>
             </div>
           </div>
+
+          <!-- Action Exports Toolbar -->
+          <div class="exports-toolbar">
+            <button id="btn-export-pdf" class="btn btn-secondary btn-sm" type="button">
+              <i data-lucide="printer" style="width: 14px; height: 14px;"></i>
+              <span>Export PDF</span>
+            </button>
+            <button id="btn-export-json" class="btn btn-secondary btn-sm" type="button">
+              <i data-lucide="download" style="width: 14px; height: 14px;"></i>
+              <span>Save JSON</span>
+            </button>
+            <button id="btn-copy-markdown" class="btn btn-secondary btn-sm" type="button">
+              <i data-lucide="file-text" style="width: 14px; height: 14px;"></i>
+              <span>Copy Markdown</span>
+            </button>
+          </div>
+
         </div>
 
-        <!-- Twitter Card Mockup -->
-        <div>
-          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Twitter / X Large Image Card</span>
-          <div class="twitter-card-preview max-w-md">
-            <div class="aspect-video w-full bg-slate-800 flex items-center justify-center overflow-hidden">
-              <img id="tw-preview-image" src="" alt="Twitter Preview" class="w-full h-full object-cover">
-            </div>
-            <div class="p-3 bg-[#16181c]">
-              <span id="tw-preview-host" class="text-[11px] text-slate-400 block truncate">example.com</span>
-              <h5 id="tw-preview-title" class="text-sm font-semibold text-white leading-snug mt-0.5 line-clamp-1">Tweet Title</h5>
-              <p id="tw-preview-desc" class="text-xs text-slate-400 mt-1 line-clamp-2">Tweet description preview...</p>
-            </div>
+        <!-- Divided Metrics Strip -->
+        <div class="kpis-strip">
+          <div class="kpi-cell">
+            <span class="kpi-cell-label">Words</span>
+            <strong id="stat-words" class="kpi-cell-value">0</strong>
+          </div>
+          <div class="kpi-cell">
+            <span class="kpi-cell-label">Reading Time</span>
+            <strong id="stat-read-time" class="kpi-cell-value">0m</strong>
+          </div>
+          <div class="kpi-cell">
+            <span class="kpi-cell-label">H1 Headings</span>
+            <strong id="stat-h1" class="kpi-cell-value">0</strong>
+          </div>
+          <div class="kpi-cell">
+            <span class="kpi-cell-label">Total Headings</span>
+            <strong id="stat-headings" class="kpi-cell-value">0</strong>
+          </div>
+          <div class="kpi-cell">
+            <span class="kpi-cell-label">Images</span>
+            <strong id="stat-images" class="kpi-cell-value">0</strong>
+          </div>
+          <div class="kpi-cell">
+            <span class="kpi-cell-label">Missing Alt</span>
+            <strong id="stat-missing-alt" class="kpi-cell-value" style="color: var(--negative);">0</strong>
+          </div>
+          <div class="kpi-cell">
+            <span class="kpi-cell-label">Total Links</span>
+            <strong id="stat-links" class="kpi-cell-value">0</strong>
+          </div>
+          <div class="kpi-cell">
+            <span class="kpi-cell-label">Schemas</span>
+            <strong id="stat-schemas" class="kpi-cell-value">0</strong>
           </div>
         </div>
-
       </div>
-    </div>
 
-    <!-- TAB 6: SEO Generators -->
-    <div id="tab-tools" class="tab-pane hidden space-y-6">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
-        <!-- Schema.org Generator -->
-        <div class="glass-panel p-6 space-y-3">
-          <div class="flex items-center space-x-2 text-white font-bold text-sm">
-            <i data-lucide="code" class="w-4 h-4 text-amber-400"></i>
-            <span>Schema.org JSON-LD Generator</span>
-          </div>
-          <select id="tool-schema-type" class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white">
-            <option value="faq">FAQPage Schema</option>
-            <option value="article">Article / BlogPosting Schema</option>
-            <option value="product">Product Schema</option>
-            <option value="localBusiness">LocalBusiness Schema</option>
-            <option value="breadcrumbs">Breadcrumbs Schema</option>
-          </select>
-          <div class="relative">
-            <pre id="tool-schema-output" class="p-3 bg-slate-950 rounded-lg text-[11px] font-mono text-amber-300 overflow-x-auto max-h-56"></pre>
-            <button id="btn-copy-schema" class="absolute top-2 right-2 px-2 py-1 bg-slate-800 hover:bg-slate-700 text-[10px] text-slate-200 rounded border border-slate-700">Copy</button>
+      <!-- Navigation Tabs -->
+      <nav class="tabs-bar" role="tablist">
+        <button class="tab-btn active" data-target="tab-issues" type="button">
+          <i data-lucide="list-checks" style="width: 15px; height: 15px;"></i>
+          <span>Issues &amp; Fixes</span>
+        </button>
+        <button class="tab-btn" data-target="tab-serp" type="button">
+          <i data-lucide="layout" style="width: 15px; height: 15px;"></i>
+          <span>SERP Simulator</span>
+        </button>
+        <button class="tab-btn" data-target="tab-headings" type="button">
+          <i data-lucide="git-branch" style="width: 15px; height: 15px;"></i>
+          <span>Heading Tree</span>
+        </button>
+        <button class="tab-btn" data-target="tab-keywords" type="button">
+          <i data-lucide="pie-chart" style="width: 15px; height: 15px;"></i>
+          <span>Keyword Density</span>
+        </button>
+        <button class="tab-btn" data-target="tab-social" type="button">
+          <i data-lucide="share-2" style="width: 15px; height: 15px;"></i>
+          <span>Social Previews</span>
+        </button>
+        <button class="tab-btn" data-target="tab-tools" type="button">
+          <i data-lucide="wrench" style="width: 15px; height: 15px;"></i>
+          <span>SEO Generators</span>
+        </button>
+        <button class="tab-btn" data-target="tab-about" type="button">
+          <i data-lucide="user" style="width: 15px; height: 15px;"></i>
+          <span>About</span>
+        </button>
+      </nav>
+
+      <!-- TAB 1: Issues List -->
+      <div id="tab-issues" class="tab-pane">
+        <div class="filters-strip">
+          <div class="filter-btn-group">
+            <span style="font-size: 13px; color: var(--muted); margin-right: 4px;">Filter:</span>
+            <button class="filter-issue-btn active" data-filter="all" type="button">All</button>
+            <button class="filter-issue-btn" data-filter="critical" type="button">Critical</button>
+            <button class="filter-issue-btn" data-filter="warning" type="button">Warnings</button>
+            <button class="filter-issue-btn" data-filter="passed" type="button">Passed</button>
           </div>
         </div>
-
-        <!-- Robots.txt Builder -->
-        <div class="glass-panel p-6 space-y-3">
-          <div class="flex items-center space-x-2 text-white font-bold text-sm">
-            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
-            <span>Robots.txt Builder</span>
-          </div>
-          <div class="flex space-x-1.5 text-[11px]">
-            <button class="tool-robots-preset px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300" data-preset="standard">Standard</button>
-            <button class="tool-robots-preset px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300" data-preset="blockAi">Block AI Bots</button>
-            <button class="tool-robots-preset px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300" data-preset="disallowAll">Disallow All</button>
-          </div>
-          <div class="relative">
-            <pre id="tool-robots-output" class="p-3 bg-slate-950 rounded-lg text-[11px] font-mono text-emerald-300 overflow-x-auto max-h-56"></pre>
-            <button id="btn-copy-robots" class="absolute top-2 right-2 px-2 py-1 bg-slate-800 hover:bg-slate-700 text-[10px] text-slate-200 rounded border border-slate-700">Copy</button>
-          </div>
-        </div>
-
-        <!-- XML Sitemap Generator -->
-        <div class="glass-panel p-6 space-y-3">
-          <div class="flex items-center space-x-2 text-white font-bold text-sm">
-            <i data-lucide="map" class="w-4 h-4 text-cyan-400"></i>
-            <span>XML Sitemap Generator</span>
-          </div>
-          <button id="btn-generate-sitemap" class="w-full py-1.5 bg-cyan-600/80 hover:bg-cyan-600 text-white rounded text-xs font-semibold">Generate from Audited Links</button>
-          <div class="relative">
-            <pre id="tool-sitemap-output" class="p-3 bg-slate-950 rounded-lg text-[11px] font-mono text-cyan-300 overflow-x-auto max-h-56"></pre>
-            <button id="btn-copy-sitemap" class="absolute top-2 right-2 px-2 py-1 bg-slate-800 hover:bg-slate-700 text-[10px] text-slate-200 rounded border border-slate-700">Copy</button>
-          </div>
-        </div>
-
+        <div id="issues-list-container" class="issues-stack"></div>
       </div>
-    </div>
 
-    <!-- TAB 7: About Fouad & The Project -->
-    <div id="tab-about" class="tab-pane hidden space-y-6">
-      <div class="glass-panel p-6 sm:p-8">
-        <div class="flex flex-col md:flex-row items-start gap-6">
-          <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-blue-600 via-cyan-500 to-indigo-600 flex items-center justify-center text-3xl font-bold text-white shadow-xl shadow-blue-500/20 flex-shrink-0">
-            FS
-          </div>
-          <div class="space-y-4 max-w-3xl">
+      <!-- TAB 2: SERP Simulator -->
+      <div id="tab-serp" class="tab-pane hidden" style="display: none;">
+        <div class="serp-layout">
+          
+          <!-- Left: Editor Controls -->
+          <div class="serp-editor-card">
+            <h3 style="font-size: 15px; font-weight: 600; margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
+              <i data-lucide="sliders" style="width: 16px; height: 16px; color: var(--accent);"></i>
+              <span>Snippet Controls</span>
+            </h3>
+
+            <div style="margin-bottom: 14px;">
+              <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-bottom: 4px;">
+                <span>Page Title</span>
+                <span id="serp-title-pixel-count" style="font-variant-numeric: tabular-nums;">0px / ~600px (0 chars)</span>
+              </div>
+              <input type="text" id="editor-serp-title" class="input-text" style="height: 34px; padding-left: 12px;">
+              <div class="pixel-meter-bar"><div id="meter-serp-title" class="pixel-meter-fill" style="width: 0%"></div></div>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+              <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-bottom: 4px;">
+                <span>Target URL</span>
+                <span id="serp-url-char-count" style="font-variant-numeric: tabular-nums;">0 chars</span>
+              </div>
+              <input type="text" id="editor-serp-url" class="input-text" style="height: 34px; padding-left: 12px;">
+            </div>
+
             <div>
-              <div class="flex items-center space-x-3">
-                <h3 class="text-2xl font-bold text-white">Fouad</h3>
-                <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">Creator</span>
+              <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-bottom: 4px;">
+                <span>Meta Description</span>
+                <span id="serp-desc-pixel-count" style="font-variant-numeric: tabular-nums;">0px / ~960px (0 chars)</span>
               </div>
-              <p class="text-slate-400 text-sm mt-1 flex items-center space-x-2">
-                <i data-lucide="map-pin" class="w-4 h-4 text-rose-400"></i>
-                <span>Paris, France</span>
-              </p>
+              <textarea id="editor-serp-desc" rows="3" class="input-textarea"></textarea>
+              <div class="pixel-meter-bar"><div id="meter-serp-desc" class="pixel-meter-fill" style="width: 0%"></div></div>
             </div>
+          </div>
 
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Photography, videography, and tech enthusiast based in Paris, France. Creator of growthmaker.fr, focusing on growth marketing, conversion rate optimization, and web tools.
-            </p>
+          <!-- Right: Google Search Result Mockup -->
+          <div class="serp-preview-card">
+            <h3 style="font-size: 15px; font-weight: 600; margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
+              <i data-lucide="eye" style="width: 16px; height: 16px; color: var(--accent);"></i>
+              <span>Google Search Result Previews</span>
+            </h3>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div class="glass-panel-subtle p-4">
-                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center space-x-2">
-                  <i data-lucide="wrench" class="w-3.5 h-3.5 text-cyan-400"></i>
-                  <span>Skills &amp; Toolkit</span>
-                </h4>
-                <ul class="text-xs text-slate-300 space-y-1">
-                  <li>- Web Development (JavaScript, Python, HTML5, CSS3)</li>
-                  <li>- Search Engine Optimization (SEO) &amp; Web Vitals</li>
-                  <li>- Photoshop, Illustrator, Premiere Pro</li>
-                </ul>
-              </div>
-
-              <div class="glass-panel-subtle p-4">
-                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center space-x-2">
-                  <i data-lucide="heart" class="w-3.5 h-3.5 text-pink-400"></i>
-                  <span>Interests &amp; Hobbies</span>
-                </h4>
-                <ul class="text-xs text-slate-300 space-y-1">
-                  <li>- Coding &amp; Open Source Projects</li>
-                  <li>- Photography &amp; Video Production</li>
-                  <li>- Movies, Series, and Gaming</li>
-                </ul>
+            <!-- Desktop View -->
+            <div style="margin-bottom: 20px;">
+              <span style="font-size: 13px; font-weight: 600; color: var(--muted); display: block; margin-bottom: 6px;">Desktop View</span>
+              <div class="serp-card">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                  <div id="serp-favicon-desktop" style="width: 18px; height: 18px; border-radius: 50%; background: #e8eaec; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #4d5156;">G</div>
+                  <div>
+                    <div class="serp-site-name" id="serp-preview-sitename">Soundcraft</div>
+                    <div class="serp-url" id="serp-preview-url-desktop">https://shop.soundcraft.com/products/pro-wireless-headphones</div>
+                  </div>
+                </div>
+                <div class="serp-title" id="serp-preview-title-desktop">Title Tag Preview</div>
+                <div class="serp-snippet" id="serp-preview-snippet-desktop">Meta description will appear here as seen on Google desktop search results.</div>
               </div>
             </div>
 
-            <div class="pt-4 border-t border-slate-800/80">
-              <h4 class="text-sm font-semibold text-white mb-2">About This Project</h4>
-              <p class="text-xs text-slate-400 leading-relaxed">
-                This project began in 2019 as a personal web repository. In 2026, I completely rebuilt and expanded it into Fouad's SEO Toolkit: a free, zero-dependency suite that anyone can run in their browser, on their terminal, or host on GitHub Pages without expensive recurring subscriptions.
-              </p>
-            </div>
-
-            <div class="flex items-center space-x-3 pt-2">
-              <a href="https://github.com/foverse" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 flex items-center space-x-2 transition">
-                <i data-lucide="github" class="w-4 h-4"></i>
-                <span>GitHub Profile</span>
-              </a>
-              <a href="https://growthmaker.fr" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-blue-600/20 hover:bg-blue-600/30 text-xs font-medium text-blue-300 border border-blue-500/30 flex items-center space-x-2 transition"><i data-lucide="globe" class="w-4 h-4 text-blue-400"></i><span>growthmaker.fr</span></a>
+            <!-- Mobile View -->
+            <div>
+              <span style="font-size: 13px; font-weight: 600; color: var(--muted); display: block; margin-bottom: 6px;">Mobile View</span>
+              <div class="serp-card serp-card-mobile">
+                <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                  <div id="serp-favicon-mobile" style="width: 16px; height: 16px; border-radius: 50%; background: #e8eaec; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #4d5156;">G</div>
+                  <span class="serp-site-name" id="serp-preview-sitename-mobile" style="font-size: 13px;">Soundcraft</span>
+                </div>
+                <div class="serp-url" id="serp-preview-url-mobile" style="font-size: 13px; margin-bottom: 4px;">https://shop.soundcraft.com/products/pro-wireless-headphones</div>
+                <div class="serp-title" id="serp-preview-title-mobile" style="font-size: 16px; line-height: 22px; margin-bottom: 4px;">Mobile Title Preview</div>
+                <div class="serp-snippet" id="serp-preview-snippet-mobile" style="font-size: 13px; line-height: 18px;">Mobile snippet text...</div>
+              </div>
             </div>
 
           </div>
+
         </div>
       </div>
-    </div>
+
+      <!-- TAB 3: Headings Tree -->
+      <div id="tab-headings" class="tab-pane hidden" style="display: none;">
+        <div class="tool-panel">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+            <h3 style="font-size: 15px; font-weight: 600; margin: 0; display: flex; align-items: center; gap: 8px;">
+              <i data-lucide="git-branch" style="width: 16px; height: 16px; color: var(--accent);"></i>
+              <span>Heading Hierarchy Outline</span>
+            </h3>
+            <span style="font-size: 13px; color: var(--muted);">Heading levels detected on page</span>
+          </div>
+          <div id="heading-tree-container" class="heading-tree-container"></div>
+        </div>
+      </div>
+
+      <!-- TAB 4: Keyword Density -->
+      <div id="tab-keywords" class="tab-pane hidden" style="display: none;">
+        <div class="keywords-grid">
+          
+          <!-- 1-Grams -->
+          <div class="keyword-card">
+            <h4><span>Single Words (1-Grams)</span><span style="font-weight: 400; color: var(--muted);">Density</span></h4>
+            <div id="keywords-unigrams-list" style="display: flex; flex-direction: column; gap: 6px;"></div>
+          </div>
+
+          <!-- 2-Grams -->
+          <div class="keyword-card">
+            <h4><span>2-Word Phrases</span><span style="font-weight: 400; color: var(--muted);">Density</span></h4>
+            <div id="keywords-bigrams-list" style="display: flex; flex-direction: column; gap: 6px;"></div>
+          </div>
+
+          <!-- 3-Grams -->
+          <div class="keyword-card">
+            <h4><span>3-Word Phrases</span><span style="font-weight: 400; color: var(--muted);">Density</span></h4>
+            <div id="keywords-trigrams-list" style="display: flex; flex-direction: column; gap: 6px;"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 5: Social Previews -->
+      <div id="tab-social" class="tab-pane hidden" style="display: none;">
+        <div class="social-grid">
+          
+          <!-- OpenGraph -->
+          <div>
+            <span style="font-size: 13px; font-weight: 600; color: var(--muted); display: block; margin-bottom: 6px;">OpenGraph Card (Facebook &amp; LinkedIn)</span>
+            <div class="fb-card">
+              <img id="og-preview-image" src="" alt="OG Preview">
+              <div class="fb-card-body">
+                <span id="og-preview-host" style="font-size: 13px; color: var(--muted); text-transform: uppercase; font-weight: 600; display: block;">SOUNDCRAFT.COM</span>
+                <h5 id="og-preview-title" style="font-size: 14px; font-weight: 600; margin: 4px 0 2px 0;">Article Headline</h5>
+                <p id="og-preview-desc" style="font-size: 13px; color: var(--muted); margin: 0;">Article description...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Twitter / X -->
+          <div>
+            <span style="font-size: 13px; font-weight: 600; color: var(--muted); display: block; margin-bottom: 6px;">Twitter / X Large Image Card</span>
+            <div class="twitter-card-preview">
+              <img id="tw-preview-image" src="" alt="Twitter Preview">
+              <div class="twitter-card-body">
+                <span id="tw-preview-host" style="font-size: 13px; color: var(--muted); display: block;">soundcraft.com</span>
+                <h5 id="tw-preview-title" style="font-size: 14px; font-weight: 600; margin: 4px 0 2px 0;">Tweet Title</h5>
+                <p id="tw-preview-desc" style="font-size: 13px; color: var(--muted); margin: 0;">Tweet description preview...</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 6: SEO Generators -->
+      <div id="tab-tools" class="tab-pane hidden" style="display: none;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px;">
+          
+          <!-- Schema.org Generator -->
+          <div class="tool-panel" style="margin-bottom: 0;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+              <div style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600;">
+                <i data-lucide="code" style="width: 16px; height: 16px; color: var(--accent);"></i>
+                <span>Schema.org JSON-LD</span>
+              </div>
+              <button id="btn-copy-schema" class="btn btn-secondary btn-sm" type="button">Copy</button>
+            </div>
+            <select id="tool-schema-type" class="input-text" style="height: 32px; font-size: 13px; margin-bottom: 8px;">
+              <option value="faq">FAQPage Schema</option>
+              <option value="article">Article / BlogPosting Schema</option>
+              <option value="product">Product Schema</option>
+              <option value="localBusiness">LocalBusiness Schema</option>
+              <option value="breadcrumbs">Breadcrumbs Schema</option>
+            </select>
+            <pre id="tool-schema-output" class="code-output-block"></pre>
+          </div>
+
+          <!-- Robots.txt Builder -->
+          <div class="tool-panel" style="margin-bottom: 0;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+              <div style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600;">
+                <i data-lucide="shield-check" style="width: 16px; height: 16px; color: var(--positive);"></i>
+                <span>Robots.txt Builder</span>
+              </div>
+              <button id="btn-copy-robots" class="btn btn-secondary btn-sm" type="button">Copy</button>
+            </div>
+            <div style="display: flex; gap: 6px; margin-bottom: 8px;">
+              <button class="tool-robots-preset btn btn-secondary btn-sm" data-preset="standard" type="button">Standard</button>
+              <button class="tool-robots-preset btn btn-secondary btn-sm" data-preset="blockAi" type="button">Block AI Bots</button>
+              <button class="tool-robots-preset btn btn-secondary btn-sm" data-preset="disallowAll" type="button">Disallow All</button>
+            </div>
+            <pre id="tool-robots-output" class="code-output-block"></pre>
+          </div>
+
+          <!-- XML Sitemap Generator -->
+          <div class="tool-panel" style="margin-bottom: 0;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+              <div style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600;">
+                <i data-lucide="map" style="width: 16px; height: 16px; color: var(--chart-2);"></i>
+                <span>XML Sitemap</span>
+              </div>
+              <button id="btn-copy-sitemap" class="btn btn-secondary btn-sm" type="button">Copy</button>
+            </div>
+            <button id="btn-generate-sitemap" class="btn btn-secondary btn-sm" style="width: 100%; margin-bottom: 8px;" type="button">Generate from Audited Links</button>
+            <pre id="tool-sitemap-output" class="code-output-block"></pre>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 7: About Fouad & Project -->
+      <div id="tab-about" class="tab-pane hidden" style="display: none;">
+        <div class="tool-panel">
+          <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+            <div style="width: 56px; height: 56px; border-radius: var(--radius-control); background: var(--accent); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; flex-shrink: 0;">
+              FS
+            </div>
+            <div style="flex: 1; min-width: 280px;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                <h3 style="font-size: 18px; font-weight: 600; margin: 0;">Fouad</h3>
+                <span class="version-pill">Creator</span>
+              </div>
+              <p style="font-size: 13px; color: var(--muted); margin: 0 0 12px 0;">Paris, France · Creator of growthmaker.fr</p>
+              
+              <p style="font-size: 14px; color: var(--text); line-height: 1.5; margin-bottom: 16px;">
+                Photography, videography, and web technology enthusiast based in Paris, France. Builder of growthmaker.fr focusing on growth marketing, technical SEO, and conversion optimization.
+              </p>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 16px;">
+                <div style="background: var(--surface); border: 1px solid var(--border); padding: 12px; border-radius: var(--radius-control);">
+                  <div style="font-size: 13px; font-weight: 600; color: var(--muted); margin-bottom: 6px;">Skills</div>
+                  <div style="font-size: 13px; color: var(--text); line-height: 1.4;">JavaScript, Python, SEO Auditing, HTML5/CSS3, Adobe Premiere &amp; Photoshop</div>
+                </div>
+                <div style="background: var(--surface); border: 1px solid var(--border); padding: 12px; border-radius: var(--radius-control);">
+                  <div style="font-size: 13px; font-weight: 600; color: var(--muted); margin-bottom: 6px;">Project Architecture</div>
+                  <div style="font-size: 13px; color: var(--text); line-height: 1.4;">Zero external runtime dependencies. Runs 100% locally in browser, on Node.js CLI, or via Python CLI.</div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://github.com/foverse" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <i data-lucide="github" style="width: 14px; height: 14px;"></i>
+                  <span>GitHub Profile</span>
+                </a>
+                <a href="https://growthmaker.fr" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <i data-lucide="globe" style="width: 14px; height: 14px;"></i>
+                  <span>growthmaker.fr</span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
 
   </main>
 
   <!-- Modal: About Fouad -->
-  <div id="about-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
-    <div class="glass-panel max-w-xl w-full p-6 sm:p-8 relative border border-slate-700 shadow-2xl">
-      <button id="btn-close-about-modal" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition">
-        <i data-lucide="x" class="w-5 h-5"></i>
+  <div id="about-modal" class="modal-overlay hidden" style="display: none;">
+    <div class="modal-window">
+      <button id="btn-close-about-modal" class="modal-close-btn" type="button" aria-label="Close modal">
+        <i data-lucide="x" style="width: 16px; height: 16px;"></i>
       </button>
 
-      <div class="flex items-center space-x-4 mb-5">
-        <div class="w-14 h-14 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-xl font-bold text-white shadow-lg">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+        <div style="width: 44px; height: 44px; border-radius: var(--radius-control); background: var(--accent); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600;">
           FS
         </div>
         <div>
-          <h3 class="text-xl font-bold text-white">Fouad</h3>
-          <p class="text-xs text-slate-400 flex items-center space-x-1 mt-0.5">
-            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-400"></i>
-            <span>Paris, France</span>
-          </p>
+          <h3 style="font-size: 16px; font-weight: 600; margin: 0;">Fouad</h3>
+          <p style="font-size: 13px; color: var(--muted); margin: 2px 0 0 0;">Paris, France · growthmaker.fr</p>
         </div>
       </div>
 
-      <div class="space-y-3 text-xs sm:text-sm text-slate-300">
-        <p>
-          Photography, videography, and tech enthusiast based in Paris, France. Builder of growthmaker.fr.
-        </p>
-        <p class="text-slate-400">
-          Originally created in 2019, this repository was upgraded into <strong>Fouad's SEO Toolkit</strong> to provide developers, creators, and website owners with an open-source, subscription-free SEO auditor.
-        </p>
+      <p style="font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 12px;">
+        Photography, videography, and tech builder based in Paris. Created Fouad's SEO Toolkit as an open-source, subscription-free technical SEO workbench.
+      </p>
 
-        <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 space-y-1.5 text-xs text-slate-400">
-          <div><strong class="text-slate-200">Skills:</strong> JavaScript, Python, Web Development, SEO, Photoshop, Premiere Pro, Illustrator</div>
-          <div><strong class="text-slate-200">Hobbies:</strong> Coding, Photography, Videography, Movies &amp; Gaming</div>
-        </div>
-      </div>
-
-      <div class="flex items-center space-x-3 mt-6 pt-4 border-t border-slate-800">
-        <a href="https://github.com/foverse" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 flex items-center space-x-2 transition">
-          <i data-lucide="github" class="w-4 h-4"></i>
+      <div style="display: flex; gap: 8px; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--rule);">
+        <a href="https://github.com/foverse" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+          <i data-lucide="github" style="width: 14px; height: 14px;"></i>
           <span>GitHub</span>
         </a>
-        <a href="https://growthmaker.fr" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-blue-600/20 hover:bg-blue-600/30 text-xs font-medium text-blue-300 border border-blue-500/30 flex items-center space-x-2 transition"><i data-lucide="globe" class="w-4 h-4 text-blue-400"></i><span>growthmaker.fr</span></a>
-        <a href="https://github.com/foverse/seo-toolkit" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-xs font-medium text-white flex items-center space-x-2 transition">
-          <i data-lucide="star" class="w-4 h-4"></i>
+        <a href="https://growthmaker.fr" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+          <i data-lucide="globe" style="width: 14px; height: 14px;"></i>
+          <span>growthmaker.fr</span>
+        </a>
+        <a href="https://github.com/foverse/seo-toolkit" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+          <i data-lucide="star" style="width: 14px; height: 14px;"></i>
           <span>Star on GitHub</span>
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="mt-auto border-t border-slate-900 bg-slate-950 py-6 text-xs text-slate-500 text-center">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p>Fouad's SEO Toolkit (c) 2026. Built by <a href="https://github.com/foverse" class="text-blue-400 hover:underline">Fouad</a> in Paris, France.</p>
-      <div class="flex items-center space-x-4">
-        <button id="footer-btn-about" class="text-slate-400 hover:text-white transition">About Fouad</button>
-        <a href="https://github.com/foverse/seo-toolkit" class="hover:text-slate-400">GitHub Repository</a>
-        <a href="https://growthmaker.fr" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-blue-600/20 hover:bg-blue-600/30 text-xs font-medium text-blue-300 border border-blue-500/30 flex items-center space-x-2 transition"><i data-lucide="globe" class="w-4 h-4 text-blue-400"></i><span>growthmaker.fr</span></a>
-        <a href="https://foverse.github.io/seo-toolkit/" class="hover:text-slate-400">Live Site</a>
+  <!-- Modal: Stageshow Interactive Walkthrough -->
+  <div id="stageshow-modal" class="modal-overlay hidden" style="display: none;">
+    <div class="modal-window" style="max-width: 760px; padding: 20px;">
+      <button id="btn-close-stageshow-modal" class="modal-close-btn" type="button" aria-label="Close modal">
+        <i data-lucide="x" style="width: 16px; height: 16px;"></i>
+      </button>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; padding-right: 32px;">
+        <div>
+          <h3 style="font-size: 16px; font-weight: 600; margin: 0; color: var(--text);">Stageshow · SEO Toolkit Walkthrough</h3>
+          <p style="font-size: 12px; color: var(--muted); margin: 2px 0 0 0;">Faux UI choreography running locally with simulated cursor and real-time state resolution.</p>
+        </div>
+      </div>
+
+      <div id="stageshow-container"></div>
+    </div>
+  </div>
+
+  <!-- App Footer -->
+  <footer class="app-footer">
+    <div class="app-footer-inner">
+      <p style="margin: 0;">Fouad's SEO Toolkit (c) 2026. Built by <a href="https://github.com/foverse">Fouad</a> in Paris, France.</p>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <button id="footer-btn-about" style="background: none; border: none; padding: 0; color: var(--muted); cursor: pointer; text-decoration: underline; font-size: var(--fs-small);" type="button">About Fouad</button>
+        <a href="https://github.com/foverse/seo-toolkit">GitHub Repository</a>
+        <a href="https://growthmaker.fr" target="_blank" rel="noopener noreferrer">growthmaker.fr</a>
+        <a href="https://foverse.github.io/seo-toolkit/">Live Application</a>
       </div>
     </div>
   </footer>
@@ -735,6 +668,7 @@
   <script src="js/analyzer.js"></script>
   <script src="js/tools.js"></script>
   <script src="js/samples.js"></script>
+  <script src="js/stageshow-player.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

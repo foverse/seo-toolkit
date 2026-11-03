@@ -1,13 +1,13 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 /**
  * Fouad's SEO Toolkit - Command Line Interface (CLI)
  * Run terminal SEO audits on live URLs or local HTML files with zero external dependencies.
  * Created by Fouad (https://github.com/foverse)
  *
  * Usage:
- *   node cli.js https://example.com
+ *   node cli.js https://soundcraft.com
  *   node cli.js --file ./index.html
- *   node cli.js --json https://example.com
+ *   node cli.js --json https://soundcraft.com
  *   node cli.js --test
  */
 
@@ -109,7 +109,7 @@ async function main() {
 
   if (outputFilePath) {
     fs.writeFileSync(outputFilePath, JSON.stringify(report, null, 2));
-    console.log(`\n${c.green}âœ“ Detailed report saved to:${c.reset} ${outputFilePath}`);
+    console.log(`\n${c.green}[OK] Detailed report saved to:${c.reset} ${outputFilePath}`);
   }
 }
 
@@ -128,9 +128,9 @@ ${c.bold}Options:${c.reset}
   --help, -h         Show this help guide
 
 ${c.bold}Examples:${c.reset}
-  node cli.js https://example.com
+  node cli.js https://soundcraft.com
   node cli.js --file ./index.html
-  node cli.js https://example.com --json --output report.json
+  node cli.js https://soundcraft.com --json --output report.json
 `);
 }
 
@@ -333,7 +333,7 @@ function printReport(r) {
   if (r.passed.length > 0) {
     console.log(`\n  ${c.bold}${c.green}Passed Checks (${r.passed.length}):${c.reset}`);
     r.passed.forEach(p => {
-      console.log(`    ${c.green}âœ“${c.reset} ${p.title} (${p.desc})`);
+      console.log(`    ${c.green}[PASS]${c.reset} ${p.title} (${p.desc})`);
     });
   }
 
@@ -348,7 +348,7 @@ function runSelfTest() {
   <title>Modern Web Architecture Guide and Best Practices</title>
   <meta name="description" content="Discover modern web architecture strategies, edge rendering techniques, and high-performance SEO optimizations for scalable web apps.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://example.com/guide">
+  <link rel="canonical" href="https://soundcraft.com/guide">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Article","headline":"Web Architecture Guide"}
   </script>
@@ -360,7 +360,7 @@ function runSelfTest() {
   <p>Minimizing initial server response latency ensures users and search engine bots immediately receive HTML markup without bottlenecks. Configuring distributed reverse proxies, compression protocols like Brotli, and edge TLS termination significantly drops load time. In addition, maintaining low DNS lookup latencies through Anycast networks guarantees consistent response speeds regardless of where your visitors are browsing from.</p>
   <h2>Optimizing Image Assets and Modern Media Formats</h2>
   <p>High-resolution imagery must be compressed and formatted in modern containers such as WebP and AVIF to prevent excessive bandwidth consumption and cumulative layout shift. Setting explicit width and height dimensions prevents visual layout recalculation during browser image decoding. Furthermore, serving images through a responsive picture element ensures mobile screens do not waste mobile data downloading oversized desktop assets.</p>
-  <img src="https://example.com/hero.webp" alt="High performance web architecture diagram illustration">
+  <img src="https://soundcraft.com/hero.webp" alt="High performance web architecture diagram illustration">
 </body>
 </html>`;
   const report = analyzeHtmlRaw(sampleHtml, 'self-test');
@@ -368,7 +368,7 @@ function runSelfTest() {
   console.log(`Passed checks: ${report.passed.length}`);
   console.log(`Issues found: ${report.issues.length}`);
   if (report.score >= 95) {
-    console.log(`${c.green}${c.bold}âœ“ All Self Tests Passed Successfully!${c.reset}`);
+    console.log(`${c.green}${c.bold}[PASS] All Self Tests Passed Successfully!${c.reset}`);
   } else {
     console.log(`${c.red}Self test produced unexpected score: ${report.score}${c.reset}`);
     process.exit(1);

@@ -11,3 +11,5 @@ Thumbs.db
 coverage/
 dist/
 *.log
+
+.taste-skill/
