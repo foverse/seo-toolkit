@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEOVerse: Open-Source SEO and AI Visibility Platform</title>
+  <meta name="description" content="The developer-first, open-source alternative to Semrush and Ahrefs. All-in-one SEO and AI visibility platform for engineers, founders, and AI coding agents.">
+  <link rel="canonical" href="https://foverse.github.io/seoverse/">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://foverse.github.io/seoverse/">
+  <meta property="og:title" content="SEOVerse: Open-Source SEO and AI Visibility Platform">
+  <meta property="og:description" content="Open-source alternative to Semrush and Ahrefs. 12 autonomous AI agent skills, MCP server, and complete local suite.">
+  <meta property="og:image" content="./shots/seoverse-dashboard.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SEOVerse">
+  <meta name="twitter:description" content="The developer-first, open-source SEO suite and AI visibility platform.">
+  <meta name="twitter:image" content="./shots/seoverse-dashboard.png">
+
+  <style>
+    :root {
+      --bg: #090d16;
+      --bg-card: #0f172a;
+      --bg-card-hover: #1e293b;
+      --border: #1e293b;
+      --border-accent: #3b82f6;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --success: #10b981;
+      --radius: 10px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    header {
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 50;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .brand {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand span {
+      background: linear-gradient(135deg, #60a5fa, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+    .nav-links a:hover {
+      color: var(--text);
+      text-decoration: none;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      border: 1px solid transparent;
+      text-decoration: none !important;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+    .btn-outline {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      background: var(--bg-card);
+      border-color: var(--border-accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+    .pill {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #93c5fd;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      max-width: 850px;
+      margin: 0 auto 20px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 32px;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    /* Showcase Carousel */
+    .showcase {
+      margin-bottom: 80px;
+    }
+    .showcase-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 8px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .tab-btn.active {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: var(--primary);
+      color: #93c5fd;
+    }
+    .preview-frame {
+      border: 1px solid var(--border);
+      background: #020617;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    .preview-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Features Grid */
+    .section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-title h2 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.8px;
+      margin-bottom: 12px;
+    }
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 28px;
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+    }
+    .card:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      transform: translateY(-2px);
+    }
+    .card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+    .card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Skills Table */
+    .skills-section {
+      margin-bottom: 80px;
+    }
+    .table-wrap {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow-x: auto;
+      background: var(--bg-card);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: #0b1120;
+      color: var(--text);
+      font-weight: 600;
+    }
+    td code {
+      font-family: var(--mono);
+      color: #93c5fd;
+      background: rgba(59, 130, 246, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    /* Terminal Quickstart */
+    .quickstart {
+      background: #020617;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 80px;
+    }
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #eab308; }
+    .dot-green { background: #10b981; }
+    pre {
+      font-family: var(--mono);
+      font-size: 14px;
+      color: #38bdf8;
+      line-height: 1.7;
+      overflow-x: auto;
+    }
+    pre .cmd { color: #f8fafc; font-weight: 600; }
+    pre .comment { color: #64748b; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      color: var(--text-muted);
+      font-size: 14px;
+      text-align: center;
+    }
+    footer a { color: var(--text); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        SEO<span>Verse</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#showcase">UI Showcase</a></li>
+        <li><a href="#skills">12 Agent Skills</a></li>
+        <li><a href="#quickstart">Quickstart</a></li>
+        <li><a href="https://github.com/foverse/seoverse" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+      <a href="https://github.com/foverse/seoverse" class="btn btn-primary" target="_blank" rel="noopener">Star on GitHub</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="pill">Open-Source Alternative to Semrush and Ahrefs</div>
+      <h1>The All-in-One SEO and AI Visibility Platform</h1>
+      <p>Developer-first SEO suite and autonomous AI agent toolkit. Run fully locally, self-host on your own servers, and connect directly to Cursor, Claude Code, Antigravity, and Codex via MCP.</p>
+      <div class="hero-actions">
+        <a href="#quickstart" class="btn btn-primary">Run Locally in 60s</a>
+        <a href="https://github.com/foverse/seoverse" class="btn btn-outline" target="_blank" rel="noopener">View Source Code</a>
+      </div>
+    </section>
+
+    <!-- UI Showcase Tabs -->
+    <section class="showcase" id="showcase">
+      <div class="showcase-tabs">
+        <button class="tab-btn active" onclick="setSlide(0, this)">Dashboard</button>
+        <button class="tab-btn" onclick="setSlide(1, this)">Keyword Research</button>
+        <button class="tab-btn" onclick="setSlide(2, this)">Domain Overview</button>
+        <button class="tab-btn" onclick="setSlide(3, this)">Site Audit</button>
+        <button class="tab-btn" onclick="setSlide(4, this)">Reports</button>
+      </div>
+      <div class="preview-frame">
+        <img id="preview-img" src="./shots/seoverse-dashboard.png" alt="SEOVerse UI Preview">
+      </div>
+    </section>
+
+    <!-- Core Features Grid -->
+    <section class="features" id="features">
+      <div class="section-title">
+        <h2>Core SEO and GEO Workflows</h2>
+        <p>Engineered to replace bloated subscription tools with clean, focused developer workflows.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Keyword Research and Clustering</h3>
+          <p>Analyze search volumes, keyword difficulty, CPC, and intent categories. Automatically cluster keyword sets into structured topical content hubs.</p>
+        </div>
+
+        <div class="card">
+          <h3>Full Technical Site Auditing</h3>
+          <p>Crawl internal links, detect indexation directives, broken redirects, canonical structure, and mobile-responsiveness issues with prioritized fixes.</p>
+        </div>
+
+        <div class="card">
+          <h3>Competitor Intelligence</h3>
+          <p>Benchmark your domain against market leaders. Map keyword footprint overlaps, discover content gaps, and analyze referring backlink profiles.</p>
+        </div>
+
+        <div class="card">
+          <h3>Generative Engine Optimization (GEO)</h3>
+          <p>Audit how conversational LLMs (ChatGPT, Gemini, Perplexity) answer queries in your niche, identify cited sources, and track brand visibility.</p>
+        </div>
+
+        <div class="card">
+          <h3>Rank Tracking and Local SEO</h3>
+          <p>Monitor daily organic ranking movements and Google Maps local pack visibility around specific locations without recurring costs.</p>
+        </div>
+
+        <div class="card">
+          <h3>Model Context Protocol (MCP)</h3>
+          <p>Connect your AI coding assistants directly to your SEO data. Instruct agents to audit code, optimize metadata, or query rankings in plain English.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 Agent Skills -->
+    <section class="skills-section" id="skills">
+      <div class="section-title">
+        <h2>12 Built-in AI Agent Skills</h2>
+        <p>Ready-to-run skill workflows for Claude Code, Cursor, Antigravity, OpenClaw, and Codex.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Skill Command</th>
+              <th>Workflow Objective</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>/seo-audit</code></td>
+              <td>Audit a domain, investigate crawl issues, and deliver a prioritized recommendations report.</td>
+            </tr>
+            <tr>
+              <td><code>/keyword-research</code></td>
+              <td>Discover seed opportunities, analyze search volumes, difficulty scores, and user intent.</td>
+            </tr>
+            <tr>
+              <td><code>/competitor-analysis</code></td>
+              <td>Map a competitor organic footprint, top ranking URLs, content gaps, and backlinks.</td>
+            </tr>
+            <tr>
+              <td><code>/keyword-clustering</code></td>
+              <td>Cluster related keywords by topical intent and map them into actionable content silos.</td>
+            </tr>
+            <tr>
+              <td><code>/link-prospecting</code></td>
+              <td>Find prospective backlink opportunities, verify contacts, and draft contextual outreach.</td>
+            </tr>
+            <tr>
+              <td><code>/local-seo</code></td>
+              <td>Audit Google Business Profiles and track geo-targeted rankings across local radius grids.</td>
+            </tr>
+            <tr>
+              <td><code>/seo-coach</code></td>
+              <td>Interactive strategy guide providing tailored prioritization between quick wins and long-term bets.</td>
+            </tr>
+            <tr>
+              <td><code>/seo-report</code></td>
+              <td>Generate executive-ready SEO performance reports in self-contained markdown and HTML.</td>
+            </tr>
+            <tr>
+              <td><code>/seo-project-setup</code></td>
+              <td>Configure domain baselines, tracked competitors, target geographies, and seed keywords.</td>
+            </tr>
+            <tr>
+              <td><code>/ai-visibility-audit</code></td>
+              <td>Track how often your brand is mentioned or cited in ChatGPT, Perplexity, and Gemini answers.</td>
+            </tr>
+            <tr>
+              <td><code>/ai-prompt-research</code></td>
+              <td>Uncover prompts and queries that prospective customers ask conversational AI in your sector.</td>
+            </tr>
+            <tr>
+              <td><code>/competitive-landscape</code></td>
+              <td>Macro-level competitive share comparison across multiple industry domains.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Quickstart -->
+    <section class="quickstart" id="quickstart">
+      <div class="terminal-header">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+        <span style="margin-left: 8px; font-size: 13px; color: #64748b;">bash (local quickstart)</span>
+      </div>
+      <pre>
+<span class="comment"># 1. Clone repository</span>
+<span class="cmd">git clone https://github.com/foverse/seoverse.git</span>
+<span class="cmd">cd seoverse</span>
+
+<span class="comment"># 2. Install dependencies</span>
+<span class="cmd">pnpm install</span>
+
+<span class="comment"># 3. Apply local SQLite migrations and build widgets</span>
+<span class="cmd">pnpm run db:migrate:local</span>
+<span class="cmd">pnpm run build:report-widgets</span>
+
+<span class="comment"># 4. Start local development server (runs with local trusted auth on port 3001)</span>
+<span class="cmd">pnpm run dev</span>
+</pre>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>SEOVerse is open-source under the MIT License. Hosted on <a href="https://github.com/foverse/seoverse" target="_blank" rel="noopener">GitHub (foverse/seoverse)</a>.</p>
+    </div>
+  </footer>
+
+  <script>
+    const slides = [
+      './shots/seoverse-dashboard.png',
+      './shots/seoverse-keywords.png',
+      './shots/seoverse-domain.png',
+      './shots/seoverse-audit.png',
+      './shots/seoverse-reports.png'
+    ];
+
+    function setSlide(index, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('preview-img').src = slides[index];
+    }
+  </script>
+</body>
+</html>
