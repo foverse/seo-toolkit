@@ -344,7 +344,7 @@
         <li><a href="#quickstart">Quickstart</a></li>
         <li><a href="https://github.com/foverse/seoverse" target="_blank" rel="noopener">GitHub</a></li>
       </ul>
-      <a href="https://github.com/foverse/seoverse" class="btn btn-primary" target="_blank" rel="noopener">Star on GitHub</a>
+      <a href="/projects" class="btn btn-primary">Open Live App &rarr;</a>
     </div>
   </header>
 
@@ -354,8 +354,9 @@
       <h1>The All-in-One SEO and AI Visibility Platform</h1>
       <p>Developer-first SEO suite and autonomous AI agent toolkit. Run fully locally, self-host on your own servers, and connect directly to Cursor, Claude Code, Antigravity, and Codex via MCP.</p>
       <div class="hero-actions">
-        <a href="#quickstart" class="btn btn-primary">Run Locally in 60s</a>
-        <a href="https://github.com/foverse/seoverse" class="btn btn-outline" target="_blank" rel="noopener">View Source Code</a>
+        <a href="/projects" class="btn btn-primary">Open Live App &rarr;</a>
+        <a href="#quickstart" class="btn btn-outline">Local Setup Guide</a>
+        <a href="https://github.com/foverse/seoverse" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
       </div>
     </section>
 
@@ -368,8 +369,13 @@
         <button class="tab-btn" onclick="setSlide(3, this)">Site Audit</button>
         <button class="tab-btn" onclick="setSlide(4, this)">Reports</button>
       </div>
-      <div class="preview-frame">
-        <img id="preview-img" src="./shots/seoverse-dashboard.png" alt="SEOVerse UI Preview">
+      <div class="preview-frame" style="position: relative;">
+        <a href="/projects" title="Click to open interactive app" style="display: block;">
+          <img id="preview-img" src="./shots/seoverse-dashboard.png" alt="SEOVerse UI Preview">
+          <div style="position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); background: rgba(15, 23, 42, 0.9); border: 1px solid #3b82f6; color: #93c5fd; padding: 8px 18px; border-radius: 9999px; font-size: 13px; font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+            ⚡ Click here to launch the interactive app (/projects)
+          </div>
+        </a>
       </div>
     </section>
 
