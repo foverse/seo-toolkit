@@ -2,8 +2,8 @@
 
 A fast, zero-dependency on-page SEO analyzer, Google SERP simulator, and technical markup toolkit.
 
-- Live Web App: [https://foverse.github.io/seo-toolkit/](https://foverse.github.io/seo-toolkit/)
-- Repository: [https://github.com/foverse/seo-toolkit](https://github.com/foverse/seo-toolkit)
+- Live Web App: [https://foverse.github.io/seoverse/](https://foverse.github.io/seoverse/)
+- Repository: [https://github.com/foverse/seoverse](https://github.com/foverse/seoverse)
 - License: MIT
 
 ---
@@ -57,11 +57,11 @@ Built and maintained by [Fouad](https://growthmaker.fr) ([@foverse](https://gith
 ## Quick Start
 
 ### Option 1: Browser (Zero Setup)
-Open [https://foverse.github.io/seo-toolkit/](https://foverse.github.io/seo-toolkit/) or open `index.html` locally in any modern browser.
+Open [https://foverse.github.io/seoverse/](https://foverse.github.io/seoverse/) or open `index.html` locally in any modern browser.
 
 ### Option 2: Local Node Server (Bypasses CORS for External URLs)
 ```bash
-git clone https://github.com/foverse/seo-toolkit.git
+git clone https://github.com/foverse/seoverse.git
 cd seo-toolkit
 npm start
 ```
