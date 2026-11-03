@@ -1,5 +1,5 @@
 {
-  "name": "open-seo",
+  "name": "seoverse",
   "private": true,
   "sideEffects": [
     "./src/standalone-server.ts"
@@ -181,5 +181,6 @@
     "overrides": {
       "zod@4": "4.6.7"
     }
-  }
+  },
+  "description": "SEOVerse - All-in-one open-source SEO suite and AI agent toolkit"
 }

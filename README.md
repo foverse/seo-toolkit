@@ -1,6 +1,6 @@
-# OpenSEO
+# SEOVerse
 
-> Open source alternative to Semrush and Ahrefs
+> Open-source all-in-one SEO & AI Visibility platform for developers, indie hackers, and AI agents.
 
 OpenSEO is an SEO tool for _the people_. If tools like Semrush or Ahrefs are too expensive or bloated, OpenSEO is a pay-as-you-go alternative that you actually control.
 
