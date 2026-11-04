@@ -7,1040 +7,75 @@
   <meta name="description" content="Developer-first open-source SEO suite and autonomous AI agent toolkit. Run organic research locally with SQLite or connect AI coding assistants via MCP.">
   <link rel="canonical" href="https://foverse.github.io/seoverse/">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#101416">
+  <link rel="icon" href="assets/seoverse-favicon.svg" type="image/svg+xml">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://foverse.github.io/seoverse/">
   <meta property="og:title" content="SEOVerse — Open-Source SEO Suite and AI Visibility Platform">
   <meta property="og:description" content="Open-source alternative to commercial SEO suites. 12 autonomous AI agent skills, local SQLite engine, and native Model Context Protocol support.">
-  <meta property="og:image" content="./shots/seoverse-dashboard.png">
+  <meta property="og:image" content="https://foverse.github.io/seoverse/assets/illustrations/search-orbit.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SEOVerse — Open-Source SEO Suite">
   <meta name="twitter:description" content="Developer-first SEO suite and autonomous AI agent visibility platform.">
-  <meta name="twitter:image" content="./shots/seoverse-dashboard.png">
+  <meta name="twitter:image" content="https://foverse.github.io/seoverse/assets/illustrations/search-orbit.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #eeecea;
-      --surface: #e4e1dd;
-      --surface-hover: #dad6d0;
-      --ink: #141312;
-      --muted: #4a4642;
-      --accent: #2c4c3e;
-      --accent-hover: #1f362c;
-      --accent-ink: #ffffff;
-      --field-1: #cdc3b6;
-      --field-1-ink: #141312;
-      --stage: #dedad4;
-      --radius: 6px;
-      --radius-lg: 10px;
-
-      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-      --ease-soft: cubic-bezier(0.25, 1, 0.5, 1);
-      --ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
-
-      --step-small: 14px;
-      --step-body: 16px;
-      --step-lead: 20px;
-      --step-h2: clamp(20px, 1.3rem + 1vw, 32px);
-      --step-h1: clamp(24px, 1.4rem + 2vw, 48px);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      background-color: var(--bg);
-      color: var(--ink);
-      font-family: 'Work Sans', system-ui, -apple-system, sans-serif;
-      font-size: var(--step-body);
-      line-height: 1.55;
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--ink);
-      overflow-x: hidden;
-      padding: 0;
-      margin: 0;
-    }
-
-    code, pre, kbd, samp {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: var(--step-small);
-    }
-
-    a {
-      color: var(--ink);
-      text-decoration: none;
-      transition: color 160ms ease;
-    }
-    a:hover {
-      color: var(--accent);
-    }
-
-    p, .hero-desc, .section-desc, .feature-text p, .stage-details, .faq-answer, .cta-desc, .skills-table td {
-      color: var(--ink);
-      font-size: var(--step-body);
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1140px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 31px;
-      padding-right: 20px;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 24px;
-      border-radius: var(--radius);
-      font-family: 'Work Sans', system-ui, -apple-system, sans-serif;
-      font-size: var(--step-body);
-      font-weight: 500;
-      cursor: pointer;
-      text-decoration: none;
-      border: none;
-      transition: background-color 160ms ease, color 160ms ease, transform 120ms var(--ease-out);
-    }
-    .btn:active {
-      transform: scale(0.98);
-    }
-    .btn-primary {
-      background-color: var(--accent);
-      color: var(--accent-ink);
-    }
-    .btn-primary:hover {
-      background-color: var(--accent-hover);
-      color: var(--accent-ink);
-    }
-    .btn-secondary {
-      background-color: var(--surface);
-      color: var(--ink);
-    }
-    .btn-secondary:hover {
-      background-color: var(--surface-hover);
-    }
-
-    /* Navigation */
-    header {
-      background-color: var(--bg);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-      width: 100%;
-    }
-    .brand-name {
-      font-size: var(--step-lead);
-      font-weight: 600;
-      letter-spacing: -0.03em;
-      color: var(--ink);
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: var(--step-body);
-      color: var(--muted);
-      font-weight: 400;
-    }
-    .nav-links a:hover {
-      color: var(--ink);
-    }
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-    }
-
-    /* Hero Section (50/50 Split) */
-    .hero {
-      padding: 48px 0 88px;
-      width: 100%;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-      width: 100%;
-    }
-    @media (max-width: 960px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-    }
-
-    .hero-text {
-      width: 100%;
-    }
-
-    .hero-title {
-      font-size: var(--step-h1);
-      font-weight: 300;
-      letter-spacing: -0.035em;
-      line-height: 1.05;
-      margin-bottom: 24px;
-      color: var(--ink);
-    }
-
-    /* Masked Line Reveal for H1 */
-    .lines .line {
-      display: block;
-      overflow: hidden;
-      padding-bottom: 0.08em;
-      margin-bottom: -0.08em;
-    }
-    .lines [data-line] {
-      display: block;
-      transform: translateY(105%);
-      animation: line-up 900ms var(--ease-out) forwards;
-      animation-delay: calc(var(--i) * 110ms + 100ms);
-    }
-    @keyframes line-up {
-      to { transform: translateY(0); }
-    }
-
-    .hero-desc {
-      font-size: var(--step-body);
-      max-width: 500px;
-      line-height: 1.5;
-      margin-bottom: 32px;
-      font-weight: 400;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    /* Live SEO Control (Fragment marked data-ui) */
-    .hero-control {
-      background-color: var(--surface);
-      border-radius: var(--radius-lg);
-      padding: 16px;
-      width: 100%;
-    }
-    .control-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-    }
-    .control-title {
-      font-size: var(--step-small);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--muted);
-    }
-    .control-badge {
-      font-size: var(--step-small);
-      padding: 3px 8px;
-      background-color: var(--field-1);
-      color: var(--field-1-ink);
-      border-radius: 4px;
-      font-weight: 500;
-    }
-    .control-input-wrap {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-    .control-input {
-      flex: 1;
-      padding: 10px 14px;
-      background-color: var(--bg);
-      border: 1px solid var(--field-1); /* taste-skill-ignore */
-      border-radius: var(--radius);
-      font-family: inherit;
-      font-size: var(--step-small);
-      color: var(--ink);
-    }
-    .control-btn {
-      padding: 10px 16px;
-      background-color: var(--accent);
-      color: var(--accent-ink);
-      border: none;
-      border-radius: var(--radius);
-      font-size: var(--step-small);
-      font-weight: 500;
-      cursor: pointer;
-      transition: background-color 160ms ease, transform 120ms var(--ease-out);
-    }
-    .control-btn:active {
-      transform: scale(0.97);
-    }
-    .metrics-summary-strip {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 18px;
-      flex-wrap: wrap;
-    }
-    .metric-strip-item {
-      flex: 1;
-      min-width: 120px;
-      background-color: var(--bg);
-      padding: 10px 12px;
-      border-radius: var(--radius);
-    }
-    .metric-label {
-      font-size: var(--step-small);
-      color: var(--muted);
-      margin-bottom: 2px;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-    }
-    .metric-value {
-      font-size: var(--step-body);
-      font-weight: 600;
-      color: var(--ink);
-    }
-    .serp-preview {
-      background-color: #ffffff;
-      padding: 16px;
-      border-radius: var(--radius);
-      border: 1px solid var(--field-1); /* taste-skill-ignore */
-    }
-    .serp-url {
-      font-size: var(--step-small);
-      color: #202124;
-      margin-bottom: 4px;
-    }
-    .serp-title {
-      font-size: var(--step-body);
-      color: #1a0dab;
-      font-weight: 400;
-      line-height: 1.3;
-      margin-bottom: 4px;
-    }
-    .serp-snippet {
-      font-size: var(--step-small);
-      color: #4d5156;
-      line-height: 1.45;
-    }
-
-    /* Section Styling */
-    section {
-      padding: 80px 0;
-      width: 100%;
-    }
-    .section-header {
-      margin-bottom: 48px;
-      width: 100%;
-    }
-    .section-title {
-      font-size: var(--step-h2);
-      font-weight: 300;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin-bottom: 14px;
-      color: var(--ink);
-    }
-    .section-desc {
-      font-size: var(--step-body);
-      max-width: 620px;
-      font-weight: 400;
-    }
-
-    /* Showcase Section (Output index, live sheet) */
-    .showcase-layout {
-      display: grid;
-      grid-template-columns: 340px 1fr;
-      gap: 40px;
-      align-items: start;
-      width: 100%;
-    }
-    @media (max-width: 960px) {
-      .showcase-layout {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-    }
-    .showcase-nav {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .output-tab {
-      display: block;
-      width: 100%;
-      text-align: left;
-      padding: 16px 20px;
-      background-color: transparent;
-      border: none;
-      border-radius: var(--radius);
-      font-family: inherit;
-      font-size: var(--step-lead);
-      font-weight: 400;
-      color: var(--muted);
-      cursor: pointer;
-      transition: background-color 160ms ease, color 160ms ease, transform 120ms var(--ease-out);
-    }
-    .output-tab:hover {
-      background-color: var(--surface);
-      color: var(--ink);
-    }
-    .output-tab.active {
-      background-color: var(--surface);
-      color: var(--ink);
-      font-weight: 600;
-    }
-    .showcase-stage {
-      background-color: var(--stage);
-      border-radius: var(--radius-lg);
-      padding: 16px;
-      min-height: 520px;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
-    .stage-card {
-      background-color: #ffffff;
-      border-radius: var(--radius);
-      overflow: hidden;
-      width: 100%;
-    }
-    .stage-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-    }
-    .stage-meta {
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: var(--surface);
-      border-radius: 0 0 var(--radius) var(--radius);
-    }
-    .stage-caption {
-      font-size: var(--step-body);
-      font-weight: 500;
-      color: var(--ink);
-    }
-    .stage-link {
-      font-size: var(--step-small);
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    /* Features Section (Small proof beside text) */
-    .features-list {
-      display: flex;
-      flex-direction: column;
-      gap: 48px;
-      width: 100%;
-    }
-    .feature-module {
-      display: grid;
-      grid-template-columns: 360px 1fr;
-      gap: 36px;
-      background-color: transparent;
-      border: none;
-      padding: 0;
-      align-items: center;
-      width: 100%;
-    }
-    @media (max-width: 840px) {
-      .feature-module {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-    }
-    .proof-panel {
-      background-color: var(--surface);
-      border-radius: var(--radius);
-      padding: 24px;
-      overflow: hidden;
-    }
-    .proof-header {
-      font-size: var(--step-small);
-      color: var(--muted);
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .proof-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 0;
-      font-size: var(--step-small);
-    }
-    .proof-item span:first-child {
-      color: var(--muted);
-    }
-    .proof-item span:last-child {
-      font-weight: 600;
-      color: var(--ink);
-    }
-    .feature-media-box {
-      width: 100%;
-      border-radius: var(--radius);
-      overflow: hidden;
-      background-color: var(--surface);
-    }
-    .feature-media-box img, .feature-media-box video {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-    }
-    .feature-text h3 {
-      font-size: var(--step-lead);
-      font-weight: 500;
-      margin-bottom: 12px;
-      color: var(--ink);
-    }
-    .feature-text p {
-      font-size: var(--step-body);
-      line-height: 1.55;
-    }
-
-    /* Skills Agenda / List */
-    .skills-wrapper {
-      background-color: var(--surface);
-      border-radius: var(--radius-lg);
-      padding: 36px;
-      width: 100%;
-    }
-    @media (max-width: 768px) {
-      .skills-wrapper {
-        padding: 20px;
-      }
-    }
-    .skills-filter {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 32px;
-      flex-wrap: wrap;
-    }
-    .filter-btn {
-      padding: 8px 16px;
-      background-color: var(--bg);
-      color: var(--muted);
-      border: none;
-      border-radius: var(--radius);
-      font-family: inherit;
-      font-size: var(--step-small);
-      font-weight: 500;
-      cursor: pointer;
-      transition: background-color 160ms ease, color 160ms ease;
-    }
-    .filter-btn.active {
-      background-color: var(--accent);
-      color: var(--accent-ink);
-    }
-    .skills-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-    .skills-table th {
-      padding: 14px 16px;
-      font-size: var(--step-small);
-      font-weight: 600;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-    .skills-table td {
-      padding: 16px;
-      font-size: var(--step-small);
-      vertical-align: middle;
-    }
-    .skills-table tbody tr {
-      transition: background-color 160ms ease;
-    }
-    .skill-cmd {
-      font-weight: 600;
-      color: var(--accent);
-      background-color: var(--stage);
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: var(--step-small);
-    }
-
-    /* How It Works (Drag through stages) */
-    .stages-container {
-      background-color: var(--surface);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      width: 100%;
-      overflow: hidden;
-      max-width: 100%;
-    }
-    @media (max-width: 768px) {
-      .stages-container {
-        padding: 20px;
-      }
-    }
-    .stage-content-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 36px;
-      align-items: center;
-      width: 100%;
-      max-width: 100%;
-    }
-    @media (max-width: 840px) {
-      .stage-content-split {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-    }
-    .stage-left {
-      width: 100%;
-      max-width: 100%;
-    }
-    .stage-statement {
-      font-size: var(--step-lead);
-      font-weight: 500;
-      line-height: 1.25;
-      color: var(--ink);
-    }
-    .stage-details {
-      font-size: var(--step-body);
-      margin-top: 16px;
-      line-height: 1.5;
-      word-break: normal;
-      overflow-wrap: break-word;
-    }
-    .stage-terminal {
-      background-color: var(--bg);
-      padding: 24px;
-      border-radius: var(--radius);
-      font-family: inherit;
-      width: 100%;
-      max-width: 100%;
-      overflow-x: auto;
-    }
-    .stage-terminal pre {
-      color: var(--ink);
-      line-height: 1.6;
-      font-size: var(--step-small);
-      white-space: pre-wrap;
-      word-break: break-all;
-    }
-    .stage-slider-wrap {
-      margin-top: 20px;
-      width: 100%;
-    }
-    .stage-slider {
-      width: 100%;
-      height: 8px;
-      background-color: var(--field-1);
-      border-radius: 4px;
-      outline: none;
-      -webkit-appearance: none;
-      appearance: none;
-      cursor: pointer;
-    }
-    .stage-slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 28px;
-      height: 28px;
-      border-radius: 4px;
-      background: var(--accent);
-      cursor: pointer;
-    }
-    .stage-stops {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 14px;
-      font-size: var(--step-small);
-      color: var(--muted);
-      width: 100%;
-    }
-    .stage-stop.active {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-    /* FAQ (Accordion of filled tiles) */
-    .faq-layout {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 48px;
-      width: 100%;
-    }
-    @media (max-width: 840px) {
-      .faq-layout {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-    }
-    .faq-sticky {
-      position: sticky;
-      top: 100px;
-      align-self: start;
-    }
-    .faq-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      width: 100%;
-    }
-    .faq-tile {
-      background-color: var(--surface);
-      border-radius: var(--radius);
-      padding: 22px 24px;
-      cursor: pointer;
-      transition: background-color 160ms ease;
-      width: 100%;
-    }
-    .faq-tile[open] {
-      background-color: var(--surface-hover);
-    }
-    .faq-tile summary {
-      font-size: var(--step-body);
-      font-weight: 600;
-      color: var(--ink);
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none;
-    }
-    .faq-tile summary::-webkit-details-marker {
-      display: none;
-    }
-    .faq-tile summary::after {
-      content: "+";
-      font-size: var(--step-lead);
-      font-weight: 300;
-      color: var(--muted);
-      margin-left: 16px;
-    }
-    .faq-tile[open] summary::after {
-      content: "−";
-    }
-    .faq-answer {
-      margin-top: 14px;
-      font-size: var(--step-body);
-      line-height: 1.55;
-      max-width: 650px;
-    }
-
-    /* CTA Section (2-Column Split) */
-    .cta-section {
-      background-color: var(--surface);
-      border-radius: var(--radius-lg);
-      padding: 56px 48px;
-      width: 100%;
-    }
-    @media (max-width: 768px) {
-      .cta-section {
-        padding: 32px 20px;
-      }
-    }
-    .cta-split {
-      display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 40px;
-      align-items: center;
-      width: 100%;
-    }
-    @media (max-width: 860px) {
-      .cta-split {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-    }
-    .cta-heading {
-      font-size: var(--step-h2);
-      font-weight: 300;
-      line-height: 1.2;
-      letter-spacing: -0.025em;
-      margin-bottom: 20px;
-      color: var(--ink);
-    }
-    .cta-form {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-    }
-    .cta-input {
-      flex: 1;
-      min-width: 220px;
-      padding: 14px 18px;
-      background-color: var(--bg);
-      border: 1px solid var(--field-1); /* taste-skill-ignore */
-      border-radius: var(--radius);
-      font-family: inherit;
-      font-size: var(--step-body);
-      color: var(--ink);
-    }
-    .cta-desc {
-      font-size: var(--step-small);
-      color: var(--muted);
-    }
-    .cta-quick-card {
-      background-color: var(--bg);
-      padding: 24px;
-      border-radius: var(--radius);
-    }
-    .cta-card-header {
-      font-size: var(--step-small);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-    .cta-card-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 6px 0;
-      font-size: var(--step-small);
-    }
-    .cta-card-item span:first-child {
-      color: var(--muted);
-    }
-    .cta-card-item span:last-child {
-      font-weight: 500;
-      color: var(--ink);
-    }
-
-    /* Footer (Board of Tiles) */
-    footer {
-      padding: 80px 0 60px;
-      background-color: var(--bg);
-      width: 100%;
-    }
-    .footer-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-bottom: 24px;
-      width: 100%;
-    }
-    @media (max-width: 768px) {
-      .footer-split {
-        grid-template-columns: 1fr;
-      }
-    }
-    .footer-panel {
-      background-color: var(--surface);
-      padding: 32px;
-      border-radius: var(--radius);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 200px;
-    }
-    .footer-panel-title {
-      font-size: var(--step-small);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-    .footer-panel-content {
-      font-size: var(--step-body);
-      line-height: 1.55;
-    }
-    .footer-nav-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .footer-nav-list a {
-      color: var(--ink);
-      font-size: var(--step-body);
-    }
-    .footer-bottom-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 16px;
-      width: 100%;
-    }
-    @media (max-width: 768px) {
-      .footer-bottom-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    .footer-tile-wordmark {
-      background-color: var(--ink);
-      color: var(--bg);
-      padding: 40px;
-      border-radius: var(--radius);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .wordmark-text {
-      font-size: var(--step-h1);
-      font-weight: 600;
-      letter-spacing: -0.04em;
-    }
-    .footer-tile-action {
-      background-color: var(--accent);
-      color: var(--accent-ink);
-      padding: 32px;
-      border-radius: var(--radius);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-decoration: none;
-      transition: background-color 160ms ease, transform 120ms var(--ease-out);
-    }
-    .footer-tile-action:hover {
-      background-color: var(--accent-hover);
-      color: var(--accent-ink);
-    }
-    .footer-tile-action:active {
-      transform: scale(0.98);
-    }
-    .action-text {
-      font-size: var(--step-lead);
-      font-weight: 500;
-    }
-    .action-sub {
-      font-size: var(--step-small);
-      opacity: 0.85;
-    }
-
-    /* Motion Reveals */
-    [data-reveal] {
-      opacity: 0.05;
-      transform: translateY(24px);
-      transition: opacity 600ms var(--ease-out), transform 700ms var(--ease-out);
-    }
-    [data-reveal].is-in {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-      [data-reveal] {
-        opacity: 1 !important;
-        transform: none !important;
-      }
-      .lines [data-line] {
-        transform: none !important;
-        animation: none !important;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/growthmaker.css">
 </head>
-<body>
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- Top Navigation Bar -->
   <header>
     <div class="container nav">
-      <div class="brand-name">SEOVerse</div>
-      <ul class="nav-links">
+      <div class="brand-lockup"><a class="service-brand" href="#top" aria-label="SEOVerse home"><img src="assets/seoverse-logo.svg" width="259" height="64" alt="SEOVerse"></a></div>
+      <nav aria-label="Main navigation"><ul class="nav-links">
         <li><a href="#showcase">Interface</a></li>
         <li><a href="#features">Capabilities</a></li>
         <li><a href="#skills">Agent Skills</a></li>
         <li><a href="#workflow">How It Works</a></li>
         <li><a href="#faq">Questions</a></li>
         <li><a href="https://github.com/foverse/seoverse" target="_blank" rel="noopener">GitHub</a></li>
-      </ul>
-      <a href="/projects" class="btn btn-primary">Launch Live App</a>
+      </ul></nav>
+      <div class="nav-actions"><a href="#workflow" class="btn btn-primary">Run locally <span aria-hidden="true">↗</span></a><details class="mobile-menu"><summary aria-label="Open navigation">Menu</summary><nav aria-label="Mobile navigation"><a href="#showcase">Interface</a><a href="#features">Capabilities</a><a href="#skills">Agent skills</a><a href="#workflow">Get started</a><a href="#faq">Questions</a><a href="https://growthmaker.fr">Growthmaker ↗</a></nav></details></div>
     </div>
   </header>
 
-  <main class="container">
+  <main class="container" id="main-content">
 
     <!-- Hero Section (50/50 Split) -->
     <section class="hero">
       <div class="hero-grid">
         <div class="hero-text">
-          <h1 class="hero-title lines">
-            <span class="line"><span data-line style="--i:0">Developer-First SEO</span></span>
-            <span class="line"><span data-line style="--i:1">and AI Visibility</span></span>
-          </h1>
-          <p class="hero-desc">Open-source alternative to commercial SEO suites. Run organic research and autonomous AI agent skills locally with SQLite, or connect directly through the Model Context Protocol.</p>
+          <h1 class="hero-title lines"><span class="line"><span data-line style="--i:0">Search further.</span></span><span class="line"><span data-line style="--i:1">Grow <em>organically.</em></span></span></h1>
+          <p class="hero-desc">Your open-source workspace for SEO and AI visibility. Research keywords, audit your site, and put twelve AI agent skills to work — on your own terms.</p>
           <div class="hero-actions">
-            <a href="/projects" class="btn btn-primary">Launch Live App</a>
-            <a href="https://github.com/foverse/seoverse" class="btn btn-secondary" target="_blank" rel="noopener">GitHub Repository</a>
-          </div>
+            <a href="#showcase" class="btn btn-primary">Explore the suite <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/foverse/seoverse" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+          </div><p class="hero-note">Open source. Local first. Built for the way you work.</p>
         </div>
 
-        <!-- Live Working SEO Control (Fragment marked data-ui) -->
-        <div class="hero-control" data-ui="true">
-          <div class="control-header">
-            <span class="control-title">Live Metadata &amp; SERP Inspector</span>
-            <span class="control-badge">Local Engine</span>
-          </div>
-          <div class="control-input-wrap">
-            <input type="text" class="control-input" id="inspector-input" value="https://foverse.github.io/seoverse/" aria-label="URL to inspect">
-            <button class="control-btn" id="inspect-btn" onclick="runInspector()">Inspect Page</button>
-          </div>
-          <div class="metrics-summary-strip">
-            <div class="metric-strip-item">
-              <div class="metric-label">Title Tag</div>
-              <div class="metric-value" id="val-title">48 chars (Optimal)</div>
-            </div>
-            <div class="metric-strip-item">
-              <div class="metric-label">Meta Description</div>
-              <div class="metric-value" id="val-desc">142 chars (Optimal)</div>
-            </div>
-            <div class="metric-strip-item">
-              <div class="metric-label">AI Visibility Index</div>
-              <div class="metric-value" id="val-visibility">94 / 100 (High)</div>
-            </div>
-          </div>
-          <div class="serp-preview">
-            <div class="serp-url" id="serp-preview-url">https://foverse.github.io &gt; seoverse</div>
-            <div class="serp-title" id="serp-preview-title">SEOVerse — Open-Source SEO Suite and AI Visibility Platform</div>
-            <div class="serp-snippet" id="serp-preview-desc">Developer-first open-source SEO suite and autonomous AI agent toolkit. Run organic research locally with SQLite or connect AI coding assistants via MCP.</div>
-          </div>
-        </div>
+        <figure class="hero-art"><img src="assets/illustrations/search-orbit.webp" width="1536" height="1024" alt="A silver search lens encircled by an orbit with lime satellites" fetchpriority="high" decoding="async"></figure>
       </div>
+      <div class="product-strip"><span>SEO &amp; GEO</span><span>12 AI agent skills</span><span>MCP native</span><span>Your data. Your stack.</span><a href="https://github.com/foverse/seoverse/blob/master/LICENSE">MIT licensed ↗</a></div>
     </section>
 
     <!-- Showcase Section (Output index, live sheet) -->
     <section class="showcase-section" id="showcase" data-reveal>
       <div class="section-header">
-        <h2 class="section-title">Verified Organic Engine Outputs</h2>
-        <p class="section-desc">Inspect genuine views from the local development server. Explore comprehensive keyword clusters, crawl diagnostics, and AI citations.</p>
+        <h2 class="section-title">One workspace. Every angle.</h2>
+        <p class="section-desc">Explore the interface, from keyword discovery to technical audits and reports. These screenshots show the local app before data is connected.</p>
       </div>
 
       <div class="showcase-layout">
         <div class="showcase-nav">
-          <button class="output-tab active" onclick="switchOutput(0, this)">Performance Overview</button>
-          <button class="output-tab" onclick="switchOutput(1, this)">Keyword Discovery</button>
+          <button class="output-tab" onclick="switchOutput(0, this)">Performance Overview <span aria-hidden="true">↗</span></button>
+          <button class="output-tab active" onclick="switchOutput(1, this)">Keyword Discovery <span aria-hidden="true">↗</span></button>
           <button class="output-tab" onclick="switchOutput(2, this)">Domain Intelligence</button>
           <button class="output-tab" onclick="switchOutput(3, this)">Technical Site Audit</button>
           <button class="output-tab" onclick="switchOutput(4, this)">Executive Reports</button>
@@ -1048,10 +83,10 @@
 
         <div class="showcase-stage">
           <div class="stage-card">
-            <img id="stage-img" src="./shots/seoverse-dashboard.png" alt="SEOVerse Dashboard Interface" width="1440" height="900">
+            <img id="stage-img" src="./shots/seoverse-keywords.png" alt="SEOVerse keyword research interface" width="1440" height="900">
             <div class="stage-meta">
-              <span class="stage-caption" id="stage-caption">Core Dashboard: Organic impressions, position distribution, and indexing status</span>
-              <a href="/projects" class="stage-link">Open in Live App &rarr;</a>
+              <span class="stage-caption" id="stage-caption">Keyword research: start with a seed, a location, and a question.</span>
+              <a href="#workflow" class="stage-link">Run locally ↗</a>
             </div>
           </div>
         </div>
@@ -1061,48 +96,36 @@
     <!-- Features Section (Small proof beside text) -->
     <section class="features-section" id="features" data-reveal>
       <div class="section-header">
-        <h2 class="section-title">Substantive Organic Capabilities</h2>
+        <h2 class="section-title">From insight to action.</h2>
         <p class="section-desc">Designed to replace proprietary subscription lock-in with transparent, normalized SQL storage and autonomous agents.</p>
       </div>
 
       <div class="features-list">
         <!-- Feature 1 -->
         <div class="feature-module" data-reveal>
-          <div class="proof-panel">
-            <div class="proof-header">Clustering Sample</div>
-            <div class="proof-item"><span>Seed Term</span> <span>headless seo</span></div>
-            <div class="proof-item"><span>Cluster Size</span> <span>42 queries</span></div>
-            <div class="proof-item"><span>Search Volume</span> <span>18.4k / mo</span></div>
-            <div class="proof-item"><span>Intent Class</span> <span>Informational</span></div>
-          </div>
+          <div class="feature-media-box"><img class="generated-art" src="assets/illustrations/keyword-terrain.webp" alt="A search lens discovering connected opportunities across a sculpted keyword landscape" width="1536" height="1024" loading="lazy"></div>
           <div class="feature-text">
-            <h3>Automated Keyword Clustering</h3>
+            <h3>Find your next opportunity.</h3>
             <p>Group thousands of related queries into structured topical authority pillars. Categorize search volumes, commercial intent, and SERP difficulty without paying for individual keyword credits.</p>
           </div>
         </div>
 
         <!-- Feature 2 -->
         <div class="feature-module" data-reveal>
-          <div class="proof-panel">
-            <div class="proof-header">Crawler Diagnostics</div>
-            <div class="proof-item"><span>Scanned URLs</span> <span>1,420 pages</span></div>
-            <div class="proof-item"><span>Status 200 OK</span> <span>1,398 URLs</span></div>
-            <div class="proof-item"><span>Canonical Discrepancies</span> <span>0 found</span></div>
-            <div class="proof-item"><span>Mobile Readiness</span> <span>100% pass</span></div>
-          </div>
+          <div class="feature-media-box"><img class="generated-art" src="assets/illustrations/technical-foundations.webp" alt="Graphite architectural blocks with a lime component revealed for inspection" width="1536" height="1024" loading="lazy"></div>
           <div class="feature-text">
-            <h3>Full-Spectrum Technical Auditing</h3>
+            <h3>Build on solid foundations.</h3>
             <p>Traverse internal link structures, test robots directives, diagnose redirect hops, and detect canonical errors. Identifies exact code fixes with line references for your engineering team.</p>
           </div>
         </div>
 
-        <!-- Feature 3 with real atmospheric photography -->
+        <!-- Feature 3: real app interface -->
         <div class="feature-module" data-reveal>
           <div class="feature-media-box">
-            <img src="https://picsum.photos/id/781/1200/800" alt="Platform structure photograph by Matthew Wiebe" width="1200" height="800" loading="lazy">
+            <img src="shots/seoverse-domain.png" alt="SEOVerse domain intelligence interface before connecting a domain" width="1440" height="900" loading="lazy">
           </div>
           <div class="feature-text">
-            <h3>Competitor Gap Analysis</h3>
+            <h3>See the competitive picture.</h3>
             <p>Benchmark your domain against leading market alternatives. Discover high-converting search keywords your competitors rank for and identify high-authority backlink opportunities.</p>
           </div>
         </div>
@@ -1115,17 +138,52 @@
             </video>
           </div>
           <div class="feature-text">
-            <h3>Generative Engine Optimization (GEO)</h3>
+            <h3>Show up in AI answers.</h3>
             <p>Audit and track how conversational LLMs answer questions in your industry. Understand citation frequency, detect competitor recommendations, and optimize content for AI overview inclusion.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <section class="snippet-section" id="snippet-studio" data-reveal>
+      <div class="snippet-intro"><h2 class="section-title">Shape your search result.</h2><p class="section-desc">A small change can make a clearer first impression. Try your page title and description, and see how they read in search.</p><a class="snippet-jump" href="#inspector-input">Try the snippet studio <span aria-hidden="true">↗</span></a></div>
+        <!-- Client-side search snippet studio -->
+        <div class="hero-control" data-ui="true">
+          <div class="control-header">
+            <span class="control-title">Search snippet studio</span>
+            <span class="control-badge">Interactive preview</span>
+          </div>
+          <div class="control-input-wrap">
+            <input type="text" class="control-input" id="inspector-input" value="https://foverse.github.io/seoverse/" aria-label="URL to inspect">
+            <button class="control-btn" id="inspect-btn" onclick="runInspector()">Preview <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="snippet-fields"><label for="snippet-title">Page title<input id="snippet-title" type="text" value="SEOVerse — SEO &amp; AI visibility, on your terms."></label><label for="snippet-description">Description<textarea id="snippet-description" rows="3">An open-source SEO workspace for keyword research, technical audits, and AI visibility. Connect your AI assistant and build your next organic growth move.</textarea></label></div>
+          <div class="metrics-summary-strip" aria-live="polite">
+            <div class="metric-strip-item">
+              <div class="metric-label">Title Tag</div>
+              <div class="metric-value" id="val-title"></div>
+            </div>
+            <div class="metric-strip-item">
+              <div class="metric-label">Meta Description</div>
+              <div class="metric-value" id="val-desc"></div>
+            </div>
+            <div class="metric-strip-item">
+              <div class="metric-label">Preview engine</div>
+              <div class="metric-value" id="val-visibility">Browser only</div>
+            </div>
+          </div>
+          <div class="serp-preview" aria-live="polite">
+            <div class="serp-url" id="serp-preview-url">https://foverse.github.io &gt; seoverse</div>
+            <div class="serp-title" id="serp-preview-title">SEOVerse — Open-Source SEO Suite and AI Visibility Platform</div>
+            <div class="serp-snippet" id="serp-preview-desc">Developer-first open-source SEO suite and autonomous AI agent toolkit. Run organic research locally with SQLite or connect AI coding assistants via MCP.</div>
+          </div><p class="preview-note">Edit the fields to shape your search result. Preview only; no website audit is performed.</p>
+        </div>
+    </section>
+
     <!-- Skills Agenda Section (12 Autonomous Skills) -->
     <section class="skills-section" id="skills" data-reveal>
       <div class="section-header">
-        <h2 class="section-title">Twelve Built-In AI Agent Skills</h2>
+        <h2 class="section-title">Meet your twelve specialists.</h2>
         <p class="section-desc">Executable skill routines that give Cursor, Claude Code, Antigravity, and Codex the exact procedures to research, audit, and optimize.</p>
       </div>
 
@@ -1215,7 +273,7 @@
     <!-- How It Works (Drag Through Stages) -->
     <section class="workflow-section" id="workflow" data-reveal>
       <div class="section-header">
-        <h2 class="section-title">Developer Execution Workflow</h2>
+        <h2 class="section-title">Your stack. Your workflow.</h2>
         <p class="section-desc">Run everything on your own machine. From git clone to autonomous agent execution in four direct steps.</p>
       </div>
 
@@ -1252,7 +310,7 @@ pnpm run dev</code></pre>
     <section class="faq-section" id="faq" data-reveal>
       <div class="faq-layout">
         <div class="faq-sticky">
-          <h2 class="section-title">Common Questions</h2>
+          <h2 class="section-title">A little more clarity.</h2>
           <p class="section-desc">Practical details on self-hosting, data persistence, and agent integration.</p>
         </div>
 
@@ -1299,11 +357,11 @@ pnpm run dev</code></pre>
     <section class="cta-section" data-reveal>
       <div class="cta-split">
         <div class="cta-left">
-          <h2 class="cta-heading">Own Your Organic Search Intelligence</h2>
+          <h2 class="cta-heading">Make your next growth move.</h2>
           <div class="cta-form">
             <input type="text" class="cta-input" value="git clone https://github.com/foverse/seoverse.git" readonly id="clone-input" aria-label="Git clone command">
-            <button class="btn btn-primary" onclick="copyClone()">Copy Command</button>
-            <a href="/projects" class="btn btn-secondary">Launch App</a>
+            <button class="btn btn-primary" onclick="copyClone(this)">Copy Command</button>
+            <a href="https://github.com/foverse/seoverse#readme" class="btn btn-secondary">Read the docs ↗</a>
           </div>
           <p class="cta-desc">Free and open-source under the MIT license. Full code transparency and zero telemetry.</p>
         </div>
@@ -1329,14 +387,14 @@ pnpm run dev</code></pre>
             SEOVerse is free and open-source software under the MIT license. Built with TanStack Router, Cloudflare Workers, SQLite / D1, and Model Context Protocol (MCP).
           </div>
           <div style="font-size: var(--step-small); color: var(--muted); margin-top: 14px;">
-            Footage: "Sun-synchronous orbit of AI data centers" by Wikideas1 (CC0 via Wikimedia Commons). Atmosphere photography by Matthew Wiebe.
+            Footage: "Sun-synchronous orbit of AI data centers" by Wikideas1 (CC0 via Wikimedia Commons).
           </div>
         </div>
 
         <div class="footer-panel" data-reveal>
           <div class="footer-panel-title">Navigation &amp; Docs</div>
           <ul class="footer-nav-list">
-            <li><a href="/projects">Live Projects Portal (/projects)</a></li>
+            <li><a href="#workflow">Run SEOVerse locally</a></li><li><a href="https://growthmaker.fr">Back to Growthmaker ↗</a></li>
             <li><a href="#showcase">Interface Showcase</a></li>
             <li><a href="#skills">Twelve AI Agent Skills</a></li>
             <li><a href="#faq">Frequently Asked Questions</a></li>
@@ -1347,8 +405,8 @@ pnpm run dev</code></pre>
 
       <div class="footer-bottom-grid" data-reveal>
         <div class="footer-tile-wordmark">
-          <div class="wordmark-text">SEOVerse</div>
-          <div style="font-size: var(--step-small); opacity: 0.85;">Local First · Agent Native</div>
+          <a class="footer-service-logo" href="#top" aria-label="SEOVerse home"><img src="assets/seoverse-logo.svg" width="259" height="64" alt="SEOVerse"></a>
+          <div class="footer-brand-family"><a href="https://growthmaker.fr" aria-label="A Growthmaker project"><img src="assets/growthmaker-wordmark.svg" width="1742" height="292" alt="Growthmaker"></a><span>Local first · Agent native</span></div>
         </div>
 
         <a href="https://github.com/foverse/seoverse" class="footer-tile-action" target="_blank" rel="noopener">
@@ -1361,29 +419,38 @@ pnpm run dev</code></pre>
 
   <!-- Scripts -->
   <script>
-    // Live Inspector in Hero
+    // Client-side snippet studio: this does not fetch or audit the entered URL.
     function runInspector() {
-      const input = document.getElementById('inspector-input').value;
-      const cleanUrl = input.replace('https://', '').replace('http://', '').replace(/\/$/, '');
-      const parts = cleanUrl.split('/');
-      const domain = parts[0];
-      const path = parts.length > 1 ? parts.slice(1).join(' > ') : 'home';
-
-      document.getElementById('serp-preview-url').textContent = 'https://' + domain + ' > ' + path;
-      document.getElementById('serp-preview-title').textContent = 'SEO & Visibility Analysis: ' + domain;
-      document.getElementById('serp-preview-desc').textContent = 'Complete organic health audit for ' + domain + '. Zero technical crawl errors detected, optimal meta tags, and high AI visibility score across conversational engines.';
-
-      document.getElementById('val-title').textContent = (domain.length + 18) + ' chars (Optimal)';
-      document.getElementById('val-desc').textContent = '146 chars (Optimal)';
-      document.getElementById('val-visibility').textContent = '96 / 100 (High)';
+      const title = document.getElementById('snippet-title').value.trim();
+      const description = document.getElementById('snippet-description').value.trim();
+      const input = document.getElementById('inspector-input');
+      let parsed;
+      try {
+        parsed = new URL(input.value.includes('://') ? input.value : 'https://' + input.value);
+        if (!['http:', 'https:'].includes(parsed.protocol) || !parsed.hostname.includes('.')) throw new Error('Invalid URL');
+        input.setCustomValidity('');
+      } catch {
+        input.setCustomValidity('Enter a website URL, such as https://example.com');
+        input.reportValidity();
+        return;
+      }
+      document.getElementById('serp-preview-url').textContent = parsed.hostname + (parsed.pathname === '/' ? '' : ' › ' + parsed.pathname.slice(1).split('/').filter(Boolean).join(' › '));
+      document.getElementById('serp-preview-title').textContent = title || 'Your page title';
+      document.getElementById('serp-preview-desc').textContent = description || 'Your page description';
+      document.getElementById('val-title').textContent = title.length + ' characters';
+      document.getElementById('val-desc').textContent = description.length + ' characters';
     }
+    document.querySelectorAll('.snippet-fields input, .snippet-fields textarea').forEach(field => field.addEventListener('input', runInspector));
+    document.getElementById('inspector-input').addEventListener('input', () => document.getElementById('inspector-input').setCustomValidity(''));
+    document.getElementById('inspector-input').addEventListener('keydown', event => { if (event.key === 'Enter') runInspector(); });
+    runInspector();
 
     // Showcase Outputs Switching
     const showcaseData = [
       {
         src: './shots/seoverse-dashboard.png',
         alt: 'SEOVerse Dashboard Interface',
-        caption: 'Core Dashboard: Organic impressions, position distribution, and indexing status'
+        caption: 'Dashboard interface · capture taken before project data was connected'
       },
       {
         src: './shots/seoverse-keywords.png',
@@ -1410,6 +477,7 @@ pnpm run dev</code></pre>
     function switchOutput(index, btn) {
       document.querySelectorAll('.output-tab').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      document.querySelectorAll('.output-tab').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
       const data = showcaseData[index];
       const img = document.getElementById('stage-img');
       img.src = data.src;
@@ -1421,6 +489,7 @@ pnpm run dev</code></pre>
     function filterSkills(category, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      document.querySelectorAll('.filter-btn').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
       const rows = document.querySelectorAll('#skills-rows tr');
       rows.forEach(row => {
         if (category === 'all' || row.dataset.cat === category) {
@@ -1473,16 +542,21 @@ pnpm run dev</code></pre>
     }
 
     // Copy Clone Command
-    function copyClone() {
+    async function copyClone(btn) {
       const cmd = document.getElementById('clone-input').value;
-      navigator.clipboard.writeText(cmd).then(() => {
-        const btn = event.target;
-        const oldText = btn.textContent;
+      try {
+        await navigator.clipboard.writeText(cmd);
         btn.textContent = 'Copied!';
-        setTimeout(() => { btn.textContent = oldText; }, 2000);
-      });
+      } catch {
+        document.getElementById('clone-input').select();
+        btn.textContent = 'Select & copy';
+      }
+      setTimeout(() => { btn.textContent = 'Copy Command'; }, 2000);
     }
 
+    document.querySelectorAll('.output-tab, .filter-btn').forEach(btn => btn.setAttribute('aria-pressed', String(btn.classList.contains('active'))));
+    document.querySelectorAll('.mobile-menu a').forEach(link => link.addEventListener('click', () => document.querySelector('.mobile-menu').removeAttribute('open')));
+    document.documentElement.classList.add('motion-ready');
     // Motion & Scroll Reveals (scripted style mutation for recorder tracking)
     function triggerReveals() {
       const trigger = window.innerHeight * 0.92;
