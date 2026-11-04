@@ -1,24 +1,29 @@
 {
  "url": "index.html",
- "at": "2026-11-03T11:14:03.619Z",
+ "at": "2026-11-04T00:18:34.393Z",
  "allow": [],
  "viewports": [
   {
    "width": 1440,
    "height": 900,
    "load": "load",
-   "screens": 2,
+   "screens": 7,
    "filled": [
-    0.82,
-    0.79
+    0.33,
+    0.36,
+    0.37,
+    0.52,
+    0.44,
+    0.44,
+    0.54
    ],
    "motion": {
-    "elements": 1,
+    "elements": 19,
     "css": 0,
-    "transitions": 1,
-    "scripted": 0,
-    "videos": 0,
-    "playingVideos": 0
+    "transitions": 0,
+    "scripted": 19,
+    "videos": 1,
+    "playingVideos": 1
    },
    "metrics": {
     "viewport": {
@@ -26,22 +31,25 @@
      "h": 900
     },
     "page": {
-     "height": 923,
-     "screens": 1,
-     "words": 147,
+     "height": 6240,
+     "screens": 6.9,
+     "words": 786,
      "img": 2,
-     "video": 0,
+     "video": 1,
      "canvas": 0,
-     "svg": 31,
-     "sections": 2,
+     "svg": 0,
+     "sections": 7,
      "horizontalOverflow": 0,
      "overflowCulprits": [],
-     "uiFragments": 0,
+     "uiFragments": 2,
      "uiAbuse": false,
-     "realPictures": 0,
-     "videoCount": 0,
-     "uiPictures": 0,
-     "pictureSamples": [],
+     "realPictures": 3,
+     "videoCount": 1,
+     "uiPictures": 1,
+     "pictureSamples": [
+      "seoverse-dashboard.png",
+      "800"
+     ],
      "blendText": 0,
      "sideScrollers": 0,
      "brokenImages": [],
@@ -49,979 +57,206 @@
      "videosNoPoster": 0
     },
     "hero": {
-     "text": "Fouad's SEO Toolkit",
-     "words": 3,
-     "chars": 19,
-     "lines": 1,
-     "size": 22,
-     "vw": 1.5,
-     "font": "IBM Plex Sans",
-     "weight": 600,
-     "tracking": -0.02,
-     "leading": 1.25,
-     "top": 89,
-     "tag": "h1",
-     "kind": "heading",
+     "text": "Developer-First SEO and AI Visibility",
+     "words": 5,
+     "chars": 37,
+     "lines": 2,
+     "size": 48,
+     "vw": 3.3,
+     "font": "Work Sans",
+     "weight": 300,
+     "tracking": -0.035,
+     "leading": 1.05,
+     "upper": false,
+     "italic": false,
+     "mono": false,
      "align": "left",
-     "position": "left"
+     "position": "left",
+     "widthRatio": 0.36,
+     "top": 186,
+     "tag": "h1",
+     "kind": "heading"
     },
     "h1": {
-     "text": "Fouad's SEO Toolkit",
-     "words": 3,
-     "lines": 1,
-     "size": 22,
-     "font": "IBM Plex Sans"
+     "text": "Developer-First SEO and AI Visibility",
+     "words": 5,
+     "lines": 2,
+     "size": 48,
+     "font": "Work Sans"
     },
     "headings": [
      {
-      "text": "--",
-      "words": 1,
-      "chars": 2,
-      "lines": 1,
-      "size": 28,
-      "vw": 1.9,
-      "font": "IBM Plex Sans",
-      "weight": 600,
-      "tracking": -0.02,
-      "leading": 1,
+      "text": "Developer-First SEO and AI Visibility",
+      "words": 5,
+      "chars": 37,
+      "lines": 2,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.035,
+      "leading": 1.05,
       "upper": false,
       "italic": false,
       "mono": false,
       "align": "left",
       "position": "left",
-      "widthRatio": 0.01,
-      "top": 444,
-      "tag": "span",
+      "widthRatio": 0.36,
+      "top": 186,
+      "tag": "h1",
       "kind": "heading"
-     }
-    ],
-    "headingSummary": {
-     "count": 1,
-     "maxLines": 1,
-     "over2Lines": 0,
-     "statements": 0,
-     "centered": 0,
-     "medianWords": null,
-     "mixedFontHeadings": 0
-    },
-    "type": {
-     "families": [
-      {
-       "family": "IBM Plex Sans",
-       "share": 0.72,
-       "mono": false
-      },
-      {
-       "family": "Arial",
-       "share": 0.28,
-       "mono": false
-      }
-     ],
-     "familyCount": 2,
-     "sizes": [
-      13,
-      14,
-      15,
-      17,
-      18,
-      22,
-      28
-     ],
-     "sizeCount": 7,
-     "notLoaded": [],
-     "body": {
-      "font": "IBM Plex Sans",
-      "size": 13,
-      "leading": 1.45,
-      "weight": 400,
-      "tracking": 0,
-      "contrast": 5.9
-     },
-     "measureChars": 84,
-     "max": {
-      "size": 28,
-      "vw": 1.9,
-      "font": "IBM Plex Sans",
-      "text": "--"
-     },
-     "monoShare": 0,
-     "monoProseShare": 0,
-     "monoFamilies": [],
-     "monoSamples": [],
-     "microLabels": 0,
-     "microLabelShare": 0,
-     "microSamples": [],
-     "upperShare": 0,
-     "centerShare": 0.28,
-     "smallText": 0
-    },
-    "eyebrows": [],
-    "numbered": [],
-    "color": {
-     "bodyBg": "#f9fbfc",
-     "bodyBgHsl": {
-      "h": 200,
-      "s": 0.33,
-      "l": 0.98
-     },
-     "dark": false,
-     "sectionBgs": [
-      {
-       "color": "#ffffff",
-       "top": 64,
-       "hsl": {
-        "h": 0,
-        "s": 0,
-        "l": 1
-       }
-      }
-     ],
-     "textColors": [
-      {
-       "color": "#5d5f60",
-       "share": 0.68
-      },
-      {
-       "color": "#131416",
-       "share": 0.26
-      },
-      {
-       "color": "#c4242a",
-       "share": 0.02
-      },
-      {
-       "color": "#ffffff",
-       "share": 0.02
-      },
-      {
-       "color": "#92400e",
-       "share": 0.01
-      }
-     ],
-     "button": {
-      "bg": "#ffffff",
-      "hsl": {
-       "h": 0,
-       "s": 0,
-       "l": 1
-      },
-      "fg": "#131416"
-     },
-     "lowContrast": []
-    },
-    "buttons": {
-     "count": 13,
-     "inHero": 13,
-     "radius": 6,
-     "height": 30,
-     "withShadow": 0,
-     "withGradient": 0,
-     "mono": 0,
-     "upper": 0,
-     "heroLabels": [
-      "About",
-      "GitHub",
-      "Run Demo",
-      "Analyze Website URL",
-      "E-Commerce"
-     ]
-    },
-    "surfaces": {
-     "shadowStatic": 0,
-     "shadowOverlay": 0,
-     "shadowSamples": [],
-     "gradients": 0,
-     "scrims": 0,
-     "gradientSamples": [],
-     "gradientText": 0,
-     "hairlines": 4,
-     "hairlineSamples": [
-      "header.app-header 1440px",
-      "div.tool-panel-header 1188px",
-      "nav.tabs-bar 1230px",
-      "footer.app-footer 1440px"
-     ],
-     "outlinedBoxes": 4,
-     "dashed": 0,
-     "blurred": 0,
-     "roundedBoxes": 4,
-     "boxRadius": 8,
-     "squareMedia": 0,
-     "roundedMedia": 0,
-     "mediaRadius": 0,
-     "textShadow": 0,
-     "cardRows": []
-    },
-    "heroMedia": [],
-    "nav": {
-     "links": 2,
-     "fixed": true,
-     "height": 48,
-     "floatingPill": false,
-     "blur": false
-    },
-    "fontsLoaded": [
-     "ibm plex sans"
-    ]
-   },
-   "layout": {
-    "viewport": {
-     "w": 1440,
-     "h": 900
-    },
-    "pageH": 923,
-    "margins": {
-     "left": 105,
-     "right": 115
-    },
-    "sections": [
-     {
-      "sel": "section#input-section.tool-panel",
-      "tag": "section",
-      "top": 187,
-      "height": 170,
-      "words": 29,
-      "media": 0,
-      "middle": 0,
-      "heading": null,
-      "left": 126,
-      "right": 126,
-      "textLeft": 146,
-      "textRight": 137,
-      "fullBleed": false,
-      "footer": false,
-      "hero": true,
-      "continues": false,
-      "pinned": false
      },
      {
-      "sel": "section#audit-results",
-      "tag": "section",
-      "top": 381,
-      "height": 409,
-      "words": 70,
-      "media": 0,
-      "middle": 37,
-      "heading": {
-       "text": "--",
-       "size": 28,
-       "tag": "span"
-      },
-      "left": 105,
-      "right": 130,
-      "textLeft": 105,
-      "textRight": 141,
-      "fullBleed": false,
-      "footer": true,
-      "hero": true,
-      "continues": false,
-      "pinned": false
-     }
-    ],
-    "gaps": [],
-    "h1s": [
-     {
-      "text": "Fouad's SEO Toolkit",
-      "size": 22,
-      "top": 89,
-      "firstScreen": true
-     }
-    ],
-    "edgeText": [],
-    "edges": [
-     {
-      "x": 105,
-      "n": 2
-     }
-    ],
-    "leftBlocks": 2,
-    "bodySize": 13,
-    "stage": false,
-    "explains": false,
-    "slivers": [],
-    "voidShare": 0.09,
-    "voidBox": {
-     "x": 420,
-     "y": 720,
-     "w": 1020,
-     "h": 120
-    }
-   },
-   "app": {
-    "viewport": {
-     "w": 1440,
-     "h": 900
-    },
-    "dark": false,
-    "ground": "#f9fbfc",
-    "sidebar": null,
-    "topbar": {
-     "h": 48
-    },
-    "canvas": {
-     "left": 105,
-     "right": 115
-    },
-    "hero": {
-     "text": "Fouad's SEO Toolkit",
-     "words": 3,
-     "chars": 19,
-     "lines": 1,
-     "size": 22,
-     "vw": 1.5,
-     "font": "IBM Plex Sans",
-     "weight": 600,
-     "tracking": -0.02,
-     "leading": 1.25,
-     "top": 89,
-     "tag": "h1",
-     "kind": "heading",
-     "align": "left",
-     "position": "left"
-    },
-    "charts": 1,
-    "layout": {
-     "panels": 1,
-     "firstScreen": 1,
-     "ragged": [],
-     "voids": []
-    },
-    "tiles": 0,
-    "panels": {
-     "count": 4,
-     "radii": [
-      [
-       8,
-       2
-      ],
-      [
-       16,
-       1
-      ],
-      [
-       6,
-       1
-      ]
-     ],
-     "heavyBorders": 0,
-     "borderSamples": [],
-     "heavyShadows": 0,
-     "softShadows": 0,
-     "shadowSamples": [],
-     "glass": 0
-    },
-    "chips": {
-     "count": 1,
-     "hues": 1,
-     "samples": [
-      {
-       "hue": 192,
-       "size": 28,
-       "radius": "6px"
-      }
-     ]
-    },
-    "numbers": {
-     "cells": 0,
-     "leftAligned": 0,
-     "figures": 1,
-     "tabularShare": 1,
-     "kpiMax": 17
-    },
-    "rows": null,
-    "chartHues": 0,
-    "placeholders": [],
-    "type": {
-     "under13": 0.02,
-     "tiny": 0,
-     "tinySamples": [],
-     "sizes": [
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      20,
-      22,
-      28
-     ]
-    },
-    "title": {
-     "text": "Fouad's SEO Toolkit",
-     "size": 22,
-     "top": 89
-    },
-    "colourShare": 0.004
-   },
-   "consoleErrors": []
-  },
-  {
-   "width": 768,
-   "height": 1024,
-   "load": "load",
-   "screens": 2,
-   "filled": [
-    0.98,
-    0.88
-   ],
-   "motion": {
-    "elements": 1,
-    "css": 0,
-    "transitions": 1,
-    "scripted": 0,
-    "videos": 0,
-    "playingVideos": 0
-   },
-   "metrics": {
-    "viewport": {
-     "w": 768,
-     "h": 1024
-    },
-    "page": {
-     "height": 1261,
-     "screens": 1.2,
-     "words": 147,
-     "img": 2,
-     "video": 0,
-     "canvas": 0,
-     "svg": 31,
-     "sections": 2,
-     "horizontalOverflow": 0,
-     "overflowCulprits": [],
-     "uiFragments": 0,
-     "uiAbuse": false,
-     "realPictures": 0,
-     "videoCount": 0,
-     "uiPictures": 0,
-     "pictureSamples": [],
-     "blendText": 0,
-     "sideScrollers": 0,
-     "brokenImages": [],
-     "emoji": [],
-     "videosNoPoster": 0
-    },
-    "hero": {
-     "text": "Fouad's SEO Toolkit",
-     "words": 3,
-     "chars": 19,
-     "lines": 1,
-     "size": 22,
-     "vw": 2.9,
-     "font": "IBM Plex Sans",
-     "weight": 600,
-     "tracking": -0.02,
-     "leading": 1.25,
-     "top": 73,
-     "tag": "h1",
-     "kind": "heading",
-     "align": "left",
-     "position": "left"
-    },
-    "h1": {
-     "text": "Fouad's SEO Toolkit",
-     "words": 3,
-     "lines": 1,
-     "size": 22,
-     "font": "IBM Plex Sans"
-    },
-    "headings": [
-     {
-      "text": "--",
-      "words": 1,
-      "chars": 2,
+      "text": "Verified Organic Engine Outputs",
+      "words": 4,
+      "chars": 31,
       "lines": 1,
-      "size": 28,
-      "vw": 3.6,
-      "font": "IBM Plex Sans",
-      "weight": 600,
-      "tracking": -0.02,
-      "leading": 1,
-      "upper": false,
-      "italic": false,
-      "mono": false,
-      "align": "left",
-      "position": "left",
-      "widthRatio": 0.03,
-      "top": 462,
-      "tag": "span",
-      "kind": "heading"
-     }
-    ],
-    "headingSummary": {
-     "count": 1,
-     "maxLines": 1,
-     "over2Lines": 0,
-     "statements": 0,
-     "centered": 0,
-     "medianWords": null,
-     "mixedFontHeadings": 0
-    },
-    "type": {
-     "families": [
-      {
-       "family": "IBM Plex Sans",
-       "share": 0.72,
-       "mono": false
-      },
-      {
-       "family": "Arial",
-       "share": 0.28,
-       "mono": false
-      }
-     ],
-     "familyCount": 2,
-     "sizes": [
-      13,
-      14,
-      15,
-      17,
-      18,
-      22,
-      28
-     ],
-     "sizeCount": 7,
-     "notLoaded": [],
-     "body": {
-      "font": "IBM Plex Sans",
-      "size": 13,
-      "leading": 1.45,
-      "weight": 400,
-      "tracking": 0,
-      "contrast": 5.9
-     },
-     "measureChars": 84,
-     "max": {
-      "size": 28,
-      "vw": 3.6,
-      "font": "IBM Plex Sans",
-      "text": "--"
-     },
-     "monoShare": 0,
-     "monoProseShare": 0,
-     "monoFamilies": [],
-     "monoSamples": [],
-     "microLabels": 0,
-     "microLabelShare": 0,
-     "microSamples": [],
-     "upperShare": 0,
-     "centerShare": 0.28,
-     "smallText": 0
-    },
-    "eyebrows": [],
-    "numbered": [],
-    "color": {
-     "bodyBg": "#f9fbfc",
-     "bodyBgHsl": {
-      "h": 200,
-      "s": 0.33,
-      "l": 0.98
-     },
-     "dark": false,
-     "sectionBgs": [
-      {
-       "color": "#ffffff",
-       "top": 56,
-       "hsl": {
-        "h": 0,
-        "s": 0,
-        "l": 1
-       }
-      }
-     ],
-     "textColors": [
-      {
-       "color": "#5d5f60",
-       "share": 0.68
-      },
-      {
-       "color": "#131416",
-       "share": 0.26
-      },
-      {
-       "color": "#c4242a",
-       "share": 0.02
-      },
-      {
-       "color": "#ffffff",
-       "share": 0.02
-      },
-      {
-       "color": "#92400e",
-       "share": 0.01
-      }
-     ],
-     "button": {
-      "bg": "#ffffff",
-      "hsl": {
-       "h": 0,
-       "s": 0,
-       "l": 1
-      },
-      "fg": "#131416"
-     },
-     "lowContrast": []
-    },
-    "buttons": {
-     "count": 13,
-     "inHero": 11,
-     "radius": 6,
-     "height": 30,
-     "withShadow": 0,
-     "withGradient": 0,
-     "mono": 0,
-     "upper": 0,
-     "heroLabels": [
-      "About",
-      "GitHub",
-      "Run Demo",
-      "Analyze Website URL",
-      "E-Commerce"
-     ]
-    },
-    "surfaces": {
-     "shadowStatic": 0,
-     "shadowOverlay": 0,
-     "shadowSamples": [],
-     "gradients": 0,
-     "scrims": 0,
-     "gradientSamples": [],
-     "gradientText": 0,
-     "hairlines": 4,
-     "hairlineSamples": [
-      "header.app-header 768px",
-      "div.tool-panel-header 668px",
-      "nav.tabs-bar 710px",
-      "footer.app-footer 768px"
-     ],
-     "outlinedBoxes": 4,
-     "dashed": 0,
-     "blurred": 0,
-     "roundedBoxes": 4,
-     "boxRadius": 8,
-     "squareMedia": 0,
-     "roundedMedia": 0,
-     "mediaRadius": 0,
-     "textShadow": 0,
-     "cardRows": []
-    },
-    "heroMedia": [],
-    "nav": {
-     "links": 2,
-     "fixed": true,
-     "height": 48,
-     "floatingPill": false,
-     "blur": false
-    },
-    "fontsLoaded": [
-     "ibm plex sans"
-    ]
-   },
-   "layout": {
-    "viewport": {
-     "w": 768,
-     "h": 1024
-    },
-    "pageH": 1261,
-    "margins": {
-     "left": 29,
-     "right": 35
-    },
-    "sections": [
-     {
-      "sel": "section#input-section.tool-panel",
-      "tag": "section",
-      "top": 171,
-      "height": 214,
-      "words": 29,
-      "media": 0,
-      "middle": 10,
-      "heading": null,
-      "left": 50,
-      "right": 50,
-      "textLeft": 50,
-      "textRight": 67,
-      "fullBleed": false,
-      "footer": false,
-      "hero": true,
-      "continues": false,
-      "pinned": false
-     },
-     {
-      "sel": "section#audit-results",
-      "tag": "section",
-      "top": 409,
-      "height": 697,
-      "words": 67,
-      "media": 0,
-      "middle": 181,
-      "heading": {
-       "text": "--",
-       "size": 28,
-       "tag": "span"
-      },
-      "left": 29,
-      "right": 0,
-      "textLeft": 29,
-      "textRight": 29,
-      "fullBleed": false,
-      "footer": true,
-      "hero": true,
-      "continues": false,
-      "pinned": false
-     }
-    ],
-    "gaps": [],
-    "h1s": [
-     {
-      "text": "Fouad's SEO Toolkit",
-      "size": 22,
-      "top": 73,
-      "firstScreen": true
-     }
-    ],
-    "edgeText": [],
-    "edges": [
-     {
-      "x": 29,
-      "n": 2
-     }
-    ],
-    "leftBlocks": 2,
-    "bodySize": 13,
-    "stage": false,
-    "explains": false,
-    "slivers": [],
-    "voidShare": 0,
-    "voidBox": null
-   },
-   "app": {
-    "viewport": {
-     "w": 768,
-     "h": 1024
-    },
-    "dark": false,
-    "ground": "#f9fbfc",
-    "sidebar": null,
-    "topbar": {
-     "h": 48
-    },
-    "canvas": {
-     "left": 24,
-     "right": -210
-    },
-    "hero": {
-     "text": "Fouad's SEO Toolkit",
-     "words": 3,
-     "chars": 19,
-     "lines": 1,
-     "size": 22,
-     "vw": 2.9,
-     "font": "IBM Plex Sans",
-     "weight": 600,
-     "tracking": -0.02,
-     "leading": 1.25,
-     "top": 73,
-     "tag": "h1",
-     "kind": "heading",
-     "align": "left",
-     "position": "left"
-    },
-    "charts": 1,
-    "layout": {
-     "panels": 1,
-     "firstScreen": 1,
-     "ragged": [],
-     "voids": []
-    },
-    "tiles": 0,
-    "panels": {
-     "count": 4,
-     "radii": [
-      [
-       8,
-       2
-      ],
-      [
-       12,
-       1
-      ],
-      [
-       6,
-       1
-      ]
-     ],
-     "heavyBorders": 0,
-     "borderSamples": [],
-     "heavyShadows": 0,
-     "softShadows": 0,
-     "shadowSamples": [],
-     "glass": 0
-    },
-    "chips": {
-     "count": 1,
-     "hues": 1,
-     "samples": [
-      {
-       "hue": 192,
-       "size": 28,
-       "radius": "6px"
-      }
-     ]
-    },
-    "numbers": {
-     "cells": 0,
-     "leftAligned": 0,
-     "figures": 1,
-     "tabularShare": 1,
-     "kpiMax": 17
-    },
-    "rows": null,
-    "chartHues": 0,
-    "placeholders": [],
-    "type": {
-     "under13": 0.02,
-     "tiny": 0,
-     "tinySamples": [],
-     "sizes": [
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      20,
-      22,
-      28
-     ]
-    },
-    "title": {
-     "text": "Fouad's SEO Toolkit",
-     "size": 22,
-     "top": 73
-    },
-    "colourShare": 0.012
-   },
-   "consoleErrors": []
-  },
-  {
-   "width": 390,
-   "height": 844,
-   "load": "load",
-   "screens": 2,
-   "filled": [
-    0.91,
-    0.77
-   ],
-   "motion": {
-    "elements": 1,
-    "css": 0,
-    "transitions": 1,
-    "scripted": 0,
-    "videos": 0,
-    "playingVideos": 0
-   },
-   "metrics": {
-    "viewport": {
-     "w": 390,
-     "h": 844
-    },
-    "page": {
-     "height": 1662,
-     "screens": 2,
-     "words": 145,
-     "img": 2,
-     "video": 0,
-     "canvas": 0,
-     "svg": 31,
-     "sections": 2,
-     "horizontalOverflow": 0,
-     "overflowCulprits": [],
-     "uiFragments": 0,
-     "uiAbuse": false,
-     "realPictures": 0,
-     "videoCount": 0,
-     "uiPictures": 0,
-     "pictureSamples": [],
-     "blendText": 0,
-     "sideScrollers": 0,
-     "brokenImages": [],
-     "emoji": [],
-     "videosNoPoster": 0
-    },
-    "hero": {
-     "text": "Fouad's SEO Toolkit",
-     "words": 3,
-     "chars": 19,
-     "lines": 1,
-     "size": 22,
-     "vw": 5.6,
-     "font": "IBM Plex Sans",
-     "weight": 600,
-     "tracking": -0.02,
-     "leading": 1.25,
-     "top": 73,
-     "tag": "h1",
-     "kind": "heading",
-     "align": "left",
-     "position": "left"
-    },
-    "h1": {
-     "text": "Fouad's SEO Toolkit",
-     "words": 3,
-     "lines": 1,
-     "size": 22,
-     "font": "IBM Plex Sans"
-    },
-    "headings": [
-     {
-      "text": "Fouad's SEO Toolkit",
-      "words": 3,
-      "chars": 19,
-      "lines": 1,
-      "size": 22,
-      "vw": 5.6,
-      "font": "IBM Plex Sans",
-      "weight": 600,
-      "tracking": -0.015,
-      "leading": 1.25,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.03,
+      "leading": 1.15,
       "upper": false,
       "italic": false,
       "mono": false,
       "align": "left",
       "position": "center",
-      "widthRatio": 0.85,
-      "top": 73,
-      "tag": "h1",
+      "widthRatio": 0.76,
+      "top": 721,
+      "tag": "h2",
       "kind": "heading"
      },
      {
-      "text": "--",
-      "words": 1,
-      "chars": 2,
+      "text": "Substantive Organic Capabilities",
+      "words": 3,
+      "chars": 32,
       "lines": 1,
-      "size": 28,
-      "vw": 7.2,
-      "font": "IBM Plex Sans",
-      "weight": 600,
-      "tracking": -0.02,
-      "leading": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.03,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 1574,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Twelve Built-In AI Agent Skills",
+      "words": 5,
+      "chars": 31,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.03,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 2887,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Developer Execution Workflow",
+      "words": 3,
+      "chars": 28,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.03,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 4069,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Common Questions",
+      "words": 2,
+      "chars": 16,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.03,
+      "leading": 1.15,
       "upper": false,
       "italic": false,
       "mono": false,
       "align": "left",
       "position": "left",
-      "widthRatio": 0.05,
-      "top": 556,
-      "tag": "span",
+      "widthRatio": 0.22,
+      "top": 4714,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Own Your Organic Search Intelligence",
+      "words": 5,
+      "chars": 36,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.44,
+      "top": 5423,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "SEOVerse",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Work Sans",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.15,
+      "top": 6066,
+      "tag": "div",
       "kind": "heading"
      }
     ],
     "headingSummary": {
-     "count": 2,
-     "maxLines": 1,
+     "count": 8,
+     "maxLines": 2,
      "over2Lines": 0,
      "statements": 0,
      "centered": 0,
@@ -1031,131 +266,137 @@
     "type": {
      "families": [
       {
-       "family": "IBM Plex Sans",
-       "share": 0.72,
+       "family": "Work Sans",
+       "share": 0.95,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.05,
        "mono": false
       },
       {
        "family": "Arial",
-       "share": 0.28,
+       "share": 0,
        "mono": false
       }
      ],
-     "familyCount": 2,
+     "familyCount": 3,
      "sizes": [
-      13,
       14,
-      17,
-      18,
-      22,
-      28
+      16,
+      20,
+      32,
+      48
      ],
-     "sizeCount": 6,
+     "sizeCount": 5,
      "notLoaded": [],
      "body": {
-      "font": "IBM Plex Sans",
-      "size": 13,
-      "leading": 1.45,
+      "font": "Work Sans",
+      "size": 16,
+      "leading": 1.5,
       "weight": 400,
       "tracking": 0,
-      "contrast": 5.9
+      "contrast": 15.7
      },
-     "measureChars": 47,
+     "measureChars": 81,
      "max": {
-      "size": 28,
-      "vw": 7.2,
-      "font": "IBM Plex Sans",
-      "text": "--"
+      "size": 48,
+      "vw": 3.3,
+      "font": "Work Sans",
+      "text": "Developer-First SEO"
      },
-     "monoShare": 0,
+     "monoShare": 0.05,
      "monoProseShare": 0,
-     "monoFamilies": [],
+     "monoFamilies": [
+      "ui-monospace"
+     ],
      "monoSamples": [],
      "microLabels": 0,
      "microLabelShare": 0,
      "microSamples": [],
-     "upperShare": 0,
-     "centerShare": 0.28,
+     "upperShare": 0.03,
+     "centerShare": 0.01,
      "smallText": 0
     },
     "eyebrows": [],
     "numbered": [],
     "color": {
-     "bodyBg": "#f9fbfc",
+     "bodyBg": "#eeecea",
      "bodyBgHsl": {
-      "h": 200,
-      "s": 0.33,
-      "l": 0.98
+      "h": 30,
+      "s": 0.11,
+      "l": 0.93
      },
      "dark": false,
      "sectionBgs": [
       {
-       "color": "#ffffff",
-       "top": 56,
+       "color": "#e4e1dd",
+       "top": 3036,
        "hsl": {
-        "h": 0,
-        "s": 0,
-        "l": 1
+        "h": 34,
+        "s": 0.11,
+        "l": 0.88
        }
       },
       {
-       "color": "#f4f6f8",
-       "top": 171,
+       "color": "#eeecea",
+       "top": 5660,
        "hsl": {
-        "h": 210,
-        "s": 0.22,
-        "l": 0.96
+        "h": 30,
+        "s": 0.11,
+        "l": 0.93
        }
       }
      ],
      "textColors": [
       {
-       "color": "#5d5f60",
-       "share": 0.69
+       "color": "#141312",
+       "share": 0.79
       },
       {
-       "color": "#131416",
-       "share": 0.25
+       "color": "#4a4642",
+       "share": 0.12
       },
       {
-       "color": "#c4242a",
+       "color": "#2c4c3e",
+       "share": 0.03
+      },
+      {
+       "color": "#4d5156",
        "share": 0.02
       },
       {
        "color": "#ffffff",
        "share": 0.02
-      },
-      {
-       "color": "#92400e",
-       "share": 0.01
       }
      ],
      "button": {
-      "bg": "#ffffff",
+      "bg": "#2c4c3e",
       "hsl": {
-       "h": 0,
-       "s": 0,
-       "l": 1
+       "h": 154,
+       "s": 0.27,
+       "l": 0.24
       },
-      "fg": "#131416"
+      "fg": "#ffffff"
      },
      "lowContrast": []
     },
     "buttons": {
-     "count": 8,
-     "inHero": 6,
+     "count": 12,
+     "inHero": 5,
      "radius": 6,
-     "height": 28,
+     "height": 49,
      "withShadow": 0,
      "withGradient": 0,
      "mono": 0,
      "upper": 0,
      "heroLabels": [
-      "Run Demo",
-      "Analyze Website URL",
-      "E-Commerce",
-      "Tech Blog",
-      "Broken SEO"
+      "Launch Live App",
+      "Launch Live App",
+      "GitHub Repository",
+      "Inspect Page",
+      "Performance Overview"
      ]
     },
     "surfaces": {
@@ -1166,60 +407,66 @@
      "scrims": 0,
      "gradientSamples": [],
      "gradientText": 0,
-     "hairlines": 4,
-     "hairlineSamples": [
-      "header.app-header 390px",
-      "div.tool-panel-header 290px",
-      "nav.tabs-bar 332px",
-      "footer.app-footer 390px"
-     ],
-     "outlinedBoxes": 4,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
      "dashed": 0,
      "blurred": 0,
-     "roundedBoxes": 4,
-     "boxRadius": 8,
+     "roundedBoxes": 21,
+     "boxRadius": 6,
      "squareMedia": 0,
-     "roundedMedia": 0,
-     "mediaRadius": 0,
+     "roundedMedia": 3,
+     "mediaRadius": 6,
      "textShadow": 0,
-     "cardRows": []
+     "cardRows": [
+      {
+       "count": 3,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 238
+      }
+     ]
     },
     "heroMedia": [],
     "nav": {
-     "links": 1,
+     "links": 7,
      "fixed": true,
-     "height": 48,
+     "height": 72,
      "floatingPill": false,
      "blur": false
     },
     "fontsLoaded": [
-     "ibm plex sans"
+     "work sans"
     ]
    },
    "layout": {
     "viewport": {
-     "w": 390,
-     "h": 844
+     "w": 1440,
+     "h": 900
     },
-    "pageH": 1662,
+    "pageH": 6240,
     "margins": {
-     "left": 24,
-     "right": 27
+     "left": 181,
+     "right": 188
     },
     "sections": [
      {
-      "sel": "section#input-section.tool-panel",
+      "sel": "section.hero",
       "tag": "section",
-      "top": 171,
-      "height": 317,
-      "words": 29,
+      "top": 72,
+      "height": 569,
+      "words": 100,
       "media": 0,
-      "middle": 0,
-      "heading": null,
-      "left": 50,
-      "right": 50,
-      "textLeft": 50,
-      "textRight": 56,
+      "middle": 105,
+      "heading": {
+       "text": "Developer-First SEO",
+       "size": 48,
+       "tag": "h1"
+      },
+      "left": 181,
+      "right": 186,
+      "textLeft": 181,
+      "textRight": 194,
       "fullBleed": false,
       "footer": false,
       "hero": true,
@@ -1227,22 +474,22 @@
       "pinned": false
      },
      {
-      "sel": "section#audit-results",
+      "sel": "section#showcase.showcase-section.is-in",
       "tag": "section",
-      "top": 512,
-      "height": 957,
-      "words": 61,
-      "media": 0,
-      "middle": 559,
+      "top": 641,
+      "height": 853,
+      "words": 53,
+      "media": 1,
+      "middle": 0,
       "heading": {
-       "text": "--",
-       "size": 28,
-       "tag": "span"
+       "text": "Verified Organic Engine Outputs",
+       "size": 32,
+       "tag": "h2"
       },
-      "left": 29,
-      "right": 0,
-      "textLeft": 29,
-      "textRight": 59,
+      "left": 181,
+      "right": 186,
+      "textLeft": 181,
+      "textRight": 232,
       "fullBleed": false,
       "footer": false,
       "hero": false,
@@ -1250,18 +497,137 @@
       "pinned": false
      },
      {
-      "sel": "footer.app-footer",
-      "tag": "footer",
-      "top": 1526,
-      "height": 136,
-      "words": 18,
-      "media": 0,
+      "sel": "section#features.features-section.is-in",
+      "tag": "section",
+      "top": 1494,
+      "height": 1313,
+      "words": 189,
+      "media": 2,
       "middle": 0,
-      "heading": null,
-      "left": 24,
-      "right": 27,
-      "textLeft": 24,
-      "textRight": 27,
+      "heading": {
+       "text": "Substantive Organic Capabilities",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 181,
+      "right": 181,
+      "textLeft": 181,
+      "textRight": 181,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#skills.skills-section.is-in",
+      "tag": "section",
+      "top": 2807,
+      "height": 1182,
+      "words": 224,
+      "media": 0,
+      "middle": 37,
+      "heading": {
+       "text": "Twelve Built-In AI Agent Skills",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 181,
+      "right": 222,
+      "textLeft": 181,
+      "textRight": 222,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#workflow.workflow-section.is-in",
+      "tag": "section",
+      "top": 3989,
+      "height": 645,
+      "words": 72,
+      "media": 0,
+      "middle": 2,
+      "heading": {
+       "text": "Developer Execution Workflow",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 181,
+      "right": 210,
+      "textLeft": 181,
+      "textRight": 210,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#faq.faq-section.is-in",
+      "tag": "section",
+      "top": 4634,
+      "height": 696,
+      "words": 215,
+      "media": 0,
+      "middle": 99,
+      "heading": {
+       "text": "Common Questions",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 181,
+      "right": 218,
+      "textLeft": 181,
+      "textRight": 218,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.cta-section.is-in",
+      "tag": "section",
+      "top": 5330,
+      "height": 330,
+      "words": 41,
+      "media": 0,
+      "middle": 88,
+      "heading": {
+       "text": "Own Your Organic Search Intelligence",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 229,
+      "right": 242,
+      "textLeft": 229,
+      "textRight": 242,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer",
+      "tag": "footer",
+      "top": 5660,
+      "height": 580,
+      "words": 80,
+      "media": 0,
+      "middle": 16,
+      "heading": {
+       "text": "SEOVerse",
+       "size": 48,
+       "tag": "div"
+      },
+      "left": 213,
+      "right": 298,
+      "textLeft": 213,
+      "textRight": 298,
       "fullBleed": false,
       "footer": true,
       "hero": false,
@@ -1272,135 +638,1426 @@
     "gaps": [],
     "h1s": [
      {
-      "text": "Fouad's SEO Toolkit",
-      "size": 22,
-      "top": 73,
+      "text": "Developer-First SEO and AI Visibility",
+      "size": 48,
+      "top": 186,
       "firstScreen": true
      }
     ],
     "edgeText": [],
     "edges": [
      {
-      "x": 29,
-      "n": 2
+      "x": 181,
+      "n": 13
+     },
+     {
+      "x": 577,
+      "n": 8
+     },
+     {
+      "x": 221,
+      "n": 4
      }
     ],
-    "leftBlocks": 2,
-    "bodySize": 13,
+    "leftBlocks": 25,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0.17,
+    "voidBox": {
+     "x": 720,
+     "y": 540,
+     "w": 720,
+     "h": 300
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    0.35,
+    0.63,
+    0.65,
+    0.51,
+    0.88,
+    0.44,
+    0.62,
+    0.63,
+    0.76
+   ],
+   "motion": {
+    "elements": 19,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 19,
+    "videos": 1,
+    "playingVideos": 1
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 8213,
+     "screens": 8,
+     "words": 777,
+     "img": 2,
+     "video": 1,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 2,
+     "uiAbuse": false,
+     "realPictures": 3,
+     "videoCount": 1,
+     "uiPictures": 1,
+     "pictureSamples": [
+      "seoverse-dashboard.png",
+      "800"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Developer-First SEO and AI Visibility",
+     "words": 5,
+     "chars": 37,
+     "lines": 2,
+     "size": 37.8,
+     "vw": 4.9,
+     "font": "Work Sans",
+     "weight": 300,
+     "tracking": -0.035,
+     "leading": 1.05,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.93,
+     "top": 120,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Developer-First SEO and AI Visibility",
+     "words": 5,
+     "lines": 2,
+     "size": 37.8,
+     "font": "Work Sans"
+    },
+    "headings": [
+     {
+      "text": "Developer-First SEO and AI Visibility",
+      "words": 5,
+      "chars": 37,
+      "lines": 2,
+      "size": 37.8,
+      "vw": 4.9,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.035,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.93,
+      "top": 120,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Verified Organic Engine Outputs",
+      "words": 4,
+      "chars": 31,
+      "lines": 1,
+      "size": 28.5,
+      "vw": 3.7,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.03,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.93,
+      "top": 953,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Substantive Organic Capabilities",
+      "words": 3,
+      "chars": 32,
+      "lines": 1,
+      "size": 28.5,
+      "vw": 3.7,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.03,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.93,
+      "top": 2151,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Twelve Built-In AI Agent Skills",
+      "words": 5,
+      "chars": 31,
+      "lines": 1,
+      "size": 28.5,
+      "vw": 3.7,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.03,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.93,
+      "top": 4001,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Developer Execution Workflow",
+      "words": 3,
+      "chars": 28,
+      "lines": 1,
+      "size": 28.5,
+      "vw": 3.7,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.03,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.93,
+      "top": 5386,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Common Questions",
+      "words": 2,
+      "chars": 16,
+      "lines": 1,
+      "size": 28.5,
+      "vw": 3.7,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.03,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.93,
+      "top": 6099,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Own Your Organic Search Intelligence",
+      "words": 5,
+      "chars": 36,
+      "lines": 1,
+      "size": 28.5,
+      "vw": 3.7,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 6843,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "SEOVerse",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 37.8,
+      "vw": 4.9,
+      "font": "Work Sans",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.22,
+      "top": 7922,
+      "tag": "div",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 8,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Work Sans",
+       "share": 0.95,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.05,
+       "mono": false
+      },
+      {
+       "family": "Arial",
+       "share": 0,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      14,
+      16,
+      20,
+      29,
+      38
+     ],
+     "sizeCount": 5,
+     "notLoaded": [],
+     "body": {
+      "font": "Work Sans",
+      "size": 16,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 15.7
+     },
+     "measureChars": 81,
+     "max": {
+      "size": 37.8,
+      "vw": 4.9,
+      "font": "Work Sans",
+      "text": "Developer-First SEO"
+     },
+     "monoShare": 0.05,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.03,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#eeecea",
+     "bodyBgHsl": {
+      "h": 30,
+      "s": 0.11,
+      "l": 0.93
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#e4e1dd",
+       "top": 440,
+       "hsl": {
+        "h": 34,
+        "s": 0.11,
+        "l": 0.88
+       }
+      },
+      {
+       "color": "#dedad4",
+       "top": 1442,
+       "hsl": {
+        "h": 36,
+        "s": 0.13,
+        "l": 0.85
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 1458,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#eeecea",
+       "top": 7262,
+       "hsl": {
+        "h": 30,
+        "s": 0.11,
+        "l": 0.93
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#141312",
+       "share": 0.8
+      },
+      {
+       "color": "#4a4642",
+       "share": 0.11
+      },
+      {
+       "color": "#2c4c3e",
+       "share": 0.03
+      },
+      {
+       "color": "#4d5156",
+       "share": 0.02
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#2c4c3e",
+      "hsl": {
+       "h": 154,
+       "s": 0.27,
+       "l": 0.24
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 12,
+     "inHero": 4,
+     "radius": 6,
+     "height": 49,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Launch Live App",
+      "Launch Live App",
+      "GitHub Repository",
+      "Inspect Page"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 18,
+     "boxRadius": 6,
+     "squareMedia": 0,
+     "roundedMedia": 3,
+     "mediaRadius": 6,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "work sans"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 8213,
+    "margins": {
+     "left": 31,
+     "right": 20
+    },
+    "sections": [
+     {
+      "sel": "section.hero",
+      "tag": "section",
+      "top": 72,
+      "height": 801,
+      "words": 100,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Developer-First SEO",
+       "size": 38,
+       "tag": "h1"
+      },
+      "left": 31,
+      "right": 36,
+      "textLeft": 31,
+      "textRight": 44,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#showcase.showcase-section.is-in",
+      "tag": "section",
+      "top": 873,
+      "height": 1198,
+      "words": 53,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Verified Organic Engine Outputs",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 31,
+      "right": 20,
+      "textLeft": 31,
+      "textRight": 83,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#features.features-section.is-in",
+      "tag": "section",
+      "top": 2071,
+      "height": 1850,
+      "words": 189,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "Substantive Organic Capabilities",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 31,
+      "right": 20,
+      "textLeft": 31,
+      "textRight": 25,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#skills.skills-section.is-in",
+      "tag": "section",
+      "top": 3921,
+      "height": 1384,
+      "words": 224,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Twelve Built-In AI Agent Skills",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 31,
+      "right": 56,
+      "textLeft": 31,
+      "textRight": 56,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#workflow.workflow-section.is-in",
+      "tag": "section",
+      "top": 5306,
+      "height": 714,
+      "words": 72,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Developer Execution Workflow",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 31,
+      "right": 40,
+      "textLeft": 31,
+      "textRight": 40,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#faq.faq-section.is-in",
+      "tag": "section",
+      "top": 6019,
+      "height": 792,
+      "words": 215,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Common Questions",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 31,
+      "right": 64,
+      "textLeft": 31,
+      "textRight": 64,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.cta-section.is-in",
+      "tag": "section",
+      "top": 6811,
+      "height": 451,
+      "words": 41,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Own Your Organic Search Intelligence",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 51,
+      "right": 64,
+      "textLeft": 51,
+      "textRight": 64,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer",
+      "tag": "footer",
+      "top": 7262,
+      "height": 950,
+      "words": 80,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 63,
+      "right": 60,
+      "textLeft": 63,
+      "textRight": 60,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Developer-First SEO and AI Visibility",
+      "size": 38,
+      "top": 120,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 31,
+      "n": 21
+     },
+     {
+      "x": 51,
+      "n": 4
+     }
+    ],
+    "leftBlocks": 25,
+    "bodySize": 16,
     "stage": false,
     "explains": false,
     "slivers": [],
     "voidShare": 0,
     "voidBox": null
    },
-   "app": {
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.45,
+    0.5,
+    0.49,
+    0.62,
+    0.55,
+    0.49,
+    0.91,
+    0.91,
+    0.6,
+    0.52,
+    0.65,
+    0.61
+   ],
+   "motion": {
+    "elements": 19,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 19,
+    "videos": 1,
+    "playingVideos": 1
+   },
+   "metrics": {
     "viewport": {
-     "w": 390,
-     "h": 844
+     "w": 463,
+     "h": 1002
     },
-    "dark": false,
-    "ground": "#f9fbfc",
-    "sidebar": null,
-    "topbar": {
-     "h": 48
-    },
-    "canvas": {
-     "left": 24,
-     "right": -588
+    "page": {
+     "height": 10782,
+     "screens": 10.8,
+     "words": 777,
+     "img": 2,
+     "video": 1,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 2,
+     "uiAbuse": false,
+     "realPictures": 3,
+     "videoCount": 1,
+     "uiPictures": 1,
+     "pictureSamples": [
+      "seoverse-dashboard.png",
+      "800"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
     },
     "hero": {
-     "text": "Fouad's SEO Toolkit",
-     "words": 3,
-     "chars": 19,
-     "lines": 1,
-     "size": 22,
-     "vw": 5.6,
-     "font": "IBM Plex Sans",
-     "weight": 600,
-     "tracking": -0.02,
-     "leading": 1.25,
-     "top": 73,
-     "tag": "h1",
-     "kind": "heading",
+     "text": "Developer-First SEO and AI Visibility",
+     "words": 5,
+     "chars": 37,
+     "lines": 2,
+     "size": 30.2,
+     "vw": 6.5,
+     "font": "Work Sans",
+     "weight": 300,
+     "tracking": -0.035,
+     "leading": 1.05,
+     "upper": false,
+     "italic": false,
+     "mono": false,
      "align": "left",
-     "position": "left"
+     "position": "center",
+     "widthRatio": 0.73,
+     "top": 120,
+     "tag": "h1",
+     "kind": "heading"
     },
-    "charts": 1,
-    "layout": {
-     "panels": 1,
-     "firstScreen": 1,
-     "ragged": [],
-     "voids": []
+    "h1": {
+     "text": "Developer-First SEO and AI Visibility",
+     "words": 5,
+     "lines": 2,
+     "size": 30.2,
+     "font": "Work Sans"
     },
-    "tiles": 0,
-    "panels": {
-     "count": 4,
-     "radii": [
-      [
-       8,
-       2
-      ],
-      [
-       12,
-       1
-      ],
-      [
-       6,
-       1
-      ]
-     ],
-     "heavyBorders": 0,
-     "borderSamples": [],
-     "heavyShadows": 0,
-     "softShadows": 0,
-     "shadowSamples": [],
-     "glass": 0
+    "headings": [
+     {
+      "text": "Developer-First SEO and AI Visibility",
+      "words": 5,
+      "chars": 37,
+      "lines": 2,
+      "size": 30.2,
+      "vw": 6.5,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.035,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.73,
+      "top": 120,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Verified Organic Engine Outputs",
+      "words": 4,
+      "chars": 31,
+      "lines": 2,
+      "size": 24.7,
+      "vw": 5.3,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.03,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.73,
+      "top": 1246,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Substantive Organic Capabilities",
+      "words": 3,
+      "chars": 32,
+      "lines": 2,
+      "size": 24.7,
+      "vw": 5.3,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.03,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.73,
+      "top": 2488,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Twelve Built-In AI Agent Skills",
+      "words": 5,
+      "chars": 31,
+      "lines": 1,
+      "size": 24.7,
+      "vw": 5.3,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.03,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.73,
+      "top": 4666,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Developer Execution Workflow",
+      "words": 3,
+      "chars": 28,
+      "lines": 1,
+      "size": 24.7,
+      "vw": 5.3,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.03,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.73,
+      "top": 7290,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Common Questions",
+      "words": 2,
+      "chars": 16,
+      "lines": 1,
+      "size": 24.7,
+      "vw": 5.3,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.03,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.73,
+      "top": 8141,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Own Your Organic Search Intelligence",
+      "words": 5,
+      "chars": 36,
+      "lines": 2,
+      "size": 24.7,
+      "vw": 5.3,
+      "font": "Work Sans",
+      "weight": 300,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.65,
+      "top": 9122,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "SEOVerse",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 30.2,
+      "vw": 6.5,
+      "font": "Work Sans",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.29,
+      "top": 10503,
+      "tag": "div",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 8,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
     },
-    "chips": {
-     "count": 1,
-     "hues": 1,
-     "samples": [
+    "type": {
+     "families": [
       {
-       "hue": 192,
-       "size": 28,
-       "radius": "6px"
+       "family": "Work Sans",
+       "share": 0.95,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.05,
+       "mono": false
+      },
+      {
+       "family": "Arial",
+       "share": 0,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      14,
+      16,
+      20,
+      25,
+      30
+     ],
+     "sizeCount": 5,
+     "notLoaded": [],
+     "body": {
+      "font": "Work Sans",
+      "size": 16,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 15.7
+     },
+     "measureChars": 36,
+     "max": {
+      "size": 30.2,
+      "vw": 6.5,
+      "font": "Work Sans",
+      "text": "Developer-First SEO"
+     },
+     "monoShare": 0.05,
+     "monoProseShare": 0,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.03,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#eeecea",
+     "bodyBgHsl": {
+      "h": 30,
+      "s": 0.11,
+      "l": 0.93
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#e4e1dd",
+       "top": 513,
+       "hsl": {
+        "h": 34,
+        "s": 0.11,
+        "l": 0.88
+       }
+      },
+      {
+       "color": "#dedad4",
+       "top": 1808,
+       "hsl": {
+        "h": 36,
+        "s": 0.13,
+        "l": 0.85
+       }
+      },
+      {
+       "color": "#eeecea",
+       "top": 9726,
+       "hsl": {
+        "h": 30,
+        "s": 0.11,
+        "l": 0.93
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#141312",
+       "share": 0.8
+      },
+      {
+       "color": "#4a4642",
+       "share": 0.11
+      },
+      {
+       "color": "#2c4c3e",
+       "share": 0.03
+      },
+      {
+       "color": "#4d5156",
+       "share": 0.02
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#2c4c3e",
+      "hsl": {
+       "h": 154,
+       "s": 0.27,
+       "l": 0.24
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 12,
+     "inHero": 4,
+     "radius": 6,
+     "height": 32,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Launch Live App",
+      "Launch Live App",
+      "GitHub Repository",
+      "Inspect Page"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 22,
+     "boxRadius": 6,
+     "squareMedia": 0,
+     "roundedMedia": 3,
+     "mediaRadius": 6,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 5,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 8257
       }
      ]
     },
-    "numbers": {
-     "cells": 0,
-     "leftAligned": 0,
-     "figures": 1,
-     "tabularShare": 1,
-     "kpiMax": 17
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
     },
-    "rows": null,
-    "chartHues": 0,
-    "placeholders": [],
-    "type": {
-     "under13": 0.02,
-     "tiny": 0,
-     "tinySamples": [],
-     "sizes": [
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      20,
-      22,
-      28
-     ]
-    },
-    "title": {
-     "text": "Fouad's SEO Toolkit",
-     "size": 22,
-     "top": 73
-    },
-    "colourShare": 0.045
+    "fontsLoaded": [
+     "work sans"
+    ]
    },
+   "layout": {
+    "viewport": {
+     "w": 463,
+     "h": 1002
+    },
+    "pageH": 10782,
+    "margins": {
+     "left": 31,
+     "right": 23
+    },
+    "sections": [
+     {
+      "sel": "section.hero",
+      "tag": "section",
+      "top": 72,
+      "height": 1094,
+      "words": 100,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Developer-First SEO",
+       "size": 30,
+       "tag": "h1"
+      },
+      "left": 31,
+      "right": 109,
+      "textLeft": 31,
+      "textRight": 124,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#showcase.showcase-section.is-in",
+      "tag": "section",
+      "top": 1166,
+      "height": 1242,
+      "words": 53,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Verified Organic Engine Outputs",
+       "size": 25,
+       "tag": "h2"
+      },
+      "left": 31,
+      "right": 93,
+      "textLeft": 31,
+      "textRight": 123,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.section-header",
+      "tag": "div",
+      "top": 2488,
+      "height": 170,
+      "words": 20,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Substantive Organic Capabilities",
+       "size": 25,
+       "tag": "h2"
+      },
+      "left": 31,
+      "right": 107,
+      "textLeft": 31,
+      "textRight": 107,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.features-list",
+      "tag": "div",
+      "top": 2706,
+      "height": 1800,
+      "words": 169,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "Automated Keyword Clustering",
+       "size": 20,
+       "tag": "h3"
+      },
+      "left": 31,
+      "right": 93,
+      "textLeft": 31,
+      "textRight": 98,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.section-header",
+      "tag": "div",
+      "top": 4666,
+      "height": 142,
+      "words": 26,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Twelve Built-In AI Agent Skills",
+       "size": 25,
+       "tag": "h2"
+      },
+      "left": 31,
+      "right": 106,
+      "textLeft": 31,
+      "textRight": 106,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.skills-wrapper.is-in",
+      "tag": "div",
+      "top": 4856,
+      "height": 2274,
+      "words": 198,
+      "media": 0,
+      "middle": 32,
+      "heading": null,
+      "left": 51,
+      "right": 16,
+      "textLeft": 67,
+      "textRight": 16,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#workflow.workflow-section.is-in",
+      "tag": "section",
+      "top": 7210,
+      "height": 851,
+      "words": 72,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Developer Execution Workflow",
+       "size": 25,
+       "tag": "h2"
+      },
+      "left": 31,
+      "right": 101,
+      "textLeft": 31,
+      "textRight": 101,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#faq.faq-section.is-in",
+      "tag": "section",
+      "top": 8061,
+      "height": 1029,
+      "words": 215,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Common Questions",
+       "size": 25,
+       "tag": "h2"
+      },
+      "left": 31,
+      "right": 117,
+      "textLeft": 31,
+      "textRight": 117,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.cta-section.is-in",
+      "tag": "section",
+      "top": 9090,
+      "height": 636,
+      "words": 41,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Own Your Organic Search Intelligence",
+       "size": 25,
+       "tag": "h2"
+      },
+      "left": 51,
+      "right": 113,
+      "textLeft": 51,
+      "textRight": 135,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer",
+      "tag": "footer",
+      "top": 9726,
+      "height": 1056,
+      "words": 80,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 63,
+      "right": 127,
+      "textLeft": 63,
+      "textRight": 127,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Developer-First SEO and AI Visibility",
+      "size": 30,
+      "top": 120,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 31,
+      "n": 21
+     },
+     {
+      "x": 51,
+      "n": 4
+     }
+    ],
+    "leftBlocks": 25,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
    "consoleErrors": []
   }
  ],
@@ -1409,27 +2066,30 @@
   {
    "viewport": "desktop",
    "width": 1440,
-   "fold": "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\after\\desktop-fold.jpg",
+   "fold": "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\inspect\\desktop-fold.jpg",
    "pages": [
-    "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\after\\desktop-page-01.jpg"
+    "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\inspect\\desktop-page-01.jpg",
+    "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\inspect\\desktop-page-02.jpg"
    ],
    "film": []
   },
   {
    "viewport": "tablet",
    "width": 768,
-   "fold": "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\after\\tablet-fold.jpg",
+   "fold": "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\inspect\\tablet-fold.jpg",
    "pages": [
-    "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\after\\tablet-page-01.jpg"
+    "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\inspect\\tablet-page-01.jpg",
+    "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\inspect\\tablet-page-02.jpg"
    ],
    "film": []
   },
   {
    "viewport": "mobile",
    "width": 390,
-   "fold": "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\after\\mobile-fold.jpg",
+   "fold": "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\inspect\\mobile-fold.jpg",
    "pages": [
-    "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\after\\mobile-page-01.jpg"
+    "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\inspect\\mobile-page-01.jpg",
+    "C:\\Users\\fouad\\Documents\\FOUAD\\AI\\GitHub_Projects\\SEO_Toolkit\\.taste-skill\\inspect\\mobile-page-02.jpg"
    ],
    "film": []
   }
