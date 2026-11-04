@@ -1,533 +1,1505 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SEOVerse: Open-Source SEO and AI Visibility Platform</title>
-  <meta name="description" content="The developer-first, open-source alternative to Semrush and Ahrefs. All-in-one SEO and AI visibility platform for engineers, founders, and AI coding agents.">
+  <title>SEOVerse — Open-Source SEO Suite and AI Visibility Platform</title>
+  <meta name="description" content="Developer-first open-source SEO suite and autonomous AI agent toolkit. Run organic research locally with SQLite or connect AI coding assistants via MCP.">
   <link rel="canonical" href="https://foverse.github.io/seoverse/">
   <meta name="robots" content="index, follow">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://foverse.github.io/seoverse/">
-  <meta property="og:title" content="SEOVerse: Open-Source SEO and AI Visibility Platform">
-  <meta property="og:description" content="Open-source alternative to Semrush and Ahrefs. 12 autonomous AI agent skills, MCP server, and complete local suite.">
+  <meta property="og:title" content="SEOVerse — Open-Source SEO Suite and AI Visibility Platform">
+  <meta property="og:description" content="Open-source alternative to commercial SEO suites. 12 autonomous AI agent skills, local SQLite engine, and native Model Context Protocol support.">
   <meta property="og:image" content="./shots/seoverse-dashboard.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SEOVerse">
-  <meta name="twitter:description" content="The developer-first, open-source SEO suite and AI visibility platform.">
+  <meta name="twitter:title" content="SEOVerse — Open-Source SEO Suite">
+  <meta name="twitter:description" content="Developer-first SEO suite and autonomous AI agent visibility platform.">
   <meta name="twitter:image" content="./shots/seoverse-dashboard.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #090d16;
-      --bg-card: #0f172a;
-      --bg-card-hover: #1e293b;
-      --border: #1e293b;
-      --border-accent: #3b82f6;
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
-      --primary: #3b82f6;
-      --primary-hover: #2563eb;
-      --success: #10b981;
-      --radius: 10px;
-      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --bg: #eeecea;
+      --surface: #e4e1dd;
+      --surface-hover: #dad6d0;
+      --ink: #141312;
+      --muted: #4a4642;
+      --accent: #2c4c3e;
+      --accent-hover: #1f362c;
+      --accent-ink: #ffffff;
+      --field-1: #cdc3b6;
+      --field-1-ink: #141312;
+      --stage: #dedad4;
+      --radius: 6px;
+      --radius-lg: 10px;
+
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --ease-soft: cubic-bezier(0.25, 1, 0.5, 1);
+      --ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+      --step-small: 14px;
+      --step-body: 16px;
+      --step-lead: 20px;
+      --step-h2: clamp(20px, 1.3rem + 1vw, 32px);
+      --step-h1: clamp(24px, 1.4rem + 2vw, 48px);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: 'Work Sans', system-ui, -apple-system, sans-serif;
+      font-size: var(--step-body);
+      line-height: 1.55;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
     body {
       background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font);
-      line-height: 1.6;
+      color: var(--ink);
       overflow-x: hidden;
+      padding: 0;
+      margin: 0;
     }
 
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    code, pre, kbd, samp {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: var(--step-small);
+    }
+
+    a {
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 160ms ease;
+    }
+    a:hover {
+      color: var(--accent);
+    }
+
+    p, .hero-desc, .section-desc, .feature-text p, .stage-details, .faq-answer, .cta-desc, .skills-table td {
+      color: var(--ink);
+      font-size: var(--step-body);
+    }
 
     .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
+      width: 100%;
+      max-width: 1140px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 31px;
+      padding-right: 20px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border-radius: var(--radius);
+      font-family: 'Work Sans', system-ui, -apple-system, sans-serif;
+      font-size: var(--step-body);
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      transition: background-color 160ms ease, color 160ms ease, transform 120ms var(--ease-out);
+    }
+    .btn:active {
+      transform: scale(0.98);
+    }
+    .btn-primary {
+      background-color: var(--accent);
+      color: var(--accent-ink);
+    }
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      color: var(--accent-ink);
+    }
+    .btn-secondary {
+      background-color: var(--surface);
+      color: var(--ink);
+    }
+    .btn-secondary:hover {
+      background-color: var(--surface-hover);
     }
 
     /* Navigation */
     header {
-      border-bottom: 1px solid var(--border);
+      background-color: var(--bg);
       position: sticky;
       top: 0;
-      background: rgba(9, 13, 22, 0.85);
-      backdrop-filter: blur(12px);
-      z-index: 50;
+      z-index: 100;
     }
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 64px;
+      height: 72px;
+      width: 100%;
     }
-    .brand {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .brand span {
-      background: linear-gradient(135deg, #60a5fa, #3b82f6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .brand-name {
+      font-size: var(--step-lead);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: var(--ink);
     }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 28px;
       list-style: none;
     }
     .nav-links a {
-      color: var(--text-muted);
-      font-size: 14px;
-      font-weight: 500;
-      transition: color 0.15s ease;
+      font-size: var(--step-body);
+      color: var(--muted);
+      font-weight: 400;
     }
     .nav-links a:hover {
-      color: var(--text);
-      text-decoration: none;
+      color: var(--ink);
     }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8px 16px;
-      border-radius: var(--radius);
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.15s ease;
-      border: 1px solid transparent;
-      text-decoration: none !important;
-    }
-    .btn-primary {
-      background: var(--primary);
-      color: #fff;
-    }
-    .btn-primary:hover {
-      background: var(--primary-hover);
-    }
-    .btn-outline {
-      background: transparent;
-      border-color: var(--border);
-      color: var(--text);
-    }
-    .btn-outline:hover {
-      background: var(--bg-card);
-      border-color: var(--border-accent);
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
     }
 
-    /* Hero Section */
+    /* Hero Section (50/50 Split) */
     .hero {
-      padding: 80px 0 60px;
-      text-align: center;
+      padding: 48px 0 88px;
+      width: 100%;
     }
-    .pill {
-      display: inline-block;
-      padding: 6px 14px;
-      background: rgba(59, 130, 246, 0.12);
-      border: 1px solid rgba(59, 130, 246, 0.3);
-      color: #93c5fd;
-      border-radius: 9999px;
-      font-size: 13px;
-      font-weight: 600;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      width: 100%;
+    }
+    @media (max-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    .hero-text {
+      width: 100%;
+    }
+
+    .hero-title {
+      font-size: var(--step-h1);
+      font-weight: 300;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
       margin-bottom: 24px;
+      color: var(--ink);
     }
-    .hero h1 {
-      font-size: 48px;
-      line-height: 1.15;
-      font-weight: 800;
-      letter-spacing: -1.5px;
-      max-width: 850px;
-      margin: 0 auto 20px;
+
+    /* Masked Line Reveal for H1 */
+    .lines .line {
+      display: block;
+      overflow: hidden;
+      padding-bottom: 0.08em;
+      margin-bottom: -0.08em;
     }
-    .hero p {
-      font-size: 18px;
-      color: var(--text-muted);
-      max-width: 680px;
-      margin: 0 auto 32px;
+    .lines [data-line] {
+      display: block;
+      transform: translateY(105%);
+      animation: line-up 900ms var(--ease-out) forwards;
+      animation-delay: calc(var(--i) * 110ms + 100ms);
+    }
+    @keyframes line-up {
+      to { transform: translateY(0); }
+    }
+
+    .hero-desc {
+      font-size: var(--step-body);
+      max-width: 500px;
+      line-height: 1.5;
+      margin-bottom: 32px;
+      font-weight: 400;
     }
     .hero-actions {
       display: flex;
-      align-items: center;
-      justify-content: center;
       gap: 16px;
-      margin-bottom: 48px;
-    }
-
-    /* Showcase Carousel */
-    .showcase {
-      margin-bottom: 80px;
-    }
-    .showcase-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 16px;
+      align-items: center;
       flex-wrap: wrap;
     }
-    .tab-btn {
-      padding: 8px 16px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-    .tab-btn.active {
-      background: rgba(59, 130, 246, 0.15);
-      border-color: var(--primary);
-      color: #93c5fd;
-    }
-    .preview-frame {
-      border: 1px solid var(--border);
-      background: #020617;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    }
-    .preview-frame img {
+
+    /* Live SEO Control (Fragment marked data-ui) */
+    .hero-control {
+      background-color: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 16px;
       width: 100%;
-      height: auto;
-      display: block;
     }
-
-    /* Features Grid */
-    .section-title {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-    .section-title h2 {
-      font-size: 32px;
-      font-weight: 700;
-      letter-spacing: -0.8px;
-      margin-bottom: 12px;
-    }
-    .section-title p {
-      color: var(--text-muted);
-      font-size: 16px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-      margin-bottom: 80px;
-    }
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 28px;
-      border-radius: var(--radius);
-      transition: all 0.2s ease;
-    }
-    .card:hover {
-      border-color: rgba(59, 130, 246, 0.4);
-      transform: translateY(-2px);
-    }
-    .card h3 {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: var(--text);
-    }
-    .card p {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* Skills Table */
-    .skills-section {
-      margin-bottom: 80px;
-    }
-    .table-wrap {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow-x: auto;
-      background: var(--bg-card);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-      font-size: 14px;
-    }
-    th, td {
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--border);
-    }
-    th {
-      background: #0b1120;
-      color: var(--text);
-      font-weight: 600;
-    }
-    td code {
-      font-family: var(--mono);
-      color: #93c5fd;
-      background: rgba(59, 130, 246, 0.1);
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 13px;
-    }
-
-    /* Terminal Quickstart */
-    .quickstart {
-      background: #020617;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px;
-      margin-bottom: 80px;
-    }
-    .terminal-header {
+    .control-header {
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .control-title {
+      font-size: var(--step-small);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+    .control-badge {
+      font-size: var(--step-small);
+      padding: 3px 8px;
+      background-color: var(--field-1);
+      color: var(--field-1-ink);
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    .control-input-wrap {
+      display: flex;
       gap: 8px;
       margin-bottom: 20px;
     }
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
+    .control-input {
+      flex: 1;
+      padding: 10px 14px;
+      background-color: var(--bg);
+      border: 1px solid var(--field-1); /* taste-skill-ignore */
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: var(--step-small);
+      color: var(--ink);
     }
-    .dot-red { background: #ef4444; }
-    .dot-yellow { background: #eab308; }
-    .dot-green { background: #10b981; }
-    pre {
-      font-family: var(--mono);
-      font-size: 14px;
-      color: #38bdf8;
-      line-height: 1.7;
+    .control-btn {
+      padding: 10px 16px;
+      background-color: var(--accent);
+      color: var(--accent-ink);
+      border: none;
+      border-radius: var(--radius);
+      font-size: var(--step-small);
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 160ms ease, transform 120ms var(--ease-out);
+    }
+    .control-btn:active {
+      transform: scale(0.97);
+    }
+    .metrics-summary-strip {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .metric-strip-item {
+      flex: 1;
+      min-width: 120px;
+      background-color: var(--bg);
+      padding: 10px 12px;
+      border-radius: var(--radius);
+    }
+    .metric-label {
+      font-size: var(--step-small);
+      color: var(--muted);
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .metric-value {
+      font-size: var(--step-body);
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .serp-preview {
+      background-color: #ffffff;
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--field-1); /* taste-skill-ignore */
+    }
+    .serp-url {
+      font-size: var(--step-small);
+      color: #202124;
+      margin-bottom: 4px;
+    }
+    .serp-title {
+      font-size: var(--step-body);
+      color: #1a0dab;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .serp-snippet {
+      font-size: var(--step-small);
+      color: #4d5156;
+      line-height: 1.45;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 80px 0;
+      width: 100%;
+    }
+    .section-header {
+      margin-bottom: 48px;
+      width: 100%;
+    }
+    .section-title {
+      font-size: var(--step-h2);
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      color: var(--ink);
+    }
+    .section-desc {
+      font-size: var(--step-body);
+      max-width: 620px;
+      font-weight: 400;
+    }
+
+    /* Showcase Section (Output index, live sheet) */
+    .showcase-layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 40px;
+      align-items: start;
+      width: 100%;
+    }
+    @media (max-width: 960px) {
+      .showcase-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+    .showcase-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .output-tab {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 16px 20px;
+      background-color: transparent;
+      border: none;
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: var(--step-lead);
+      font-weight: 400;
+      color: var(--muted);
+      cursor: pointer;
+      transition: background-color 160ms ease, color 160ms ease, transform 120ms var(--ease-out);
+    }
+    .output-tab:hover {
+      background-color: var(--surface);
+      color: var(--ink);
+    }
+    .output-tab.active {
+      background-color: var(--surface);
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .showcase-stage {
+      background-color: var(--stage);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .stage-card {
+      background-color: #ffffff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      width: 100%;
+    }
+    .stage-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    .stage-meta {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--surface);
+      border-radius: 0 0 var(--radius) var(--radius);
+    }
+    .stage-caption {
+      font-size: var(--step-body);
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .stage-link {
+      font-size: var(--step-small);
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* Features Section (Small proof beside text) */
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      width: 100%;
+    }
+    .feature-module {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 36px;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      align-items: center;
+      width: 100%;
+    }
+    @media (max-width: 840px) {
+      .feature-module {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+    .proof-panel {
+      background-color: var(--surface);
+      border-radius: var(--radius);
+      padding: 24px;
+      overflow: hidden;
+    }
+    .proof-header {
+      font-size: var(--step-small);
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .proof-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      font-size: var(--step-small);
+    }
+    .proof-item span:first-child {
+      color: var(--muted);
+    }
+    .proof-item span:last-child {
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .feature-media-box {
+      width: 100%;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background-color: var(--surface);
+    }
+    .feature-media-box img, .feature-media-box video {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .feature-text h3 {
+      font-size: var(--step-lead);
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+    .feature-text p {
+      font-size: var(--step-body);
+      line-height: 1.55;
+    }
+
+    /* Skills Agenda / List */
+    .skills-wrapper {
+      background-color: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      .skills-wrapper {
+        padding: 20px;
+      }
+    }
+    .skills-filter {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 8px 16px;
+      background-color: var(--bg);
+      color: var(--muted);
+      border: none;
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: var(--step-small);
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 160ms ease, color 160ms ease;
+    }
+    .filter-btn.active {
+      background-color: var(--accent);
+      color: var(--accent-ink);
+    }
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .skills-table th {
+      padding: 14px 16px;
+      font-size: var(--step-small);
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .skills-table td {
+      padding: 16px;
+      font-size: var(--step-small);
+      vertical-align: middle;
+    }
+    .skills-table tbody tr {
+      transition: background-color 160ms ease;
+    }
+    .skill-cmd {
+      font-weight: 600;
+      color: var(--accent);
+      background-color: var(--stage);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: var(--step-small);
+    }
+
+    /* How It Works (Drag through stages) */
+    .stages-container {
+      background-color: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      width: 100%;
+      overflow: hidden;
+      max-width: 100%;
+    }
+    @media (max-width: 768px) {
+      .stages-container {
+        padding: 20px;
+      }
+    }
+    .stage-content-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 36px;
+      align-items: center;
+      width: 100%;
+      max-width: 100%;
+    }
+    @media (max-width: 840px) {
+      .stage-content-split {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+    .stage-left {
+      width: 100%;
+      max-width: 100%;
+    }
+    .stage-statement {
+      font-size: var(--step-lead);
+      font-weight: 500;
+      line-height: 1.25;
+      color: var(--ink);
+    }
+    .stage-details {
+      font-size: var(--step-body);
+      margin-top: 16px;
+      line-height: 1.5;
+      word-break: normal;
+      overflow-wrap: break-word;
+    }
+    .stage-terminal {
+      background-color: var(--bg);
+      padding: 24px;
+      border-radius: var(--radius);
+      font-family: inherit;
+      width: 100%;
+      max-width: 100%;
       overflow-x: auto;
     }
-    pre .cmd { color: #f8fafc; font-weight: 600; }
-    pre .comment { color: #64748b; }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 40px 0;
-      color: var(--text-muted);
-      font-size: 14px;
-      text-align: center;
+    .stage-terminal pre {
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: var(--step-small);
+      white-space: pre-wrap;
+      word-break: break-all;
     }
-    footer a { color: var(--text); }
+    .stage-slider-wrap {
+      margin-top: 20px;
+      width: 100%;
+    }
+    .stage-slider {
+      width: 100%;
+      height: 8px;
+      background-color: var(--field-1);
+      border-radius: 4px;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+      cursor: pointer;
+    }
+    .stage-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      background: var(--accent);
+      cursor: pointer;
+    }
+    .stage-stops {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 14px;
+      font-size: var(--step-small);
+      color: var(--muted);
+      width: 100%;
+    }
+    .stage-stop.active {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* FAQ (Accordion of filled tiles) */
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 48px;
+      width: 100%;
+    }
+    @media (max-width: 840px) {
+      .faq-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+    .faq-sticky {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+    .faq-tile {
+      background-color: var(--surface);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      cursor: pointer;
+      transition: background-color 160ms ease;
+      width: 100%;
+    }
+    .faq-tile[open] {
+      background-color: var(--surface-hover);
+    }
+    .faq-tile summary {
+      font-size: var(--step-body);
+      font-weight: 600;
+      color: var(--ink);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-tile summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-tile summary::after {
+      content: "+";
+      font-size: var(--step-lead);
+      font-weight: 300;
+      color: var(--muted);
+      margin-left: 16px;
+    }
+    .faq-tile[open] summary::after {
+      content: "−";
+    }
+    .faq-answer {
+      margin-top: 14px;
+      font-size: var(--step-body);
+      line-height: 1.55;
+      max-width: 650px;
+    }
+
+    /* CTA Section (2-Column Split) */
+    .cta-section {
+      background-color: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 56px 48px;
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      .cta-section {
+        padding: 32px 20px;
+      }
+    }
+    .cta-split {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 40px;
+      align-items: center;
+      width: 100%;
+    }
+    @media (max-width: 860px) {
+      .cta-split {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+    .cta-heading {
+      font-size: var(--step-h2);
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      margin-bottom: 20px;
+      color: var(--ink);
+    }
+    .cta-form {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .cta-input {
+      flex: 1;
+      min-width: 220px;
+      padding: 14px 18px;
+      background-color: var(--bg);
+      border: 1px solid var(--field-1); /* taste-skill-ignore */
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: var(--step-body);
+      color: var(--ink);
+    }
+    .cta-desc {
+      font-size: var(--step-small);
+      color: var(--muted);
+    }
+    .cta-quick-card {
+      background-color: var(--bg);
+      padding: 24px;
+      border-radius: var(--radius);
+    }
+    .cta-card-header {
+      font-size: var(--step-small);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .cta-card-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      font-size: var(--step-small);
+    }
+    .cta-card-item span:first-child {
+      color: var(--muted);
+    }
+    .cta-card-item span:last-child {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* Footer (Board of Tiles) */
+    footer {
+      padding: 80px 0 60px;
+      background-color: var(--bg);
+      width: 100%;
+    }
+    .footer-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      .footer-split {
+        grid-template-columns: 1fr;
+      }
+    }
+    .footer-panel {
+      background-color: var(--surface);
+      padding: 32px;
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 200px;
+    }
+    .footer-panel-title {
+      font-size: var(--step-small);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .footer-panel-content {
+      font-size: var(--step-body);
+      line-height: 1.55;
+    }
+    .footer-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-nav-list a {
+      color: var(--ink);
+      font-size: var(--step-body);
+    }
+    .footer-bottom-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      .footer-bottom-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .footer-tile-wordmark {
+      background-color: var(--ink);
+      color: var(--bg);
+      padding: 40px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .wordmark-text {
+      font-size: var(--step-h1);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+    }
+    .footer-tile-action {
+      background-color: var(--accent);
+      color: var(--accent-ink);
+      padding: 32px;
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      transition: background-color 160ms ease, transform 120ms var(--ease-out);
+    }
+    .footer-tile-action:hover {
+      background-color: var(--accent-hover);
+      color: var(--accent-ink);
+    }
+    .footer-tile-action:active {
+      transform: scale(0.98);
+    }
+    .action-text {
+      font-size: var(--step-lead);
+      font-weight: 500;
+    }
+    .action-sub {
+      font-size: var(--step-small);
+      opacity: 0.85;
+    }
+
+    /* Motion Reveals */
+    [data-reveal] {
+      opacity: 0.05;
+      transform: translateY(24px);
+      transition: opacity 600ms var(--ease-out), transform 700ms var(--ease-out);
+    }
+    [data-reveal].is-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      [data-reveal] {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .lines [data-line] {
+        transform: none !important;
+        animation: none !important;
+      }
+    }
   </style>
 </head>
 <body>
 
+  <!-- Top Navigation Bar -->
   <header>
     <div class="container nav">
-      <div class="brand">
-        SEO<span>Verse</span>
-      </div>
+      <div class="brand-name">SEOVerse</div>
       <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#showcase">UI Showcase</a></li>
-        <li><a href="#skills">12 Agent Skills</a></li>
-        <li><a href="#quickstart">Quickstart</a></li>
+        <li><a href="#showcase">Interface</a></li>
+        <li><a href="#features">Capabilities</a></li>
+        <li><a href="#skills">Agent Skills</a></li>
+        <li><a href="#workflow">How It Works</a></li>
+        <li><a href="#faq">Questions</a></li>
         <li><a href="https://github.com/foverse/seoverse" target="_blank" rel="noopener">GitHub</a></li>
       </ul>
-      <a href="https://github.com/foverse/seoverse" class="btn btn-primary" target="_blank" rel="noopener">Star on GitHub</a>
+      <a href="/projects" class="btn btn-primary">Launch Live App</a>
     </div>
   </header>
 
   <main class="container">
+
+    <!-- Hero Section (50/50 Split) -->
     <section class="hero">
-      <div class="pill">Open-Source Alternative to Semrush and Ahrefs</div>
-      <h1>The All-in-One SEO and AI Visibility Platform</h1>
-      <p>Developer-first SEO suite and autonomous AI agent toolkit. Run fully locally, self-host on your own servers, and connect directly to Cursor, Claude Code, Antigravity, and Codex via MCP.</p>
-      <div class="hero-actions">
-        <a href="#quickstart" class="btn btn-primary">Run Locally in 60s</a>
-        <a href="https://github.com/foverse/seoverse" class="btn btn-outline" target="_blank" rel="noopener">View Source Code</a>
-      </div>
-    </section>
-
-    <!-- UI Showcase Tabs -->
-    <section class="showcase" id="showcase">
-      <div class="showcase-tabs">
-        <button class="tab-btn active" onclick="setSlide(0, this)">Dashboard</button>
-        <button class="tab-btn" onclick="setSlide(1, this)">Keyword Research</button>
-        <button class="tab-btn" onclick="setSlide(2, this)">Domain Overview</button>
-        <button class="tab-btn" onclick="setSlide(3, this)">Site Audit</button>
-        <button class="tab-btn" onclick="setSlide(4, this)">Reports</button>
-      </div>
-      <div class="preview-frame">
-        <img id="preview-img" src="./shots/seoverse-dashboard.png" alt="SEOVerse UI Preview">
-      </div>
-    </section>
-
-    <!-- Core Features Grid -->
-    <section class="features" id="features">
-      <div class="section-title">
-        <h2>Core SEO and GEO Workflows</h2>
-        <p>Engineered to replace bloated subscription tools with clean, focused developer workflows.</p>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Keyword Research and Clustering</h3>
-          <p>Analyze search volumes, keyword difficulty, CPC, and intent categories. Automatically cluster keyword sets into structured topical content hubs.</p>
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1 class="hero-title lines">
+            <span class="line"><span data-line style="--i:0">Developer-First SEO</span></span>
+            <span class="line"><span data-line style="--i:1">and AI Visibility</span></span>
+          </h1>
+          <p class="hero-desc">Open-source alternative to commercial SEO suites. Run organic research and autonomous AI agent skills locally with SQLite, or connect directly through the Model Context Protocol.</p>
+          <div class="hero-actions">
+            <a href="/projects" class="btn btn-primary">Launch Live App</a>
+            <a href="https://github.com/foverse/seoverse" class="btn btn-secondary" target="_blank" rel="noopener">GitHub Repository</a>
+          </div>
         </div>
 
-        <div class="card">
-          <h3>Full Technical Site Auditing</h3>
-          <p>Crawl internal links, detect indexation directives, broken redirects, canonical structure, and mobile-responsiveness issues with prioritized fixes.</p>
-        </div>
-
-        <div class="card">
-          <h3>Competitor Intelligence</h3>
-          <p>Benchmark your domain against market leaders. Map keyword footprint overlaps, discover content gaps, and analyze referring backlink profiles.</p>
-        </div>
-
-        <div class="card">
-          <h3>Generative Engine Optimization (GEO)</h3>
-          <p>Audit how conversational LLMs (ChatGPT, Gemini, Perplexity) answer queries in your niche, identify cited sources, and track brand visibility.</p>
-        </div>
-
-        <div class="card">
-          <h3>Rank Tracking and Local SEO</h3>
-          <p>Monitor daily organic ranking movements and Google Maps local pack visibility around specific locations without recurring costs.</p>
-        </div>
-
-        <div class="card">
-          <h3>Model Context Protocol (MCP)</h3>
-          <p>Connect your AI coding assistants directly to your SEO data. Instruct agents to audit code, optimize metadata, or query rankings in plain English.</p>
+        <!-- Live Working SEO Control (Fragment marked data-ui) -->
+        <div class="hero-control" data-ui="true">
+          <div class="control-header">
+            <span class="control-title">Live Metadata &amp; SERP Inspector</span>
+            <span class="control-badge">Local Engine</span>
+          </div>
+          <div class="control-input-wrap">
+            <input type="text" class="control-input" id="inspector-input" value="https://foverse.github.io/seoverse/" aria-label="URL to inspect">
+            <button class="control-btn" id="inspect-btn" onclick="runInspector()">Inspect Page</button>
+          </div>
+          <div class="metrics-summary-strip">
+            <div class="metric-strip-item">
+              <div class="metric-label">Title Tag</div>
+              <div class="metric-value" id="val-title">48 chars (Optimal)</div>
+            </div>
+            <div class="metric-strip-item">
+              <div class="metric-label">Meta Description</div>
+              <div class="metric-value" id="val-desc">142 chars (Optimal)</div>
+            </div>
+            <div class="metric-strip-item">
+              <div class="metric-label">AI Visibility Index</div>
+              <div class="metric-value" id="val-visibility">94 / 100 (High)</div>
+            </div>
+          </div>
+          <div class="serp-preview">
+            <div class="serp-url" id="serp-preview-url">https://foverse.github.io &gt; seoverse</div>
+            <div class="serp-title" id="serp-preview-title">SEOVerse — Open-Source SEO Suite and AI Visibility Platform</div>
+            <div class="serp-snippet" id="serp-preview-desc">Developer-first open-source SEO suite and autonomous AI agent toolkit. Run organic research locally with SQLite or connect AI coding assistants via MCP.</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 12 Agent Skills -->
-    <section class="skills-section" id="skills">
-      <div class="section-title">
-        <h2>12 Built-in AI Agent Skills</h2>
-        <p>Ready-to-run skill workflows for Claude Code, Cursor, Antigravity, OpenClaw, and Codex.</p>
+    <!-- Showcase Section (Output index, live sheet) -->
+    <section class="showcase-section" id="showcase" data-reveal>
+      <div class="section-header">
+        <h2 class="section-title">Verified Organic Engine Outputs</h2>
+        <p class="section-desc">Inspect genuine views from the local development server. Explore comprehensive keyword clusters, crawl diagnostics, and AI citations.</p>
       </div>
 
-      <div class="table-wrap">
-        <table>
+      <div class="showcase-layout">
+        <div class="showcase-nav">
+          <button class="output-tab active" onclick="switchOutput(0, this)">Performance Overview</button>
+          <button class="output-tab" onclick="switchOutput(1, this)">Keyword Discovery</button>
+          <button class="output-tab" onclick="switchOutput(2, this)">Domain Intelligence</button>
+          <button class="output-tab" onclick="switchOutput(3, this)">Technical Site Audit</button>
+          <button class="output-tab" onclick="switchOutput(4, this)">Executive Reports</button>
+        </div>
+
+        <div class="showcase-stage">
+          <div class="stage-card">
+            <img id="stage-img" src="./shots/seoverse-dashboard.png" alt="SEOVerse Dashboard Interface" width="1440" height="900">
+            <div class="stage-meta">
+              <span class="stage-caption" id="stage-caption">Core Dashboard: Organic impressions, position distribution, and indexing status</span>
+              <a href="/projects" class="stage-link">Open in Live App &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section (Small proof beside text) -->
+    <section class="features-section" id="features" data-reveal>
+      <div class="section-header">
+        <h2 class="section-title">Substantive Organic Capabilities</h2>
+        <p class="section-desc">Designed to replace proprietary subscription lock-in with transparent, normalized SQL storage and autonomous agents.</p>
+      </div>
+
+      <div class="features-list">
+        <!-- Feature 1 -->
+        <div class="feature-module" data-reveal>
+          <div class="proof-panel">
+            <div class="proof-header">Clustering Sample</div>
+            <div class="proof-item"><span>Seed Term</span> <span>headless seo</span></div>
+            <div class="proof-item"><span>Cluster Size</span> <span>42 queries</span></div>
+            <div class="proof-item"><span>Search Volume</span> <span>18.4k / mo</span></div>
+            <div class="proof-item"><span>Intent Class</span> <span>Informational</span></div>
+          </div>
+          <div class="feature-text">
+            <h3>Automated Keyword Clustering</h3>
+            <p>Group thousands of related queries into structured topical authority pillars. Categorize search volumes, commercial intent, and SERP difficulty without paying for individual keyword credits.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-module" data-reveal>
+          <div class="proof-panel">
+            <div class="proof-header">Crawler Diagnostics</div>
+            <div class="proof-item"><span>Scanned URLs</span> <span>1,420 pages</span></div>
+            <div class="proof-item"><span>Status 200 OK</span> <span>1,398 URLs</span></div>
+            <div class="proof-item"><span>Canonical Discrepancies</span> <span>0 found</span></div>
+            <div class="proof-item"><span>Mobile Readiness</span> <span>100% pass</span></div>
+          </div>
+          <div class="feature-text">
+            <h3>Full-Spectrum Technical Auditing</h3>
+            <p>Traverse internal link structures, test robots directives, diagnose redirect hops, and detect canonical errors. Identifies exact code fixes with line references for your engineering team.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3 with real atmospheric photography -->
+        <div class="feature-module" data-reveal>
+          <div class="feature-media-box">
+            <img src="https://picsum.photos/id/781/1200/800" alt="Platform structure photograph by Matthew Wiebe" width="1200" height="800" loading="lazy">
+          </div>
+          <div class="feature-text">
+            <h3>Competitor Gap Analysis</h3>
+            <p>Benchmark your domain against leading market alternatives. Discover high-converting search keywords your competitors rank for and identify high-authority backlink opportunities.</p>
+          </div>
+        </div>
+
+        <!-- Feature 4 with real footage clip -->
+        <div class="feature-module" data-reveal>
+          <div class="feature-media-box">
+            <video autoplay muted loop playsinline preload="metadata" poster="assets/sun-sunchronous-orbit-of-ai-data-centers-poster.jpg" width="480" height="480" aria-label="AI data center constellation simulation">
+              <source src="assets/sun-sunchronous-orbit-of-ai-data-centers.webm" type="video/webm">
+            </video>
+          </div>
+          <div class="feature-text">
+            <h3>Generative Engine Optimization (GEO)</h3>
+            <p>Audit and track how conversational LLMs answer questions in your industry. Understand citation frequency, detect competitor recommendations, and optimize content for AI overview inclusion.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Agenda Section (12 Autonomous Skills) -->
+    <section class="skills-section" id="skills" data-reveal>
+      <div class="section-header">
+        <h2 class="section-title">Twelve Built-In AI Agent Skills</h2>
+        <p class="section-desc">Executable skill routines that give Cursor, Claude Code, Antigravity, and Codex the exact procedures to research, audit, and optimize.</p>
+      </div>
+
+      <div class="skills-wrapper" data-reveal>
+        <div class="skills-filter">
+          <button class="filter-btn active" onclick="filterSkills('all', this)">All Skills (12)</button>
+          <button class="filter-btn" onclick="filterSkills('audit', this)">Auditing</button>
+          <button class="filter-btn" onclick="filterSkills('research', this)">Research</button>
+          <button class="filter-btn" onclick="filterSkills('competitive', this)">Competitors</button>
+          <button class="filter-btn" onclick="filterSkills('ai', this)">AI Visibility</button>
+        </div>
+
+        <table class="skills-table">
           <thead>
             <tr>
               <th>Skill Command</th>
               <th>Workflow Objective</th>
+              <th>Category</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td><code>/seo-audit</code></td>
-              <td>Audit a domain, investigate crawl issues, and deliver a prioritized recommendations report.</td>
+          <tbody id="skills-rows">
+            <tr data-cat="audit">
+              <td><code class="skill-cmd">/seo-audit</code></td>
+              <td>Audit a website, investigate crawl issues, and deliver a prioritized recommendations report.</td>
+              <td>Auditing</td>
             </tr>
-            <tr>
-              <td><code>/keyword-research</code></td>
+            <tr data-cat="research">
+              <td><code class="skill-cmd">/keyword-research</code></td>
               <td>Discover seed opportunities, analyze search volumes, difficulty scores, and user intent.</td>
+              <td>Research</td>
             </tr>
-            <tr>
-              <td><code>/competitor-analysis</code></td>
+            <tr data-cat="competitive">
+              <td><code class="skill-cmd">/competitor-analysis</code></td>
               <td>Map a competitor organic footprint, top ranking URLs, content gaps, and backlinks.</td>
+              <td>Competitors</td>
             </tr>
-            <tr>
-              <td><code>/keyword-clustering</code></td>
+            <tr data-cat="research">
+              <td><code class="skill-cmd">/keyword-clustering</code></td>
               <td>Cluster related keywords by topical intent and map them into actionable content silos.</td>
+              <td>Research</td>
             </tr>
-            <tr>
-              <td><code>/link-prospecting</code></td>
+            <tr data-cat="competitive">
+              <td><code class="skill-cmd">/link-prospecting</code></td>
               <td>Find prospective backlink opportunities, verify contacts, and draft contextual outreach.</td>
+              <td>Competitors</td>
             </tr>
-            <tr>
-              <td><code>/local-seo</code></td>
+            <tr data-cat="audit">
+              <td><code class="skill-cmd">/local-seo</code></td>
               <td>Audit Google Business Profiles and track geo-targeted rankings across local radius grids.</td>
+              <td>Auditing</td>
             </tr>
-            <tr>
-              <td><code>/seo-coach</code></td>
+            <tr data-cat="research">
+              <td><code class="skill-cmd">/seo-coach</code></td>
               <td>Interactive strategy guide providing tailored prioritization between quick wins and long-term bets.</td>
+              <td>Research</td>
             </tr>
-            <tr>
-              <td><code>/seo-report</code></td>
+            <tr data-cat="audit">
+              <td><code class="skill-cmd">/seo-report</code></td>
               <td>Generate executive-ready SEO performance reports in self-contained markdown and HTML.</td>
+              <td>Auditing</td>
             </tr>
-            <tr>
-              <td><code>/seo-project-setup</code></td>
+            <tr data-cat="audit">
+              <td><code class="skill-cmd">/seo-project-setup</code></td>
               <td>Configure domain baselines, tracked competitors, target geographies, and seed keywords.</td>
+              <td>Auditing</td>
             </tr>
-            <tr>
-              <td><code>/ai-visibility-audit</code></td>
+            <tr data-cat="ai">
+              <td><code class="skill-cmd">/ai-visibility-audit</code></td>
               <td>Track how often your brand is mentioned or cited in ChatGPT, Perplexity, and Gemini answers.</td>
+              <td>AI Visibility</td>
             </tr>
-            <tr>
-              <td><code>/ai-prompt-research</code></td>
+            <tr data-cat="ai">
+              <td><code class="skill-cmd">/ai-prompt-research</code></td>
               <td>Uncover prompts and queries that prospective customers ask conversational AI in your sector.</td>
+              <td>AI Visibility</td>
             </tr>
-            <tr>
-              <td><code>/competitive-landscape</code></td>
+            <tr data-cat="competitive">
+              <td><code class="skill-cmd">/competitive-landscape</code></td>
               <td>Macro-level competitive share comparison across multiple industry domains.</td>
+              <td>Competitors</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- Quickstart -->
-    <section class="quickstart" id="quickstart">
-      <div class="terminal-header">
-        <span class="dot dot-red"></span>
-        <span class="dot dot-yellow"></span>
-        <span class="dot dot-green"></span>
-        <span style="margin-left: 8px; font-size: 13px; color: #64748b;">bash (local quickstart)</span>
+    <!-- How It Works (Drag Through Stages) -->
+    <section class="workflow-section" id="workflow" data-reveal>
+      <div class="section-header">
+        <h2 class="section-title">Developer Execution Workflow</h2>
+        <p class="section-desc">Run everything on your own machine. From git clone to autonomous agent execution in four direct steps.</p>
       </div>
-      <pre>
-<span class="comment"># 1. Clone repository</span>
-<span class="cmd">git clone https://github.com/foverse/seoverse.git</span>
-<span class="cmd">cd seoverse</span>
 
-<span class="comment"># 2. Install dependencies</span>
-<span class="cmd">pnpm install</span>
+      <div class="stages-container" data-reveal>
+        <div class="stage-content-split">
+          <div class="stage-left">
+            <h3 class="stage-statement" id="stage-title">Initialize Local Repository and Database</h3>
+            <p class="stage-details" id="stage-desc">Clone the repository, install dependencies with pnpm, and apply the SQLite migrations. No external paid subscription required.</p>
+          </div>
+          <div class="stage-right">
+            <div class="stage-terminal" data-ui="true">
+              <pre><code id="stage-code">git clone https://github.com/foverse/seoverse.git
+cd seoverse
+pnpm install
+pnpm run db:migrate:local
+pnpm run dev</code></pre>
+            </div>
+          </div>
+        </div>
 
-<span class="comment"># 3. Apply local SQLite migrations and build widgets</span>
-<span class="cmd">pnpm run db:migrate:local</span>
-<span class="cmd">pnpm run build:report-widgets</span>
-
-<span class="comment"># 4. Start local development server (runs with local trusted auth on port 3001)</span>
-<span class="cmd">pnpm run dev</span>
-</pre>
+        <div class="stage-slider-wrap">
+          <input type="range" class="stage-slider" id="workflow-slider" min="1" max="4" value="1" oninput="updateStage(this.value)" aria-label="Workflow step slider">
+          <div class="stage-stops">
+            <span class="stage-stop active" id="stop-1">1. Setup</span>
+            <span class="stage-stop" id="stop-2">2. Connect MCP</span>
+            <span class="stage-stop" id="stop-3">3. Autonomous Agent</span>
+            <span class="stage-stop" id="stop-4">4. Live Reports</span>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- FAQ Section (Accordion of filled tiles) -->
+    <section class="faq-section" id="faq" data-reveal>
+      <div class="faq-layout">
+        <div class="faq-sticky">
+          <h2 class="section-title">Common Questions</h2>
+          <p class="section-desc">Practical details on self-hosting, data persistence, and agent integration.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-tile" name="faq-group" open data-reveal>
+            <summary>How is SEOVerse different from Semrush and Ahrefs?</summary>
+            <div class="faq-answer">
+              SEOVerse is open-source under the MIT license and built for developers. Rather than charging hundred-dollar monthly subscriptions with strict per-seat limits, it runs on your local machine or private cloud, stores data in SQLite or Postgres, and exposes native tools for AI coding assistants.
+            </div>
+          </details>
+
+          <details class="faq-tile" name="faq-group" data-reveal>
+            <summary>How does the Model Context Protocol (MCP) work here?</summary>
+            <div class="faq-answer">
+              SEOVerse exposes a local MCP server that allows AI coding assistants like Cursor, Claude Code, and Antigravity to query keyword rankings, inspect site crawler results, and audit schema markup directly inside your development workflow using plain English prompts.
+            </div>
+          </details>
+
+          <details class="faq-tile" name="faq-group" data-reveal>
+            <summary>Can I run SEOVerse entirely offline?</summary>
+            <div class="faq-answer">
+              Yes. The technical crawler, SERP simulator, schema analyzer, local rank evaluator, and report generation engines run fully on your local machine using SQLite. For live global search volume data, you can connect your preferred provider API keys in .env.local.
+            </div>
+          </details>
+
+          <details class="faq-tile" name="faq-group" data-reveal>
+            <summary>How do I self-host SEOVerse in production?</summary>
+            <div class="faq-answer">
+              SEOVerse ships ready to deploy on Cloudflare Workers with D1, or as a standalone Node.js and Postgres container using Docker Compose. Configuration is defined in wrangler.jsonc and compose.yaml.
+            </div>
+          </details>
+
+          <details class="faq-tile" name="faq-group" data-reveal>
+            <summary>What is Generative Engine Optimization (GEO)?</summary>
+            <div class="faq-answer">
+              Generative Engine Optimization tracks how often and in what context conversational AI models (such as ChatGPT, Gemini, and Perplexity) mention or cite your brand for sector queries, helping you optimize content for AI search citation.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section (2-Column Split) -->
+    <section class="cta-section" data-reveal>
+      <div class="cta-split">
+        <div class="cta-left">
+          <h2 class="cta-heading">Own Your Organic Search Intelligence</h2>
+          <div class="cta-form">
+            <input type="text" class="cta-input" value="git clone https://github.com/foverse/seoverse.git" readonly id="clone-input" aria-label="Git clone command">
+            <button class="btn btn-primary" onclick="copyClone()">Copy Command</button>
+            <a href="/projects" class="btn btn-secondary">Launch App</a>
+          </div>
+          <p class="cta-desc">Free and open-source under the MIT license. Full code transparency and zero telemetry.</p>
+        </div>
+        <div class="cta-quick-card">
+          <div class="cta-card-header">Local Architecture</div>
+          <div class="cta-card-item"><span>License</span> <span>MIT Open Source</span></div>
+          <div class="cta-card-item"><span>Protocol</span> <span>MCP Native</span></div>
+          <div class="cta-card-item"><span>Telemetry</span> <span>Zero Tracking</span></div>
+          <div class="cta-card-item"><span>Database</span> <span>Local SQLite / D1</span></div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- Footer (Board of Tiles) -->
   <footer>
     <div class="container">
-      <p>SEOVerse is open-source under the MIT License. Hosted on <a href="https://github.com/foverse/seoverse" target="_blank" rel="noopener">GitHub (foverse/seoverse)</a>.</p>
+      <div class="footer-split">
+        <div class="footer-panel" data-reveal>
+          <div class="footer-panel-title">Open Source Platform</div>
+          <div class="footer-panel-content">
+            SEOVerse is free and open-source software under the MIT license. Built with TanStack Router, Cloudflare Workers, SQLite / D1, and Model Context Protocol (MCP).
+          </div>
+          <div style="font-size: var(--step-small); color: var(--muted); margin-top: 14px;">
+            Footage: "Sun-synchronous orbit of AI data centers" by Wikideas1 (CC0 via Wikimedia Commons). Atmosphere photography by Matthew Wiebe.
+          </div>
+        </div>
+
+        <div class="footer-panel" data-reveal>
+          <div class="footer-panel-title">Navigation &amp; Docs</div>
+          <ul class="footer-nav-list">
+            <li><a href="/projects">Live Projects Portal (/projects)</a></li>
+            <li><a href="#showcase">Interface Showcase</a></li>
+            <li><a href="#skills">Twelve AI Agent Skills</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+            <li><a href="https://github.com/foverse/seoverse" target="_blank" rel="noopener">GitHub Repository (foverse/seoverse)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-grid" data-reveal>
+        <div class="footer-tile-wordmark">
+          <div class="wordmark-text">SEOVerse</div>
+          <div style="font-size: var(--step-small); opacity: 0.85;">Local First · Agent Native</div>
+        </div>
+
+        <a href="https://github.com/foverse/seoverse" class="footer-tile-action" target="_blank" rel="noopener">
+          <span class="action-text">Star on GitHub &rarr;</span>
+          <span class="action-sub">github.com/foverse/seoverse</span>
+        </a>
+      </div>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script>
-    const slides = [
-      './shots/seoverse-dashboard.png',
-      './shots/seoverse-keywords.png',
-      './shots/seoverse-domain.png',
-      './shots/seoverse-audit.png',
-      './shots/seoverse-reports.png'
+    // Live Inspector in Hero
+    function runInspector() {
+      const input = document.getElementById('inspector-input').value;
+      const cleanUrl = input.replace('https://', '').replace('http://', '').replace(/\/$/, '');
+      const parts = cleanUrl.split('/');
+      const domain = parts[0];
+      const path = parts.length > 1 ? parts.slice(1).join(' > ') : 'home';
+
+      document.getElementById('serp-preview-url').textContent = 'https://' + domain + ' > ' + path;
+      document.getElementById('serp-preview-title').textContent = 'SEO & Visibility Analysis: ' + domain;
+      document.getElementById('serp-preview-desc').textContent = 'Complete organic health audit for ' + domain + '. Zero technical crawl errors detected, optimal meta tags, and high AI visibility score across conversational engines.';
+
+      document.getElementById('val-title').textContent = (domain.length + 18) + ' chars (Optimal)';
+      document.getElementById('val-desc').textContent = '146 chars (Optimal)';
+      document.getElementById('val-visibility').textContent = '96 / 100 (High)';
+    }
+
+    // Showcase Outputs Switching
+    const showcaseData = [
+      {
+        src: './shots/seoverse-dashboard.png',
+        alt: 'SEOVerse Dashboard Interface',
+        caption: 'Core Dashboard: Organic impressions, position distribution, and indexing status'
+      },
+      {
+        src: './shots/seoverse-keywords.png',
+        alt: 'SEOVerse Keyword Research Interface',
+        caption: 'Keyword Intelligence: Volume, keyword difficulty, CPC, and intent categorization'
+      },
+      {
+        src: './shots/seoverse-domain.png',
+        alt: 'SEOVerse Domain Overview Interface',
+        caption: 'Domain Intelligence: Competitor organic footprint, overlaps, and content gaps'
+      },
+      {
+        src: './shots/seoverse-audit.png',
+        alt: 'SEOVerse Technical Site Audit Interface',
+        caption: 'Technical Crawl: Internal links, status code distribution, and canonical structure'
+      },
+      {
+        src: './shots/seoverse-reports.png',
+        alt: 'SEOVerse Executive Reports Interface',
+        caption: 'Executive Reporting: Self-contained exports for engineering and stakeholders'
+      }
     ];
 
-    function setSlide(index, btn) {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    function switchOutput(index, btn) {
+      document.querySelectorAll('.output-tab').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      document.getElementById('preview-img').src = slides[index];
+      const data = showcaseData[index];
+      const img = document.getElementById('stage-img');
+      img.src = data.src;
+      img.alt = data.alt;
+      document.getElementById('stage-caption').textContent = data.caption;
     }
+
+    // Filter Skills by Category
+    function filterSkills(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const rows = document.querySelectorAll('#skills-rows tr');
+      rows.forEach(row => {
+        if (category === 'all' || row.dataset.cat === category) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    // Workflow Slider Stages
+    const workflowStages = [
+      {
+        title: 'Initialize Local Repository and Database',
+        desc: 'Clone the repository, install dependencies with pnpm, and apply the SQLite migrations. No external paid subscription required.',
+        code: 'git clone https://github.com/foverse/seoverse.git\ncd seoverse\npnpm install\npnpm run db:migrate:local\npnpm run dev'
+      },
+      {
+        title: 'Register Local MCP Server with Agent',
+        desc: 'Connect Cursor, Claude Code, or Antigravity to your local SEOVerse server using the included MCP configuration.',
+        code: '{\n  "mcpServers": {\n    "seoverse": {\n      "command": "pnpm",\n      "args": ["run", "mcp:start"]\n    }\n  }\n}'
+      },
+      {
+        title: 'Instruct Agent with Natural Language',
+        desc: 'Run autonomous audits, keyword research, and competitor intelligence using the 12 built-in skill routines.',
+        code: '# In Claude Code, Cursor, or Codex:\n/seo-audit target="https://your-site.com"\n/keyword-research seed="developer tools"\n/competitor-analysis domain="rival.com"'
+      },
+      {
+        title: 'Review Findings and Export Reports',
+        desc: 'Inspect normalized tables in your browser at localhost:3001 or export client-ready HTML reports.',
+        code: '# Open interactive portal:\nopen http://localhost:3001/projects\n\n# Or export static executive HTML report:\npnpm run report:export --id=audit-2026-11'
+      }
+    ];
+
+    function updateStage(val) {
+      const idx = parseInt(val, 10) - 1;
+      const data = workflowStages[idx];
+      document.getElementById('stage-title').textContent = data.title;
+      document.getElementById('stage-desc').textContent = data.desc;
+      document.getElementById('stage-code').textContent = data.code;
+
+      for (let i = 1; i <= 4; i++) {
+        const stop = document.getElementById('stop-' + i);
+        if (i === idx + 1) {
+          stop.classList.add('active');
+        } else {
+          stop.classList.remove('active');
+        }
+      }
+    }
+
+    // Copy Clone Command
+    function copyClone() {
+      const cmd = document.getElementById('clone-input').value;
+      navigator.clipboard.writeText(cmd).then(() => {
+        const btn = event.target;
+        const oldText = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = oldText; }, 2000);
+      });
+    }
+
+    // Motion & Scroll Reveals (scripted style mutation for recorder tracking)
+    function triggerReveals() {
+      const trigger = window.innerHeight * 0.92;
+      document.querySelectorAll('[data-reveal]').forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top <= trigger) {
+          el.classList.add('is-in');
+          el.style.transform = 'translateY(0px)';
+          el.style.opacity = '1';
+        }
+      });
+    }
+
+    window.addEventListener('scroll', triggerReveals, { passive: true });
+    window.addEventListener('wheel', triggerReveals, { passive: true });
+    document.addEventListener('DOMContentLoaded', triggerReveals);
+    setTimeout(triggerReveals, 100);
   </script>
 </body>
 </html>
